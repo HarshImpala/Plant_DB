@@ -1,0 +1,1010 @@
+{
+  "acacia collinsii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:446-2",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Acacia collinsii | Saff. | First published in Science | n.s. | nom. cons. | This name is a synonym of | Vachellia collinsii",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A446-2",
+    "powo_error": ""
+  },
+  "acalypha hispida": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:337478-1",
+    "powo_native": "Bismarck Archipelago\nIntroduced into:\nAndaman Is. | Bangladesh | Benin | Burundi | Caroline Is. | Cayman Is. | Comoros | Cook Is. | Cuba | Dominican Republic | Ecuador | Equatorial Guinea | Gambia | Gilbert Is. | Gulf of Guinea Is. | Haiti",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A337478-1",
+    "powo_error": ""
+  },
+  "acorus gramineus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:84019-1",
+    "powo_native": "Bangladesh | Cambodia | China North-Central | China South-Central | China Southeast | East Himalaya | Hainan | Inner Mongolia | Japan | Korea | Laos | Myanmar | Philippines | Primorye | Qinghai | Taiwan | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A84019-1",
+    "powo_error": ""
+  },
+  "adenanthera microsperma": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:472162-1",
+    "powo_native": "Andaman Is. | Borneo | Cambodia | China South-Central | China Southeast | Hainan | Jawa | Lesser Sunda Is. | Malaya | Myanmar | Nicobar Is. | Sumatera | Taiwan | Vietnam\nIntroduced into:\nJamaica | Mauritius",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A472162-1",
+    "powo_error": ""
+  },
+  "aglaonema costatum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:84052-1",
+    "powo_native": "Bangladesh | Cambodia | Laos | Malaya | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A84052-1",
+    "powo_error": ""
+  },
+  "aglaonema modestum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:84081-1",
+    "powo_native": "Bangladesh | Cambodia | China South-Central | China Southeast | Laos | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A84081-1",
+    "powo_error": ""
+  },
+  "aglaonema nitidum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:84086-1",
+    "powo_native": "Borneo | Jawa | Malaya | Myanmar | Sumatera | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A84086-1",
+    "powo_error": ""
+  },
+  "allamanda schottii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:76487-1",
+    "powo_native": "Argentina Northeast | Brazil South | Brazil Southeast | French Guiana\nIntroduced into:\nBangladesh | China Southeast | Costa Rica | Galápagos | Hainan | Honduras | Mexico Southeast | Panamá | Puerto Rico",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A76487-1",
+    "powo_error": ""
+  },
+  "alpinia purpurata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:795383-1",
+    "powo_native": "Bismarck Archipelago | Maluku | New Caledonia | New Guinea | Solomon Is. | Vanuatu\nIntroduced into:\nAssam | Bangladesh | Caroline Is. | Colombia | Comoros | Cook Is. | Ecuador | Fiji | Hawaii | Leeward Is. | Mexico Southwest | Peru",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A795383-1",
+    "powo_error": ""
+  },
+  "alpinia vittata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:872078-1",
+    "powo_native": "Bismarck Archipelago | Solomon Is.\nIntroduced into:\nDominican Republic | Fiji | Leeward Is. | Thailand | Trinidad-Tobago",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A872078-1",
+    "powo_error": ""
+  },
+  "alpinia zerumbet": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:872083-1",
+    "powo_native": "Bangladesh | Cambodia | China South-Central | China Southeast | Hainan | Japan | Laos | Malaya | Myanmar | Nansei-shoto | Taiwan | Thailand | Vietnam\nIntroduced into:\nAscension | Azores | Bismarck Archipelago | Bolivia | Canary Is.",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A872083-1",
+    "powo_error": ""
+  },
+  "ananas comosus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:30000083-2",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Bromeliaceae | Juss. | First published in Gen. Pl. [Jussieu] 49. 1789 [4 Aug 1789] (1789)nom. cons. | This family is accepted",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30000083-2",
+    "powo_error": ""
+  },
+  "angraecum eburneum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:616096-1",
+    "powo_native": "Aldabra | Comoros | Kenya | Madagascar | Mauritius | Réunion | Seychelles",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A616096-1",
+    "powo_error": ""
+  },
+  "anthurium digitatum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:84749-1",
+    "powo_native": "Trinidad-Tobago",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A84749-1",
+    "powo_error": ""
+  },
+  "anthurium schlechtendalii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:85335-1",
+    "powo_native": "Belize | Guatemala | Honduras | Mexico Gulf | Mexico Southeast | Mexico Southwest",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A85335-1",
+    "powo_error": ""
+  },
+  "anthurium vittariifolium": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:15820-2",
+    "powo_native": "Brazil North | Colombia | Ecuador | Peru\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nAlismatales\nView Order Tree\nopens in a new tab\nFamily\nAraceae\nView Family Tree\nopens in a new tab\nGenus\nAnthurium\nView in Tree of Life\nopens in a new tab\nSpecies\nAnthurium vittariifolium\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPublications\nSort\nAlphabetically\nNewest first\nOldest first\nPOWO follows t",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A15820-2",
+    "powo_error": ""
+  },
+  "aristolochia fimbriata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:92931-1",
+    "powo_native": "Argentina Northeast | Bolivia | Brazil South | Paraguay",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A92931-1",
+    "powo_error": ""
+  },
+  "aristolochia gigantea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:60460287-2",
+    "powo_native": "Brazil Northeast | Brazil South",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A60460287-2",
+    "powo_error": ""
+  },
+  "aristolochia grandiflora": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:92978-1",
+    "powo_native": "Belize | Colombia | Costa Rica | Ecuador | El Salvador | Guatemala | Honduras | Jamaica | Mexico Gulf | Mexico Northeast | Mexico Southeast | Mexico Southwest | Nicaragua | Panamá\nIntroduced into:\nBangladesh | Cuba | Leeward Is.",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A92978-1",
+    "powo_error": ""
+  },
+  "aristolochia labiata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:93051-1",
+    "powo_native": "Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central\nIntroduced into:\nCameroon | Dominican Republic",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A93051-1",
+    "powo_error": ""
+  },
+  "aristolochia maxima": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:93123-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Aristolochia maxima | Cham. | First published in Linnaea 7: 208 (1832) | nom. illeg. | This name is a synonym of | Aristolochia chamissonis",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A93123-1",
+    "powo_error": ""
+  },
+  "aristolochia ringens": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:93286-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Aristolochia ringens | Link & Otto | First published in Icon. Pl. Select.: 33 (1821) | nom. illeg. | This name is a synonym of | Aristolochia labiata",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A93286-1",
+    "powo_error": ""
+  },
+  "aristolochia trilobata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:319092-2",
+    "powo_native": "Belize | Bermuda | Brazil North | Brazil Northeast | Brazil Southeast | Colombia | Costa Rica | Cuba | Dominican Republic | French Guiana | Guyana | Haiti | Honduras | Jamaica | Leeward Is. | Mexico Southeast | Nicaragua",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A319092-2",
+    "powo_error": ""
+  },
+  "aristolochia zollingeriana": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:93453-1",
+    "powo_native": "Jawa | Nansei-shoto | Philippines | Sumatera | Taiwan",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A93453-1",
+    "powo_error": ""
+  },
+  "asplenium nidus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:17048040-1",
+    "powo_native": "Bismarck Archipelago | Borneo | Caroline Is. | Christmas I. | Jawa | Lesser Sunda Is. | Malaya | Maluku | New Guinea | Philippines | Queensland | Solomon Is. | Sulawesi | Sumatera\nIntroduced into:\nBangladesh | Chagos Archipelago | Fiji",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A17048040-1",
+    "powo_error": ""
+  },
+  "averrhoa carambola": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:371870-1",
+    "powo_native": "Jawa | Maluku | Sulawesi\nIntroduced into:\nAndaman Is. | Assam | Bangladesh | Belize | Bolivia | Borneo | Brazil North | Brazil Northeast | Brazil West-Central | Cambodia | Caroline Is. | China South-Central | China Southeast | Comoros",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A371870-1",
+    "powo_error": ""
+  },
+  "begonia listada": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:30710-2",
+    "powo_native": "Paraguay\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nCucurbitales\nView Order Tree\nopens in a new tab\nFamily\nBegoniaceae\nView Family Tree\nopens in a new tab\nGenus\nBegonia\nView in Tree of Life\nopens in a new tab\nSpecies\nBegonia listada\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPublications\nSort\nAlphabetically\nNewest first\nOldest first\nPOWO follows these authorities in accepting this name:\nGovaerts | R. (1996). World Checklist of Seed Plants 2(1 | 2): 1-492",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30710-2",
+    "powo_error": ""
+  },
+  "begonia solimutata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:273191-2",
+    "powo_native": "Brazil North\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nCucurbitales\nView Order Tree\nopens in a new tab\nFamily\nBegoniaceae\nView Family Tree\nopens in a new tab\nGenus\nBegonia\nView in Tree of Life\nopens in a new tab\nSpecies\nBegonia solimutata\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPublications\nSort\nAlphabetically\nNewest first\nOldest first\nPOWO follows these authorities in accepting this name:\nGovaerts | R. (1996). World Checklist of Seed Plants 2(1 | 2)",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A273191-2",
+    "powo_error": ""
+  },
+  "brachychilum horsfieldii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:795751-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Brachychilum horsfieldii | (R.Br. ex Wall.) Petersen | First published in Bot. Tidsskr. 18: 262 | t. 17 (1893) | This name is a synonym of | Hedychium horsfieldii",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A795751-1",
+    "powo_error": ""
+  },
+  "breynia nivosa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:36347-2",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Breynia nivosa | (W.Bull) Small | First published in Bull. Torrey Bot. Club 37: 516 (1910) | This name is a synonym of | Phyllanthus nivosus",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A36347-2",
+    "powo_error": ""
+  },
+  "brownea latifolia": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:482426-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Brownea latifolia | Jacq. | First published in Fragm. Bot.: 25 (1800) | This name is a synonym of | Brownea coccinea subsp. capitella | Brownea coccinea | subsp. | capitella",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A482426-1",
+    "powo_error": ""
+  },
+  "caladium bicolor": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:30010088-2",
+    "powo_native": "Argentina Northwest | Bolivia | Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Colombia | Costa Rica | Ecuador | French Guiana | Guyana | Honduras | Nicaragua | Panamá | Peru | Suriname",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30010088-2",
+    "powo_error": ""
+  },
+  "calathea zebrina": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:795959-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Calathea zebrina | (Sims) Lindl. | First published in Bot. Reg. 14: t. 1210 (1829) | This name is a synonym of | Goeppertia zebrina",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A795959-1",
+    "powo_error": ""
+  },
+  "canna glauca": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:796016-1",
+    "powo_native": "Argentina Northeast | Argentina Northwest | Bermuda | Bolivia | Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Colombia | Costa Rica | Cuba | Dominican Republic | Ecuador | El Salvador | Florida",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A796016-1",
+    "powo_error": ""
+  },
+  "carica papaya": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:30011248-2",
+    "powo_native": "Belize | Colombia | Costa Rica | El Salvador | Guatemala | Honduras | Mexico Gulf | Mexico Southeast | Mexico Southwest | Nicaragua | Panamá | Venezuela\nIntroduced into:\nAndaman Is. | Angola | Argentina Northeast | Argentina Northwest | Ascension",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30011248-2",
+    "powo_error": ""
+  },
+  "castanospermum australe": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:960752-1",
+    "powo_native": "New South Wales | Queensland | Vanuatu\nIntroduced into:\nBangladesh | Bismarck Archipelago | India | Jawa | Kenya | Myanmar | New Caledonia | New Guinea | Norfolk Is. | Pakistan | Society Is. | Sri Lanka | Tanzania | Trinidad-Tobago",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A960752-1",
+    "powo_error": ""
+  },
+  "cinnamomum parthenoxylon": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:463600-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Cinnamomum parthenoxylon | (Jack) Meisn. | First published in A.P.de Candolle | Prodr. 15(1): 26 (1864) | This name is a synonym of | Camphora parthenoxylon",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A463600-1",
+    "powo_error": ""
+  },
+  "clerodendrum splendens": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:862410-1",
+    "powo_native": "Angola | Benin | Burundi | Cabinda | Cameroon | Central African Republic | Congo | DR Congo | Equatorial Guinea | Gabon | Ghana | Guinea | Guinea-Bissau | Ivory Coast | Liberia | Nigeria | Senegal | Sierra Le",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A862410-1",
+    "powo_error": ""
+  },
+  "clerodendrum thomsoniae": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:862437-1",
+    "powo_native": "Cameroon | Gambia | Ghana | Gulf of Guinea Is. | Nigeria | Senegal | Sierra Leone\nIntroduced into:\nBangladesh | Bolivia | Caroline Is. | Colombia | Costa Rica | Cuba | Dominican Republic | DR Congo | East Himalaya | Ecuador | Guate",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A862437-1",
+    "powo_error": ""
+  },
+  "clusia rosea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:427536-1",
+    "powo_native": "Brazil Northeast",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A427536-1",
+    "powo_error": ""
+  },
+  "coccothrinax readii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:62410-2",
+    "powo_native": "Belize | Mexico Southeast\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nArecales\nView Order Tree\nopens in a new tab\nFamily\nArecaceae\nView Family Tree\nopens in a new tab\nGenus\nCoccothrinax\nView in Tree of Life\nopens in a new tab\nSpecies\nCoccothrinax readii\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPublications\nSort\nAlphabetically\nNewest first\nOldest first\nPOWO follows these authorities in accepting this name:\nDuno de Stefano | R. & M",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A62410-2",
+    "powo_error": ""
+  },
+  "cocos nucifera": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:666160-1",
+    "powo_native": "Bismarck Archipelago | Maluku | New Guinea | Philippines | Queensland | Samoa | Santa Cruz Is. | Solomon Is. | Tokelau-Manihiki | Tonga | Vanuatu\nIntroduced into:\nAndaman Is. | Angola | Ascension | Assam | Bahamas | Bangladesh | Be",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A666160-1",
+    "powo_error": ""
+  },
+  "coffea arabica": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:747038-1",
+    "powo_native": "Ethiopia | Kenya | Sudan-South Sudan\nIntroduced into:\nAndaman Is. | Ascension | Bangladesh | Belize | Bermuda | Bismarck Archipelago | Bolivia | Borneo | Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Caroline I",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A747038-1",
+    "powo_error": ""
+  },
+  "coffea canephora": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:747068-1",
+    "powo_native": "Angola | Benin | Cabinda | Cameroon | Central African Republic | Congo | DR Congo | Gabon | Ghana | Guinea | Guinea-Bissau | Ivory Coast | Liberia | Nigeria | Sudan-South Sudan | Tanzania | Togo | Uganda\nIntr",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A747068-1",
+    "powo_error": ""
+  },
+  "colocasia esculenta": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:1170772-2",
+    "powo_native": "Assam | Bangladesh | China South-Central | China Southeast | East Himalaya | India | Laos | Malaya | Myanmar | Nepal | Sumatera | Taiwan | Thailand\nIntroduced into:\nAlabama | Algeria | Andaman Is. | Arkansas | Azores",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A1170772-2",
+    "powo_error": ""
+  },
+  "colvillea racemosa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:486928-1",
+    "powo_native": "Madagascar\nIntroduced into:\nBangladesh | India | Trinidad-Tobago\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nFabales\nView Order Tree\nopens in a new tab\nFamily\nFabaceae\nView Family Tree\nopens in a new tab\nGenus\nColvillea\nView in Tree of Life\nopens in a new tab\nSpecies\nColvillea racemosa\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPublications\nSort\nAlphabetically\nNewest first\nOldest first\nPOWO follows these aut",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A486928-1",
+    "powo_error": ""
+  },
+  "cordia myxa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:114380-1",
+    "powo_native": "Assam | Bangladesh | India | Iran | Laos | Myanmar | Nepal | Pakistan | Sri Lanka | Vietnam\nIntroduced into:\nAlgeria | Benin | Burkina | Cameroon | Comoros | DR Congo | East Aegean Is. | Egypt | Ethiopia",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A114380-1",
+    "powo_error": ""
+  },
+  "couroupita guianensis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:592385-1",
+    "powo_native": "Bolivia | Brazil North | Colombia | Ecuador | French Guiana | Guyana | Panamá | Peru | Suriname | Venezuela\nIntroduced into:\nAndaman Is. | Bangladesh | Brazil Southeast | Costa Rica | Cuba | Dominican Republic | Florida | Haiti",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A592385-1",
+    "powo_error": ""
+  },
+  "ctenanthe amabilis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:1192593-2",
+    "powo_native": "Brazil Southeast",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A1192593-2",
+    "powo_error": ""
+  },
+  "cubanola domingensis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:72066-2",
+    "powo_native": "Dominican Republic",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A72066-2",
+    "powo_error": ""
+  },
+  "curculigo capitulata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:64141-1",
+    "powo_native": "Assam | Bangladesh | China South-Central | China Southeast | East Himalaya | Hainan | Jawa | Laos | Lesser Sunda Is. | Malaya | Maluku | Myanmar | Nepal | New Guinea | Nicobar Is. | Philippines | Queensland",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A64141-1",
+    "powo_error": ""
+  },
+  "cyanastrum cordifolium": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:429674-1",
+    "powo_native": "Cameroon | Congo | DR Congo | Equatorial Guinea | Gabon",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A429674-1",
+    "powo_error": ""
+  },
+  "cyperus diffusus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:304313-1",
+    "powo_native": "Andaman Is. | Assam | Bangladesh | Bismarck Archipelago | Borneo | Cambodia | China South-Central | China Southeast | East Himalaya | Hainan | India | Jawa | Laos | Malaya | Maluku | Myanmar | Nepal | New Gui",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A304313-1",
+    "powo_error": ""
+  },
+  "delonix regia": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:491231-1",
+    "powo_native": "Madagascar\nIntroduced into:\nAndaman Is. | Angola | Assam | Bahamas | Bangladesh | Belize | Borneo | Burkina | Burundi | Cambodia | Cameroon | Caroline Is. | Cayman Is. | Chad | China South-Central | China Southeast | Christmas I.",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A491231-1",
+    "powo_error": ""
+  },
+  "dendrocnide excelsa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:851442-1",
+    "powo_native": "New South Wales",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A851442-1",
+    "powo_error": ""
+  },
+  "dichrostachys cinerea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:978480-1",
+    "powo_native": "Madagascar",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A978480-1",
+    "powo_error": ""
+  },
+  "dioscorea alata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:317625-1",
+    "powo_native": "Assam | Bangladesh | Bismarck Archipelago | Borneo | Cambodia | Christmas I. | East Himalaya | India | Jawa | Lesser Sunda Is. | Malaya | Myanmar | Nepal | New Guinea | Philippines | Sulawesi | Sumatera | Tha",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A317625-1",
+    "powo_error": ""
+  },
+  "dioscorea oppositifolia": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:318348-1",
+    "powo_native": "Assam | Bangladesh | East Himalaya | India | Myanmar",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A318348-1",
+    "powo_error": ""
+  },
+  "dioscorea polystachya": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:318443-1",
+    "powo_native": "China North-Central | China South-Central | China Southeast | Inner Mongolia | Korea | Kuril Is. | Primorye | Taiwan\nIntroduced into:\nAlabama | Arkansas | Connecticut | District of Columbia | Florida | Georgia | Illinois | Indiana | Japan",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A318443-1",
+    "powo_error": ""
+  },
+  "dischidia bengalensis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:96902-1",
+    "powo_native": "Assam | Bangladesh | Borneo | East Himalaya | Jawa | Malaya | Myanmar | Nepal | Nicobar Is. | Sumatera | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A96902-1",
+    "powo_error": ""
+  },
+  "dischidia platyphylla": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:97013-1",
+    "powo_native": "Philippines\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nGentianales\nView Order Tree\nopens in a new tab\nFamily\nApocynaceae\nView Family Tree\nopens in a new tab\nGenus\nDischidia\nView in Tree of Life\nopens in a new tab\nSpecies\nDischidia platyphylla\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPublications\nSort\nAlphabetically\nNewest first\nOldest first\nPOWO follows these authorities in accepting this name:\nGovaerts | R. (2000). World Checklist of Seed Plants Data",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A97013-1",
+    "powo_error": ""
+  },
+  "dischidia subulata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:97057-1",
+    "powo_native": "Malaya | Sumatera\nAccepted Infraspecifics\nIncludes 2 Accepted Infraspecifics\nKB\nDischidia subulata\nsubsp.\nangustata\nRintz\nDischidia subulata\nsubsp.\nsubulata\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nGentianales\nView Order Tree\nopens in a new tab\nFamily\nApocynaceae\nView Family Tree\nopens in a new tab\nGenus\nDischidia\nView in Tree of Life\nopens in a new tab\nSpecies\nDischidia subulata\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPubli",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A97057-1",
+    "powo_error": ""
+  },
+  "dischidia vidalii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:60474364-2",
+    "powo_native": "Philippines",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A60474364-2",
+    "powo_error": ""
+  },
+  "elaeis guineensis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:666802-1",
+    "powo_native": "Angola | Benin | Cameroon | Central African Republic | Chad | Congo | DR Congo | Gabon | Gambia | Ghana | Guinea | Guinea-Bissau | Gulf of Guinea Is. | Ivory Coast | Kenya | Liberia | Malawi | Mozambique",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A666802-1",
+    "powo_error": ""
+  },
+  "elettaria ensal": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:872401-1",
+    "powo_native": "Sri Lanka",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A872401-1",
+    "powo_error": ""
+  },
+  "epidendrum ciliare": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:631578-1",
+    "powo_native": "Belize | Bolivia | Brazil North | Brazil Northeast | Colombia | Costa Rica | Ecuador | El Salvador | French Guiana | Guatemala | Guyana | Honduras | Leeward Is. | Mexico Central | Mexico Gulf | Mexico Northeast | Mexico Northwest",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A631578-1",
+    "powo_error": ""
+  },
+  "epiphyllum anguliger": {
+    "powo_native": "",
+    "powo_url": "https://powo.science.kew.org/results?q=Epiphyllum%20anguliger",
+    "powo_taxon_id": "",
+    "powo_error": "not_found"
+  },
+  "epiphyllum chrysocardium": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:92713-2",
+    "powo_native": "Mexico Southeast",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A92713-2",
+    "powo_error": ""
+  },
+  "epiphyllum oxypetalum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:132938-1",
+    "powo_native": "Belize | El Salvador | Guatemala | Honduras | Mexico Central | Mexico Gulf | Mexico Southeast | Mexico Southwest | Nicaragua\nIntroduced into:\nBrazil Northeast | Brazil South | Brazil Southeast | China South-Central | Cuba | Dominican Republic | Leeward Is.",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A132938-1",
+    "powo_error": ""
+  },
+  "erythroxylum coca": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:330132-2",
+    "powo_native": "Bolivia | Brazil North | Colombia | Ecuador | Peru\nIntroduced into:\nAssam | Cameroon | Caroline Is. | Guinea-Bissau | Gulf of Guinea Is. | Kazan-retto | Tanzania\nAccepted Infraspecifics\nIncludes 2 Accepted Infraspecifics\nKB\nErythroxylum coca\nvar.\ncoca\nErythroxylum coca\nvar.\nipadu\nPlowman\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A330132-2",
+    "powo_error": ""
+  },
+  "euphorbia leuconeura": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:347109-1",
+    "powo_native": "Madagascar",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A347109-1",
+    "powo_error": ""
+  },
+  "euterpe oleracea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:666941-1",
+    "powo_native": "Brazil North | Brazil Northeast | Colombia | Ecuador | French Guiana | Guyana | Suriname | Trinidad-Tobago",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A666941-1",
+    "powo_error": ""
+  },
+  "ficus benghalensis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:852482-1",
+    "powo_native": "Assam | Bangladesh | East Himalaya | India | Laccadive Is. | Maldives | Nepal | Pakistan | Sri Lanka\nIntroduced into:\nAfghanistan | Andaman Is. | Chagos Archipelago | Florida | Gilbert Is. | Iran | Jamaica | Laos | Marianas",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A852482-1",
+    "powo_error": ""
+  },
+  "ficus cyathistipula": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:852705-1",
+    "powo_native": "Angola | Benin | Burundi | Cameroon | Central African Republic | Congo | DR Congo | Gabon | Ghana | Guinea | Ivory Coast | Kenya | Liberia | Malawi | Rwanda | Sudan-South Sudan | Tanzania | Togo",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A852705-1",
+    "powo_error": ""
+  },
+  "ficus elastica": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:60458499-2",
+    "powo_native": "Assam | Bangladesh | China South-Central | East Himalaya | Jawa | Laos | Malaya | Myanmar | Nepal | Sumatera | Thailand | Vietnam\nIntroduced into:\nAndaman Is. | Bahamas | Cameroon | Caroline Is. | Comoros | Cuba",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A60458499-2",
+    "powo_error": ""
+  },
+  "ficus lyrata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:853158-1",
+    "powo_native": "Benin | Cameroon | Gabon | Ghana | Guinea | Guinea-Bissau | Ivory Coast | Liberia | Nigeria | Sierra Leone | Togo\nIntroduced into:\nCanary Is. | El Salvador",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A853158-1",
+    "powo_error": ""
+  },
+  "ficus obliqua": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:853303-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Ficus obliqua | Miq. | First published in H.Zollinger | Syst. Verz. Ind. Archip. 2: 92 (1854) | nom. illeg. | This name is a synonym of | Ficus melinocarpa",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A853303-1",
+    "powo_error": ""
+  },
+  "ficus rubiginosa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:60466944-2",
+    "powo_native": "New South Wales | Queensland\nIntroduced into:\nCalifornia | Canary Is. | Madeira | Marianas | New Zealand North | Spain",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A60466944-2",
+    "powo_error": ""
+  },
+  "flacourtia flavescens": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:111692-1",
+    "powo_native": "Cameroon | Central African Republic | Chad | DR Congo | Gabon | Ghana | Guinea | Ivory Coast | Nigeria | Sierra Leone\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nMalpighiales\nView Order Tree\nopens in a new tab\nFamily\nSalicaceae\nView Family Tree\nopens in a new tab\nGenus\nFlacourtia\nView in Tree of Life\nopens in a new tab\nSpecies\nFlacourti",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A111692-1",
+    "powo_error": ""
+  },
+  "globba schomburgkii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:796781-1",
+    "powo_native": "Assam | Cambodia | China South-Central | India | Laos | Myanmar | Thailand | Vietnam\nAccepted Infraspecifics\nIncludes 2 Accepted Infraspecifics\nKB\nGlobba schomburgkii\nvar.\nangustata\nGagnep.\nGlobba schomburgkii\nvar.\nschomburgkii\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nZingiberales\nView Order Tree\nopens in a new tab\nFamily\nZingiberaceae\nView Family Tree\nopens in a new tab\nGenus\nG",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A796781-1",
+    "powo_error": ""
+  },
+  "harpullia arborea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:783304-1",
+    "powo_native": "Assam | Bangladesh | Borneo | Cambodia | Fiji | India | Jawa | Lesser Sunda Is. | Malaya | Maluku | Nepal | New Guinea | Philippines | Queensland | Samoa | Solomon Is. | Sri Lanka | Sulawesi",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A783304-1",
+    "powo_error": ""
+  },
+  "hatiora pentaptera": {
+    "powo_native": "",
+    "powo_url": "https://powo.science.kew.org/results?q=Hatiora%20pentaptera",
+    "powo_taxon_id": "",
+    "powo_error": "not_found"
+  },
+  "hatiora salicornioides": {
+    "powo_native": "",
+    "powo_url": "https://powo.science.kew.org/results?q=Hatiora%20salicornioides",
+    "powo_taxon_id": "",
+    "powo_error": "not_found"
+  },
+  "hedychium coronarium": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:796836-1",
+    "powo_native": "Assam | China South-Central | China Southeast | East Himalaya | India | Myanmar | Nepal | Taiwan | Thailand | Vietnam\nIntroduced into:\nAndaman Is. | Argentina Northeast | Argentina Northwest | Azores | Bangladesh | Belize | Bismarck Archipelago",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A796836-1",
+    "powo_error": ""
+  },
+  "hedychium gardnerianum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:69077-3",
+    "powo_native": "Assam | East Himalaya | India | Myanmar | Nepal | Thailand | Vietnam\nIntroduced into:\nAscension | Azores | Brazil South | Brazil Southeast | Cape Provinces | Cook Is. | Costa Rica | Cuba | Dominican Republic | El Salvador | Haiti",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A69077-3",
+    "powo_error": ""
+  },
+  "hedychium horsfieldii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:796866-1",
+    "powo_native": "Jawa",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A796866-1",
+    "powo_error": ""
+  },
+  "heliconia": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:331205-2",
+    "powo_native": "Argentina Northeast | Argentina Northwest | Belize | Bismarck Archipelago | Bolivia | Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Colombia | Costa Rica | Cuba | Dominican Republic | Ecuador | El Salvador",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A331205-2",
+    "powo_error": ""
+  },
+  "heliconia rostrata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:796978-1",
+    "powo_native": "Bolivia | Colombia | Ecuador | Peru\nIntroduced into:\nBangladesh | Comoros | Mexico Southeast | Mexico Southwest | Puerto Rico | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A796978-1",
+    "powo_error": ""
+  },
+  "hoffmannia ghiesbreghtii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:753195-1",
+    "powo_native": "Belize | Guatemala | Mexico Gulf | Mexico Southeast",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A753195-1",
+    "powo_error": ""
+  },
+  "hura crepitans": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:350060-1",
+    "powo_native": "Bahamas | Bolivia | Brazil North | Colombia | Costa Rica | Cuba | Dominican Republic | Ecuador | French Guiana | Guyana | Haiti | Honduras | Jamaica | Leeward Is. | Nicaragua | Panamá | Peru | Puerto Rico",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A350060-1",
+    "powo_error": ""
+  },
+  "hylocereus megalanthus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:50425948-2",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Hylocereus megalanthus | (K.Schum. ex Vaupel) Ralf Bauer | First published in Cactaceae Syst. Init. 17: 28 (2003) | This name is a synonym of | Selenicereus megalanthus",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A50425948-2",
+    "powo_error": ""
+  },
+  "hylocereus undatus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:125404-2",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Hylocereus undatus | (Haw.) Britton & Rose | First published in N.L.Britton | Fl. Bermuda: 256 (1918) | This name is a synonym of | Selenicereus undatus",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A125404-2",
+    "powo_error": ""
+  },
+  "isolepis cernua": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:309238-1",
+    "powo_native": "Albania | Algeria | Antipodean Is. | Argentina Northeast | Argentina Northwest | Argentina South | Azores | Baleares | Bolivia | Brazil South | British Columbia | California | Canary Is. | Cape Provinces | Cape Verde | Chatham Is.",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A309238-1",
+    "powo_error": ""
+  },
+  "justicia brandegeeana": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:289220-2",
+    "powo_native": "El Salvador | Guatemala | Honduras | Mexico Central | Mexico Northeast\nIntroduced into:\nAssam | Bangladesh | Benin | Bolivia | Brazil South | Caroline Is. | Cook Is. | Dominican Republic | East Himalaya | Ecuador | Florida | Gambia",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A289220-2",
+    "powo_error": ""
+  },
+  "justicia carnea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:132826-2",
+    "powo_native": "Argentina Northeast | Brazil South | Brazil Southeast | Paraguay\nIntroduced into:\nAzores | Colombia | Cook Is. | Cuba | Dominican Republic | Ecuador | Haiti | Hawaii | Mexico Central | Myanmar | St.Helena | Venezuelan Antilles",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A132826-2",
+    "powo_error": ""
+  },
+  "khaya grandifoliola": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:578853-1",
+    "powo_native": "Benin | Burkina | Central African Republic | Chad | DR Congo | Ghana | Guinea | Ivory Coast | Liberia | Nigeria | Sudan-South Sudan | Togo",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A578853-1",
+    "powo_error": ""
+  },
+  "kigelia pinnata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:109886-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Kigelia pinnata | (Jacq.) DC. | First published in Prodr. 9: 247 (1845) | This name is a synonym of | Kigelia africana subsp. africana | Kigelia africana | subsp. | africana",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A109886-1",
+    "powo_error": ""
+  },
+  "kohleria hirsuta": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:381572-1",
+    "powo_native": "Colombia | Ecuador | French Guiana | Guyana | Suriname | Trinidad-Tobago",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A381572-1",
+    "powo_error": ""
+  },
+  "lagerstroemia speciosa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:553618-1",
+    "powo_native": "Assam | Bangladesh | Borneo | Cambodia | China South-Central | East Himalaya | India | Jawa | Laos | Lesser Sunda Is. | Malaya | Maluku | Myanmar | New Guinea | Philippines | Sri Lanka | Sulawesi | Sumatera",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A553618-1",
+    "powo_error": ""
+  },
+  "mangifera indica": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:69913-1",
+    "powo_native": "Assam | China South-Central | East Himalaya | Myanmar | Thailand\nIntroduced into:\nAndaman Is. | Angola | Ascension | Bahamas | Bangladesh | Belize | Brazil South | Burkina | Cambodia | Cameroon | Caroline Is. | Cayman Is. | Central",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A69913-1",
+    "powo_error": ""
+  },
+  "medinilla magnifica": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:570289-1",
+    "powo_native": "Philippines",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A570289-1",
+    "powo_error": ""
+  },
+  "nephelium lappaceum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:36501-1",
+    "powo_native": "Assam | Bangladesh | Borneo | Cambodia | China South-Central | China Southeast | East Himalaya | Hainan | Jawa | Laos | Malaya | Maluku | Myanmar | Nicobar Is. | Philippines | Sulawesi | Sumatera | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A36501-1",
+    "powo_error": ""
+  },
+  "mimosa aculeaticarpa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:161462-2",
+    "powo_native": "Arizona | Mexico Central | Mexico Gulf | Mexico Northeast | Mexico Northwest | Mexico Southeast | Mexico Southwest | New Mexico",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A161462-2",
+    "powo_error": ""
+  },
+  "mimosa polycarpa spegazzinii": {
+    "powo_native": "",
+    "powo_url": "https://powo.science.kew.org/results?q=Mimosa%20polycarpa%20spegazzinii",
+    "powo_taxon_id": "",
+    "powo_error": "not_found"
+  },
+  "morinda": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:34941-1",
+    "powo_native": "Andaman Is. | Angola | Aruba | Assam | Bahamas | Bangladesh | Belize | Benin | Bismarck Archipelago | Borneo | Cabinda | Cambodia | Cameroon | Caroline Is. | Cayman Is. | Central African Republic | China South-Central",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A34941-1",
+    "powo_error": ""
+  },
+  "murraya paniculata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:774441-1",
+    "powo_native": "Andaman Is. | Assam | Bangladesh | Bismarck Archipelago | Borneo | Cambodia | China South-Central | China Southeast | Christmas I. | East Himalaya | Hainan | India | Jawa | Laos | Lesser Sunda Is. | Malaya | Maluku",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A774441-1",
+    "powo_error": ""
+  },
+  "musa coccinea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:797554-1",
+    "powo_native": "China South-Central | China Southeast | Vietnam\nIntroduced into:\nCosta Rica | India | Jawa | Philippines",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797554-1",
+    "powo_error": ""
+  },
+  "musa velutina": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:797625-1",
+    "powo_native": "Assam | East Himalaya\nIntroduced into:\nBrazil South | Costa Rica | Myanmar",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797625-1",
+    "powo_error": ""
+  },
+  "musa nana": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:797588-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Musaceae | Musa | Musa nana | Lour. | First published in Fl. Cochinch.: 644 (1790) | no type material known. | This name is unplaced | Unplaced names are names that cannot be accepted | nor can they be put into synonymy. | Learn more about unplaced names",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797588-1",
+    "powo_error": ""
+  },
+  "musa paradisiaca": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:797595-1",
+    "powo_native": "Malaya | Philippines\nIntroduced into:\nAlabama | Andaman Is. | Ascension | Assam | Bangladesh | Borneo | Burkina | Caroline Is. | Central African Republic | Chad | Chagos Archipelago | China South-Central | China Southeast | Comoros | Cook Is.",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797595-1",
+    "powo_error": ""
+  },
+  "musa paradisiaca seminifera": {
+    "powo_native": "",
+    "powo_url": "https://powo.science.kew.org/results?q=Musa%20paradisiaca%20seminifera",
+    "powo_taxon_id": "",
+    "powo_error": "not_found"
+  },
+  "nautilocalyx lynchii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:167431-2",
+    "powo_native": "Brazil North | Colombia",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A167431-2",
+    "powo_error": ""
+  },
+  "neptunia plena": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:1056199-2",
+    "powo_native": "Aruba | Bahamas | Bolivia | Brazil North | Brazil Northeast | Brazil West-Central | Colombia | Costa Rica | Cuba | Dominican Republic | Ecuador | El Salvador | French Guiana | Galápagos | Guatemala | Guyana | Haiti",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A1056199-2",
+    "powo_error": ""
+  },
+  "oxalis triangularis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:375478-1",
+    "powo_native": "Argentina Northeast | Argentina Northwest | Bolivia | Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Paraguay | Peru\nIntroduced into:\nArkansas | Florida",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A375478-1",
+    "powo_error": ""
+  },
+  "pachira affinis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:562648-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Pachira affinis | (Mart.) Decne. | First published in Ann. Gén. Hort. 23: 52 (1880) | This name is a synonym of | Pachira insignis",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A562648-1",
+    "powo_error": ""
+  },
+  "pachira aquatica": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:179762-2",
+    "powo_native": "Belize | Bolivia | Brazil North | Brazil Northeast | Colombia | Costa Rica | Ecuador | El Salvador | French Guiana | Guatemala | Guyana | Honduras | Mexico Central | Mexico Gulf | Mexico Northwest | Mexico Southeast | Mexico Southw",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A179762-2",
+    "powo_error": ""
+  },
+  "palisota schweinfurthii": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:172936-1",
+    "powo_native": "Angola | Burundi | Cameroon | Central African Republic | Chad | Congo | DR Congo | Equatorial Guinea | Gabon | Gulf of Guinea Is. | Nigeria | Rwanda | Sudan-South Sudan | Tanzania | Uganda | Zambia\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A172936-1",
+    "powo_error": ""
+  },
+  "passiflora citrina": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:282176-2",
+    "powo_native": "El Salvador | Guatemala | Honduras\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nMalpighiales\nView Order Tree\nopens in a new tab\nFamily\nPassifloraceae\nView Family Tree\nopens in a new tab\nGenus\nPassiflora\nView in Tree of Life\nopens in a new tab\nSpecies\nPassiflora citrina\nKew's Tree of Life Explorer\nDiscover the flowering plant tree of life and the genomic data used to build it.\nView the Tree of Life\nPublications\nSort\nAlphabetically\nNewest first\nOldest first\nPOWO follows these authorities in accept",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A282176-2",
+    "powo_error": ""
+  },
+  "passiflora coriacea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:674920-1",
+    "powo_native": "Bolivia | Colombia | Ecuador | Guyana | Nicaragua | Panamá | Peru",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A674920-1",
+    "powo_error": ""
+  },
+  "passiflora edulis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:321964-2",
+    "powo_native": "Argentina Northeast | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Paraguay\nIntroduced into:\nAngola | Argentina Northwest | Assam | Azores | Bangladesh | Benin | Bolivia | Borneo | Brazil North | Burundi | Cambodia",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A321964-2",
+    "powo_error": ""
+  },
+  "passiflora foetida": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:321966-2",
+    "powo_native": "Argentina Northeast | Argentina Northwest | Aruba | Bahamas | Belize | Bolivia | Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Chile North | Colombia | Costa Rica | Cuba | Dominican Republic",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A321966-2",
+    "powo_error": ""
+  },
+  "passiflora incarnata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:675097-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Passiflora incarnata | Ker Gawl. | First published in Bot. Reg. 3: t. 152 (1817) | sensu auct. | This name is a synonym of | Passiflora edulis",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A675097-1",
+    "powo_error": ""
+  },
+  "passiflora quadrangularis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:675390-1",
+    "powo_native": "Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Colombia\nIntroduced into:\nBahamas | Bangladesh | Bolivia | Cameroon | Caroline Is. | China Southeast | Comoros | Costa Rica | Cuba | Dominican Republic | East Himal",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A675390-1",
+    "powo_error": ""
+  },
+  "passiflora violacea": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:321947-2",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Passiflora violacea | Vell. | First published in Fl. Flumin. 9: t. 84 (1831) | nom. illeg. | This name is a synonym of | Passiflora amethystina",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A321947-2",
+    "powo_error": ""
+  },
+  "phyllanthus inflatus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:354054-1",
+    "powo_native": "Kenya | Malawi | Mozambique | Sudan-South Sudan | Tanzania | Uganda | Zambia | Zimbabwe\nClassification\nKingdom\nPlantae\nPhylum\nStreptophyta\nClass\nEquisetopsida\nSubclass\nMagnoliidae\nOrder\nMalpighiales\nView Order Tree\nopens in a new tab\nFamily\nPhyllanthaceae\nView Family Tree\nopens in a new tab\nGenus\nPhyllanthus\nView in Tree of Life\nopens in a new tab\nSpecies\nPhyllanthus inflatus\nKew's Tree of Life Explorer\nDiscover the flowering plant tr",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A354054-1",
+    "powo_error": ""
+  },
+  "phyllanthus reticulatus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:354573-1",
+    "powo_native": "Andaman Is. | Assam | Bangladesh | Borneo | Cambodia | China South-Central | China Southeast | East Himalaya | Hainan | India | Jawa | Laos | Lesser Sunda Is. | Malaya | Maluku | Myanmar | Nansei-shoto | New",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A354573-1",
+    "powo_error": ""
+  },
+  "pilea involucrata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:77091436-1",
+    "powo_native": "Colombia | Costa Rica | Ecuador | El Salvador | Panamá | Peru | Trinidad-Tobago | Venezuela | Venezuelan Antilles",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77091436-1",
+    "powo_error": ""
+  },
+  "piper betle": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:680605-1",
+    "powo_native": "Andaman Is. | Cambodia | Laos | Lesser Sunda Is. | Malaya | Myanmar | Nicobar Is. | Philippines | Thailand | Vietnam\nIntroduced into:\nAssam | Bangladesh | Bismarck Archipelago | Caroline Is. | Christmas I. | Comoros | Cuba | East H",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A680605-1",
+    "powo_error": ""
+  },
+  "piper kadsura": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:681817-1",
+    "powo_native": "Japan | Kazan-retto | Korea | Nansei-shoto | Ogasawara-shoto",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A681817-1",
+    "powo_error": ""
+  },
+  "piper longum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:682030-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Piper longum | Blume | First published in Verh. Batav. Genootsch. Kunsten 11: 197 (1826) | sensu auct. | This name is a synonym of | Piper retrofractum",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A682030-1",
+    "powo_error": ""
+  },
+  "piper magnificum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:682090-1",
+    "powo_native": "Peru",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A682090-1",
+    "powo_error": ""
+  },
+  "plumeria alba": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:81171-1",
+    "powo_native": "Leeward Is. | Puerto Rico | Windward Is.\nIntroduced into:\nAssam | Bangladesh",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A81171-1",
+    "powo_error": ""
+  },
+  "plumeria rubra": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:81275-1",
+    "powo_native": "Belize | Colombia | Costa Rica | El Salvador | Guatemala | Honduras | Mexico Central | Mexico Gulf | Mexico Northeast | Mexico Northwest | Mexico Southeast | Mexico Southwest | Nicaragua | Panamá | Venezuela\nIntroduced into:\nAndaman Is. | Argentina North",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A81275-1",
+    "powo_error": ""
+  },
+  "polyalthia suberosa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:74734-1",
+    "powo_native": "Assam | Bangladesh | Cambodia | China Southeast | Hainan | India | Laos | Malaya | Myanmar | Philippines | Sri Lanka | Thailand",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A74734-1",
+    "powo_error": ""
+  },
+  "pseudorhipsalis ramulosa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:963240-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Pseudorhipsalis ramulosa | (Salm-Dyck) Barthlott | First published in Bradleya 9: 90 (1991) | This name is a synonym of | Kimnachia ramulosa",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A963240-1",
+    "powo_error": ""
+  },
+  "pseudospondias microcarpa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:70341-1",
+    "powo_native": "Angola | Benin | Burkina | Burundi | Cameroon | Central African Republic | Chad | Comoros | Congo | DR Congo | Equatorial Guinea | Gabon | Gambia | Ghana | Guinea | Guinea-Bissau | Gulf of Guinea Is. | Ivory",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A70341-1",
+    "powo_error": ""
+  },
+  "psidium cattleianum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:587798-1",
+    "powo_native": "Mauritius",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A587798-1",
+    "powo_error": ""
+  },
+  "psidium friedrichsthalianum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:211742-2",
+    "powo_native": "Belize | Bolivia | Brazil North | Colombia | Costa Rica | Ecuador | El Salvador | Guatemala | Honduras | Mexico Southeast | Mexico Southwest | Nicaragua | Panamá | Peru",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A211742-2",
+    "powo_error": ""
+  },
+  "psidium guajava": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:551152-1",
+    "powo_native": "Ghana | Guinea | Guinea-Bissau | Ivory Coast",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A551152-1",
+    "powo_error": ""
+  },
+  "psidium guineense": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:211886-2",
+    "powo_native": "Argentina Northeast | Argentina Northwest | Belize | Bolivia | Brazil North | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Colombia | Costa Rica | Ecuador | El Salvador | French Guiana | Guatemala | Guyana",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A211886-2",
+    "powo_error": ""
+  },
+  "rauvolfia tetraphylla": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:81663-1",
+    "powo_native": "Belize | Bolivia | Colombia | Costa Rica | Dominican Republic | Ecuador | El Salvador | French Guiana | Guatemala | Haiti | Honduras | Jamaica | Leeward Is. | Mexico Central | Mexico Gulf | Mexico Northeast | Mexico Northwest",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A81663-1",
+    "powo_error": ""
+  },
+  "ravenala madagascariensis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:77126725-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Strelitziaceae | Hutch. | First published in Fam. Fl. Pl. | Monocot. 72. 1934 [Oct 1934] (1934)nom. cons. | This family is accepted",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77126725-1",
+    "powo_error": ""
+  },
+  "rhipsalis baccifera": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:345967-1",
+    "powo_native": "Bahamas | Cayman Is. | Cuba | Dominican Republic",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A345967-1",
+    "powo_error": ""
+  },
+  "rhipsalis cereuscula": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:309421-2",
+    "powo_native": "Argentina Northeast | Bolivia | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Paraguay | Uruguay\nIntroduced into:\nCosta Rica",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A309421-2",
+    "powo_error": ""
+  },
+  "rhipsalis pilocarpa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:138353-1",
+    "powo_native": "Brazil South",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A138353-1",
+    "powo_error": ""
+  },
+  "rosenbergiodendron formosum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:222508-2",
+    "powo_native": "Colombia | Ecuador | Panamá",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A222508-2",
+    "powo_error": ""
+  },
+  "saccharum officinarum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:419977-1",
+    "powo_native": "New Guinea\nIntroduced into:\nAlabama | Aldabra | Algeria | Andaman Is. | Angola | Assam | Bahamas | Bangladesh | Belize | Benin | Bermuda | Bismarck Archipelago | Borneo | Brazil North | Brazil Northeast | Brazil South | Brazil Sout",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A419977-1",
+    "powo_error": ""
+  },
+  "salacca zalacca": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:670335-1",
+    "powo_native": "Jawa | Sumatera\nIntroduced into:\nBorneo | Lesser Sunda Is. | Malaya | Maluku | Sulawesi",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A670335-1",
+    "powo_error": ""
+  },
+  "sauropus androgynus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:356006-1",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Sauropus androgynus | (L.) Merr. | First published in Forest. Bur. Philipp. Bull. 1: 30 (1903) | This name is a synonym of | Phyllanthus androgynus",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A356006-1",
+    "powo_error": ""
+  },
+  "selenicereus chrysocardius": {
+    "powo_native": "",
+    "powo_url": "https://powo.science.kew.org/results?q=Selenicereus%20chrysocardius",
+    "powo_taxon_id": "",
+    "powo_error": "not_found"
+  },
+  "setaria palmifolia": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:421711-1",
+    "powo_native": "Andaman Is. | Assam | Bangladesh | Borneo | China South-Central | China Southeast | East Himalaya | Hainan | India | Japan | Jawa | Laos | Lesser Sunda Is. | Malaya | Maluku | Myanmar | Nansei-shoto | Nepal",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A421711-1",
+    "powo_error": ""
+  },
+  "solandra maxima": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:818078-1",
+    "powo_native": "Belize | Colombia | Costa Rica | El Salvador | Guatemala | Honduras | Mexico Central | Mexico Gulf | Mexico Northeast | Mexico Northwest | Mexico Southeast | Mexico Southwest | Nicaragua | Panamá\nIntroduced into:\nCanary Is. | Cook Is. | Ecuador",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A818078-1",
+    "powo_error": ""
+  },
+  "spathiphyllum cochlearispathum": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:88958-1",
+    "powo_native": "Mexico Central | Mexico Gulf | Mexico Southeast",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A88958-1",
+    "powo_error": ""
+  },
+  "spathodea campanulata": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:30003692-2",
+    "powo_native": "Angola | Benin | Burundi | Cameroon | Central African Republic | Congo | DR Congo | Ethiopia | Gabon | Gambia | Guinea | Guinea-Bissau | Gulf of Guinea Is. | Ivory Coast | Liberia | Nigeria | Rwanda | Senegal",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30003692-2",
+    "powo_error": ""
+  },
+  "spondias dulcis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:71455-1",
+    "powo_native": "Bismarck Archipelago | Maluku | New Guinea | Santa Cruz Is. | Solomon Is.\nIntroduced into:\nAndaman Is. | Bangladesh | Belize | Benin | Borneo | Brazil North | Brazil Southeast | Cambodia | Cameroon | Caroline Is. | Cayman Is. | Central African Republic",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A71455-1",
+    "powo_error": ""
+  },
+  "spondias mombin": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:71480-1",
+    "powo_native": "Aruba | Belize | Bolivia | Brazil North | Brazil Northeast | Brazil Southeast | Brazil West-Central | Cayman Is. | Colombia | Costa Rica | Cuba | Dominican Republic | Ecuador | El Salvador | French Guiana | Guatemala | Guyana",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A71480-1",
+    "powo_error": ""
+  },
+  "strelitzia alba": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:585015-1",
+    "powo_native": "Cape Provinces",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A585015-1",
+    "powo_error": ""
+  },
+  "strelitzia nicolai": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:798185-1",
+    "powo_native": "Botswana | KwaZulu-Natal | Mozambique | Zimbabwe\nIntroduced into:\nMexico Gulf | New South Wales | Queensland",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A798185-1",
+    "powo_error": ""
+  },
+  "strophanthus gratus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:81895-1",
+    "powo_native": "Cameroon | Central African Republic | Congo | DR Congo | Gabon | Ghana | Guinea | Ivory Coast | Liberia | Nigeria | Senegal | Sierra Leone\nIntroduced into:\nBurkina | Taiwan",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A81895-1",
+    "powo_error": ""
+  },
+  "strophanthus petersianus": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:81935-1",
+    "powo_native": "Kenya | KwaZulu-Natal | Malawi | Mozambique | Northern Provinces | Tanzania | Zambia",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A81935-1",
+    "powo_error": ""
+  },
+  "syagrus romanzoffiana": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:246966-2",
+    "powo_native": "Argentina Northeast | Brazil Northeast | Brazil South | Brazil Southeast | Brazil West-Central | Paraguay | Uruguay\nIntroduced into:\nEl Salvador | Florida | Honduras | Mauritius | New South Wales | Queensland",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A246966-2",
+    "powo_error": ""
+  },
+  "tamarindus indica": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:520167-1",
+    "powo_native": "Comoros | Madagascar\nIntroduced into:\nAldabra | Andaman Is. | Angola | Aruba | Assam | Bahamas | Bangladesh | Belize | Benin | Bismarck Archipelago | Bolivia | Burkina | Burundi | Cambodia | Cameroon | Cape Verde",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A520167-1",
+    "powo_error": ""
+  },
+  "terminalia catappa": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:551849-1",
+    "powo_native": "Benin | Burkina | Cameroon | Central African Republic | Chad | DR Congo | Gabon | Gambia | Guinea | Guinea-Bissau | Gulf of Guinea Is. | Ivory Coast | Liberia | Mauritania | Senegal",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A551849-1",
+    "powo_error": ""
+  },
+  "theobroma cacao": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:30000208-2",
+    "powo_native": "International Plant Names Index Nomenclatural data for the scientific names of vascular plants | International Plant Names Index | Nomenclatural data for the scientific names of vascular plants | Tree of Life Explorer A comprehensive evolutionary tree of life for flowering plants | Tree of Life Explorer | A comprehensive evolutionary tree of life for flowering plants | Medicinal Plant Names Services A global database of names used for herbal drugs, products and medicinal plants | Medicinal Plant Names Services | A global database of names used for herbal drugs | products and medicinal plants | Plant DNA C-values Database Genome size (C-value) data for >12,000 plant and algal species | Plant DNA C-values Database | Genome size (C-value) data for >12 | 000 plant and algal species | Tropical Important Plant Areas Discover more about critical sites for plant diversity in the tropics | Tropical Important Plant Areas | Discover more about critical sites for plant diversity in the tropics | Featured Tree of Life Explorer Discover the flowering plant tree of life and the genomic data used to build it. | Featured | Discover the flowering plant tree of life and the genomic data used to build it. | Let us know what you think! | Malvaceae | Juss. | First published in Gen. Pl. [Jussieu] 271. 1789 [4 Aug 1789] (1789)nom. cons. | This family is accepted",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30000208-2",
+    "powo_error": ""
+  },
+  "thunbergia mysorensis": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:60447289-2",
+    "powo_native": "India\nIntroduced into:\nLeeward Is. | Mauritius | Sri Lanka",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A60447289-2",
+    "powo_error": ""
+  },
+  "vanilla planifolia": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:262578-2",
+    "powo_native": "Belize | Brazil North | Colombia | Costa Rica | El Salvador | Guatemala | Honduras | Mexico Gulf | Mexico Southeast | Mexico Southwest | Nicaragua | Panamá\nIntroduced into:\nBangladesh | Brazil West-Central | Caroline Is. | Cayman Is. | Chagos Archipelago",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A262578-2",
+    "powo_error": ""
+  },
+  "vanilla pompona": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:661259-1",
+    "powo_native": "Bolivia | Brazil North | Brazil Northeast | Brazil West-Central | Colombia | Costa Rica | Ecuador | French Guiana | Guatemala | Guyana | Honduras | Jamaica | Mexico Gulf | Mexico Southeast | Mexico Southwest | Nicaragua | Panamá",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A661259-1",
+    "powo_error": ""
+  },
+  "zingiber officinale": {
+    "powo_taxon_id": "urn:lsid:ipni.org:names:798372-1",
+    "powo_native": "Assam | China South-Central | East Himalaya\nIntroduced into:\nAndaman Is. | Bangladesh | Borneo | Cambodia | Caroline Is. | China Southeast | Comoros | Costa Rica | Cuba | Dominican Republic | Gulf of Guinea Is. | Hainan | Haiti | Honduras",
+    "powo_url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A798372-1",
+    "powo_error": ""
+  }
+}

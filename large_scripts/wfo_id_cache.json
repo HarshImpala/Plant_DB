@@ -1,0 +1,674 @@
+{
+  "acacia collinsii": {
+    "wfo_id": "wfo-0000182077",
+    "method": "matching_api"
+  },
+  "acalypha hispida": {
+    "wfo_id": "wfo-0000950668",
+    "method": "matching_api"
+  },
+  "acorus gramineus": {
+    "wfo_id": "wfo-0000352676",
+    "method": "matching_api"
+  },
+  "adenanthera microsperma": {
+    "wfo_id": "wfo-0000187373",
+    "method": "matching_api"
+  },
+  "aglaonema costatum": {
+    "wfo_id": "wfo-0000917172",
+    "method": "matching_api"
+  },
+  "aglaonema modestum": {
+    "wfo_id": "wfo-0000921877",
+    "method": "matching_api"
+  },
+  "aglaonema nitidum": {
+    "wfo_id": "wfo-0000922580",
+    "method": "matching_api"
+  },
+  "allamanda schottii": {
+    "wfo_id": "wfo-0000943350",
+    "method": "matching_api"
+  },
+  "alpinia purpurata": {
+    "wfo_id": "wfo-0000338713",
+    "method": "matching_api"
+  },
+  "alpinia vittata": {
+    "wfo_id": "wfo-0000338842",
+    "method": "matching_api"
+  },
+  "alpinia zerumbet": {
+    "wfo_id": "wfo-0000338850",
+    "method": "matching_api"
+  },
+  "ananas comosus": {
+    "wfo_id": "wfo-0000339432",
+    "method": "matching_api"
+  },
+  "angraecum eburneum": {
+    "wfo_id": "wfo-0000976619",
+    "method": "matching_api"
+  },
+  "anthurium digitatum": {
+    "wfo_id": "wfo-0000224360",
+    "method": "matching_api"
+  },
+  "anthurium schlechtendalii": {
+    "wfo_id": "wfo-0000232488",
+    "method": "matching_api"
+  },
+  "anthurium vittariifolium": {
+    "wfo_id": "wfo-0000234460",
+    "method": "matching_api"
+  },
+  "aristolochia fimbriata": {
+    "wfo_id": "wfo-0000547788",
+    "method": "matching_api"
+  },
+  "aristolochia gigantea": {
+    "wfo_id": "wfo-0000547827",
+    "method": "matching_api"
+  },
+  "aristolochia grandiflora": {
+    "wfo_id": "wfo-0000547851",
+    "method": "matching_api"
+  },
+  "aristolochia labiata": {
+    "wfo_id": "wfo-0000547955",
+    "method": "matching_api"
+  },
+  "aristolochia maxima": {
+    "wfo_id": "wfo-0000548053",
+    "method": "matching_api"
+  },
+  "aristolochia ringens": {
+    "wfo_id": "wfo-0000548271",
+    "method": "matching_api"
+  },
+  "aristolochia trilobata": {
+    "wfo_id": "wfo-0000548425",
+    "method": "matching_api"
+  },
+  "aristolochia zollingeriana": {
+    "wfo_id": "wfo-0000548485",
+    "method": "matching_api"
+  },
+  "asplenium nidus": {
+    "wfo_id": "wfo-0001108020",
+    "method": "matching_api"
+  },
+  "averrhoa carambola": {
+    "wfo_id": "wfo-0000557405",
+    "method": "matching_api"
+  },
+  "begonia listada": {
+    "wfo_id": "wfo-0000824596",
+    "method": "matching_api"
+  },
+  "begonia solimutata": {
+    "wfo_id": "wfo-0000825560",
+    "method": "matching_api"
+  },
+  "brachychilum horsfieldii": {
+    "wfo_id": "wfo-0000341738",
+    "method": "matching_api"
+  },
+  "breynia nivosa": {
+    "wfo_id": "wfo-0000413278",
+    "method": "matching_api"
+  },
+  "brownea latifolia": {
+    "wfo_id": "wfo-0000214098",
+    "method": "matching_api"
+  },
+  "caladium bicolor": {
+    "wfo_id": "wfo-0000739079",
+    "method": "matching_api"
+  },
+  "calathea zebrina": {
+    "wfo_id": "wfo-0000343167",
+    "method": "matching_api"
+  },
+  "canna glauca": {
+    "wfo_id": "wfo-0000343792",
+    "method": "matching_api"
+  },
+  "carica papaya": {
+    "wfo_id": "wfo-0000588009",
+    "method": "matching_api"
+  },
+  "castanospermum australe": {
+    "wfo_id": "wfo-0000212067",
+    "method": "matching_api"
+  },
+  "cinnamomum parthenoxylon": {
+    "wfo_id": "wfo-0000605312",
+    "method": "matching_api"
+  },
+  "clerodendrum splendens": {
+    "wfo_id": "wfo-0000886685",
+    "method": "matching_api"
+  },
+  "clerodendrum thomsoniae": {
+    "wfo_id": "wfo-0000887105",
+    "method": "matching_api"
+  },
+  "clusia rosea": {
+    "wfo_id": "wfo-0000612436",
+    "method": "matching_api"
+  },
+  "coccothrinax readii": {
+    "wfo_id": "wfo-0000901549",
+    "method": "matching_api"
+  },
+  "cocos nucifera": {
+    "wfo_id": "wfo-0000903570",
+    "method": "matching_api"
+  },
+  "coffea arabica": {
+    "wfo_id": "wfo-0000910097",
+    "method": "matching_api"
+  },
+  "coffea canephora": {
+    "wfo_id": "wfo-0000910571",
+    "method": "matching_api"
+  },
+  "colocasia esculenta": {
+    "wfo_id": "wfo-0000917419",
+    "method": "matching_api"
+  },
+  "colvillea racemosa": {
+    "wfo_id": "wfo-0000186694",
+    "method": "matching_api"
+  },
+  "cordia myxa": {
+    "wfo_id": "wfo-0000620765",
+    "method": "matching_api"
+  },
+  "couroupita guianensis": {
+    "wfo_id": "wfo-0000775148",
+    "method": "matching_api"
+  },
+  "ctenanthe amabilis": {
+    "wfo_id": "wfo-0000365193",
+    "method": "matching_api"
+  },
+  "cubanola domingensis": {
+    "wfo_id": "wfo-0000933427",
+    "method": "matching_api"
+  },
+  "curculigo capitulata": {
+    "wfo_id": "wfo-0000764772",
+    "method": "matching_api"
+  },
+  "cyanastrum cordifolium": {
+    "wfo_id": "wfo-0000764829",
+    "method": "matching_api"
+  },
+  "cyperus diffusus": {
+    "wfo_id": "wfo-0000371726",
+    "method": "matching_api"
+  },
+  "delonix regia": {
+    "wfo_id": "wfo-0000166389",
+    "method": "matching_api"
+  },
+  "dendrocnide excelsa": {
+    "wfo_id": "wfo-0000641019",
+    "method": "matching_api"
+  },
+  "dichrostachys cinerea": {
+    "wfo_id": "wfo-0000176871",
+    "method": "matching_api"
+  },
+  "dioscorea alata": {
+    "wfo_id": "wfo-0000388864",
+    "method": "matching_api"
+  },
+  "dioscorea oppositifolia": {
+    "wfo_id": "wfo-0000393046",
+    "method": "matching_api"
+  },
+  "dioscorea polystachya": {
+    "wfo_id": "wfo-0000393961",
+    "method": "matching_api"
+  },
+  "dischidia bengalensis": {
+    "wfo_id": "wfo-0000651616",
+    "method": "matching_api"
+  },
+  "dischidia platyphylla": {
+    "wfo_id": "wfo-0000651732",
+    "method": "matching_api"
+  },
+  "dischidia subulata": {
+    "wfo_id": "wfo-0000651779",
+    "method": "matching_api"
+  },
+  "dischidia vidalii": {
+    "wfo_id": "wfo-0000651795",
+    "method": "matching_api"
+  },
+  "elaeis guineensis": {
+    "wfo_id": "wfo-0000947985",
+    "method": "matching_api"
+  },
+  "elettaria ensal": {
+    "wfo_id": "wfo-0000406519",
+    "method": "matching_api"
+  },
+  "epidendrum ciliare": {
+    "wfo_id": "wfo-0000949799",
+    "method": "matching_api"
+  },
+  "epiphyllum anguliger": {
+    "wfo_id": "wfo-0000670149",
+    "method": "matching_api"
+  },
+  "epiphyllum chrysocardium": {
+    "wfo_id": "wfo-0000670160",
+    "method": "matching_api"
+  },
+  "epiphyllum oxypetalum": {
+    "wfo_id": "wfo-0000670203",
+    "method": "matching_api"
+  },
+  "erythroxylum coca": {
+    "wfo_id": "wfo-0000679758",
+    "method": "matching_api"
+  },
+  "euphorbia leuconeura": {
+    "wfo_id": "wfo-0000963021",
+    "method": "matching_api"
+  },
+  "euterpe oleracea": {
+    "wfo_id": "wfo-0000965687",
+    "method": "matching_api"
+  },
+  "ficus benghalensis": {
+    "wfo_id": "wfo-0000687501",
+    "method": "matching_api"
+  },
+  "ficus cyathistipula": {
+    "wfo_id": "wfo-0000688019",
+    "method": "matching_api"
+  },
+  "ficus elastica": {
+    "wfo_id": "wfo-0000688216",
+    "method": "matching_api"
+  },
+  "ficus lyrata": {
+    "wfo_id": "wfo-0001084874",
+    "method": "matching_api"
+  },
+  "ficus obliqua": {
+    "wfo_id": "wfo-0000689487",
+    "method": "matching_api"
+  },
+  "ficus rubiginosa": {
+    "wfo_id": "wfo-0000690111",
+    "method": "matching_api"
+  },
+  "flacourtia flavescens": {
+    "wfo_id": "wfo-0000925647",
+    "method": "matching_api"
+  },
+  "globba schomburgkii": {
+    "wfo_id": "wfo-0000430660",
+    "method": "matching_api"
+  },
+  "harpullia arborea": {
+    "wfo_id": "wfo-0000715815",
+    "method": "matching_api"
+  },
+  "hatiora pentaptera": {
+    "wfo_id": "wfo-0001257897",
+    "method": "matching_api"
+  },
+  "hatiora salicornioides": {
+    "wfo_id": "wfo-0000716171",
+    "method": "matching_api"
+  },
+  "hedychium coronarium": {
+    "wfo_id": "wfo-0000435787",
+    "method": "matching_api"
+  },
+  "hedychium gardnerianum": {
+    "wfo_id": "wfo-0000435987",
+    "method": "matching_api"
+  },
+  "hedychium horsfieldii": {
+    "wfo_id": "wfo-0000436106",
+    "method": "matching_api"
+  },
+  "heliconia": {
+    "wfo_id": "wfo-4000017228",
+    "method": "matching_api"
+  },
+  "heliconia rostrata": {
+    "wfo_id": "wfo-0000438784",
+    "method": "matching_api"
+  },
+  "hoffmannia ghiesbreghtii": {
+    "wfo_id": "wfo-0000982612",
+    "method": "matching_api"
+  },
+  "hura crepitans": {
+    "wfo_id": "wfo-0000215711",
+    "method": "matching_api"
+  },
+  "hylocereus megalanthus": {
+    "wfo_id": "wfo-0001271805",
+    "method": "matching_api"
+  },
+  "hylocereus undatus": {
+    "wfo_id": "wfo-0000726906",
+    "method": "matching_api"
+  },
+  "isolepis cernua": {
+    "wfo_id": "wfo-0000448337",
+    "method": "matching_api"
+  },
+  "justicia brandegeeana": {
+    "wfo_id": "wfo-0000354190",
+    "method": "matching_api"
+  },
+  "justicia carnea": {
+    "wfo_id": "wfo-0000354735",
+    "method": "matching_api"
+  },
+  "khaya grandifoliola": {
+    "wfo_id": "wfo-0000357001",
+    "method": "matching_api"
+  },
+  "kigelia pinnata": {
+    "wfo_id": "wfo-0000778896",
+    "method": "matching_api"
+  },
+  "kohleria hirsuta": {
+    "wfo_id": "wfo-0000357724",
+    "method": "matching_api"
+  },
+  "lagerstroemia speciosa": {
+    "wfo_id": "wfo-0000366693",
+    "method": "matching_api"
+  },
+  "mangifera indica": {
+    "wfo_id": "wfo-0000371248",
+    "method": "matching_api"
+  },
+  "medinilla magnifica": {
+    "wfo_id": "wfo-0001082446",
+    "method": "matching_api"
+  },
+  "nephelium lappaceum": {
+    "wfo_id": "wfo-0000381268",
+    "method": "matching_api"
+  },
+  "mimosa aculeaticarpa": {
+    "wfo_id": "wfo-0000169632",
+    "method": "matching_api"
+  },
+  "mimosa polycarpa spegazzinii": {
+    "wfo_id": "wfo-0000169804",
+    "method": "matching_api"
+  },
+  "morinda": {
+    "wfo_id": "wfo-4000024850",
+    "method": "matching_api"
+  },
+  "murraya paniculata": {
+    "wfo_id": "wfo-0000453279",
+    "method": "matching_api"
+  },
+  "musa coccinea": {
+    "wfo_id": "wfo-0000474224",
+    "method": "matching_api"
+  },
+  "musa velutina": {
+    "wfo_id": "wfo-0000475207",
+    "method": "matching_api"
+  },
+  "musa nana": {
+    "wfo_id": "wfo-0000474616",
+    "method": "matching_api"
+  },
+  "musa paradisiaca": {
+    "wfo_id": "wfo-0000474656",
+    "method": "matching_api"
+  },
+  "musa paradisiaca seminifera": {
+    "wfo_id": "wfo-0000474793",
+    "method": "matching_api"
+  },
+  "nautilocalyx lynchii": {
+    "wfo_id": "wfo-0001064811",
+    "method": "matching_api"
+  },
+  "neptunia plena": {
+    "wfo_id": "wfo-0000174148",
+    "method": "matching_api"
+  },
+  "oxalis triangularis": {
+    "wfo_id": "wfo-0001089468",
+    "method": "matching_api"
+  },
+  "pachira affinis": {
+    "wfo_id": "wfo-0000397431",
+    "method": "matching_api"
+  },
+  "pachira aquatica": {
+    "wfo_id": "wfo-0000397427",
+    "method": "matching_api"
+  },
+  "palisota schweinfurthii": {
+    "wfo_id": "wfo-0000488837",
+    "method": "matching_api"
+  },
+  "passiflora citrina": {
+    "wfo_id": "wfo-0000479819",
+    "method": "matching_api"
+  },
+  "passiflora coriacea": {
+    "wfo_id": "wfo-0000480045",
+    "method": "matching_api"
+  },
+  "passiflora edulis": {
+    "wfo_id": "wfo-0000479905",
+    "method": "matching_api"
+  },
+  "passiflora foetida": {
+    "wfo_id": "wfo-0000479879",
+    "method": "matching_api"
+  },
+  "passiflora incarnata": {
+    "wfo_id": "wfo-0001090757",
+    "method": "matching_api"
+  },
+  "passiflora quadrangularis": {
+    "wfo_id": "wfo-0000480101",
+    "method": "matching_api"
+  },
+  "passiflora violacea": {
+    "wfo_id": "wfo-0000482103",
+    "method": "matching_api"
+  },
+  "phyllanthus inflatus": {
+    "wfo_id": "wfo-0000271217",
+    "method": "matching_api"
+  },
+  "phyllanthus reticulatus": {
+    "wfo_id": "wfo-0000271947",
+    "method": "matching_api"
+  },
+  "pilea involucrata": {
+    "wfo_id": "wfo-0000510037",
+    "method": "matching_api"
+  },
+  "piper betle": {
+    "wfo_id": "wfo-0000479518",
+    "method": "matching_api"
+  },
+  "piper kadsura": {
+    "wfo_id": "wfo-0000486229",
+    "method": "matching_api"
+  },
+  "piper longum": {
+    "wfo_id": "wfo-0000486013",
+    "method": "matching_api"
+  },
+  "piper magnificum": {
+    "wfo_id": "wfo-0001092849",
+    "method": "matching_api"
+  },
+  "plumeria alba": {
+    "wfo_id": "wfo-0000279064",
+    "method": "matching_api"
+  },
+  "plumeria rubra": {
+    "wfo_id": "wfo-0000279184",
+    "method": "matching_api"
+  },
+  "polyalthia suberosa": {
+    "wfo_id": "wfo-0001066143",
+    "method": "matching_api"
+  },
+  "pseudorhipsalis ramulosa": {
+    "wfo_id": "wfo-0000397959",
+    "method": "matching_api"
+  },
+  "pseudospondias microcarpa": {
+    "wfo_id": "wfo-0000393818",
+    "method": "matching_api"
+  },
+  "psidium cattleianum": {
+    "wfo_id": "wfo-0000284334",
+    "method": "matching_api"
+  },
+  "psidium friedrichsthalianum": {
+    "wfo_id": "wfo-0000284404",
+    "method": "matching_api"
+  },
+  "psidium guajava": {
+    "wfo_id": "wfo-0000284421",
+    "method": "matching_api"
+  },
+  "psidium guineense": {
+    "wfo_id": "wfo-0000284428",
+    "method": "matching_api"
+  },
+  "rauvolfia tetraphylla": {
+    "wfo_id": "wfo-0000295195",
+    "method": "matching_api"
+  },
+  "ravenala madagascariensis": {
+    "wfo_id": "wfo-0000509912",
+    "method": "matching_api"
+  },
+  "rhipsalis baccifera": {
+    "wfo_id": "wfo-0000399853",
+    "method": "matching_api"
+  },
+  "rhipsalis cereuscula": {
+    "wfo_id": "wfo-0000399868",
+    "method": "matching_api"
+  },
+  "rhipsalis pilocarpa": {
+    "wfo_id": "wfo-0000399667",
+    "method": "matching_api"
+  },
+  "rosenbergiodendron formosum": {
+    "wfo_id": "wfo-0000298039",
+    "method": "matching_api"
+  },
+  "saccharum officinarum": {
+    "wfo_id": "wfo-0000896660",
+    "method": "matching_api"
+  },
+  "salacca zalacca": {
+    "wfo_id": "wfo-0000300111",
+    "method": "matching_api"
+  },
+  "sauropus androgynus": {
+    "wfo_id": "wfo-0000304988",
+    "method": "matching_api"
+  },
+  "selenicereus chrysocardius": {
+    "wfo_id": "wfo-0001289783",
+    "method": "matching_api"
+  },
+  "setaria palmifolia": {
+    "wfo_id": "wfo-0000899427",
+    "method": "matching_api"
+  },
+  "solandra maxima": {
+    "wfo_id": "wfo-0001025619",
+    "method": "matching_api"
+  },
+  "spathiphyllum cochlearispathum": {
+    "wfo_id": "wfo-0000312000",
+    "method": "matching_api"
+  },
+  "spathodea campanulata": {
+    "wfo_id": "wfo-0000779723",
+    "method": "matching_api"
+  },
+  "spondias dulcis": {
+    "wfo_id": "wfo-0000435462",
+    "method": "matching_api"
+  },
+  "spondias mombin": {
+    "wfo_id": "wfo-0000435470",
+    "method": "matching_api"
+  },
+  "strelitzia alba": {
+    "wfo_id": "wfo-0000561814",
+    "method": "matching_api"
+  },
+  "strelitzia nicolai": {
+    "wfo_id": "wfo-0000561967",
+    "method": "matching_api"
+  },
+  "strophanthus gratus": {
+    "wfo_id": "wfo-0000317279",
+    "method": "matching_api"
+  },
+  "strophanthus petersianus": {
+    "wfo_id": "wfo-0000317320",
+    "method": "matching_api"
+  },
+  "syagrus romanzoffiana": {
+    "wfo_id": "wfo-0000317885",
+    "method": "matching_api"
+  },
+  "tamarindus indica": {
+    "wfo_id": "wfo-0000170926",
+    "method": "matching_api"
+  },
+  "terminalia catappa": {
+    "wfo_id": "wfo-0000406800",
+    "method": "matching_api"
+  },
+  "theobroma cacao": {
+    "wfo_id": "wfo-0000458440",
+    "method": "matching_api"
+  },
+  "thunbergia mysorensis": {
+    "wfo_id": "wfo-0000510530",
+    "method": "matching_api"
+  },
+  "vanilla planifolia": {
+    "wfo_id": "wfo-0000331533",
+    "method": "matching_api"
+  },
+  "vanilla pompona": {
+    "wfo_id": "wfo-0000331540",
+    "method": "matching_api"
+  },
+  "zingiber officinale": {
+    "wfo_id": "wfo-0000617397",
+    "method": "matching_api"
+  }
+}
