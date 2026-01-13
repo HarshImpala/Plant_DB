@@ -5,7 +5,7 @@ Add POWO nativity to plants_with_native_plus_wfo.csv.
 
 Key features:
 - POWO API search (v1/v2) + robust HTML fallback
-- HARD STOP at "Introduced into" (no contamination)
+- HARD STOP at "Introduced into" / "Classification" (no contamination; newline/Excel aware)
 - WGSRPD expansion FIRST
 - Wikidata fallback using SEARCH → QID → geographic filter
   (prevents Czech Republic / Netherlands false positives)
@@ -129,6 +129,41 @@ def powo_results_url(query: str) -> str:
 
 def taxon_url_from_urn(urn: str) -> str:
     return f"{POWO_BASE}/taxon/{quote(urn, safe='')}"
+
+# ---- POWO native tail cutoff (newline/Excel aware) ----
+_POWO_TAIL_CUTOFF = re.compile(
+    r"""
+    (?:\r?\n|\s*\|\s*)*              # line breaks or pipe separators
+    \b(introduced\s+into|classification)\b
+    .*$
+    """,
+    flags=re.IGNORECASE | re.DOTALL | re.VERBOSE,
+)
+
+def clean_powo_native_field(text: str) -> str:
+    """
+    Removes everything from 'Introduced into' or 'Classification' onward.
+    Handles Excel-style line breaks (\r\n / \n).
+    """
+    if text is None:
+        return ""
+    if isinstance(text, float) and pd.isna(text):
+        return ""
+
+    s = str(text).strip()
+    if not s:
+        return ""
+
+    # Normalize line endings
+    s = s.replace("\r\n", "\n").replace("\r", "\n")
+
+    # Cut tail
+    s = re.sub(_POWO_TAIL_CUTOFF, "", s).strip()
+
+    # Normalize whitespace/newlines
+    s = re.sub(r"\s+", " ", s).strip()
+
+    return s.strip(" |").strip()
 
 # ======================================================
 # WGSRPD mapping
@@ -262,19 +297,35 @@ def extract_native_from_taxon_html(urn: str) -> list[str]:
                     out = []
                     for el in t.parent.next_elements:
                         if isinstance(el, str):
-                            low = el.lower()
-                            if "introduced into" in low or any(sw in low for sw in STOP_WORDS):
+                            # Normalize line breaks so Excel/PyCharm "enter sign" doesn't bypass checks
+                            chunk = str(el).replace("\r\n", "\n").replace("\r", "\n")
+                            low = chunk.lower()
+
+                            # HARD STOP on tail sections
+                            if ("introduced into" in low) or ("classification" in low) or any(sw in low for sw in STOP_WORDS):
                                 return dedup_preserve(out)
-                            parts = re.split(r"[|\n,•·]+", el)
+
+                            parts = re.split(r"[|\n,•·]+", chunk)
                             for p in parts:
                                 p = clean_space(p)
-                                if p and not any(sw in p.lower() for sw in STOP_WORDS):
-                                    out.append(p)
+                                if not p:
+                                    continue
+                                pl = p.lower()
+                                if ("introduced into" in pl) or ("classification" in pl) or any(sw in pl for sw in STOP_WORDS):
+                                    return dedup_preserve(out)
+                                out.append(p)
+
                         elif isinstance(el, Tag) and el.name == "a":
                             txt = clean_space(el.get_text())
-                            if txt and not any(sw in txt.lower() for sw in STOP_WORDS):
-                                out.append(txt)
+                            tl = txt.lower()
+                            if not txt:
+                                continue
+                            if ("introduced into" in tl) or ("classification" in tl) or any(sw in tl for sw in STOP_WORDS):
+                                return dedup_preserve(out)
+                            out.append(txt)
+
                     return dedup_preserve(out)
+
         return []
     except Exception:
         return []
@@ -323,6 +374,8 @@ def main():
 
         if cached and cached.get("powo_native"):
             out = cached
+            # sanitize cached values in case older runs saved contaminated strings
+            out["powo_native"] = clean_powo_native_field(out.get("powo_native", ""))
         else:
             urn = powo_search_best_urn(name)
             if not urn:
@@ -334,16 +387,21 @@ def main():
                 }
             else:
                 areas = extract_native_from_taxon_html(urn)
+
+                # Post-clean (belt-and-suspenders): handles any newline/section leakage
+                native_joined = clean_powo_native_field(" | ".join(dedup_preserve(areas)))
+
                 countries = []
                 for a in areas:
                     expanded = expand_wgsrpd(a, wgsrpd) or [a]
                     for e in expanded:
                         countries.extend(wikidata_countries_for_place(e, wikidata_cache))
+
                 out = {
-                    "powo_native": " | ".join(dedup_preserve(areas)),
+                    "powo_native": native_joined,
                     "powo_url": taxon_url_from_urn(urn),
                     "powo_taxon_id": urn,
-                    "powo_error": "" if areas else "no_native_data",
+                    "powo_error": "" if native_joined else "no_native_data",
                 }
 
             powo_cache[key] = out
