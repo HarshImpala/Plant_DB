@@ -1,0 +1,523 @@
+{
+  "Acacia collinsii Saff.": null,
+  "Acorus gramineus Ait. 'Variegatus'": null,
+  "Adenanthera microsperma Teijsm. et Binn.": null,
+  "Allamanda schottii Pohl.": null,
+  "Alpinia purpurata (Viell.) Schum.": null,
+  "Alpinia vittata Bull.": null,
+  "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm.": null,
+  "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm. 'Variegata'": null,
+  "Ananas comosus (L.) Merr.": null,
+  "Angraecum eburneum Bory": null,
+  "Anthurium schlechtendalii Kunth": null,
+  "Anthurium vittariifolium Engl.": null,
+  "Aristolochia fimbriata Cham.": null,
+  "Aristolochia gigantea Mart. et Zucc.": null,
+  "Aristolochia grandiflora Sw.": null,
+  "Aristolochia labiata Willd.": null,
+  "Aristolochia maxima L.": null,
+  "Aristolochia ringens Vahl": null,
+  "Aristolochia trilobata L.": null,
+  "Aristolochia zollingeriana Miq": null,
+  "Averrhoa carambola L.": {
+    "id": "Q42816734",
+    "title": "Q42816734",
+    "pageid": 44070155,
+    "concepturi": "http://www.wikidata.org/entity/Q42816734",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q42816734",
+    "display": {
+      "label": {
+        "value": "Averrhoa carambola L. peel extract suppresses adipocyte differentiation in 3T3-L1 cells",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article published on 18 December 2015",
+        "language": "en"
+      }
+    },
+    "label": "Averrhoa carambola L. peel extract suppresses adipocyte differentiation in 3T3-L1 cells",
+    "description": "scientific article published on 18 December 2015",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Averrhoa carambola L. peel extract suppresses adipocyte differentiation in 3T3-L1 cells"
+    }
+  },
+  "Averrhoa carambola L. ’B10’": null,
+  "Averrhoa carambola L. 'Fwang Tung'’": null,
+  "Brachychilum horsfieldii (R.Br. ex Wallich) Petersen": null,
+  "Breynia nivosa (W.G.Sm.) Small.": null,
+  "Brownea latifolia Jacq.": null,
+  "Carica papaya L.": null,
+  "Carica papaya L. 'Nana'": null,
+  "Carica papaya L. 'Pasar Orange'": null,
+  "Carica papaya L. 'Solo'": null,
+  "Carica papaya L. 'Solo-Waimanalo'": null,
+  "Carica papaya L. 'Sunset'": null,
+  "Castanospermum australe Raddi": null,
+  "Clerodendrum splendens G.Don. ex James": null,
+  "Clerodendrum thomsoniae Balf.f.": null,
+  "Coccothrinax readii H.J.Quero R.": null,
+  "Cocos nucifera L.": {
+    "id": "Q50999143",
+    "title": "Q50999143",
+    "pageid": 51925565,
+    "concepturi": "http://www.wikidata.org/entity/Q50999143",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q50999143",
+    "display": {
+      "label": {
+        "value": "Cocos nucifera L. water improves reproductive indices in Wistar Rats.",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article published in December 2014",
+        "language": "en"
+      }
+    },
+    "label": "Cocos nucifera L. water improves reproductive indices in Wistar Rats.",
+    "description": "scientific article published in December 2014",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Cocos nucifera L. water improves reproductive indices in Wistar Rats."
+    }
+  },
+  "Cocos nucifera L. 'King'": null,
+  "Cocos nucifera L. 'Maypan'": null,
+  "Coffea arabica L.": {
+    "id": "Q106815086",
+    "title": "Q106815086",
+    "pageid": 102083363,
+    "concepturi": "http://www.wikidata.org/entity/Q106815086",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q106815086",
+    "display": {
+      "label": {
+        "value": "Coffea arabica L. (Arabica Coffee): finished drawing of leafy shoot, with details of flowers, leaf, and fruits",
+        "language": "en"
+      },
+      "description": {
+        "value": "drawing by Luigi Balugani",
+        "language": "en"
+      }
+    },
+    "label": "Coffea arabica L. (Arabica Coffee): finished drawing of leafy shoot, with details of flowers, leaf, and fruits",
+    "description": "drawing by Luigi Balugani",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Coffea arabica L. (Arabica Coffee): finished drawing of leafy shoot, with details of flowers, leaf, and fruits"
+    }
+  },
+  "Coffea arabica L. 'Bourbon'": null,
+  "Coffea arabica L. 'Nana'": null,
+  "Coffea canephora Pierre ex A.Froehner": null,
+  "Colvillea racemosa Bojer ex Hook.": null,
+  "Cordia myxa L. non Forssk.": null,
+  "Couroupita guianensis Auhl.": null,
+  "Ctenanthe amabilis (E.Morren) H.A.Kenn. & Nicolson": null,
+  "Cubanola domingensis (Britton) Aiella": null,
+  "Curculigo capitulata (Lour.) Kantze.": null,
+  "Cyanastrum cordifolium Oliv.": null,
+  "Cyperus diffusus Vahl.": null,
+  "Dendrocnide excelsa (Wedd.) Chew.": null,
+  "Dichrostachys cinerea (L.) Wight. et Arn.": null,
+  "Dioscorea alata L.": null,
+  "Dioscorea oppositifolia L.": null,
+  "Dioscorea polystachya Turcz. (Dioscorea batatas)": null,
+  "Dischidia bengalensis Colebr.": null,
+  "Dischidia platyphylla Schltr.": null,
+  "Dischidia subulata Warb. Dischidia cordifolia": null,
+  "Dischidia vidalii Becc.": null,
+  "Elaeis guineensis Jacq": null,
+  "Elettaria ensal (Gaertn.) Abeyw.": null,
+  "Epiphyllum anguliger (Lem.) G.Don": null,
+  "Epiphyllum chrysocardium Alex.": null,
+  "Epiphyllum oxypetalum (DC.) Haw.": null,
+  "Erythroxylum coca Lam": null,
+  "Euphorbia leuconeura Boiss": null,
+  "Euterpe oleracea Mart.": {
+    "id": "Q47364514",
+    "title": "Q47364514",
+    "pageid": 48409873,
+    "concepturi": "http://www.wikidata.org/entity/Q47364514",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q47364514",
+    "display": {
+      "label": {
+        "value": "Euterpe oleracea Mart. (açaí) seed extract associated with exercise training reduces hepatic steatosis in type 2 diabetic male rats",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article published on 13 October 2017",
+        "language": "en"
+      }
+    },
+    "label": "Euterpe oleracea Mart. (açaí) seed extract associated with exercise training reduces hepatic steatosis in type 2 diabetic male rats",
+    "description": "scientific article published on 13 October 2017",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Euterpe oleracea Mart. (açaí) seed extract associated with exercise training reduces hepatic steatosis in type 2 diabetic male rats"
+    }
+  },
+  "Flacourtia flavescens Willd.": null,
+  "Globba schomburgkii Hook.f.": null,
+  "Harpullia arborea (Blanco) Radlk": null,
+  "Hatiora pentaptera (Pfeiff. ex A. Dietr.) Lem.": null,
+  "Hatiora salicornioides Britton et Rose.": null,
+  "Hedychium horsfieldii R.Br. ex Wall.": null,
+  "Heliconia 'Olympic Flame'": null,
+  "Heliconia rostrata Ruiz et Pav.": null,
+  "Hoffmannia ghiesberghtii (Lem.) Hemsl.": null,
+  "Hura crepitans L.": {
+    "id": "Q96438108",
+    "title": "Q96438108",
+    "pageid": 95129744,
+    "concepturi": "http://www.wikidata.org/entity/Q96438108",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q96438108",
+    "display": {
+      "label": {
+        "value": "Hura crepitans L. Extract: Phytochemical Characterization, Antioxidant Activity, and Nanoformulation",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article published on 15 June 2020",
+        "language": "en"
+      }
+    },
+    "label": "Hura crepitans L. Extract: Phytochemical Characterization, Antioxidant Activity, and Nanoformulation",
+    "description": "scientific article published on 15 June 2020",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Hura crepitans L. Extract: Phytochemical Characterization, Antioxidant Activity, and Nanoformulation"
+    }
+  },
+  "Isolepis cernua (Vahl) Roem. et Schukt.": null,
+  "Justicia brandegeana Wassh. & L.B.Sm.": null,
+  "Justicia carnea Lindl.": null,
+  "Khaya grandifolia C.DC.": null,
+  "Kigelia pinnata (Jacq.) DC.": null,
+  "Kohleria hirsuta (HBK) Reg.": null,
+  "Mangifera indica L. 'Irwin'": null,
+  "Mangifera indica L. 'Kensington'": null,
+  "Mangifera indica L. 'Osteen'": null,
+  "Medinilla magnifica Lindl.": null,
+  "Nephelium lappaceum": {
+    "id": "Q476864",
+    "title": "Q476864",
+    "pageid": 449499,
+    "concepturi": "http://www.wikidata.org/entity/Q476864",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q476864",
+    "display": {
+      "label": {
+        "value": "Nephelium lappaceum",
+        "language": "en"
+      },
+      "description": {
+        "value": "species of plant, rambutan",
+        "language": "en"
+      }
+    },
+    "label": "Nephelium lappaceum",
+    "description": "species of plant, rambutan",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Nephelium lappaceum"
+    }
+  },
+  "Mimosa polycarpa Kanth. var. spegazzinii (Pirrota) Burkart.": null,
+  "Morinda citriodora l": null,
+  "Murraya paniculata (L.) Jack": null,
+  "Neptunia plena (L.) Benth.": null,
+  "Pachira affinis Decne.": null,
+  "Palisota schweinfurthii C.B.Clarke": null,
+  "Passiflora citrina J.M.Macdougal": null,
+  "Passiflora coriacea Juss.": null,
+  "Passiflora edulis Sims.": null,
+  "Passiflora foetida L.": null,
+  "Passiflora incarnata L.": {
+    "id": "Q34378835",
+    "title": "Q34378835",
+    "pageid": 35817538,
+    "concepturi": "http://www.wikidata.org/entity/Q34378835",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q34378835",
+    "display": {
+      "label": {
+        "value": "Passiflora incarnata L.: ethnopharmacology, clinical application, safety and evaluation of clinical trials",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article",
+        "language": "en"
+      }
+    },
+    "label": "Passiflora incarnata L.: ethnopharmacology, clinical application, safety and evaluation of clinical trials",
+    "description": "scientific article",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Passiflora incarnata L.: ethnopharmacology, clinical application, safety and evaluation of clinical trials"
+    }
+  },
+  "Passiflora quadrangularis L.": null,
+  "Passiflora x violacea 'Atropurpurea'": null,
+  "Phyllanthus inflatus Hutch": null,
+  "Phyllanthus reticulatus Poir.": null,
+  "Piper longum L.": null,
+  "Piper magnificum Trel.": null,
+  "Plumeria alba L.": null,
+  "Plumeria rubra L.": {
+    "id": "Q98721267",
+    "title": "Q98721267",
+    "pageid": 96920105,
+    "concepturi": "http://www.wikidata.org/entity/Q98721267",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q98721267",
+    "display": {
+      "label": {
+        "value": "Plumeria rubra L.- A review on its ethnopharmacological, morphological, phytochemical, pharmacological and toxicological studies",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article published on 22 August 2020",
+        "language": "en"
+      }
+    },
+    "label": "Plumeria rubra L.- A review on its ethnopharmacological, morphological, phytochemical, pharmacological and toxicological studies",
+    "description": "scientific article published on 22 August 2020",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Plumeria rubra L.- A review on its ethnopharmacological, morphological, phytochemical, pharmacological and toxicological studies"
+    }
+  },
+  "Polyalthia suberosa (Raxb.) Thwaites": null,
+  "Pseudospondias microcarpa Engl.": null,
+  "Psidium cattleyanum Afzel. ex Sabine 'Limon'": null,
+  "Psidium cattleyanum Afzel. ex Sabine 'Red-Macrocarpa'": null,
+  "Psidium cattleyanum Afzel. ex Sabine 'Rojo'": null,
+  "Psidium friedrichstahlianum (O.Berg) Niedenzu.": null,
+  "Psidium guajava L. 'Bankog's Gigant'": null,
+  "Psidium guajava L. 'Guajho Blanco'": null,
+  "Psidium guajava L. 'Orange Pulp'": null,
+  "Psidium guajava L. 'Rosa Cubana'": null,
+  "Psidium guineense Sw.": null,
+  "Rauvolfia tetraphylla": {
+    "id": "Q3595081",
+    "title": "Q3595081",
+    "pageid": 3423410,
+    "concepturi": "http://www.wikidata.org/entity/Q3595081",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q3595081",
+    "display": {
+      "label": {
+        "value": "Rauvolfia tetraphylla",
+        "language": "en"
+      },
+      "description": {
+        "value": "species of plant",
+        "language": "en"
+      }
+    },
+    "label": "Rauvolfia tetraphylla",
+    "description": "species of plant",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Rauvolfia tetraphylla"
+    }
+  },
+  "Ravenala madagascariensis Sonn.": null,
+  "Sacharum officinarum L.": null,
+  "Salacca zalacca (Gaertn.) Voss.": null,
+  "Sauropus androgynus (L.) Merr.": {
+    "id": "Q26786006",
+    "title": "Q26786006",
+    "pageid": 28712897,
+    "concepturi": "http://www.wikidata.org/entity/Q26786006",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q26786006",
+    "display": {
+      "label": {
+        "value": "Sauropus androgynus (L.) Merr. Induced Bronchiolitis Obliterans: From Botanical Studies to Toxicology",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article",
+        "language": "en"
+      }
+    },
+    "label": "Sauropus androgynus (L.) Merr. Induced Bronchiolitis Obliterans: From Botanical Studies to Toxicology",
+    "description": "scientific article",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Sauropus androgynus (L.) Merr. Induced Bronchiolitis Obliterans: From Botanical Studies to Toxicology"
+    }
+  },
+  "Selenicereus chrysocardium (Alexander) Kimnach": null,
+  "Setaria palmifolia (Koenig) Stapf": null,
+  "Solandra maxima (Sessé et Moc.) P.Green.": null,
+  "Spathodea campanulata Beauv.": null,
+  "Spondias dulcis": {
+    "id": "Q500383",
+    "title": "Q500383",
+    "pageid": 470683,
+    "concepturi": "http://www.wikidata.org/entity/Q500383",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q500383",
+    "display": {
+      "label": {
+        "value": "Spondias dulcis",
+        "language": "en"
+      },
+      "description": {
+        "value": "species of plant",
+        "language": "en"
+      }
+    },
+    "label": "Spondias dulcis",
+    "description": "species of plant",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Spondias dulcis"
+    }
+  },
+  "Spondias mombin L.": {
+    "id": "Q46254212",
+    "title": "Q46254212",
+    "pageid": 47390286,
+    "concepturi": "http://www.wikidata.org/entity/Q46254212",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q46254212",
+    "display": {
+      "label": {
+        "value": "Spondias mombin L. (Anacardiaceae) enhances detoxification of hepatic and macromolecular oxidants in acetaminophen-intoxicated rats",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article",
+        "language": "en"
+      }
+    },
+    "label": "Spondias mombin L. (Anacardiaceae) enhances detoxification of hepatic and macromolecular oxidants in acetaminophen-intoxicated rats",
+    "description": "scientific article",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Spondias mombin L. (Anacardiaceae) enhances detoxification of hepatic and macromolecular oxidants in acetaminophen-intoxicated rats"
+    }
+  },
+  "Strophanthus petersianus Klotzsch.": null,
+  "Syagrus romanzoffianum (Cham.) Glassm": null,
+  "Tamarindus indica L.": {
+    "id": "Q35016149",
+    "title": "Q35016149",
+    "pageid": 36443990,
+    "concepturi": "http://www.wikidata.org/entity/Q35016149",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q35016149",
+    "display": {
+      "label": {
+        "value": "Tamarindus indica L. (Fabaceae): patterns of use in traditional African medicine",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article",
+        "language": "en"
+      }
+    },
+    "label": "Tamarindus indica L. (Fabaceae): patterns of use in traditional African medicine",
+    "description": "scientific article",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Tamarindus indica L. (Fabaceae): patterns of use in traditional African medicine"
+    }
+  },
+  "Theobroma cacao L": {
+    "id": "Q22683787",
+    "title": "Q22683787",
+    "pageid": 24707407,
+    "concepturi": "http://www.wikidata.org/entity/Q22683787",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q22683787",
+    "display": {
+      "label": {
+        "value": "Theobroma cacao L. forma groupe contamana",
+        "language": "en"
+      },
+      "description": {
+        "value": "cultivar of cacao",
+        "language": "en"
+      }
+    },
+    "label": "Theobroma cacao L. forma groupe contamana",
+    "description": "cultivar of cacao",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Theobroma cacao L. forma groupe contamana"
+    }
+  },
+  "Thunbergia mysorensis (Wight) T.Anderson": null,
+  "Vanilla pompona Schiede": {
+    "id": "Q125419582",
+    "title": "Q125419582",
+    "pageid": 119546208,
+    "concepturi": "http://www.wikidata.org/entity/Q125419582",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q125419582",
+    "display": {
+      "label": {
+        "value": "Vanilla pompona Schiede (Vanilloideae-Orchidaceae): Morphological Variation of the Labellum in the Mexican Localities of Veracruz, Puebla, Jalisco and Oaxaca",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article published in 2023",
+        "language": "en"
+      }
+    },
+    "label": "Vanilla pompona Schiede (Vanilloideae-Orchidaceae): Morphological Variation of the Labellum in the Mexican Localities of Veracruz, Puebla, Jalisco and Oaxaca",
+    "description": "scientific article published in 2023",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Vanilla pompona Schiede (Vanilloideae-Orchidaceae): Morphological Variation of the Labellum in the Mexican Localities of Veracruz, Puebla, Jalisco and Oaxaca"
+    }
+  },
+  "Zingiber officinale Roscoe": {
+    "id": "Q37946810",
+    "title": "Q37946810",
+    "pageid": 39316732,
+    "concepturi": "http://www.wikidata.org/entity/Q37946810",
+    "repository": "wikidata",
+    "url": "//www.wikidata.org/wiki/Q37946810",
+    "display": {
+      "label": {
+        "value": "Zingiber officinale Roscoe (ginger) as an adjuvant in cancer treatment: a review",
+        "language": "en"
+      },
+      "description": {
+        "value": "scientific article published on July 1, 2011",
+        "language": "en"
+      }
+    },
+    "label": "Zingiber officinale Roscoe (ginger) as an adjuvant in cancer treatment: a review",
+    "description": "scientific article published on July 1, 2011",
+    "match": {
+      "type": "label",
+      "language": "en",
+      "text": "Zingiber officinale Roscoe (ginger) as an adjuvant in cancer treatment: a review"
+    }
+  }
+}
