@@ -460,7 +460,7 @@ def main():
     out_cols = [
         "wfo_input_used",
         "wfo_query_used",
-        "wfo_match_wfo_id",
+        "wfo_match_id",
         "wfo_match_full_name",
         "wfo_accepted_name",
         "wfo_synonyms",
@@ -490,7 +490,7 @@ def main():
         wfo_id, full_plain, query_used, dbg = wfo_rest_match_with_variants(candidates, match_cache=match_cache)
 
         df.at[i, "wfo_query_used"] = query_used
-        df.at[i, "wfo_match_wfo_id"] = wfo_id
+        df.at[i, "wfo_match_id"] = wfo_id
         df.at[i, "wfo_match_full_name"] = full_plain
 
         accepted = ""
