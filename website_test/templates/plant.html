@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}{{ plant.canonical_name or plant.scientific_name }} - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<article class="plant-page">
+    <nav class="breadcrumb">
+        <a href="{{ base_url }}/index.html">Home</a> &rsaquo;
+        {% if plant.family %}
+        <a href="{{ base_url }}/family/{{ plant.family | slugify }}.html">{{ plant.family }}</a> &rsaquo;
+        {% endif %}
+        <span>{{ plant.canonical_name or plant.scientific_name }}</span>
+    </nav>
+
+    <header class="plant-header">
+        <h1 class="scientific-name">{{ plant.scientific_name or plant.canonical_name }}</h1>
+        {% if plant.common_name %}
+        <p class="common-name">{{ plant.common_name }}</p>
+        {% endif %}
+    </header>
+
+    <div class="plant-content">
+        <aside class="plant-sidebar">
+            {% if plant.image_filename %}
+            <div class="plant-image">
+                <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}"
+                     alt="{{ plant.canonical_name }}">
+                {% if plant.image_source == 'wikipedia' %}
+                <p class="image-credit">Image source: Wikipedia</p>
+                {% elif plant.image_source %}
+                <p class="image-credit">Image source: {{ plant.image_source }}</p>
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="plant-image placeholder">
+                <span>Image coming soon</span>
+            </div>
+            {% endif %}
+
+            <table class="info-table">
+                <caption>Classification</caption>
+                <tbody>
+                    {% if plant.family %}
+                    <tr>
+                        <th>Family</th>
+                        <td><a href="{{ base_url }}/family/{{ plant.family | slugify }}.html">{{ plant.family }}</a></td>
+                    </tr>
+                    {% endif %}
+                    {% if plant.genus %}
+                    <tr>
+                        <th>Genus</th>
+                        <td><a href="{{ base_url }}/genus/{{ plant.genus | slugify }}.html">{{ plant.genus }}</a></td>
+                    </tr>
+                    {% endif %}
+                    {% if plant.wfo_id %}
+                    <tr>
+                        <th>WFO ID</th>
+                        <td>{{ plant.wfo_id }}</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+
+            {% if plant.wfo_url or plant.gbif_url or plant.wikipedia_url %}
+            <div class="external-links">
+                <h3>External Links</h3>
+                <ul>
+                    {% if plant.wfo_url %}
+                    <li><a href="{{ plant.wfo_url }}" target="_blank" rel="noopener">World Flora Online</a></li>
+                    {% endif %}
+                    {% if plant.gbif_url %}
+                    <li><a href="{{ plant.gbif_url }}" target="_blank" rel="noopener">GBIF</a></li>
+                    {% endif %}
+                    {% if plant.wikipedia_url %}
+                    <li><a href="{{ plant.wikipedia_url }}" target="_blank" rel="noopener">Wikipedia</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+        </aside>
+
+        <div class="plant-main">
+            {% if plant.description %}
+            <section class="plant-section">
+                <h2>About</h2>
+                <p>{{ plant.description }}</p>
+            </section>
+            {% endif %}
+
+            {% if common_names %}
+            <section class="plant-section">
+                <h2>Common Names</h2>
+                <ul class="common-names-list">
+                    {% for name in common_names %}
+                    <li>{{ name }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+
+            {% if plant.native_countries %}
+            <section class="plant-section">
+                <h2>Native Distribution</h2>
+                <p><strong>Countries:</strong> {{ plant.native_countries }}</p>
+                {% if plant.native_regions %}
+                <details>
+                    <summary>Detailed Regions</summary>
+                    <p>{{ plant.native_regions }}</p>
+                </details>
+                {% endif %}
+                {% if plant.native_confidence %}
+                <p class="confidence-note">Data confidence: {{ plant.native_confidence }}</p>
+                {% endif %}
+            </section>
+            {% endif %}
+
+            {% if plant.garden_location %}
+            <section class="plant-section">
+                <h2>Botanical Garden Location</h2>
+                <p>{{ plant.garden_location }}</p>
+            </section>
+            {% endif %}
+
+            {% if synonyms %}
+            <section class="plant-section">
+                <h2>Synonyms</h2>
+                <details>
+                    <summary>Show {{ synonyms | length }} synonyms</summary>
+                    <ul class="synonyms-list">
+                        {% for synonym in synonyms %}
+                        <li>{{ synonym }}</li>
+                        {% endfor %}
+                    </ul>
+                </details>
+            </section>
+            {% endif %}
+
+            {% if plant.toxicity_info %}
+            <section class="plant-section toxicity-section">
+                <h2>Toxicity</h2>
+                <p>{{ plant.toxicity_info }}</p>
+            </section>
+            {% endif %}
+
+            {% if plant.curator_comments %}
+            <section class="plant-section curator-section">
+                <h2>Curator's Comments</h2>
+                <p>{{ plant.curator_comments }}</p>
+            </section>
+            {% endif %}
+        </div>
+    </div>
+</article>
+{% endblock %}

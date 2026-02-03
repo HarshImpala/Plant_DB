@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Aristolochia L. - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../az-index.html">A-Z Index</a></li>
+                    <li><a href="../families.html">Families</a></li>
+                    <li><a href="../genera.html">Genera</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="category-page">
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a> &rsaquo;
+        <a href="../genera.html">Genus</a> &rsaquo;
+        <span>Aristolochia L.</span>
+    </nav>
+
+    <h1>Aristolochia L.</h1>
+    <p class="category-meta">Genus: 8 plants</p>
+
+    
+
+    <div class="plant-list-grid">
+        
+        <a href="../plant/aristolochia-fimbriata.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/aristolochia-fimbriata.jpg" alt="Aristolochia fimbriata">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia fimbriata</h3>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/aristolochia-gigantea.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/aristolochia-gigantea.jpg" alt="Aristolochia gigantea">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia gigantea</h3>
+                
+                <p>duckflower</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/aristolochia-grandiflora.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/aristolochia-grandiflora.jpg" alt="Aristolochia grandiflora">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia grandiflora</h3>
+                
+                <p>duckflower</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/aristolochia-labiata.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/aristolochia-labiata.jpg" alt="Aristolochia labiata">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia labiata</h3>
+                
+                <p>rooster-flower</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/aristolochia-maxima.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/aristolochia-maxima.jpg" alt="Aristolochia maxima">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia maxima</h3>
+                
+                <p>Florida Dutchman's Pipe</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/aristolochia-ringens.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <div class="placeholder-image"></div>
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia ringens</h3>
+                
+                <p>Gaping Dutchman's Pipe</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/aristolochia-trilobata.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/aristolochia-trilobata.jpg" alt="Aristolochia trilobata">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia trilobata</h3>
+                
+                <p>Dutchman's Pipe</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/aristolochia-zollingeriana.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <div class="placeholder-image"></div>
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Aristolochia zollingeriana</h3>
+                
+            </div>
+        </a>
+        
+    </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+    </footer>
+
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/controls.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}A-Z Plant Index - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<div class="az-index-page">
+    <h1>A-Z Plant Index</h1>
+    <p>Browse all {{ plant_count }} plants alphabetically by scientific name.</p>
+
+    <nav class="letter-nav">
+        {% for letter in letters %}
+        <a href="#letter-{{ letter }}" class="letter-link {% if letter in used_letters %}active{% endif %}">{{ letter }}</a>
+        {% endfor %}
+    </nav>
+
+    <div class="plant-list">
+        {% for letter, plants in plants_by_letter.items() %}
+        {% if plants %}
+        <section id="letter-{{ letter }}" class="letter-section">
+            <h2>{{ letter }}</h2>
+            <ul>
+                {% for plant in plants %}
+                <li>
+                    <a href="{{ base_url }}/plant/{{ plant.slug }}.html">
+                        <span class="scientific">{{ plant.canonical_name or plant.scientific_name }}</span>
+                        {% if plant.common_name %}
+                        <span class="common">- {{ plant.common_name }}</span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

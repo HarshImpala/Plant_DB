@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Coffea L. - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../az-index.html">A-Z Index</a></li>
+                    <li><a href="../families.html">Families</a></li>
+                    <li><a href="../genera.html">Genera</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="category-page">
+    <nav class="breadcrumb">
+        <a href="../index.html">Home</a> &rsaquo;
+        <a href="../genera.html">Genus</a> &rsaquo;
+        <span>Coffea L.</span>
+    </nav>
+
+    <h1>Coffea L.</h1>
+    <p class="category-meta">Genus: 4 plants</p>
+
+    
+
+    <div class="plant-list-grid">
+        
+        <a href="../plant/coffea-arabica.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/coffea-arabica.jpg" alt="Coffea arabica">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Coffea arabica</h3>
+                
+                <p>Coffee</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/coffea-arabica.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/coffea-arabica.jpg" alt="Coffea arabica">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Coffea arabica</h3>
+                
+                <p>Coffee</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/coffea-arabica.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/coffea-arabica.jpg" alt="Coffea arabica">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Coffea arabica</h3>
+                
+                <p>Coffee</p>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/coffea-canephora.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                <img src="../static/images/plants/coffea-canephora.jpg" alt="Coffea canephora">
+                
+            </div>
+            <div class="plant-list-info">
+                <h3>Coffea canephora</h3>
+                
+                <p>Robusta Coffee</p>
+                
+            </div>
+        </a>
+        
+    </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+    </footer>
+
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/controls.js"></script>
+    
+</body>
+</html>

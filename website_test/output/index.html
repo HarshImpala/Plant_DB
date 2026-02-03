@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Plant Encyclopedia - Home</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./az-index.html">A-Z Index</a></li>
+                    <li><a href="./families.html">Families</a></li>
+                    <li><a href="./genera.html">Genera</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="home-page">
+    <section class="hero">
+        <h1>Plant Encyclopedia</h1>
+        <p>Explore our collection of 196 plant species with detailed taxonomic information, distribution data, and more.</p>
+        <div class="hero-search">
+            <input type="text" id="hero-search" placeholder="Search for a plant..." autocomplete="off">
+        </div>
+    </section>
+
+    <section class="browse-section">
+        <h2>Browse Plants</h2>
+        <div class="browse-options">
+            <a href="./az-index.html" class="browse-card">
+                <h3>A-Z Index</h3>
+                <p>Browse all plants alphabetically by scientific name</p>
+            </a>
+            <a href="./families.html" class="browse-card">
+                <h3>By Family</h3>
+                <p>Explore 53 plant families</p>
+            </a>
+            <a href="./genera.html" class="browse-card">
+                <h3>By Genus</h3>
+                <p>Browse 105 genera</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="recent-section">
+        <h2>Featured Plants</h2>
+        <div class="plant-grid">
+            
+            <a href="./plant/acalypha-hispida.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <img src="./static/images/plants/acalypha-hispida.jpg" alt="Acalypha hispida">
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Acalypha hispida</h3>
+                    
+                    <p>chenilleplant</p>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/acorus-gramineus.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <img src="./static/images/plants/acorus-gramineus.jpg" alt="Acorus gramineus">
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Acorus gramineus</h3>
+                    
+                    <p>Slender Sweet-flag</p>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/adenanthera-microsperma.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <div class="placeholder-image"></div>
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Adenanthera microsperma</h3>
+                    
+                    <p>phai</p>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/aglaonema-costatum.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <img src="./static/images/plants/aglaonema-costatum.jpg" alt="Aglaonema costatum">
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Aglaonema costatum</h3>
+                    
+                    <p>Fox's aglaonema</p>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/aglaonema-modestum.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <img src="./static/images/plants/aglaonema-modestum.jpg" alt="Aglaonema modestum">
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Aglaonema modestum</h3>
+                    
+                    <p>Chinese evergreen</p>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/aglaonema-nitidum.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <div class="placeholder-image"></div>
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Aglaonema nitidum</h3>
+                    
+                    <p>aglaonema aroid</p>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/allamanda-schottii.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <img src="./static/images/plants/allamanda-schottii.jpg" alt="Allamanda schottii">
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Allamanda schottii</h3>
+                    
+                    <p>Bush Allamanda</p>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/alpinia-purpurata.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <img src="./static/images/plants/alpinia-purpurata.jpg" alt="Alpinia purpurata">
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Alpinia purpurata</h3>
+                    
+                    <p>Red Ginger</p>
+                    
+                </div>
+            </a>
+            
+        </div>
+    </section>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+    </footer>
+
+    <script src="./static/js/search.js"></script>
+    <script src="./static/js/controls.js"></script>
+    
+<script>
+document.getElementById('hero-search').addEventListener('input', function(e) {
+    document.getElementById('search-input').value = e.target.value;
+    document.getElementById('search-input').dispatchEvent(new Event('input'));
+});
+</script>
+
+</body>
+</html>

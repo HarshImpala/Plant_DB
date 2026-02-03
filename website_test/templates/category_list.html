@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<div class="category-list-page">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+
+    <nav class="letter-nav">
+        {% for letter in letters %}
+        <a href="#letter-{{ letter }}" class="letter-link {% if letter in used_letters %}active{% endif %}">{{ letter }}</a>
+        {% endfor %}
+    </nav>
+
+    <div class="category-list">
+        {% for letter, categories in categories_by_letter.items() %}
+        {% if categories %}
+        <section id="letter-{{ letter }}" class="letter-section">
+            <h2>{{ letter }}</h2>
+            <ul>
+                {% for cat in categories %}
+                <li>
+                    <a href="{{ base_url }}/{{ category_type }}/{{ cat.slug }}.html">
+                        {{ cat.name }}
+                        <span class="count">({{ cat.plant_count }} plants)</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

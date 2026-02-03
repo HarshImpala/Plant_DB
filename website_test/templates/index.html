@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Plant Encyclopedia - Home{% endblock %}
+
+{% block content %}
+<div class="home-page">
+    <section class="hero">
+        <h1>Plant Encyclopedia</h1>
+        <p>Explore our collection of {{ plant_count }} plant species with detailed taxonomic information, distribution data, and more.</p>
+        <div class="hero-search">
+            <input type="text" id="hero-search" placeholder="Search for a plant..." autocomplete="off">
+        </div>
+    </section>
+
+    <section class="browse-section">
+        <h2>Browse Plants</h2>
+        <div class="browse-options">
+            <a href="{{ base_url }}/az-index.html" class="browse-card">
+                <h3>A-Z Index</h3>
+                <p>Browse all plants alphabetically by scientific name</p>
+            </a>
+            <a href="{{ base_url }}/families.html" class="browse-card">
+                <h3>By Family</h3>
+                <p>Explore {{ family_count }} plant families</p>
+            </a>
+            <a href="{{ base_url }}/genera.html" class="browse-card">
+                <h3>By Genus</h3>
+                <p>Browse {{ genus_count }} genera</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="recent-section">
+        <h2>Featured Plants</h2>
+        <div class="plant-grid">
+            {% for plant in featured_plants %}
+            <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-card">
+                <div class="plant-card-image">
+                    {% if plant.image_filename %}
+                    <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.canonical_name }}">
+                    {% else %}
+                    <div class="placeholder-image"></div>
+                    {% endif %}
+                </div>
+                <div class="plant-card-info">
+                    <h3>{{ plant.canonical_name }}</h3>
+                    {% if plant.common_name %}
+                    <p>{{ plant.common_name }}</p>
+                    {% endif %}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('hero-search').addEventListener('input', function(e) {
+    document.getElementById('search-input').value = e.target.value;
+    document.getElementById('search-input').dispatchEvent(new Event('input'));
+});
+</script>
+{% endblock %}

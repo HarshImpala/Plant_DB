@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }} - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<div class="category-page">
+    <nav class="breadcrumb">
+        <a href="{{ base_url }}/index.html">Home</a> &rsaquo;
+        <a href="{{ base_url }}/{{ category_type_plural }}.html">{{ category_type_title }}</a> &rsaquo;
+        <span>{{ category.name }}</span>
+    </nav>
+
+    <h1>{{ category.name }}</h1>
+    <p class="category-meta">{{ category_type_title }}: {{ plants | length }} plant{% if plants | length != 1 %}s{% endif %}</p>
+
+    {% if category.description %}
+    <p class="category-description">{{ category.description }}</p>
+    {% endif %}
+
+    <div class="plant-list-grid">
+        {% for plant in plants %}
+        <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-list-item">
+            <div class="plant-list-image">
+                {% if plant.image_filename %}
+                <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.canonical_name }}">
+                {% else %}
+                <div class="placeholder-image"></div>
+                {% endif %}
+            </div>
+            <div class="plant-list-info">
+                <h3>{{ plant.canonical_name or plant.scientific_name }}</h3>
+                {% if plant.common_name %}
+                <p>{{ plant.common_name }}</p>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

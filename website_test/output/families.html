@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Plant Families - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./az-index.html">A-Z Index</a></li>
+                    <li><a href="./families.html">Families</a></li>
+                    <li><a href="./genera.html">Genera</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="category-list-page">
+    <h1>Plant Families</h1>
+    <p>Browse plants organized by 53 botanical families.</p>
+
+    <nav class="letter-nav">
+        
+        <a href="#letter-A" class="letter-link active">A</a>
+        
+        <a href="#letter-B" class="letter-link active">B</a>
+        
+        <a href="#letter-C" class="letter-link active">C</a>
+        
+        <a href="#letter-D" class="letter-link active">D</a>
+        
+        <a href="#letter-E" class="letter-link active">E</a>
+        
+        <a href="#letter-F" class="letter-link active">F</a>
+        
+        <a href="#letter-G" class="letter-link active">G</a>
+        
+        <a href="#letter-H" class="letter-link active">H</a>
+        
+        <a href="#letter-I" class="letter-link ">I</a>
+        
+        <a href="#letter-J" class="letter-link ">J</a>
+        
+        <a href="#letter-K" class="letter-link ">K</a>
+        
+        <a href="#letter-L" class="letter-link active">L</a>
+        
+        <a href="#letter-M" class="letter-link active">M</a>
+        
+        <a href="#letter-N" class="letter-link ">N</a>
+        
+        <a href="#letter-O" class="letter-link active">O</a>
+        
+        <a href="#letter-P" class="letter-link active">P</a>
+        
+        <a href="#letter-Q" class="letter-link ">Q</a>
+        
+        <a href="#letter-R" class="letter-link active">R</a>
+        
+        <a href="#letter-S" class="letter-link active">S</a>
+        
+        <a href="#letter-T" class="letter-link active">T</a>
+        
+        <a href="#letter-U" class="letter-link active">U</a>
+        
+        <a href="#letter-V" class="letter-link ">V</a>
+        
+        <a href="#letter-W" class="letter-link ">W</a>
+        
+        <a href="#letter-X" class="letter-link ">X</a>
+        
+        <a href="#letter-Y" class="letter-link ">Y</a>
+        
+        <a href="#letter-Z" class="letter-link active">Z</a>
+        
+    </nav>
+
+    <div class="category-list">
+        
+        
+        <section id="letter-A" class="letter-section">
+            <h2>A</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/acanthaceae.html">
+                        Acanthaceae Juss.
+                        <span class="count">(3 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/acoraceae.html">
+                        Acoraceae Martinov
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/anacardiaceae-rbr.html">
+                        Anacardiaceae R.Br.
+                        <span class="count">(6 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/annonaceae.html">
+                        Annonaceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/apocynaceae.html">
+                        Apocynaceae Juss.
+                        <span class="count">(10 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/araceae.html">
+                        Araceae Juss.
+                        <span class="count">(9 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/arecaceae-bercht-jpresl.html">
+                        Arecaceae Bercht. & J.Presl
+                        <span class="count">(8 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/aristolochiaceae.html">
+                        Aristolochiaceae Juss.
+                        <span class="count">(8 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/aspleniaceae.html">
+                        Aspleniaceae Newman
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-B" class="letter-section">
+            <h2>B</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/begoniaceae-cagardh.html">
+                        Begoniaceae C.Agardh
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/bignoniaceae.html">
+                        Bignoniaceae Juss.
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/bromeliaceae.html">
+                        Bromeliaceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-C" class="letter-section">
+            <h2>C</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/cactaceae.html">
+                        Cactaceae Juss.
+                        <span class="count">(12 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/cannaceae.html">
+                        Cannaceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/caricaceae.html">
+                        Caricaceae Dumort.
+                        <span class="count">(6 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/clusiaceae.html">
+                        Clusiaceae Lindl.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/combretaceae-rbr.html">
+                        Combretaceae R.Br.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/commelinaceae.html">
+                        Commelinaceae Mirb.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/cordiaceae-rbr-ex.html">
+                        Cordiaceae R.Br. ex Dumort.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/cyperaceae.html">
+                        Cyperaceae Juss.
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-D" class="letter-section">
+            <h2>D</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/dioscoreaceae-rbr.html">
+                        Dioscoreaceae R.Br.
+                        <span class="count">(3 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-E" class="letter-section">
+            <h2>E</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/erythroxylaceae.html">
+                        Erythroxylaceae Kunth
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/euphorbiaceae.html">
+                        Euphorbiaceae Juss.
+                        <span class="count">(3 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-F" class="letter-section">
+            <h2>F</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/fabaceae.html">
+                        Fabaceae Lindl.
+                        <span class="count">(10 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-G" class="letter-section">
+            <h2>G</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/gesneriaceae-rich-.html">
+                        Gesneriaceae Rich. & Juss.
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-H" class="letter-section">
+            <h2>H</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/heliconiaceae.html">
+                        Heliconiaceae Nakai
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/hypoxidaceae-rbr.html">
+                        Hypoxidaceae R.Br.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <section id="letter-L" class="letter-section">
+            <h2>L</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/lamiaceae.html">
+                        Lamiaceae Martinov
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/lauraceae.html">
+                        Lauraceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/lecythidaceae-arich.html">
+                        Lecythidaceae A.Rich.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/lythraceae-jst-hil.html">
+                        Lythraceae J.St.-Hil.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-M" class="letter-section">
+            <h2>M</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/malvaceae.html">
+                        Malvaceae Juss.
+                        <span class="count">(3 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/marantaceae-rbr.html">
+                        Marantaceae R.Br.
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/melastomataceae.html">
+                        Melastomataceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/meliaceae.html">
+                        Meliaceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/moraceae.html">
+                        Moraceae Gaudich.
+                        <span class="count">(8 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/musaceae.html">
+                        Musaceae Juss.
+                        <span class="count">(9 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/myrtaceae.html">
+                        Myrtaceae Juss.
+                        <span class="count">(9 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        
+        
+        <section id="letter-O" class="letter-section">
+            <h2>O</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/orchidaceae.html">
+                        Orchidaceae Juss.
+                        <span class="count">(4 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/oxalidaceae-rbr.html">
+                        Oxalidaceae R.Br.
+                        <span class="count">(4 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-P" class="letter-section">
+            <h2>P</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/passifloraceae-juss-ex.html">
+                        Passifloraceae Juss. ex Roussel
+                        <span class="count">(6 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/phyllanthaceae.html">
+                        Phyllanthaceae Martinov
+                        <span class="count">(4 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/piperaceae.html">
+                        Piperaceae Giseke
+                        <span class="count">(4 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/poaceae.html">
+                        Poaceae Barnhart
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        
+        
+        <section id="letter-R" class="letter-section">
+            <h2>R</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/rubiaceae.html">
+                        Rubiaceae Juss.
+                        <span class="count">(9 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/rutaceae.html">
+                        Rutaceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-S" class="letter-section">
+            <h2>S</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/salicaceae.html">
+                        Salicaceae Mirb.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/sapindaceae.html">
+                        Sapindaceae Juss.
+                        <span class="count">(2 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/solanaceae.html">
+                        Solanaceae Juss.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="./family/strelitziaceae.html">
+                        Strelitziaceae Hutch.
+                        <span class="count">(3 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-T" class="letter-section">
+            <h2>T</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/tecophilaeaceae.html">
+                        Tecophilaeaceae Leyb.
+                        <span class="count">(1 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section id="letter-U" class="letter-section">
+            <h2>U</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/urticaceae.html">
+                        Urticaceae Juss.
+                        <span class="count">(3 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <section id="letter-Z" class="letter-section">
+            <h2>Z</h2>
+            <ul>
+                
+                <li>
+                    <a href="./family/zingiberaceae.html">
+                        Zingiberaceae Martinov
+                        <span class="count">(11 plants)</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        
+        
+    </div>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+    </footer>
+
+    <script src="./static/js/search.js"></script>
+    <script src="./static/js/controls.js"></script>
+    
+</body>
+</html>
