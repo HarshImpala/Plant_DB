@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Collection Statistics - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<div class="stats-page">
+    <h1>Collection Statistics</h1>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">{{ total_plants }}</div>
+            <div class="stat-label">Total Plants</div>
+        </div>
+        <div class="stat-card highlight">
+            <div class="stat-number">{{ plants_with_images }}</div>
+            <div class="stat-label">With Photos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ plants_with_descriptions }}</div>
+            <div class="stat-label">With Descriptions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ plants_with_distribution }}</div>
+            <div class="stat-label">With Distribution Data</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ total_families }}</div>
+            <div class="stat-label">Families</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ total_genera }}</div>
+            <div class="stat-label">Genera</div>
+        </div>
+    </div>
+
+    <section class="stats-section">
+        <h2>Top Families by Species Count</h2>
+        <div class="family-chart">
+            {% for fam in top_families %}
+            <div class="chart-row">
+                <a href="{{ base_url }}/family/{{ fam.slug }}.html" class="chart-label">{{ fam.name }}</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: {{ ((fam.plant_count / top_families[0].plant_count) * 100) | round }}%"></div>
+                </div>
+                <span class="chart-value">{{ fam.plant_count }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}

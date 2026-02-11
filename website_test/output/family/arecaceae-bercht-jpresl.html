@@ -61,12 +61,18 @@
 
     
 
+    <div class="sort-bar">
+        <span class="sort-label">Sort by:</span>
+        <button class="sort-btn active" data-sort="scientific">Scientific name</button>
+        <button class="sort-btn" data-sort="common">Common name</button>
+    </div>
+
     <div class="plant-list-grid">
         
         <a href="../plant/coccothrinax-readii.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/coccothrinax-readii.jpg" alt="Coccothrinax readii">
+                <img src="../static/images/plants/coccothrinax-readii.jpg" alt="Coccothrinax readii" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -80,7 +86,7 @@
         <a href="../plant/cocos-nucifera.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/cocos-nucifera.jpg" alt="Cocos nucifera">
+                <img src="../static/images/plants/cocos-nucifera.jpg" alt="Cocos nucifera" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -94,7 +100,7 @@
         <a href="../plant/cocos-nucifera.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/cocos-nucifera.jpg" alt="Cocos nucifera">
+                <img src="../static/images/plants/cocos-nucifera.jpg" alt="Cocos nucifera" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -108,7 +114,7 @@
         <a href="../plant/cocos-nucifera.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/cocos-nucifera.jpg" alt="Cocos nucifera">
+                <img src="../static/images/plants/cocos-nucifera.jpg" alt="Cocos nucifera" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -122,7 +128,7 @@
         <a href="../plant/elaeis-guineensis.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/elaeis-guineensis.jpg" alt="Elaeis guineensis">
+                <img src="../static/images/plants/elaeis-guineensis.jpg" alt="Elaeis guineensis" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -136,7 +142,7 @@
         <a href="../plant/euterpe-oleracea.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/euterpe-oleracea.jpg" alt="Euterpe oleracea">
+                <img src="../static/images/plants/euterpe-oleracea.jpg" alt="Euterpe oleracea" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -150,7 +156,7 @@
         <a href="../plant/salacca-zalacca.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/salacca-zalacca.jpg" alt="Salacca zalacca">
+                <img src="../static/images/plants/salacca-zalacca.jpg" alt="Salacca zalacca" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -164,7 +170,7 @@
         <a href="../plant/syagrus-romanzoffiana.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/syagrus-romanzoffiana.jpg" alt="Syagrus romanzoffiana">
+                <img src="../static/images/plants/syagrus-romanzoffiana.jpg" alt="Syagrus romanzoffiana" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -180,12 +186,51 @@
 
     </main>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
     <footer class="site-footer">
         <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="../stats.html">Collection Statistics</a></p>
     </footer>
 
-    <script src="../static/js/search.js"></script>
-    <script src="../static/js/controls.js"></script>
+    <script src="../static/js/search.js?v=1770834692"></script>
+    <script src="../static/js/controls.js?v=1770834692"></script>
+    <script src="../static/js/lightbox.js?v=1770834692"></script>
     
+<script>
+(function() {
+    const grid = document.querySelector('.plant-list-grid');
+    const buttons = document.querySelectorAll('.sort-btn');
+    if (!grid) return;
+
+    function sortGrid(by) {
+        const items = Array.from(grid.querySelectorAll('.plant-list-item'));
+        items.sort(function(a, b) {
+            let valA, valB;
+            if (by === 'common') {
+                valA = (a.querySelector('p')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('p')?.textContent || '').trim().toLowerCase();
+                if (!valA && !valB) return 0;
+                if (!valA) return 1;
+                if (!valB) return -1;
+            } else {
+                valA = (a.querySelector('h3')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('h3')?.textContent || '').trim().toLowerCase();
+            }
+            return valA.localeCompare(valB);
+        });
+        items.forEach(function(item) { grid.appendChild(item); });
+    }
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            sortGrid(btn.dataset.sort);
+        });
+    });
+})();
+</script>
+
 </body>
 </html>

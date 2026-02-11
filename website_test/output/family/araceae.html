@@ -61,12 +61,18 @@
 
     
 
+    <div class="sort-bar">
+        <span class="sort-label">Sort by:</span>
+        <button class="sort-btn active" data-sort="scientific">Scientific name</button>
+        <button class="sort-btn" data-sort="common">Common name</button>
+    </div>
+
     <div class="plant-list-grid">
         
         <a href="../plant/aglaonema-costatum.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/aglaonema-costatum.jpg" alt="Aglaonema costatum">
+                <img src="../static/images/plants/aglaonema-costatum.jpg" alt="Aglaonema costatum" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -80,7 +86,7 @@
         <a href="../plant/aglaonema-modestum.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/aglaonema-modestum.jpg" alt="Aglaonema modestum">
+                <img src="../static/images/plants/aglaonema-modestum.jpg" alt="Aglaonema modestum" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -120,7 +126,7 @@
         <a href="../plant/anthurium-schlechtendalii.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/anthurium-schlechtendalii.jpg" alt="Anthurium schlechtendalii">
+                <img src="../static/images/plants/anthurium-schlechtendalii.jpg" alt="Anthurium schlechtendalii" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -134,7 +140,7 @@
         <a href="../plant/anthurium-vittariifolium.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/anthurium-vittariifolium.jpg" alt="Anthurium vittariifolium">
+                <img src="../static/images/plants/anthurium-vittariifolium.jpg" alt="Anthurium vittariifolium" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -146,7 +152,7 @@
         <a href="../plant/caladium-bicolor.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/caladium-bicolor.jpg" alt="Caladium bicolor">
+                <img src="../static/images/plants/caladium-bicolor.jpg" alt="Caladium bicolor" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -160,7 +166,7 @@
         <a href="../plant/colocasia-esculenta.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/colocasia-esculenta.jpg" alt="Colocasia esculenta">
+                <img src="../static/images/plants/colocasia-esculenta.jpg" alt="Colocasia esculenta" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -174,7 +180,7 @@
         <a href="../plant/spathiphyllum-cochlearispathum.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/spathiphyllum-cochlearispathum.jpg" alt="Spathiphyllum cochlearispathum">
+                <img src="../static/images/plants/spathiphyllum-cochlearispathum.jpg" alt="Spathiphyllum cochlearispathum" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -188,12 +194,51 @@
 
     </main>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
     <footer class="site-footer">
         <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="../stats.html">Collection Statistics</a></p>
     </footer>
 
-    <script src="../static/js/search.js"></script>
-    <script src="../static/js/controls.js"></script>
+    <script src="../static/js/search.js?v=1770834692"></script>
+    <script src="../static/js/controls.js?v=1770834692"></script>
+    <script src="../static/js/lightbox.js?v=1770834692"></script>
     
+<script>
+(function() {
+    const grid = document.querySelector('.plant-list-grid');
+    const buttons = document.querySelectorAll('.sort-btn');
+    if (!grid) return;
+
+    function sortGrid(by) {
+        const items = Array.from(grid.querySelectorAll('.plant-list-item'));
+        items.sort(function(a, b) {
+            let valA, valB;
+            if (by === 'common') {
+                valA = (a.querySelector('p')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('p')?.textContent || '').trim().toLowerCase();
+                if (!valA && !valB) return 0;
+                if (!valA) return 1;
+                if (!valB) return -1;
+            } else {
+                valA = (a.querySelector('h3')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('h3')?.textContent || '').trim().toLowerCase();
+            }
+            return valA.localeCompare(valB);
+        });
+        items.forEach(function(item) { grid.appendChild(item); });
+    }
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            sortGrid(btn.dataset.sort);
+        });
+    });
+})();
+</script>
+
 </body>
 </html>

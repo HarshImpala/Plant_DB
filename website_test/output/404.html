@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Page Not Found - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./az-index.html">A-Z Index</a></li>
+                    <li><a href="./families.html">Families</a></li>
+                    <li><a href="./genera.html">Genera</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="error-page">
+    <div class="error-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" width="80" height="80">
+            <path d="M2 22c1.25-1.25 2.08-2.83 2.5-4.5C5 15 5 12 7 9c2-3 6-5 10-5-1 4-3 7-6 9-3 2-5 5-5 9"/>
+            <path d="M12 17c0-4 2-7 5-9"/>
+        </svg>
+    </div>
+    <h1>404 — Page Not Found</h1>
+    <p>This page seems to have wandered off into the undergrowth.</p>
+    <div class="error-actions">
+        <a href="./index.html" class="error-btn primary">Go Home</a>
+        <a href="./az-index.html" class="error-btn">Browse A-Z</a>
+        <a href="./families.html" class="error-btn">Browse Families</a>
+    </div>
+</div>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="./stats.html">Collection Statistics</a></p>
+    </footer>
+
+    <script src="./static/js/search.js?v=1770834692"></script>
+    <script src="./static/js/controls.js?v=1770834692"></script>
+    <script src="./static/js/lightbox.js?v=1770834692"></script>
+    
+</body>
+</html>

@@ -52,10 +52,16 @@
 <div class="home-page">
     <section class="hero">
         <h1>Plant Encyclopedia</h1>
-        <p>Explore our collection of 196 plant species with detailed taxonomic information, distribution data, and more.</p>
+        <p>Explore our collection of <span class="stat-count" data-target="196">196</span> plant species with detailed taxonomic information, distribution data, and more.</p>
         <div class="hero-search">
             <input type="text" id="hero-search" placeholder="Search for a plant..." autocomplete="off">
+            <div id="hero-search-results" class="search-results hero-search-results"></div>
         </div>
+    </section>
+
+    <section id="recently-viewed-section" class="recently-viewed-section" style="display:none">
+        <h2>Recently Viewed</h2>
+        <div id="recently-viewed-list" class="recently-viewed-list"></div>
     </section>
 
     <section class="browse-section">
@@ -67,11 +73,11 @@
             </a>
             <a href="./families.html" class="browse-card">
                 <h3>By Family</h3>
-                <p>Explore 53 plant families</p>
+                <p>Explore <span class="stat-count" data-target="53">53</span> plant families</p>
             </a>
             <a href="./genera.html" class="browse-card">
                 <h3>By Genus</h3>
-                <p>Browse 105 genera</p>
+                <p>Browse <span class="stat-count" data-target="105">105</span> genera</p>
             </a>
         </div>
     </section>
@@ -83,7 +89,7 @@
             <a href="./plant/acalypha-hispida.html" class="plant-card">
                 <div class="plant-card-image">
                     
-                    <img src="./static/images/plants/acalypha-hispida.jpg" alt="Acalypha hispida">
+                    <img src="./static/images/plants/acalypha-hispida.jpg" alt="Acalypha hispida" loading="lazy">
                     
                 </div>
                 <div class="plant-card-info">
@@ -91,103 +97,125 @@
                     
                     <p>chenilleplant</p>
                     
-                </div>
-            </a>
-            
-            <a href="./plant/acorus-gramineus.html" class="plant-card">
-                <div class="plant-card-image">
                     
-                    <img src="./static/images/plants/acorus-gramineus.jpg" alt="Acorus gramineus">
-                    
-                </div>
-                <div class="plant-card-info">
-                    <h3>Acorus gramineus</h3>
-                    
-                    <p>Slender Sweet-flag</p>
+                    <span class="family-badge">Euphorbiaceae Juss.</span>
                     
                 </div>
             </a>
             
-            <a href="./plant/adenanthera-microsperma.html" class="plant-card">
+            <a href="./plant/aristolochia-trilobata.html" class="plant-card">
                 <div class="plant-card-image">
                     
-                    <div class="placeholder-image"></div>
+                    <img src="./static/images/plants/aristolochia-trilobata.jpg" alt="Aristolochia trilobata" loading="lazy">
                     
                 </div>
                 <div class="plant-card-info">
-                    <h3>Adenanthera microsperma</h3>
+                    <h3>Aristolochia trilobata</h3>
                     
-                    <p>phai</p>
+                    <p>Dutchman's Pipe</p>
+                    
+                    
+                    <span class="family-badge">Aristolochiaceae Juss.</span>
                     
                 </div>
             </a>
             
-            <a href="./plant/aglaonema-costatum.html" class="plant-card">
+            <a href="./plant/clusia-rosea.html" class="plant-card">
                 <div class="plant-card-image">
                     
-                    <img src="./static/images/plants/aglaonema-costatum.jpg" alt="Aglaonema costatum">
+                    <img src="./static/images/plants/clusia-rosea.jpg" alt="Clusia rosea" loading="lazy">
                     
                 </div>
                 <div class="plant-card-info">
-                    <h3>Aglaonema costatum</h3>
+                    <h3>Clusia rosea</h3>
                     
-                    <p>Fox's aglaonema</p>
+                    <p>pitch apple</p>
+                    
+                    
+                    <span class="family-badge">Clusiaceae Lindl.</span>
                     
                 </div>
             </a>
             
-            <a href="./plant/aglaonema-modestum.html" class="plant-card">
+            <a href="./plant/dioscorea-alata.html" class="plant-card">
                 <div class="plant-card-image">
                     
-                    <img src="./static/images/plants/aglaonema-modestum.jpg" alt="Aglaonema modestum">
+                    <img src="./static/images/plants/dioscorea-alata.jpg" alt="Dioscorea alata" loading="lazy">
                     
                 </div>
                 <div class="plant-card-info">
-                    <h3>Aglaonema modestum</h3>
+                    <h3>Dioscorea alata</h3>
                     
-                    <p>Chinese evergreen</p>
+                    <p>Yams</p>
+                    
+                    
+                    <span class="family-badge">Dioscoreaceae R.Br.</span>
                     
                 </div>
             </a>
             
-            <a href="./plant/aglaonema-nitidum.html" class="plant-card">
+            <a href="./plant/hedychium-coronarium.html" class="plant-card">
                 <div class="plant-card-image">
                     
-                    <div class="placeholder-image"></div>
+                    <img src="./static/images/plants/hedychium-coronarium.jpg" alt="Hedychium coronarium" loading="lazy">
                     
                 </div>
                 <div class="plant-card-info">
-                    <h3>Aglaonema nitidum</h3>
+                    <h3>Hedychium coronarium</h3>
                     
-                    <p>aglaonema aroid</p>
+                    <p>butterfly-lily</p>
+                    
+                    
+                    <span class="family-badge">Zingiberaceae Martinov</span>
                     
                 </div>
             </a>
             
-            <a href="./plant/allamanda-schottii.html" class="plant-card">
+            <a href="./plant/musa-paradisiaca.html" class="plant-card">
                 <div class="plant-card-image">
                     
-                    <img src="./static/images/plants/allamanda-schottii.jpg" alt="Allamanda schottii">
+                    <img src="./static/images/plants/musa-paradisiaca.jpg" alt="Musa paradisiaca" loading="lazy">
                     
                 </div>
                 <div class="plant-card-info">
-                    <h3>Allamanda schottii</h3>
+                    <h3>Musa paradisiaca</h3>
                     
-                    <p>Bush Allamanda</p>
+                    <p>banana</p>
+                    
+                    
+                    <span class="family-badge">Musaceae Juss.</span>
                     
                 </div>
             </a>
             
-            <a href="./plant/alpinia-purpurata.html" class="plant-card">
+            <a href="./plant/piper-kadsura.html" class="plant-card">
                 <div class="plant-card-image">
                     
-                    <img src="./static/images/plants/alpinia-purpurata.jpg" alt="Alpinia purpurata">
+                    <img src="./static/images/plants/piper-kadsura.jpg" alt="Piper kadsura" loading="lazy">
                     
                 </div>
                 <div class="plant-card-info">
-                    <h3>Alpinia purpurata</h3>
+                    <h3>Piper kadsura</h3>
                     
-                    <p>Red Ginger</p>
+                    <p>Kadsura pepper</p>
+                    
+                    
+                    <span class="family-badge">Piperaceae Giseke</span>
+                    
+                </div>
+            </a>
+            
+            <a href="./plant/selenicereus-megalanthus.html" class="plant-card">
+                <div class="plant-card-image">
+                    
+                    <img src="./static/images/plants/selenicereus-megalanthus.jpg" alt="Selenicereus megalanthus" loading="lazy">
+                    
+                </div>
+                <div class="plant-card-info">
+                    <h3>Selenicereus megalanthus</h3>
+                    
+                    
+                    <span class="family-badge">Cactaceae Juss.</span>
                     
                 </div>
             </a>
@@ -198,18 +226,116 @@
 
     </main>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
     <footer class="site-footer">
         <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="./stats.html">Collection Statistics</a></p>
     </footer>
 
-    <script src="./static/js/search.js"></script>
-    <script src="./static/js/controls.js"></script>
+    <script src="./static/js/search.js?v=1770834692"></script>
+    <script src="./static/js/controls.js?v=1770834692"></script>
+    <script src="./static/js/lightbox.js?v=1770834692"></script>
     
 <script>
-document.getElementById('hero-search').addEventListener('input', function(e) {
-    document.getElementById('search-input').value = e.target.value;
-    document.getElementById('search-input').dispatchEvent(new Event('input'));
-});
+// Animated stat count-up
+(function() {
+    var counters = document.querySelectorAll('.stat-count');
+    if (!counters.length || !window.IntersectionObserver) return;
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var target = parseInt(el.dataset.target, 10);
+            var start = performance.now();
+            var duration = 1200;
+            function update(now) {
+                var progress = Math.min((now - start) / duration, 1);
+                var ease = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(ease * target).toLocaleString();
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(function(c) { observer.observe(c); });
+})();
+</script>
+
+<script>
+// Recently viewed
+(function() {
+    try {
+        const recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+        if (recent.length === 0) return;
+        const list = document.getElementById('recently-viewed-list');
+        const section = document.getElementById('recently-viewed-section');
+        list.innerHTML = recent.map(function(p) {
+            return '<a href="./plant/' + p.slug + '.html" class="recently-viewed-item">'
+                + '<span class="scientific">' + p.name + '</span>'
+                + (p.common_name ? '<span class="common">' + p.common_name + '</span>' : '')
+                + '</a>';
+        }).join('');
+        section.style.display = '';
+    } catch(e) {}
+})();
+</script>
+
+<script>
+(function() {
+    const input = document.getElementById('hero-search');
+    const resultsBox = document.getElementById('hero-search-results');
+
+    function renderHeroResults(results) {
+        if (results.length === 0) {
+            resultsBox.innerHTML = '<div class="no-results" style="padding:1rem;color:#666;">No plants found</div>';
+            return;
+        }
+        let html = '';
+        for (const plant of results) {
+            html += `<a href="./plant/${plant.slug}.html">
+                <span class="scientific">${plant.canonical_name || plant.scientific_name}</span>
+                ${plant.common_name ? `<br><span class="common">${plant.common_name}</span>` : ''}
+            </a>`;
+        }
+        resultsBox.innerHTML = html;
+    }
+
+    input.addEventListener('input', function() {
+        const query = this.value.trim();
+        if (query.length < 2) {
+            resultsBox.classList.remove('active');
+            return;
+        }
+        if (typeof window.plantSearch === 'function') {
+            const results = window.plantSearch(query);
+            renderHeroResults(results);
+            resultsBox.classList.add('active');
+        }
+    });
+
+    input.addEventListener('keydown', function(e) {
+        const items = resultsBox.querySelectorAll('a');
+        const active = resultsBox.querySelector('a:focus');
+        let index = Array.from(items).indexOf(active);
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            (index < items.length - 1 ? items[index + 1] : items[0]).focus();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            index > 0 ? items[index - 1].focus() : input.focus();
+        } else if (e.key === 'Escape') {
+            resultsBox.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !resultsBox.contains(e.target)) {
+            resultsBox.classList.remove('active');
+        }
+    });
+})();
 </script>
 
 </body>

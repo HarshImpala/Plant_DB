@@ -14,6 +14,9 @@ from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
 
 
+# Site base URL — change this before deploying to a real domain
+SITE_BASE_URL = "https://example.com"
+
 # Paths
 BASE_DIR = Path(__file__).parent.parent
 TEMPLATE_DIR = BASE_DIR / "templates"
@@ -177,11 +180,13 @@ def copy_static_files():
 
 def build_site():
     """Main build function."""
+    import time
     print("Building Plant Encyclopedia...")
 
     # Setup
     env = setup_jinja_env()
     conn = get_db_connection()
+    build_version = str(int(time.time()))
 
     # Clear and prepare output
     clear_output_dir()
@@ -202,17 +207,21 @@ def build_site():
     # Common template context
     base_context = {
         'base_url': '.',
+        'build_version': build_version,
     }
 
     # === Build Homepage ===
     print("Building homepage...")
     template = env.get_template('index.html')
+    plants_with_images = [p for p in plants if p.get('image_filename')]
+    step = max(1, len(plants_with_images) // 8)
+    featured_plants = plants_with_images[::step][:8]
     html = template.render(
         **base_context,
         plant_count=len(plants),
         family_count=len(families),
         genus_count=len(genera),
-        featured_plants=plants[:8],  # First 8 as featured
+        featured_plants=featured_plants,
     )
     (OUTPUT_DIR / "index.html").write_text(html, encoding='utf-8')
 
@@ -271,7 +280,7 @@ def build_site():
     for family in families:
         family_plants = get_plants_in_category(conn, family['id'])
         html = template.render(
-            base_url='..',
+            base_url='..', build_version=build_version,
             category=family,
             category_type='family',
             category_type_plural='families',
@@ -285,7 +294,7 @@ def build_site():
     for genus in genera:
         genus_plants = get_plants_in_category(conn, genus['id'])
         html = template.render(
-            base_url='..',
+            base_url='..', build_version=build_version,
             category=genus,
             category_type='genus',
             category_type_plural='genera',
@@ -298,15 +307,38 @@ def build_site():
     print("Building plant pages...")
     template = env.get_template('plant.html')
 
+    # Pre-build genus/family lookup for related plants
+    from collections import defaultdict
+    genus_map = defaultdict(list)
+    family_map = defaultdict(list)
+    for p in plants:
+        if p.get('genus'):
+            genus_map[p['genus']].append(p)
+        if p.get('family'):
+            family_map[p['family']].append(p)
+
     for i, plant in enumerate(plants):
         synonyms = get_plant_synonyms(conn, plant['id'])
         common_names = get_plant_common_names(conn, plant['id'])
+        prev_plant = plants[i - 1] if i > 0 else None
+        next_plant = plants[i + 1] if i < len(plants) - 1 else None
+
+        # Related plants: prefer same genus, fall back to same family
+        related = [p for p in genus_map.get(plant.get('genus', ''), [])
+                   if p['id'] != plant['id']]
+        if len(related) < 2:
+            related = [p for p in family_map.get(plant.get('family', ''), [])
+                       if p['id'] != plant['id']]
+        related_plants = related[:6]
 
         html = template.render(
-            base_url='..',
+            base_url='..', build_version=build_version,
             plant=plant,
             synonyms=synonyms,
             common_names=common_names,
+            prev_plant=prev_plant,
+            next_plant=next_plant,
+            related_plants=related_plants,
         )
         (OUTPUT_DIR / "plant" / f"{plant['slug']}.html").write_text(html, encoding='utf-8')
 
@@ -316,8 +348,53 @@ def build_site():
     # === Build Search Data ===
     print("Building search data...")
     search_data = build_search_data(plants, conn)
-    search_json_path = OUTPUT_DIR / "static" / "js" / "search-data.json"
-    search_json_path.write_text(json.dumps(search_data, ensure_ascii=False), encoding='utf-8')
+    search_data_dir = OUTPUT_DIR / "static" / "data"
+    search_data_dir.mkdir(parents=True, exist_ok=True)
+    (search_data_dir / "search-data.json").write_text(json.dumps(search_data, ensure_ascii=False), encoding='utf-8')
+
+    # === Build Stats Page ===
+    print("Building stats page...")
+    template = env.get_template('stats.html')
+    top_families = sorted(families, key=lambda f: f['plant_count'], reverse=True)[:15]
+    html = template.render(
+        **base_context,
+        total_plants=len(plants),
+        plants_with_images=sum(1 for p in plants if p.get('image_filename')),
+        plants_with_descriptions=sum(1 for p in plants if p.get('description')),
+        plants_with_distribution=sum(1 for p in plants if p.get('native_countries')),
+        total_families=len(families),
+        total_genera=len(genera),
+        top_families=top_families,
+    )
+    (OUTPUT_DIR / "stats.html").write_text(html, encoding='utf-8')
+
+    # === Build 404 Page ===
+    print("Building 404 page...")
+    template = env.get_template('404.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "404.html").write_text(html, encoding='utf-8')
+
+    # === Build Sitemap ===
+    print("Building sitemap...")
+    urls = [
+        f"{SITE_BASE_URL}/index.html",
+        f"{SITE_BASE_URL}/az-index.html",
+        f"{SITE_BASE_URL}/families.html",
+        f"{SITE_BASE_URL}/genera.html",
+        f"{SITE_BASE_URL}/stats.html",
+    ]
+    for plant in plants:
+        urls.append(f"{SITE_BASE_URL}/plant/{plant['slug']}.html")
+    for fam in families:
+        urls.append(f"{SITE_BASE_URL}/family/{fam['slug']}.html")
+    for genus in genera:
+        urls.append(f"{SITE_BASE_URL}/genus/{genus['slug']}.html")
+    sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+                     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for url in urls:
+        sitemap_lines.append(f'  <url><loc>{url}</loc></url>')
+    sitemap_lines.append('</urlset>')
+    (OUTPUT_DIR / "sitemap.xml").write_text('\n'.join(sitemap_lines), encoding='utf-8')
 
     conn.close()
 

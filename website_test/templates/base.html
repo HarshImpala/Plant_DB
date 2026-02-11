@@ -51,12 +51,16 @@
         {% block content %}{% endblock %}
     </main>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
     <footer class="site-footer">
         <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="{{ base_url }}/stats.html">Collection Statistics</a></p>
     </footer>
 
-    <script src="{{ base_url }}/static/js/search.js"></script>
-    <script src="{{ base_url }}/static/js/controls.js"></script>
+    <script src="{{ base_url }}/static/js/search.js?v={{ build_version }}"></script>
+    <script src="{{ base_url }}/static/js/controls.js?v={{ build_version }}"></script>
+    <script src="{{ base_url }}/static/js/lightbox.js?v={{ build_version }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

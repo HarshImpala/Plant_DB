@@ -2,6 +2,14 @@
 
 {% block title %}{{ plant.canonical_name or plant.scientific_name }} - Plant Encyclopedia{% endblock %}
 
+{% block head %}
+{% if plant.description %}
+<meta name="description" content="{{ plant.description[:155] }}{% if plant.description | length > 155 %}...{% endif %}">
+{% else %}
+<meta name="description" content="{{ plant.canonical_name or plant.scientific_name }}{% if plant.common_name %} ({{ plant.common_name }}){% endif %}{% if plant.family %} — family {{ plant.family }}{% endif %}. Taxonomic information, native distribution, and more.">
+{% endif %}
+{% endblock %}
+
 {% block content %}
 <article class="plant-page">
     <nav class="breadcrumb">
@@ -9,11 +17,25 @@
         {% if plant.family %}
         <a href="{{ base_url }}/family/{{ plant.family | slugify }}.html">{{ plant.family }}</a> &rsaquo;
         {% endif %}
+        {% if plant.genus %}
+        <a href="{{ base_url }}/genus/{{ plant.genus | slugify }}.html">{{ plant.genus }}</a> &rsaquo;
+        {% endif %}
         <span>{{ plant.canonical_name or plant.scientific_name }}</span>
     </nav>
 
     <header class="plant-header">
-        <h1 class="scientific-name">{{ plant.scientific_name or plant.canonical_name }}</h1>
+        <div class="plant-title-row">
+            <h1 class="scientific-name">{{ plant.scientific_name or plant.canonical_name }}</h1>
+            <button class="copy-name-btn"
+                    data-name="{{ plant.canonical_name or plant.scientific_name }}"
+                    title="Copy scientific name"
+                    aria-label="Copy scientific name">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+        </div>
         {% if plant.common_name %}
         <p class="common-name">{{ plant.common_name }}</p>
         {% endif %}
@@ -33,7 +55,11 @@
             </div>
             {% else %}
             <div class="plant-image placeholder">
-                <span>Image coming soon</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="56" height="56">
+                    <path d="M2 22c1.25-1.25 2.08-2.83 2.5-4.5C5 15 5 12 7 9c2-3 6-5 10-5-1 4-3 7-6 9-3 2-5 5-5 9"/>
+                    <path d="M12 17c0-4 2-7 5-9"/>
+                </svg>
+                <span>No image available</span>
             </div>
             {% endif %}
 
@@ -61,9 +87,9 @@
                 </tbody>
             </table>
 
-            {% if plant.wfo_url or plant.gbif_url or plant.wikipedia_url %}
             <div class="external-links">
                 <h3>External Links</h3>
+                {% if plant.wfo_url or plant.gbif_url or plant.wikipedia_url %}
                 <ul>
                     {% if plant.wfo_url %}
                     <li><a href="{{ plant.wfo_url }}" target="_blank" rel="noopener">World Flora Online</a></li>
@@ -75,8 +101,12 @@
                     <li><a href="{{ plant.wikipedia_url }}" target="_blank" rel="noopener">Wikipedia</a></li>
                     {% endif %}
                 </ul>
+                {% endif %}
+                <a href="https://www.fuveszkert.org/orokbefogadas/"
+                   target="_blank" rel="noopener"
+                   class="adopt-btn"
+                   data-translate="adopt_me">Adopt me!</a>
             </div>
-            {% endif %}
         </aside>
 
         <div class="plant-main">
@@ -101,7 +131,11 @@
             {% if plant.native_countries %}
             <section class="plant-section">
                 <h2>Native Distribution</h2>
-                <p><strong>Countries:</strong> {{ plant.native_countries }}</p>
+                <div class="country-badges">
+                    {% for country in plant.native_countries.split(' | ') %}
+                    <span class="country-badge">{{ country.strip() }}</span>
+                    {% endfor %}
+                </div>
                 {% if plant.native_regions %}
                 <details>
                     <summary>Detailed Regions</summary>
@@ -151,4 +185,90 @@
         </div>
     </div>
 </article>
+
+{% if related_plants %}
+<section class="related-plants-section">
+    <h2>Related Plants</h2>
+    <div class="related-plants-grid">
+        {% for related in related_plants %}
+        <a href="{{ base_url }}/plant/{{ related.slug }}.html" class="related-plant-card">
+            <div class="related-plant-image">
+                {% if related.image_filename %}
+                <img src="{{ base_url }}/static/images/plants/{{ related.image_filename }}"
+                     alt="{{ related.canonical_name }}" loading="lazy">
+                {% else %}
+                <div class="placeholder-image"></div>
+                {% endif %}
+            </div>
+            <div class="related-plant-info">
+                <span class="scientific">{{ related.canonical_name or related.scientific_name }}</span>
+                {% if related.common_name %}
+                <span class="common">{{ related.common_name }}</span>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if prev_plant or next_plant %}
+<nav class="plant-nav">
+    <div class="plant-nav-prev">
+        {% if prev_plant %}
+        <a href="{{ base_url }}/plant/{{ prev_plant.slug }}.html">
+            <span class="plant-nav-arrow">&#8592;</span>
+            <span class="plant-nav-label">Previous</span>
+            <span class="plant-nav-name">{{ prev_plant.canonical_name or prev_plant.scientific_name }}</span>
+        </a>
+        {% endif %}
+    </div>
+    <div class="plant-nav-next">
+        {% if next_plant %}
+        <a href="{{ base_url }}/plant/{{ next_plant.slug }}.html">
+            <span class="plant-nav-name">{{ next_plant.canonical_name or next_plant.scientific_name }}</span>
+            <span class="plant-nav-label">Next</span>
+            <span class="plant-nav-arrow">&#8594;</span>
+        </a>
+        {% endif %}
+    </div>
+</nav>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Copy scientific name
+(function() {
+    var btn = document.querySelector('.copy-name-btn');
+    if (!btn || !navigator.clipboard) return;
+    btn.addEventListener('click', function() {
+        navigator.clipboard.writeText(btn.dataset.name).then(function() {
+            btn.classList.add('copied');
+            btn.title = 'Copied!';
+            setTimeout(function() {
+                btn.classList.remove('copied');
+                btn.title = 'Copy scientific name';
+            }, 2000);
+        });
+    });
+})();
+</script>
+
+<script>
+// Recently viewed
+(function() {
+    try {
+        const entry = {
+            slug: "{{ plant.slug }}",
+            name: "{{ (plant.canonical_name or plant.scientific_name) | replace('"', '&quot;') }}",
+            common_name: "{{ (plant.common_name or '') | replace('"', '&quot;') }}"
+        };
+        let recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+        recent = recent.filter(function(p) { return p.slug !== entry.slug; });
+        recent.unshift(entry);
+        localStorage.setItem('recentlyViewed', JSON.stringify(recent.slice(0, 8)));
+    } catch(e) {}
+})();
+</script>
 {% endblock %}

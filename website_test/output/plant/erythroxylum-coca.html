@@ -16,6 +16,10 @@
     <title>Erythroxylum coca - Plant Encyclopedia</title>
     <link rel="stylesheet" href="../static/css/style.css">
     
+
+<meta name="description" content="Erythroxylum coca is a species of flowering plant in the family Erythroxylaceae. It is one of the two species of cultivated coca.">
+
+
 </head>
 <body>
     <header class="site-header">
@@ -55,11 +59,25 @@
         
         <a href="../family/erythroxylaceae.html">Erythroxylaceae Kunth</a> &rsaquo;
         
+        
+        <a href="../genus/erythroxylum-pbrowne.html">Erythroxylum P.Browne</a> &rsaquo;
+        
         <span>Erythroxylum coca</span>
     </nav>
 
     <header class="plant-header">
-        <h1 class="scientific-name">Erythroxylum coca Lam.</h1>
+        <div class="plant-title-row">
+            <h1 class="scientific-name">Erythroxylum coca Lam.</h1>
+            <button class="copy-name-btn"
+                    data-name="Erythroxylum coca"
+                    title="Copy scientific name"
+                    aria-label="Copy scientific name">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+        </div>
         
         <p class="common-name">Coca</p>
         
@@ -69,7 +87,11 @@
         <aside class="plant-sidebar">
             
             <div class="plant-image placeholder">
-                <span>Image coming soon</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="56" height="56">
+                    <path d="M2 22c1.25-1.25 2.08-2.83 2.5-4.5C5 15 5 12 7 9c2-3 6-5 10-5-1 4-3 7-6 9-3 2-5 5-5 9"/>
+                    <path d="M12 17c0-4 2-7 5-9"/>
+                </svg>
+                <span>No image available</span>
             </div>
             
 
@@ -97,9 +119,9 @@
                 </tbody>
             </table>
 
-            
             <div class="external-links">
                 <h3>External Links</h3>
+                
                 <ul>
                     
                     <li><a href="https://www.worldfloraonline.org/taxon/wfo-0000679758" target="_blank" rel="noopener">World Flora Online</a></li>
@@ -111,8 +133,12 @@
                     <li><a href="https://en.wikipedia.org/wiki/Erythroxylum_coca" target="_blank" rel="noopener">Wikipedia</a></li>
                     
                 </ul>
+                
+                <a href="https://www.fuveszkert.org/orokbefogadas/"
+                   target="_blank" rel="noopener"
+                   class="adopt-btn"
+                   data-translate="adopt_me">Adopt me!</a>
             </div>
-            
         </aside>
 
         <div class="plant-main">
@@ -137,7 +163,19 @@
             
             <section class="plant-section">
                 <h2>Native Distribution</h2>
-                <p><strong>Countries:</strong> Brazil | Bolivia | Colombia | Ecuador | Peru</p>
+                <div class="country-badges">
+                    
+                    <span class="country-badge">Brazil</span>
+                    
+                    <span class="country-badge">Bolivia</span>
+                    
+                    <span class="country-badge">Colombia</span>
+                    
+                    <span class="country-badge">Ecuador</span>
+                    
+                    <span class="country-badge">Peru</span>
+                    
+                </div>
                 
                 <details>
                     <summary>Detailed Regions</summary>
@@ -181,14 +219,78 @@
     </div>
 </article>
 
+
+
+
+<nav class="plant-nav">
+    <div class="plant-nav-prev">
+        
+        <a href="../plant/epiphyllum-oxypetalum.html">
+            <span class="plant-nav-arrow">&#8592;</span>
+            <span class="plant-nav-label">Previous</span>
+            <span class="plant-nav-name">Epiphyllum oxypetalum</span>
+        </a>
+        
+    </div>
+    <div class="plant-nav-next">
+        
+        <a href="../plant/euphorbia-leuconeura.html">
+            <span class="plant-nav-name">Euphorbia leuconeura</span>
+            <span class="plant-nav-label">Next</span>
+            <span class="plant-nav-arrow">&#8594;</span>
+        </a>
+        
+    </div>
+</nav>
+
+
     </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="../stats.html">Collection Statistics</a></p>
     </footer>
 
-    <script src="../static/js/search.js"></script>
-    <script src="../static/js/controls.js"></script>
+    <script src="../static/js/search.js?v=1770834692"></script>
+    <script src="../static/js/controls.js?v=1770834692"></script>
+    <script src="../static/js/lightbox.js?v=1770834692"></script>
     
+<script>
+// Copy scientific name
+(function() {
+    var btn = document.querySelector('.copy-name-btn');
+    if (!btn || !navigator.clipboard) return;
+    btn.addEventListener('click', function() {
+        navigator.clipboard.writeText(btn.dataset.name).then(function() {
+            btn.classList.add('copied');
+            btn.title = 'Copied!';
+            setTimeout(function() {
+                btn.classList.remove('copied');
+                btn.title = 'Copy scientific name';
+            }, 2000);
+        });
+    });
+})();
+</script>
+
+<script>
+// Recently viewed
+(function() {
+    try {
+        const entry = {
+            slug: "erythroxylum-coca",
+            name: "Erythroxylum coca",
+            common_name: "Coca"
+        };
+        let recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+        recent = recent.filter(function(p) { return p.slug !== entry.slug; });
+        recent.unshift(entry);
+        localStorage.setItem('recentlyViewed', JSON.stringify(recent.slice(0, 8)));
+    } catch(e) {}
+})();
+</script>
+
 </body>
 </html>

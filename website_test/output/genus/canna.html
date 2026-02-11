@@ -61,12 +61,18 @@
 
     
 
+    <div class="sort-bar">
+        <span class="sort-label">Sort by:</span>
+        <button class="sort-btn active" data-sort="scientific">Scientific name</button>
+        <button class="sort-btn" data-sort="common">Common name</button>
+    </div>
+
     <div class="plant-list-grid">
         
         <a href="../plant/canna-glauca.html" class="plant-list-item">
             <div class="plant-list-image">
                 
-                <img src="../static/images/plants/canna-glauca.jpg" alt="Canna glauca">
+                <img src="../static/images/plants/canna-glauca.jpg" alt="Canna glauca" loading="lazy">
                 
             </div>
             <div class="plant-list-info">
@@ -82,12 +88,51 @@
 
     </main>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
     <footer class="site-footer">
         <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="../stats.html">Collection Statistics</a></p>
     </footer>
 
-    <script src="../static/js/search.js"></script>
-    <script src="../static/js/controls.js"></script>
+    <script src="../static/js/search.js?v=1770834692"></script>
+    <script src="../static/js/controls.js?v=1770834692"></script>
+    <script src="../static/js/lightbox.js?v=1770834692"></script>
     
+<script>
+(function() {
+    const grid = document.querySelector('.plant-list-grid');
+    const buttons = document.querySelectorAll('.sort-btn');
+    if (!grid) return;
+
+    function sortGrid(by) {
+        const items = Array.from(grid.querySelectorAll('.plant-list-item'));
+        items.sort(function(a, b) {
+            let valA, valB;
+            if (by === 'common') {
+                valA = (a.querySelector('p')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('p')?.textContent || '').trim().toLowerCase();
+                if (!valA && !valB) return 0;
+                if (!valA) return 1;
+                if (!valB) return -1;
+            } else {
+                valA = (a.querySelector('h3')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('h3')?.textContent || '').trim().toLowerCase();
+            }
+            return valA.localeCompare(valB);
+        });
+        items.forEach(function(item) { grid.appendChild(item); });
+    }
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            sortGrid(btn.dataset.sort);
+        });
+    });
+})();
+</script>
+
 </body>
 </html>

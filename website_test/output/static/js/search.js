@@ -20,7 +20,7 @@
     async function loadSearchData() {
         try {
             const baseUrl = getBaseUrl();
-            const response = await fetch(baseUrl + '/static/js/search-data.json');
+            const response = await fetch(baseUrl + '/static/data/search-data.json');
             searchData = await response.json();
         } catch (error) {
             console.error('Failed to load search data:', error);
@@ -158,4 +158,7 @@
 
     // Load search data on page load
     loadSearchData();
+
+    // Expose for hero search
+    window.plantSearch = search;
 })();

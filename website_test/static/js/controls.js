@@ -57,7 +57,8 @@
 
             // Misc
             image_coming_soon: "Image coming soon",
-            no_results: "No plants found"
+            no_results: "No plants found",
+            adopt_me: "Adopt me!"
         },
         hu: {
             // Header
@@ -113,7 +114,8 @@
 
             // Misc
             image_coming_soon: "Kép hamarosan",
-            no_results: "Nem található növény"
+            no_results: "Nem található növény",
+            adopt_me: "Fogadj örökbe!"
         }
     };
 
@@ -211,6 +213,36 @@
         if (langToggle) {
             langToggle.addEventListener('click', toggleLanguage);
         }
+
+        initBackToTop();
+        initSearchShortcut();
+    }
+
+    // ===== SEARCH SHORTCUT =====
+    function initSearchShortcut() {
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '/' &&
+                document.activeElement.tagName !== 'INPUT' &&
+                document.activeElement.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                var searchInput = document.getElementById('search-input');
+                if (searchInput) { searchInput.focus(); searchInput.select(); }
+            }
+        });
+    }
+
+    // ===== BACK TO TOP =====
+    function initBackToTop() {
+        const btn = document.getElementById('back-to-top');
+        if (!btn) return;
+
+        window.addEventListener('scroll', function() {
+            btn.classList.toggle('visible', window.scrollY > 300);
+        }, { passive: true });
+
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 
     // Run on DOM ready

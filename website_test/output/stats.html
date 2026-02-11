@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Collection Statistics - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./az-index.html">A-Z Index</a></li>
+                    <li><a href="./families.html">Families</a></li>
+                    <li><a href="./genera.html">Genera</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="stats-page">
+    <h1>Collection Statistics</h1>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">196</div>
+            <div class="stat-label">Total Plants</div>
+        </div>
+        <div class="stat-card highlight">
+            <div class="stat-number">137</div>
+            <div class="stat-label">With Photos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">161</div>
+            <div class="stat-label">With Descriptions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">164</div>
+            <div class="stat-label">With Distribution Data</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">53</div>
+            <div class="stat-label">Families</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">105</div>
+            <div class="stat-label">Genera</div>
+        </div>
+    </div>
+
+    <section class="stats-section">
+        <h2>Top Families by Species Count</h2>
+        <div class="family-chart">
+            
+            <div class="chart-row">
+                <a href="./family/cactaceae.html" class="chart-label">Cactaceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 100.0%"></div>
+                </div>
+                <span class="chart-value">12</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/zingiberaceae.html" class="chart-label">Zingiberaceae Martinov</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 92.0%"></div>
+                </div>
+                <span class="chart-value">11</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/apocynaceae.html" class="chart-label">Apocynaceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 83.0%"></div>
+                </div>
+                <span class="chart-value">10</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/fabaceae.html" class="chart-label">Fabaceae Lindl.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 83.0%"></div>
+                </div>
+                <span class="chart-value">10</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/araceae.html" class="chart-label">Araceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 75.0%"></div>
+                </div>
+                <span class="chart-value">9</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/musaceae.html" class="chart-label">Musaceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 75.0%"></div>
+                </div>
+                <span class="chart-value">9</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/myrtaceae.html" class="chart-label">Myrtaceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 75.0%"></div>
+                </div>
+                <span class="chart-value">9</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/rubiaceae.html" class="chart-label">Rubiaceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 75.0%"></div>
+                </div>
+                <span class="chart-value">9</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/arecaceae-bercht-jpresl.html" class="chart-label">Arecaceae Bercht. & J.Presl</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 67.0%"></div>
+                </div>
+                <span class="chart-value">8</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/aristolochiaceae.html" class="chart-label">Aristolochiaceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 67.0%"></div>
+                </div>
+                <span class="chart-value">8</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/moraceae.html" class="chart-label">Moraceae Gaudich.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 67.0%"></div>
+                </div>
+                <span class="chart-value">8</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/anacardiaceae-rbr.html" class="chart-label">Anacardiaceae R.Br.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 50.0%"></div>
+                </div>
+                <span class="chart-value">6</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/caricaceae.html" class="chart-label">Caricaceae Dumort.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 50.0%"></div>
+                </div>
+                <span class="chart-value">6</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/passifloraceae-juss-ex.html" class="chart-label">Passifloraceae Juss. ex Roussel</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 50.0%"></div>
+                </div>
+                <span class="chart-value">6</span>
+            </div>
+            
+            <div class="chart-row">
+                <a href="./family/orchidaceae.html" class="chart-label">Orchidaceae Juss.</a>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: 33.0%"></div>
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+        </div>
+    </section>
+</div>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="./stats.html">Collection Statistics</a></p>
+    </footer>
+
+    <script src="./static/js/search.js?v=1770834692"></script>
+    <script src="./static/js/controls.js?v=1770834692"></script>
+    <script src="./static/js/lightbox.js?v=1770834692"></script>
+    
+</body>
+</html>
