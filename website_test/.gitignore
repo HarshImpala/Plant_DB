@@ -1,0 +1,26 @@
+# Generated site — rebuilt by GitHub Actions, don't commit
+output/
+
+# Plant images — large binary files, excluded to keep repo small
+# GitHub Actions uses placeholder images instead (PLACEHOLDER_IMAGES=1)
+static/images/plants/
+
+# Wikipedia API cache — can be regenerated, often large
+data/wikipedia_cache.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

@@ -5,6 +5,7 @@ Generates all HTML pages from the SQLite database.
 Run this script after importing data to rebuild the website.
 """
 
+import os
 import sqlite3
 import json
 import re
@@ -14,8 +15,11 @@ from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
 
 
-# Site base URL — change this before deploying to a real domain
-SITE_BASE_URL = "https://example.com"
+# Site base URL — set via SITE_BASE_URL env var or edit here before deploying
+SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://example.com").rstrip("/")
+
+# When PLACEHOLDER_IMAGES=1, skip all plant images (saves space on CI/GitHub Pages)
+PLACEHOLDER_IMAGES = os.environ.get("PLACEHOLDER_IMAGES", "").lower() in ("1", "true", "yes")
 
 # Paths
 BASE_DIR = Path(__file__).parent.parent
@@ -257,7 +261,19 @@ def copy_static_files():
     output_static = OUTPUT_DIR / "static"
     if output_static.exists():
         shutil.rmtree(output_static)
-    shutil.copytree(STATIC_DIR, output_static)
+
+    if PLACEHOLDER_IMAGES:
+        # Copy everything except static/images/plants/ to save space
+        def ignore_plant_images(src, names):
+            src_path = Path(src)
+            if src_path == STATIC_DIR / "images" / "plants":
+                return names  # skip all files in this folder
+            return []
+        shutil.copytree(STATIC_DIR, output_static, ignore=ignore_plant_images)
+        (output_static / "images" / "plants").mkdir(parents=True, exist_ok=True)
+        print("  (placeholder mode: plant images skipped)")
+    else:
+        shutil.copytree(STATIC_DIR, output_static)
 
 
 def build_site():
@@ -282,6 +298,9 @@ def build_site():
 
     # Get all data
     plants = get_all_plants(conn)
+    if PLACEHOLDER_IMAGES:
+        for p in plants:
+            p['image_filename'] = None
     families = get_categories(conn, 'family')
     genera = get_categories(conn, 'genus')
     collections, plant_to_collection = load_collections(plants)
