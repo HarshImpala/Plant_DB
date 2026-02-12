@@ -1,5 +1,9 @@
 /* Plant Encyclopedia - Wikipedia-style Static Site */
 
+/* === Language visibility === */
+[data-lang="hu"] .lang-en { display: none !important; }
+[data-lang="en"] .lang-hu { display: none !important; }
+
 /* === Reset & Base === */
 *, *::before, *::after {
     box-sizing: border-box;

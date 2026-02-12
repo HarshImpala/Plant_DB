@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Garden Map — Plant Encyclopedia{% endblock %}
+
+{% block head %}
+<style>
+    .map-page {
+        padding: 2rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .map-page h2 {
+        margin-bottom: 0.5rem;
+    }
+    .map-page .map-subtitle {
+        color: var(--text-muted, #666);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+    }
+    .pdf-container {
+        width: 100%;
+        border: 1px solid var(--border-color, #ddd);
+        border-radius: 6px;
+        overflow: hidden;
+        background: #f5f5f5;
+    }
+    .pdf-container iframe {
+        width: 100%;
+        height: 80vh;
+        min-height: 600px;
+        border: none;
+        display: block;
+    }
+    .pdf-fallback {
+        padding: 2rem;
+        text-align: center;
+    }
+    .pdf-download-link {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.6rem 1.4rem;
+        background: var(--accent-color, #2e7d32);
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .pdf-download-link:hover {
+        opacity: 0.85;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="map-page">
+    <h2>Botanical Garden Map</h2>
+    <p class="map-subtitle">Fővárosi Állat- és Növénykert — Fűvészkert, 2021</p>
+
+    <div class="pdf-container">
+        <iframe
+            src="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf"
+            title="Fűvészkert Garden Map 2021"
+            type="application/pdf">
+            <div class="pdf-fallback">
+                <p>Your browser cannot display the PDF inline.</p>
+                <a class="pdf-download-link"
+                   href="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf"
+                   download>Download Map PDF</a>
+            </div>
+        </iframe>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted,#666);">
+        <a href="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf" target="_blank">
+            Open in new tab ↗
+        </a>
+    </p>
+</div>
+{% endblock %}

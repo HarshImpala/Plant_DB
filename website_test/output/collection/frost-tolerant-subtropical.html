@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Frost-tolerant subtropical plants - Collections - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li><a href="../families.html" data-translate="nav_families">Families</a></li>
+                    <li><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="../map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="category-page">
+    <nav class="breadcrumb">
+        <a href="../index.html">
+            <span class="lang-en">Home</span>
+            <span class="lang-hu">Főoldal</span>
+        </a> &rsaquo;
+        <a href="../collections.html">
+            <span class="lang-en">Collections</span>
+            <span class="lang-hu">Gyűjtemények</span>
+        </a> &rsaquo;
+        <span>
+            <span class="lang-en">Frost-tolerant subtropical plants</span>
+            <span class="lang-hu">Fagytűrő szubtrópusi növények</span>
+        </span>
+    </nav>
+
+    <h1>
+        <span class="lang-en">Frost-tolerant subtropical plants</span>
+        <span class="lang-hu">Fagytűrő szubtrópusi növények</span>
+    </h1>
+
+    <p class="category-meta">
+        <span class="lang-en">0 plants in this collection</span>
+        <span class="lang-hu">0 növény ebben a gyűjteményben</span>
+    </p>
+
+    
+
+    
+    <div class="category-description">
+        <p class="lang-en">Many subtropical plants have been successfully overwintering directly in front of the palm house for many years. One of them is the pomegranate, which survives our frosty winters, but sheds its leaves. The Chinese hemp palm (Trachycarpus fortunei), which lives in the Himalayas, on the other hand, can withstand snow and frost at altitudes of 2-3 thousand metres. For years, the evergreen bay laurel has been out in the open, winter and summer, without any cover. Kiwifruit from China ripens in late autumn.</p>
+        <p class="lang-hu">Közvetlenül a pálmaház előtt már hosszú évek óta sikeresen telel át számos szubtrópusi növény. Ilyen a gránátalma, mely fagyos telünket lombhullatással vészeli át. A Himalája 2-3 ezer méteres magasságában élő kínai kenderpálma viszont sikerrel dacol hóval, faggyal! Az örökzöld babér évek óta minden takarás nélkül télen-nyáron kint van a szabadban. A Kínából származó kivi késő őszre érleli be termését.</p>
+    </div>
+    
+
+    
+    <p style="color:var(--color-text-light); margin-top:2rem;">
+        <span class="lang-en">No plants assigned to this collection yet. Add canonical plant names to <code>data/collections.json</code>.</span>
+        <span class="lang-hu">Még nincs növény hozzárendelve ehhez a gyűjteményhez. Adjon hozzá kanonikus növényneveket a <code>data/collections.json</code> fájlhoz.</span>
+    </p>
+    
+</div>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="../stats.html">Collection Statistics</a></p>
+    </footer>
+
+    <script src="../static/js/search.js?v=1770924407"></script>
+    <script src="../static/js/controls.js?v=1770924407"></script>
+    <script src="../static/js/lightbox.js?v=1770924407"></script>
+    
+<script>
+(function() {
+    const grid = document.querySelector('.plant-list-grid');
+    const buttons = document.querySelectorAll('.sort-btn');
+    if (!grid) return;
+
+    function sortGrid(by) {
+        const items = Array.from(grid.querySelectorAll('.plant-list-item'));
+        items.sort(function(a, b) {
+            let valA, valB;
+            if (by === 'common') {
+                valA = (a.querySelector('p')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('p')?.textContent || '').trim().toLowerCase();
+                if (!valA && !valB) return 0;
+                if (!valA) return 1;
+                if (!valB) return -1;
+            } else {
+                valA = (a.querySelector('h3')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('h3')?.textContent || '').trim().toLowerCase();
+            }
+            return valA.localeCompare(valB);
+        });
+        items.forEach(function(item) { grid.appendChild(item); });
+    }
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            sortGrid(btn.dataset.sort);
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

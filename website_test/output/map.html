@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Garden Map — Plant Encyclopedia</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    
+<style>
+    .map-page {
+        padding: 2rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .map-page h2 {
+        margin-bottom: 0.5rem;
+    }
+    .map-page .map-subtitle {
+        color: var(--text-muted, #666);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+    }
+    .pdf-container {
+        width: 100%;
+        border: 1px solid var(--border-color, #ddd);
+        border-radius: 6px;
+        overflow: hidden;
+        background: #f5f5f5;
+    }
+    .pdf-container iframe {
+        width: 100%;
+        height: 80vh;
+        min-height: 600px;
+        border: none;
+        display: block;
+    }
+    .pdf-fallback {
+        padding: 2rem;
+        text-align: center;
+    }
+    .pdf-download-link {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.6rem 1.4rem;
+        background: var(--accent-color, #2e7d32);
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .pdf-download-link:hover {
+        opacity: 0.85;
+    }
+</style>
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="./az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li><a href="./families.html" data-translate="nav_families">Families</a></li>
+                    <li><a href="./genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="./map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="./collections.html" data-translate="nav_collections">Collections</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="map-page">
+    <h2>Botanical Garden Map</h2>
+    <p class="map-subtitle">Fővárosi Állat- és Növénykert — Fűvészkert, 2021</p>
+
+    <div class="pdf-container">
+        <iframe
+            src="./static/maps/Fuveszkert_terkepes_2021.0503.pdf"
+            title="Fűvészkert Garden Map 2021"
+            type="application/pdf">
+            <div class="pdf-fallback">
+                <p>Your browser cannot display the PDF inline.</p>
+                <a class="pdf-download-link"
+                   href="./static/maps/Fuveszkert_terkepes_2021.0503.pdf"
+                   download>Download Map PDF</a>
+            </div>
+        </iframe>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted,#666);">
+        <a href="./static/maps/Fuveszkert_terkepes_2021.0503.pdf" target="_blank">
+            Open in new tab ↗
+        </a>
+    </p>
+</div>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="./stats.html">Collection Statistics</a></p>
+    </footer>
+
+    <script src="./static/js/search.js?v=1770924407"></script>
+    <script src="./static/js/controls.js?v=1770924407"></script>
+    <script src="./static/js/lightbox.js?v=1770924407"></script>
+    
+</body>
+</html>

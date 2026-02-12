@@ -78,6 +78,20 @@
                         <td><a href="{{ base_url }}/genus/{{ plant.genus | slugify }}.html">{{ plant.genus }}</a></td>
                     </tr>
                     {% endif %}
+                    {% if plant_collection %}
+                    <tr>
+                        <th>
+                            <span class="lang-en">Collection</span>
+                            <span class="lang-hu">Gyűjtemény</span>
+                        </th>
+                        <td>
+                            <a href="{{ base_url }}/collection/{{ plant_collection.slug }}.html">
+                                <span class="lang-en">{{ plant_collection.name_en }}</span>
+                                <span class="lang-hu">{{ plant_collection.name_hu }}</span>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endif %}
                     {% if plant.wfo_id %}
                     <tr>
                         <th>WFO ID</th>

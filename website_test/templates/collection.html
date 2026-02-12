@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}{{ collection.name_en }} - Collections - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<div class="category-page">
+    <nav class="breadcrumb">
+        <a href="{{ base_url }}/index.html">
+            <span class="lang-en">Home</span>
+            <span class="lang-hu">Főoldal</span>
+        </a> &rsaquo;
+        <a href="{{ base_url }}/collections.html">
+            <span class="lang-en">Collections</span>
+            <span class="lang-hu">Gyűjtemények</span>
+        </a> &rsaquo;
+        <span>
+            <span class="lang-en">{{ collection.name_en }}</span>
+            <span class="lang-hu">{{ collection.name_hu }}</span>
+        </span>
+    </nav>
+
+    <h1>
+        <span class="lang-en">{{ collection.name_en }}</span>
+        <span class="lang-hu">{{ collection.name_hu }}</span>
+    </h1>
+
+    <p class="category-meta">
+        <span class="lang-en">{{ plants | length }} plant{% if plants | length != 1 %}s{% endif %} in this collection</span>
+        <span class="lang-hu">{{ plants | length }} növény ebben a gyűjteményben</span>
+    </p>
+
+    {% if collection.image %}
+    <div style="margin-bottom:1.5rem;">
+        <img src="{{ base_url }}/static/images/collections/{{ collection.image }}"
+             alt="{{ collection.name_en }}"
+             style="max-width:100%; max-height:320px; object-fit:cover; border-radius:8px;">
+    </div>
+    {% endif %}
+
+    {% if collection.description_en or collection.description_hu %}
+    <div class="category-description">
+        <p class="lang-en">{{ collection.description_en }}</p>
+        <p class="lang-hu">{{ collection.description_hu }}</p>
+    </div>
+    {% endif %}
+
+    {% if plants %}
+    <div class="sort-bar">
+        <span class="sort-label">
+            <span class="lang-en">Sort by:</span>
+            <span class="lang-hu">Rendezés:</span>
+        </span>
+        <button class="sort-btn active" data-sort="scientific">
+            <span class="lang-en">Scientific name</span>
+            <span class="lang-hu">Tudományos név</span>
+        </button>
+        <button class="sort-btn" data-sort="common">
+            <span class="lang-en">Common name</span>
+            <span class="lang-hu">Köznév</span>
+        </button>
+    </div>
+
+    <div class="plant-list-grid">
+        {% for plant in plants %}
+        <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-list-item">
+            <div class="plant-list-image">
+                {% if plant.image_filename %}
+                <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.canonical_name }}" loading="lazy">
+                {% else %}
+                <div class="placeholder-image"></div>
+                {% endif %}
+            </div>
+            <div class="plant-list-info">
+                <h3>{{ plant.canonical_name or plant.scientific_name }}</h3>
+                {% if plant.common_name %}
+                <p>{{ plant.common_name }}</p>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p style="color:var(--color-text-light); margin-top:2rem;">
+        <span class="lang-en">No plants assigned to this collection yet. Add canonical plant names to <code>data/collections.json</code>.</span>
+        <span class="lang-hu">Még nincs növény hozzárendelve ehhez a gyűjteményhez. Adjon hozzá kanonikus növényneveket a <code>data/collections.json</code> fájlhoz.</span>
+    </p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const grid = document.querySelector('.plant-list-grid');
+    const buttons = document.querySelectorAll('.sort-btn');
+    if (!grid) return;
+
+    function sortGrid(by) {
+        const items = Array.from(grid.querySelectorAll('.plant-list-item'));
+        items.sort(function(a, b) {
+            let valA, valB;
+            if (by === 'common') {
+                valA = (a.querySelector('p')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('p')?.textContent || '').trim().toLowerCase();
+                if (!valA && !valB) return 0;
+                if (!valA) return 1;
+                if (!valB) return -1;
+            } else {
+                valA = (a.querySelector('h3')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('h3')?.textContent || '').trim().toLowerCase();
+            }
+            return valA.localeCompare(valB);
+        });
+        items.forEach(function(item) { grid.appendChild(item); });
+    }
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            sortGrid(btn.dataset.sort);
+        });
+    });
+})();
+</script>
+{% endblock %}

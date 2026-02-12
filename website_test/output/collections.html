@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'light';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Collections - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    
+<style>
+    .collections-page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    .collections-page > h1 {
+        margin-bottom: 0.4rem;
+    }
+    .collections-page > .page-intro {
+        color: var(--color-text-light);
+        margin-bottom: 2rem;
+    }
+    .collections-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .collection-card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--color-border-light);
+        border-radius: 8px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background: var(--color-white);
+        transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .collection-card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
+    .collection-card-image {
+        width: 100%;
+        height: 160px;
+        background: var(--color-header-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        overflow: hidden;
+    }
+    .collection-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .collection-card-body {
+        padding: 1rem 1.2rem 1.2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .collection-card-body h2 {
+        font-size: 1.05rem;
+        margin: 0 0 0.5rem;
+        line-height: 1.3;
+    }
+    .collection-card-body p {
+        font-size: 0.875rem;
+        color: var(--color-text-light);
+        margin: 0 0 0.8rem;
+        flex: 1;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .collection-card-count {
+        font-size: 0.82rem;
+        color: var(--color-accent);
+        font-weight: 600;
+    }
+    .collections-empty {
+        padding: 3rem;
+        text-align: center;
+        color: var(--color-text-light);
+        border: 2px dashed var(--color-border-light);
+        border-radius: 8px;
+    }
+</style>
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="site-logo">
+                <h1>Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="./az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li><a href="./families.html" data-translate="nav_families">Families</a></li>
+                    <li><a href="./genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="./map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="./collections.html" data-translate="nav_collections">Collections</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+<div class="collections-page">
+    <h1>
+        <span class="lang-en" data-translate="collections_title">Collections</span>
+        <span class="lang-hu">Gyűjtemények</span>
+    </h1>
+    <p class="page-intro">
+        <span class="lang-en" data-translate="collections_intro">Browse plants organised by themed collections within the botanical garden.</span>
+        <span class="lang-hu">Böngésszen növények között a botanikus kert tematikus gyűjteményei szerint.</span>
+    </p>
+
+    
+    <div class="collections-grid">
+        
+        <a href="./collection/annual-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Collection of annual plants</span>
+                    <span class="lang-hu">Egynyári növények gyűjteménye</span>
+                </h2>
+                <p>
+                    <span class="lang-en">A colourful carpet of flowers greets visitors at the entrance most of the year. Most annual plants are native to the tropics and subtropics. They can be planted outdoors only after…</span>
+                    <span class="lang-hu">Az év nagy részében a bejáratnál színpompás virágszőnyeg fogadja a látogatókat. Az egynyári növények többsége a trópusokon, szubtrópusi tájakon honos. Így kiültetésük a szabadba, n…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/taxonomic-collection.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Taxonomic collection</span>
+                    <span class="lang-hu">Rendszertani gyűjtemény</span>
+                </h2>
+                <p>
+                    <span class="lang-en">The taxonomic collection presents several hundred species of the temperate-zone herbaceous representatives of the flowering plant family. In each flowerbed there are the species of…</span>
+                    <span class="lang-hu">A rendszertani gyűjtemény, a zárvatermő virágos növénycsalád mérsékeltövi, lágyszárú képviselői közül mutat be több száz fajt. Minden virágágyásban 1-1 (legfeljebb 2) család fajai …</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/deciduous-trees-shrubs.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Deciduous trees and shrubs (Arboretum 1)</span>
+                    <span class="lang-hu">Lombos fák, cserjék (Arborétum 1.)</span>
+                </h2>
+                <p>
+                    <span class="lang-en">A special feature of the Garden is the arboretum, a collection of living trees. During our walk, despite the small area, we can get to know more than 2000 species and varieties. St…</span>
+                    <span class="lang-hu">A Kert különös értéke az arborétum, az élő fák gyűjteménye. Sétánk során, a kis terület ellenére, több mint 2000 fajjal, változattal ismerkedhetünk meg. A mérsékeltövi lombos fák, …</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/north-american-prairie-desert.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">North American prairie and desert plants</span>
+                    <span class="lang-hu">Észak amerikai préri és sivatagok növényei</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Prairies are the treeless grasslands of the North American continent. One of its low-growing grasses is the buffalo grass (Bouteloua dactyloides). Among the many attractive floweri…</span>
+                    <span class="lang-hu">Az észak-amerikai kontinens fátlan, füves pusztái, a prérik. Egyik alacsony termetű pázsitfüve a bölényfű. A gyepek számos tetszetős virágú évelői közül kertjeink kedvelt dísze pél…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/citrus-fruits.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Collection of citrus fruits (Citroideae)</span>
+                    <span class="lang-hu">Citrusfélék gyűjteménye</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Due to the limited space, the rich collection of citrus fruits - lemons, oranges, mandarins, pomelos, grapefruit, etc. and their relatives and their hybrids and varieties - can onl…</span>
+                    <span class="lang-hu">A hely szűke miatt csak kívülről tekinthető meg a citrusfélék – citrom, narancs, mandarin, pomelo, grapefruit stb. valamint rokonaik és azok hibridjeinek, fajtáinak gazdag gyűjtemé…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/loess-sand-wetlands.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Plants of loess lands, sand steppes and wetlands (Collection of plants of the Hungarian landscapes 1)</span>
+                    <span class="lang-hu">A lösz- és homokpuszták valamint a vizes élőhelyek növényei (A hazai tájak növényeinek gyűjteménye 1.)</span>
+                </h2>
+                <p>
+                    <span class="lang-en">One of the main tasks of the Botanic Garden is to make known as many of the plants native to Hungary as possible. They are presented in groups according to their natural habitat. A…</span>
+                    <span class="lang-hu">A Füvészkert egyik fő feladata a Magyarországon honos növények lehető legnagyobb részének megismertetése. Ezeket természetes élőhelyük szerinti csoportosításban mutatjuk be. Alföld…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/frost-tolerant-subtropical.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Frost-tolerant subtropical plants</span>
+                    <span class="lang-hu">Fagytűrő szubtrópusi növények</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Many subtropical plants have been successfully overwintering directly in front of the palm house for many years. One of them is the pomegranate, which survives our frosty winters, …</span>
+                    <span class="lang-hu">Közvetlenül a pálmaház előtt már hosszú évek óta sikeresen telel át számos szubtrópusi növény. Ilyen a gránátalma, mely fagyos telünket lombhullatással vészeli át. A Himalája 2-3 e…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/palms.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Collection of palms</span>
+                    <span class="lang-hu">Pálmák gyűjteménye</span>
+                </h2>
+                <p>
+                    <span class="lang-en">The domed, central part of the palm house is home to the palms. Most of their nearly 3000 species are native to the equatorial region. The kentia palm (Howea forstreiana), the Chin…</span>
+                    <span class="lang-hu">A pálmaház kupolás, központi része ad otthont a pálmaféléknek. Közel 3000 fajuk többségének hazája az Egyenlítő vidéke. Délkelet-Ázsia trópusairól származik a kenciapálma, a kínai …</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/tropical-crop-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Tropical crop plants</span>
+                    <span class="lang-hu">Trópusi haszonnövények</span>
+                </h2>
+                <p>
+                    <span class="lang-en">The coffee (Coffea arabica) plant originates from the Ethiopian highlands in North Africa. The coconut palm (Cocos nucifera) is a tropical coastal plant that can reach up to 30 met…</span>
+                    <span class="lang-hu">Észak-Afrikából, az Etiópiai-fennsíkról származik a kávécserje. A kókuszpálma a trópusi tengerpartok növénye, magassága a 30 métert is elérheti. Mérete alapján fatermetű, 8-10 méte…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/subtropical-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Subtropical plants</span>
+                    <span class="lang-hu">Szubtrópusi növények</span>
+                </h2>
+                <p>
+                    <span class="lang-en">In the house of subtropical plants, which require only 10-12°C in winter, one of the Norfolk Island pine (Araucaria heterophylla) from the Pacific islands around Australia reaches …</span>
+                    <span class="lang-hu">A télen csupán 10-12 C°-ot igénylő szubtrópusi növények házában az Ausztrália környéki csendes-óceáni szigetekről származó egyik szobafenyő az épület 14 méteres gerincéig ér. A Föl…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/broadleaved-evergreens.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Collection of broadleaved evergreen trees and shrubs</span>
+                    <span class="lang-hu">Örökzöld lombosfák, cserjék gyűjteménye</span>
+                </h2>
+                <p>
+                    <span class="lang-en">The mostly continental, cold-winter climate of the Carpathian Basin allows only a few species of evergreen trees and shrubs to grow naturally. However, many species can be successf…</span>
+                    <span class="lang-hu">A Kárpát-medence többnyire kontinentális, hideg telű klímája csak kevés örökzöld fa- és cserjefaj természetes előfordulását teszi lehetővé. Védett helyeken, kertekben, parkokban ül…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/deciduous-forest-understorey.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Deciduous forest understorey</span>
+                    <span class="lang-hu">Lombos erdők aljnövényzete</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Of the typical plants of the forests of the Hungarian Middle Mountains, which have mesic soils, here blooms in spring the hellebore (Helleborus odorus), the famous flowering plant …</span>
+                    <span class="lang-hu">A Magyar Középhegység üde talajú erdeinek a jellemző növényei közül tavasszal itt virágzik a dél-dunántúli erdők nevezetessége az illatos hunyor, a nagyon ritka illír sáfrány, nálu…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/east-asian-garden.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">East-Asian garden</span>
+                    <span class="lang-hu">Kelet-ázsiai kert</span>
+                </h2>
+                <p>
+                    <span class="lang-en">A special section of the arboretum showcases some of the trees and shrubs of East Asia. Ornamental hazelnut species and witch alders are already in bloom in the winter months. Late…</span>
+                    <span class="lang-hu">Az arborétum különleges része Kelet-Ázsia fái és cserjéi közül mutat be néhányat. Már a téli hónapokban virágoznak a díszmogyoró fajok és a bóbitacserje. Később következnek a japán…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/bonsai.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Bonsai collection</span>
+                    <span class="lang-hu">Bonsai gyűjtemény</span>
+                </h2>
+                <p>
+                    <span class="lang-en">In the youngest and still developing collection of the garden, you can study the tree art and living specimens of Far Eastern tree breeding. The largest old specimen is a Chinese e…</span>
+                    <span class="lang-hu">A kert legfiatalabb még alakuló gyűjteményében a távol keleti fanevelés művészete és élő egyedei tanulmányozhatók. A legtermetesebb idős példány egy kínai szilfa. A kastély déli ho…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/dry-grassland-middle-mountains.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Dry grassland plants of the Middle Mountains</span>
+                    <span class="lang-hu">Középhegységi száraz gyepek növényei</span>
+                </h2>
+                <p>
+                    <span class="lang-en">On the hill in front of us, we get a taste of the diverse flora of the dry grasslands of the Hungarian Middle Mountains. The Smoketree bush (Cotinus coggygria), famous for its fier…</span>
+                    <span class="lang-hu">Magyar Középhegység száraz gyepjeinek változatos flórájából kapunk ízelítőt az előttünk magasodó dombon. Az őszi tűzvörös lombszíneződéséről nevezetes cserszömörce és a sziklai ürö…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/high-mountain-rock-gardens.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">High mountain rock gardens</span>
+                    <span class="lang-hu">Magashegységi sziklakertek</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Many of the high-mountain plants are popular ornaments of our rock gardens, such as the collection of candytufts (Iberis tatarica), Alpine rock-cress (Arabis alpina), thrifts (Arme…</span>
+                    <span class="lang-hu">A magashegységek növényei közül sok, sziklakertjeink kedvelt dísze, mint például a tatárvirág, ikravirág, pázsitszegfű, kőtörőfű, varjúháj és harangvirág fajok gyűjteménye teszi vá…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/tropical-aquatic-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Collection of tropical aquatic plants</span>
+                    <span class="lang-hu">Trópusi vízinövények gyűjteménye</span>
+                </h2>
+                <p>
+                    <span class="lang-en">The most notable plant in the collection is the Victoria water lily, native to South America, which takes its Latin name (Victoria regia) from the former Queen Victoria of England.…</span>
+                    <span class="lang-hu">A gyűjtemény legnevezetesebb növénye a Viktória-ház névadója, a Dél-Amerikában honos amazonasi tündérrózsa, mely latin nevét (Victoria regia) az egykori angol Viktória királynőről …</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/carnivorous-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Carnivorous Plants</span>
+                    <span class="lang-hu">Rovaremésztő növények</span>
+                </h2>
+                <p>
+                    <span class="lang-en">On the tables by the window you can see a collection of plants that lead a special way of life. Their special ability is to obtain nitrogen, essential for life, from the proteins o…</span>
+                    <span class="lang-hu">Az ablak melletti asztalokon különleges életmódot folytató növények gyűjteményét látjuk. Különleges képességük, hogy az élet számára nélkülözhetetlen nitrogént apró élő állatok feh…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/araceae.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Araceae</span>
+                    <span class="lang-hu">Kontyvirágfélék</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Plants in the family Araceae are distributed all over the world, but especially in the tropics. Their tiny flowers form a compact spadix, covered with spathes when young. Spathes o…</span>
+                    <span class="lang-hu">A kontyvirágfélék az egész Földön, de különösen a trópusokon elterjedtek. Apró virágaik tömött torzsavirágzatot alkotnak, amelyet fiatal korban buroklevél takar. A kála buroklevele…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/bromeliaceae.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Bromeliaceae, the pineapple family</span>
+                    <span class="lang-hu">Ananászfélék</span>
+                </h2>
+                <p>
+                    <span class="lang-en">They are native to the tropical and subtropical regions of Central and South America. Most of their species live clinging to the trunks and branches of tall trees in tropical rainf…</span>
+                    <span class="lang-hu">Közép- és Dél-Amerika trópusi, szubtrópusi vidékének lakói. Fajaik többsége a trópusi esőerdők magas fáinak törzsén, ágain kapaszkodva éli életét. Kivétel a család névadója, a tala…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/tropical-ferns-shade-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Tropical ferns and other shade-loving plants</span>
+                    <span class="lang-hu">Trópusi páfrányok és más árnyékkedvelő növények</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Only shade-tolerant plants can survive in the low-light environment at ground level in tropical rainforests. These include the ferns, while of the flowering shade-tolerant plants, …</span>
+                    <span class="lang-hu">A trópusi esőerdők talajszintjében, a fényszegény környezetben csak az árnyéktűrő növények képesek megélni. Ilyenek többek közt a páfrányok és a virágos növények közül az itt látha…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/orchids.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Orchids</span>
+                    <span class="lang-hu">Orchideák</span>
+                </h2>
+                <p>
+                    <span class="lang-en">The orchids, with their extremely varied flowers and shapes, are found almost all over the world. But 90% of their species are native to the tropics and subtropics. Today, botany k…</span>
+                    <span class="lang-hu">A színekben és alakban rendkívül változatos virágú orchideák csaknem az egész Földön elterjedtek. Fajaik 90%-a azonban a trópusok, szubtrópusok lakója. A tudomány ma mintegy 22 eze…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/succulent-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Succulent plants</span>
+                    <span class="lang-hu">Pozsgás növények</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Succulent plants are particularly well adapted to the arid, semi-desert and desert climates. Their shoots and leaves can store a lot of water. There are more than 50 plant families…</span>
+                    <span class="lang-hu">A szárazsághoz, a félsivatagi, sivatagi klímához különösen jól alkalmazkodtak a pozsgás, más néven szukkulens növények. Hajtásaik, leveleik sok vizet képesek raktározni. Több mint …</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/cacti.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Cacti</span>
+                    <span class="lang-hu">Kaktuszok</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Cacti are drought-tolerant, columnar, spherical or disc-shaped plants of the Americas. They are particularly spectacular when they open their flowers in May and June. An interestin…</span>
+                    <span class="lang-hu">Az amerikai kontinens szárazságtűrő, oszlopos, gömb vagy lemez alakú pozsgás növényei a kaktuszok. Különösen májusi, júniusi virágnyílásuk idején látványosak. Érdekes kivétel a lom…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/australian-plants.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Australian plants</span>
+                    <span class="lang-hu">Ausztráliai növények</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Our collection showcases some of the plants of Australia's regions characterised by dry, hot summers and mild, rainy winters. The continent's most distinctive plants are the eucaly…</span>
+                    <span class="lang-hu">Ausztrália száraz, forró nyarú, enyhe, esős telű vidékének növényei közül mutat be gyűjteményünk néhányat. A kontinens legjellegzetesebb növényei az eukaliptuszok. A mirtuszfélék r…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/crop-plants-medicinal.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Collection of crop plants (Medicinal, dye, textile and oil plants)</span>
+                    <span class="lang-hu">Haszonnövények gyűjteménye (Gyógy-, festék-, textil és olajnövények)</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Foxglove is poisonous, but provides an important source of medicine (digitalis). The dyer's woad (Isatis tinctoria) used to provide an important dye. The clary sage was once an ind…</span>
+                    <span class="lang-hu">Mérgező, de fontos gyógyszeralapanyagot (digitalis) szolgáltat a gyűszűvirág. Egykor fontos festékanyagot adott a festő csülleng. Az orvosi zsálya egykor minden gyógynövényes kert …</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/cupressaceae-yew.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Cupressaceae (cypress family) and yew family (Arboretum 4)</span>
+                    <span class="lang-hu">Ciprusfélék, tiszafafélék (Arborétum 4.)</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Cypresses are evergreen coniferous or scaly-leaved trees related to pines. Many species and varieties of the junipers, related to the cypress family, can be seen here. On the left …</span>
+                    <span class="lang-hu">A ciprusfélék a fenyőkkel rokon tű- vagy pikkelylevelű örökzöldek. Rokonságukból a borókaféléknek különösen sok faját, változatát láthatjuk itt. Balra a magas fatermetű virginai bo…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/living-fossils.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Living fossils</span>
+                    <span class="lang-hu">Élő kövületek</span>
+                </h2>
+                <p>
+                    <span class="lang-en">The oldest trees in the Garden are the Chinese ginkgo trees (Ginkgo biloba), which are over 200 years old. They appeared on the Earth about 300 million years ago, and their relativ…</span>
+                    <span class="lang-hu">A Kert legöregebb fái a több mint 200 éves kínai páfrányfenyők. Mintegy 300 millió éve jelentek meg a Földön, rokonságuk a Dinoszauruszokénál is régebbi. Ősszel rőtbarnára színeződ…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/needle-leaved-evergreens.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Needle-leaved evergreens</span>
+                    <span class="lang-hu">Tűlevelű örökzöldek</span>
+                </h2>
+                <p>
+                    <span class="lang-en">Pines are mainly found in northern landscapes and high mountains. Atlas cedar (Cedrus atlantica) is a forest-forming species in the Atlas Mountains of North Africa. Several species…</span>
+                    <span class="lang-hu">A fenyőfélék főként az északi tájak és a magashegységek lakói. Az észak-afrikai Atlasz-hegységben erdőségeket alkotó atlasz cédrus. Rokona, a lombhullató vörösfenyő több faja megta…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+        <a href="./collection/rosaceae.html" class="collection-card">
+            <div class="collection-card-image">
+                
+                🌿
+                
+            </div>
+            <div class="collection-card-body">
+                <h2>
+                    <span class="lang-en">Rosaceae, the Rose family</span>
+                    <span class="lang-hu">Rózsafélék gyűjteménye</span>
+                </h2>
+                <p>
+                    <span class="lang-en">In front of Festetics Castle, you will find a fine collection of the most famous rose varieties produced by the best-known rose breeders. Further away you can see our native wild r…</span>
+                    <span class="lang-hu">A Festetics kastély előtt a legismertebb rózsanemesítők által előállított rózsafajtákból találunk szép gyűjteményt. Távolabb hazai vadon élő rózsáink fajai sorakoznak, valamint a r…</span>
+                </p>
+                <span class="collection-card-count">
+                    <span class="lang-en">0 plants</span>
+                    <span class="lang-hu">0 növény</span>
+                </span>
+            </div>
+        </a>
+        
+    </div>
+    
+</div>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p class="footer-links"><a href="./stats.html">Collection Statistics</a></p>
+    </footer>
+
+    <script src="./static/js/search.js?v=1770924407"></script>
+    <script src="./static/js/controls.js?v=1770924407"></script>
+    <script src="./static/js/lightbox.js?v=1770924407"></script>
+    
+</body>
+</html>

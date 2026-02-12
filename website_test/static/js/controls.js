@@ -10,6 +10,8 @@
             nav_az_index: "A-Z Index",
             nav_families: "Families",
             nav_genera: "Genera",
+            nav_map: "Map",
+            nav_collections: "Collections",
             search_placeholder: "Search plants...",
 
             // Homepage
@@ -67,6 +69,8 @@
             nav_az_index: "A-Z Index",
             nav_families: "Családok",
             nav_genera: "Nemzetségek",
+            nav_map: "Térkép",
+            nav_collections: "Gyűjtemények",
             search_placeholder: "Növény keresése...",
 
             // Homepage

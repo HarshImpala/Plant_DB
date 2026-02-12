@@ -113,6 +113,20 @@ def create_database():
         )
     """)
 
+    # Collections table (seeded from data/collections.json during build)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS collections (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            slug TEXT UNIQUE NOT NULL,
+            name_en TEXT NOT NULL,
+            name_hu TEXT,
+            description_en TEXT,
+            description_hu TEXT,
+            image_filename TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+
     # Create indexes for faster lookups
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_plants_canonical ON plants(canonical_name)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_plants_family ON plants(family)")

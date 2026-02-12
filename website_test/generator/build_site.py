@@ -24,6 +24,7 @@ OUTPUT_DIR = BASE_DIR / "output"
 STATIC_DIR = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "plants.db"
+COLLECTIONS_PATH = DATA_DIR / "collections.json"
 
 
 def slugify(text):
@@ -163,11 +164,92 @@ def build_search_data(plants, conn):
     return search_data
 
 
+def load_collections(plants):
+    """Load collections from JSON, resolve plant references, and seed the DB."""
+    if not COLLECTIONS_PATH.exists():
+        return [], {}
+
+    with open(COLLECTIONS_PATH, encoding='utf-8') as f:
+        raw = json.load(f)
+
+    # Build a lookup: canonical_name (lowercase) → plant dict
+    name_lookup = {}
+    for p in plants:
+        key = (p.get('canonical_name') or '').strip().lower()
+        if key:
+            name_lookup[key] = p
+
+    # Build plant → collection lookup (canonical_name → collection dict)
+    plant_to_collection = {}
+
+    collections = []
+    for col in raw:
+        slug = col.get('slug') or slugify(col.get('name_en') or col.get('name', ''))
+        name_en = col.get('name_en') or col.get('name', '')
+        name_hu = col.get('name_hu', '')
+        desc_en = col.get('description_en') or col.get('description', '')
+        desc_hu = col.get('description_hu', '')
+
+        matched_plants = []
+        for pname in col.get('plants', []):
+            p = name_lookup.get(pname.strip().lower())
+            if p:
+                matched_plants.append(p)
+                plant_to_collection[p['canonical_name']] = {
+                    'slug': slug,
+                    'name_en': name_en,
+                    'name_hu': name_hu,
+                }
+
+        collections.append({
+            'name_en': name_en,
+            'name_hu': name_hu,
+            'slug': slug,
+            'description_en': desc_en,
+            'description_hu': desc_hu,
+            'image': col.get('image'),
+            'plant_count': len(matched_plants),
+            'plants': matched_plants,
+        })
+
+    return collections, plant_to_collection
+
+
+def seed_collections_db(conn, collections):
+    """Seed the collections table in the DB from the loaded collections list."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS collections (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            slug TEXT UNIQUE NOT NULL,
+            name_en TEXT NOT NULL,
+            name_hu TEXT,
+            description_en TEXT,
+            description_hu TEXT,
+            image_filename TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    cursor.execute("DELETE FROM collections")
+    for col in collections:
+        cursor.execute("""
+            INSERT INTO collections (slug, name_en, name_hu, description_en, description_hu, image_filename)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (col['slug'], col['name_en'], col['name_hu'],
+              col['description_en'], col['description_hu'], col.get('image')))
+    conn.commit()
+
+
 def clear_output_dir():
-    """Clear and recreate output directory."""
+    """Clear output directory contents (tolerates the folder itself being locked on Windows)."""
     if OUTPUT_DIR.exists():
-        shutil.rmtree(OUTPUT_DIR)
-    OUTPUT_DIR.mkdir(parents=True)
+        for child in OUTPUT_DIR.iterdir():
+            if child.is_dir():
+                shutil.rmtree(child)
+            else:
+                child.unlink()
+    else:
+        OUTPUT_DIR.mkdir(parents=True)
 
 
 def copy_static_files():
@@ -196,11 +278,15 @@ def build_site():
     (OUTPUT_DIR / "plant").mkdir()
     (OUTPUT_DIR / "family").mkdir()
     (OUTPUT_DIR / "genus").mkdir()
+    (OUTPUT_DIR / "collection").mkdir()
 
     # Get all data
     plants = get_all_plants(conn)
     families = get_categories(conn, 'family')
     genera = get_categories(conn, 'genus')
+    collections, plant_to_collection = load_collections(plants)
+    seed_collections_db(conn, collections)
+    print(f"Loaded {len(collections)} collections, seeded to DB")
 
     print(f"Found {len(plants)} plants, {len(families)} families, {len(genera)} genera")
 
@@ -331,6 +417,7 @@ def build_site():
                        if p['id'] != plant['id']]
         related_plants = related[:6]
 
+        plant_collection = plant_to_collection.get(plant.get('canonical_name'))
         html = template.render(
             base_url='..', build_version=build_version,
             plant=plant,
@@ -339,6 +426,7 @@ def build_site():
             prev_plant=prev_plant,
             next_plant=next_plant,
             related_plants=related_plants,
+            plant_collection=plant_collection,
         )
         (OUTPUT_DIR / "plant" / f"{plant['slug']}.html").write_text(html, encoding='utf-8')
 
@@ -368,6 +456,29 @@ def build_site():
     )
     (OUTPUT_DIR / "stats.html").write_text(html, encoding='utf-8')
 
+    # === Build Collections List Page ===
+    print("Building collections list page...")
+    template = env.get_template('collections.html')
+    html = template.render(**base_context, collections=collections)
+    (OUTPUT_DIR / "collections.html").write_text(html, encoding='utf-8')
+
+    # === Build Individual Collection Pages ===
+    print(f"Building {len(collections)} collection pages...")
+    template = env.get_template('collection.html')
+    for col in collections:
+        html = template.render(
+            base_url='..', build_version=build_version,
+            collection=col,
+            plants=col['plants'],
+        )
+        (OUTPUT_DIR / "collection" / f"{col['slug']}.html").write_text(html, encoding='utf-8')
+
+    # === Build Map Page ===
+    print("Building map page...")
+    template = env.get_template('map.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "map.html").write_text(html, encoding='utf-8')
+
     # === Build 404 Page ===
     print("Building 404 page...")
     template = env.get_template('404.html')
@@ -382,7 +493,11 @@ def build_site():
         f"{SITE_BASE_URL}/families.html",
         f"{SITE_BASE_URL}/genera.html",
         f"{SITE_BASE_URL}/stats.html",
+        f"{SITE_BASE_URL}/map.html",
+        f"{SITE_BASE_URL}/collections.html",
     ]
+    for col in collections:
+        urls.append(f"{SITE_BASE_URL}/collection/{col['slug']}.html")
     for plant in plants:
         urls.append(f"{SITE_BASE_URL}/plant/{plant['slug']}.html")
     for fam in families:
