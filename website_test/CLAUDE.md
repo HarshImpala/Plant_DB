@@ -273,7 +273,6 @@ GROUP BY c.id;
 - `toxicity_info`: Pet/human toxicity data
 - `garden_location`: Physical location in botanical garden
 - `curator_comments`: Internal notes
-- `image_source`: Attribution for images
 - Additional language support for common names
 
 ## Notes

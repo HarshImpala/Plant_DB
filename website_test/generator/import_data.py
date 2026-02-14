@@ -299,6 +299,53 @@ def import_location_data(conn, df_location):
     print(f"Updated location data for {len(df_location)} plants")
 
 
+CURATOR_DATA_FILE = DATA_DIR / "curator_data.csv"
+
+CURATOR_FIELDS = ["toxicity_info", "garden_location", "curator_comments", "image_source"]
+
+
+def import_curator_data(conn):
+    """Merge curator_data.csv into the plants table (survives full re-imports)."""
+    if not CURATOR_DATA_FILE.exists():
+        print("No curator_data.csv found — skipping.")
+        return
+
+    import csv
+    cursor = conn.cursor()
+    updated = 0
+    skipped = 0
+
+    with open(CURATOR_DATA_FILE, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            input_name = row.get('input_name', '').strip()
+            if not input_name:
+                continue
+
+            # Build SET clause for non-empty fields only
+            updates = {field: row[field].strip()
+                       for field in CURATOR_FIELDS
+                       if field in row and row[field].strip()}
+
+            if not updates:
+                skipped += 1
+                continue
+
+            set_clause = ', '.join(f"{field} = ?" for field in updates)
+            values = list(updates.values()) + [input_name]
+            cursor.execute(
+                f"UPDATE plants SET {set_clause} WHERE input_name = ?",
+                values
+            )
+            if cursor.rowcount:
+                updated += 1
+            else:
+                print(f"  Warning: no plant found for input_name '{input_name}'")
+
+    conn.commit()
+    print(f"Curator data: {updated} plants updated, {skipped} rows skipped (empty).")
+
+
 def main():
     """Main import function."""
     print("Starting data import...")
@@ -324,6 +371,10 @@ def main():
     print(f"\nReading location file: {LOCATION_FILE}")
     df_location = pd.read_excel(LOCATION_FILE)
     import_location_data(conn, df_location)
+
+    # Merge curator data (toxicity, garden location, comments, image source)
+    print(f"\nMerging curator data: {CURATOR_DATA_FILE}")
+    import_curator_data(conn)
 
     # Print summary
     cursor = conn.cursor()
