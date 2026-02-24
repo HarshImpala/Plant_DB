@@ -169,6 +169,11 @@
             <section class="plant-section">
                 <h2>Botanical Garden Location</h2>
                 <p>{{ plant.garden_location }}</p>
+                <p>
+                    <a href="{{ base_url }}/map.html?location={{ plant.garden_location | urlencode }}">
+                        View this location on the map page
+                    </a>
+                </p>
             </section>
             {% endif %}
 

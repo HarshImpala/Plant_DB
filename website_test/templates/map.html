@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Garden Map — Plant Encyclopedia{% endblock %}
+{% block title %}Garden Map - Plant Encyclopedia{% endblock %}
 
 {% block head %}
 <style>
@@ -48,18 +48,67 @@
     .pdf-download-link:hover {
         opacity: 0.85;
     }
+    .location-index {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border: 1px solid var(--color-border, #ddd);
+        border-radius: 6px;
+        background: var(--color-white, #fff);
+    }
+    .location-filter {
+        margin: 0.75rem 0 1rem;
+    }
+    .location-filter input {
+        width: 100%;
+        max-width: 420px;
+        border: 1px solid var(--color-border, #ccc);
+        border-radius: 4px;
+        padding: 0.5rem 0.625rem;
+        font-size: 0.95rem;
+    }
+    .location-group {
+        border-top: 1px solid var(--color-border-light, #e5e5e5);
+        padding: 0.75rem 0;
+    }
+    .location-group:first-of-type {
+        border-top: none;
+    }
+    .location-group h3 {
+        margin: 0 0 0.4rem;
+        font-size: 1rem;
+    }
+    .location-group ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        column-count: 2;
+        column-gap: 1.5rem;
+    }
+    .location-group li {
+        break-inside: avoid;
+        margin-bottom: 0.35rem;
+    }
+    .location-group .common {
+        color: var(--color-text-light, #666);
+        font-size: 0.85rem;
+    }
+    @media (max-width: 700px) {
+        .location-group ul {
+            column-count: 1;
+        }
+    }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="map-page">
     <h2>Botanical Garden Map</h2>
-    <p class="map-subtitle">Fővárosi Állat- és Növénykert — Fűvészkert, 2021</p>
+    <p class="map-subtitle">Fovariosi Allat- es Novenykert - Fuveszkert, 2021</p>
 
     <div class="pdf-container">
         <iframe
             src="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf"
-            title="Fűvészkert Garden Map 2021"
+            title="Fuveszkert Garden Map 2021"
             type="application/pdf">
             <div class="pdf-fallback">
                 <p>Your browser cannot display the PDF inline.</p>
@@ -72,8 +121,68 @@
 
     <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted,#666);">
         <a href="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf" target="_blank">
-            Open in new tab ↗
+            Open in new tab
         </a>
     </p>
+
+    <section class="location-index">
+        <h3>Find Plants by Garden Location</h3>
+        <p class="map-subtitle">Indexed locations: {{ map_locations|length }} | Plants with mapped location: {{ mapped_plant_count }}</p>
+        <div class="location-filter">
+            <input id="location-filter" type="text" placeholder="Filter locations or plant names...">
+        </div>
+        <div id="location-groups">
+            {% for item in map_locations %}
+            <div class="location-group" data-location="{{ item.location | lower }}" id="location-{{ item.slug }}">
+                <h3>{{ item.location }} <span class="common">({{ item.plant_count }})</span></h3>
+                <ul>
+                    {% for plant in item.plants %}
+                    <li>
+                        <a href="{{ base_url }}/plant/{{ plant.slug }}.html">{{ plant.canonical_name }}</a>
+                        {% if plant.common_name %}
+                        <span class="common"> - {{ plant.common_name }}</span>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const input = document.getElementById('location-filter');
+    const groups = Array.from(document.querySelectorAll('.location-group'));
+    const params = new URLSearchParams(window.location.search);
+    const locationParam = (params.get('location') || '').trim().toLowerCase();
+
+    function applyFilter() {
+        const q = (input.value || '').trim().toLowerCase();
+        groups.forEach(function(group) {
+            const location = group.dataset.location || '';
+            const text = group.textContent.toLowerCase();
+            group.hidden = q && !location.includes(q) && !text.includes(q);
+        });
+    }
+
+    input.addEventListener('input', applyFilter);
+
+    if (locationParam) {
+        input.value = locationParam;
+        applyFilter();
+        const target = groups.find(function(group) {
+            return (group.dataset.location || '').includes(locationParam);
+        });
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            target.style.outline = '2px solid var(--color-accent, #2e7d32)';
+            setTimeout(function() { target.style.outline = ''; }, 1800);
+        }
+    }
+})();
+</script>
 {% endblock %}

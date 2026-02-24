@@ -12,6 +12,7 @@ import re
 import shutil
 from pathlib import Path
 from collections import defaultdict
+from urllib.parse import quote
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -49,6 +50,7 @@ def setup_jinja_env():
     """Set up Jinja2 environment with custom filters."""
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
     env.filters['slugify'] = slugify
+    env.filters['urlencode'] = lambda value: quote((value or '').strip())
     return env
 
 
@@ -215,6 +217,33 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
         })
 
     return search_data
+
+
+def build_map_locations(plants):
+    """Build location -> plants mapping for the map page."""
+    grouped = defaultdict(list)
+    for plant in plants:
+        location = (plant.get('garden_location') or '').strip()
+        if not location:
+            continue
+        grouped[location].append({
+            'slug': plant['slug'],
+            'canonical_name': plant.get('canonical_name') or plant.get('scientific_name') or plant.get('input_name'),
+            'common_name': plant.get('common_name'),
+            'family': plant.get('family'),
+            'genus': plant.get('genus'),
+        })
+
+    locations = []
+    for location in sorted(grouped.keys(), key=str.lower):
+        plants_at_location = sorted(grouped[location], key=lambda p: (p['canonical_name'] or '').lower())
+        locations.append({
+            'location': location,
+            'slug': slugify(location) or 'garden-location',
+            'plant_count': len(plants_at_location),
+            'plants': plants_at_location,
+        })
+    return locations
 
 
 def build_plant_jsonld(plant, common_names, synonyms):
@@ -412,6 +441,7 @@ def build_site():
     slug_by_plant_id = build_plant_slug_map(plants)
     plants_by_category = preload_plants_by_category(conn, slug_by_plant_id)
     collections, plant_to_collection = load_collections(plants)
+    map_locations = build_map_locations(plants)
     seed_collections_db(conn, collections)
     print(f"Loaded {len(collections)} collections, seeded to DB")
 
@@ -614,7 +644,11 @@ def build_site():
     # === Build Map Page ===
     print("Building map page...")
     template = env.get_template('map.html')
-    html = template.render(**base_context)
+    html = template.render(
+        **base_context,
+        map_locations=map_locations,
+        mapped_plant_count=sum(location['plant_count'] for location in map_locations),
+    )
     (OUTPUT_DIR / "map.html").write_text(html, encoding='utf-8')
 
     # === Build 404 Page ===

@@ -29,7 +29,9 @@
 - [x] Add structured metadata (JSON-LD) for plant pages in `templates/plant.html`
   - Progress (2026-02-24): added build-time JSON-LD generation (`@type: Taxon`) with canonical URL, alternate names, parent taxonomy, identifiers, image, and source links.
   - Progress (2026-02-24): injected metadata into plant page `<head>` as `application/ld+json`.
-- [ ] Integrate `garden_location` with map/plant pages for "find in garden" workflows
+- [x] Integrate `garden_location` with map/plant pages for "find in garden" workflows
+  - Progress (2026-02-24): added map-page location index grouped from `garden_location` with per-location plant links and quick filtering.
+  - Progress (2026-02-24): added deep links from plant pages to `map.html?location=...` with auto-focus/highlight on the map page.
 
 ## Do Later
 
