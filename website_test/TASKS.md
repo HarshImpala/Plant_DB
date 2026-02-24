@@ -59,7 +59,9 @@
 - [x] Normalize `garden_location` into stable location IDs
   - Progress (2026-02-24): added normalized location tables (`garden_locations`, `plant_garden_locations`) and deterministic keys (`loc-...`) in import pipeline.
   - Progress (2026-02-24): updated build/map/plant flow to use stable location keys for deep links and location indexing.
-- [ ] Add "changed since last build" diff artifacts
+- [x] Add "changed since last build" diff artifacts
+  - Progress (2026-02-24): added snapshot/diff generation in `generator/build_site.py`.
+  - Progress (2026-02-24): build now writes `data/build_snapshot.json` and `data/build_diff_report.json` with added/removed/changed plant records.
 - [ ] Generate versioned API-ready JSON exports
 - [ ] Add editor-facing content quality queue page
 - [ ] Performance pass for larger datasets (search split/gzip/precompute)

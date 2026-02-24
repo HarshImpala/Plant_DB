@@ -30,6 +30,8 @@ STATIC_DIR = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "plants.db"
 COLLECTIONS_PATH = DATA_DIR / "collections.json"
+BUILD_SNAPSHOT_PATH = DATA_DIR / "build_snapshot.json"
+BUILD_DIFF_REPORT_PATH = DATA_DIR / "build_diff_report.json"
 
 
 def slugify(text):
@@ -240,11 +242,14 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
 def preload_garden_location_map(conn):
     """Load normalized garden location key/display_name by plant ID."""
     cursor = conn.cursor()
-    cursor.execute("""
-        SELECT pgl.plant_id, gl.location_key, gl.display_name
-        FROM plant_garden_locations pgl
-        JOIN garden_locations gl ON gl.id = pgl.location_id
-    """)
+    try:
+        cursor.execute("""
+            SELECT pgl.plant_id, gl.location_key, gl.display_name
+            FROM plant_garden_locations pgl
+            JOIN garden_locations gl ON gl.id = pgl.location_id
+        """)
+    except sqlite3.OperationalError:
+        return {}
     return {
         plant_id: {
             'garden_location_key': location_key,
@@ -317,6 +322,71 @@ def compute_quality_metrics(plants):
         'coverage_rows': coverage_rows,
         'overall_completeness': overall_completeness,
     }
+
+
+def build_snapshot(plants):
+    """Create a compact snapshot used for build-to-build diff reporting."""
+    snapshot = {}
+    for plant in plants:
+        snapshot[plant['slug']] = {
+            'id': plant['id'],
+            'input_name': plant.get('input_name'),
+            'display_name': plant.get('display_name'),
+            'family': plant.get('family'),
+            'genus': plant.get('genus'),
+            'has_image': bool(plant.get('image_filename')),
+            'has_description': bool(plant.get('description')),
+            'has_distribution': bool(plant.get('native_countries')),
+        }
+    return snapshot
+
+
+def write_build_diff_report(plants):
+    """Compare current snapshot against previous build and write a diff report."""
+    current = build_snapshot(plants)
+    if BUILD_SNAPSHOT_PATH.exists():
+        try:
+            previous = json.loads(BUILD_SNAPSHOT_PATH.read_text(encoding='utf-8'))
+        except json.JSONDecodeError:
+            previous = {}
+    else:
+        previous = {}
+
+    prev_slugs = set(previous.keys())
+    curr_slugs = set(current.keys())
+    added = sorted(curr_slugs - prev_slugs)
+    removed = sorted(prev_slugs - curr_slugs)
+    common = sorted(curr_slugs & prev_slugs)
+
+    changed = []
+    for slug in common:
+        before = previous.get(slug, {})
+        after = current.get(slug, {})
+        changed_fields = [key for key in after.keys() if before.get(key) != after.get(key)]
+        if changed_fields:
+            changed.append({
+                'slug': slug,
+                'changed_fields': changed_fields,
+                'before': {k: before.get(k) for k in changed_fields},
+                'after': {k: after.get(k) for k in changed_fields},
+            })
+
+    report = {
+        'summary': {
+            'previous_count': len(previous),
+            'current_count': len(current),
+            'added': len(added),
+            'removed': len(removed),
+            'changed': len(changed),
+        },
+        'added': [{'slug': slug, **current[slug]} for slug in added],
+        'removed': [{'slug': slug, **previous[slug]} for slug in removed],
+        'changed': changed,
+    }
+
+    BUILD_DIFF_REPORT_PATH.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding='utf-8')
+    BUILD_SNAPSHOT_PATH.write_text(json.dumps(current, indent=2, ensure_ascii=False), encoding='utf-8')
+    return report
 
 
 def build_plant_jsonld(plant, common_names, synonyms):
@@ -523,8 +593,15 @@ def build_site():
     plants_by_category = preload_plants_by_category(conn, slug_by_plant_id)
     collections, plant_to_collection = load_collections(plants)
     map_locations = build_map_locations(plants)
+    build_diff = write_build_diff_report(plants)
     seed_collections_db(conn, collections)
     print(f"Loaded {len(collections)} collections, seeded to DB")
+    print(
+        "Build diff: "
+        f"added={build_diff['summary']['added']}, "
+        f"removed={build_diff['summary']['removed']}, "
+        f"changed={build_diff['summary']['changed']}"
+    )
 
     print(f"Found {len(plants)} plants, {len(families)} families, {len(genera)} genera")
 

@@ -1,0 +1,1962 @@
+{
+  "acalypha-hispida": {
+    "id": 2,
+    "input_name": "Acalypha hispida Burm.f.",
+    "display_name": "Acalypha hispida",
+    "family": "Euphorbiaceae Juss.",
+    "genus": "Acalypha L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "acorus-gramineus": {
+    "id": 3,
+    "input_name": "Acorus gramineus Ait. 'Variegatus'",
+    "display_name": "Acorus gramineus",
+    "family": "Acoraceae Martinov",
+    "genus": "Acorus L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "adenanthera-microsperma": {
+    "id": 4,
+    "input_name": "Adenanthera microsperma Teijsm. et Binn.",
+    "display_name": "Adenanthera microsperma",
+    "family": "Fabaceae Lindl.",
+    "genus": "Adenanthera L.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "aglaonema-costatum": {
+    "id": 5,
+    "input_name": "Aglaonema costatum N.E.Br.",
+    "display_name": "Aglaonema costatum",
+    "family": "Araceae Juss.",
+    "genus": "Aglaonema Schott",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aglaonema-modestum": {
+    "id": 6,
+    "input_name": "Aglaonema modestum Schott ex Engl.",
+    "display_name": "Aglaonema modestum",
+    "family": "Araceae Juss.",
+    "genus": "Aglaonema Schott",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aglaonema-nitidum": {
+    "id": 7,
+    "input_name": "Aglaonema nitidum (Jack) Kunth 'Silver King'",
+    "display_name": "Aglaonema nitidum",
+    "family": "Araceae Juss.",
+    "genus": "Aglaonema Schott",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "allamanda-schottii": {
+    "id": 8,
+    "input_name": "Allamanda schottii Pohl.",
+    "display_name": "Allamanda schottii",
+    "family": "Apocynaceae Juss.",
+    "genus": "Allamanda L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "alpinia-purpurata": {
+    "id": 9,
+    "input_name": "Alpinia purpurata (Viell.) Schum.",
+    "display_name": "Alpinia purpurata",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Alpinia Roxb.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "alpinia-vittata": {
+    "id": 10,
+    "input_name": "Alpinia vittata Bull.",
+    "display_name": "Alpinia vittata",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Alpinia Roxb.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "alpinia-zerumbet-1": {
+    "id": 11,
+    "input_name": "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm.",
+    "display_name": "Alpinia zerumbet",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Alpinia Roxb.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "alpinia-zerumbet-2": {
+    "id": 12,
+    "input_name": "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm. 'Variegata'",
+    "display_name": "Alpinia zerumbet",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Alpinia Roxb.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "ananas-comosus": {
+    "id": 13,
+    "input_name": "Ananas comosus (L.) Merr.",
+    "display_name": "Ananas comosus",
+    "family": "Bromeliaceae Juss.",
+    "genus": "Ananas Mill.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "angraecum-eburneum": {
+    "id": 14,
+    "input_name": "Angraecum eburneum Bory",
+    "display_name": "Angraecum eburneum",
+    "family": "Orchidaceae Juss.",
+    "genus": "Angraecum Bory",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "anthurium-digitatum": {
+    "id": 15,
+    "input_name": "Anthurium digitatum (Jacq.) G.Don f.",
+    "display_name": "Anthurium digitatum",
+    "family": "Araceae Juss.",
+    "genus": "Anthurium Schott",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "anthurium-schlechtendalii": {
+    "id": 16,
+    "input_name": "Anthurium schlechtendalii Kunth",
+    "display_name": "Anthurium schlechtendalii",
+    "family": "Araceae Juss.",
+    "genus": "Anthurium Schott",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "anthurium-vittariifolium": {
+    "id": 17,
+    "input_name": "Anthurium vittariifolium Engl.",
+    "display_name": "Anthurium vittariifolium",
+    "family": "Araceae Juss.",
+    "genus": "Anthurium Schott",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aristolochia-fimbriata": {
+    "id": 18,
+    "input_name": "Aristolochia fimbriata Cham.",
+    "display_name": "Aristolochia fimbriata",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aristolochia-gigantea": {
+    "id": 19,
+    "input_name": "Aristolochia gigantea Mart. et Zucc.",
+    "display_name": "Aristolochia gigantea",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": true,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "aristolochia-grandiflora": {
+    "id": 20,
+    "input_name": "Aristolochia grandiflora Sw.",
+    "display_name": "Aristolochia grandiflora",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "aristolochia-labiata": {
+    "id": 21,
+    "input_name": "Aristolochia labiata Willd.",
+    "display_name": "Aristolochia labiata",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aristolochia-maxima": {
+    "id": 22,
+    "input_name": "Aristolochia maxima L.",
+    "display_name": "Aristolochia maxima",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aristolochia-ringens": {
+    "id": 23,
+    "input_name": "Aristolochia ringens Vahl",
+    "display_name": "Aristolochia ringens",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aristolochia-trilobata": {
+    "id": 24,
+    "input_name": "Aristolochia trilobata L.",
+    "display_name": "Aristolochia trilobata",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "aristolochia-zollingeriana": {
+    "id": 25,
+    "input_name": "Aristolochia zollingeriana Miq",
+    "display_name": "Aristolochia zollingeriana",
+    "family": "Aristolochiaceae Juss.",
+    "genus": "Aristolochia L.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "asplenium-nidus": {
+    "id": 26,
+    "input_name": "Asplenium nidus L.",
+    "display_name": "Asplenium nidus",
+    "family": "Aspleniaceae Newman",
+    "genus": "Asplenium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "averrhoa-carambola-1": {
+    "id": 27,
+    "input_name": "Averrhoa carambola L.",
+    "display_name": "Averrhoa carambola",
+    "family": "Oxalidaceae R.Br.",
+    "genus": "Averrhoa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "averrhoa-carambola-2": {
+    "id": 28,
+    "input_name": "Averrhoa carambola L. ’B10’",
+    "display_name": "Averrhoa carambola",
+    "family": "Oxalidaceae R.Br.",
+    "genus": "Averrhoa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "averrhoa-carambola-3": {
+    "id": 29,
+    "input_name": "Averrhoa carambola L. 'Fwang Tung'’",
+    "display_name": "Averrhoa carambola",
+    "family": "Oxalidaceae R.Br.",
+    "genus": "Averrhoa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "begonia-listada": {
+    "id": 30,
+    "input_name": "Begonia listada L.B.Sm. et Wassh.",
+    "display_name": "Begonia listada",
+    "family": "Begoniaceae C.Agardh",
+    "genus": "Begonia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "begonia-solimutata": {
+    "id": 31,
+    "input_name": "Begonia solimutata L.B.Sm. et Wassh.",
+    "display_name": "Begonia solimutata",
+    "family": "Begoniaceae C.Agardh",
+    "genus": "Begonia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "breynia-androgyna": {
+    "id": 178,
+    "input_name": "Sauropus androgynus (L.) Merr.",
+    "display_name": "Breynia androgyna",
+    "family": "Phyllanthaceae Martinov",
+    "genus": "Breynia J.R.Forst. & G.Forst.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "breynia-disticha": {
+    "id": 33,
+    "input_name": "Breynia nivosa (W.G.Sm.) Small.",
+    "display_name": "Breynia disticha",
+    "family": "Phyllanthaceae Martinov",
+    "genus": "Breynia J.R.Forst. & G.Forst.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "brownea-coccinea-capitella": {
+    "id": 34,
+    "input_name": "Brownea latifolia Jacq.",
+    "display_name": "Brownea coccinea capitella",
+    "family": "Fabaceae Lindl.",
+    "genus": "Brownea Jacq.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "caladium-bicolor": {
+    "id": 35,
+    "input_name": "Caladium bicolor (Aiton) Vent.",
+    "display_name": "Caladium bicolor",
+    "family": "Araceae Juss.",
+    "genus": "Caladium Vent.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "canna-glauca": {
+    "id": 37,
+    "input_name": "Canna glauca L.",
+    "display_name": "Canna glauca",
+    "family": "Cannaceae Juss.",
+    "genus": "Canna L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "carica-papaya-1": {
+    "id": 38,
+    "input_name": "Carica papaya L.",
+    "display_name": "Carica papaya",
+    "family": "Caricaceae Dumort.",
+    "genus": "Carica L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "carica-papaya-2": {
+    "id": 39,
+    "input_name": "Carica papaya L. 'Nana'",
+    "display_name": "Carica papaya",
+    "family": "Caricaceae Dumort.",
+    "genus": "Carica L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "carica-papaya-3": {
+    "id": 40,
+    "input_name": "Carica papaya L. 'Pasar Orange'",
+    "display_name": "Carica papaya",
+    "family": "Caricaceae Dumort.",
+    "genus": "Carica L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "carica-papaya-4": {
+    "id": 41,
+    "input_name": "Carica papaya L. 'Solo'",
+    "display_name": "Carica papaya",
+    "family": "Caricaceae Dumort.",
+    "genus": "Carica L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "carica-papaya-5": {
+    "id": 42,
+    "input_name": "Carica papaya L. 'Solo-Waimanalo'",
+    "display_name": "Carica papaya",
+    "family": "Caricaceae Dumort.",
+    "genus": "Carica L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "carica-papaya-6": {
+    "id": 43,
+    "input_name": "Carica papaya L. 'Sunset'",
+    "display_name": "Carica papaya",
+    "family": "Caricaceae Dumort.",
+    "genus": "Carica L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "castanospermum-australe": {
+    "id": 44,
+    "input_name": "Castanospermum australe Raddi",
+    "display_name": "Castanospermum australe",
+    "family": null,
+    "genus": null,
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "cinnamomum-parthenoxylon": {
+    "id": 45,
+    "input_name": "Cinnamomum parthenoxylon (Jacq.) Meisn.",
+    "display_name": "Cinnamomum parthenoxylon",
+    "family": "Lauraceae Juss.",
+    "genus": "Cinnamomum Schaeff.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "clerodendrum-splendens": {
+    "id": 46,
+    "input_name": "Clerodendrum splendens G.Don. ex James",
+    "display_name": "Clerodendrum splendens",
+    "family": "Lamiaceae Martinov",
+    "genus": "Clerodendrum L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "clerodendrum-thomsoniae": {
+    "id": 47,
+    "input_name": "Clerodendrum thomsoniae Balf.f.",
+    "display_name": "Clerodendrum thomsoniae",
+    "family": "Lamiaceae Martinov",
+    "genus": "Clerodendrum L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "clusia-rosea": {
+    "id": 48,
+    "input_name": "Clusia rosea Jacq. ’Princess’",
+    "display_name": "Clusia rosea",
+    "family": "Clusiaceae Lindl.",
+    "genus": "Clusia Plum. ex L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "coccothrinax-readii": {
+    "id": 49,
+    "input_name": "Coccothrinax readii H.J.Quero R.",
+    "display_name": "Coccothrinax readii",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Coccothrinax Sarg.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "cocos-nucifera-1": {
+    "id": 50,
+    "input_name": "Cocos nucifera L.",
+    "display_name": "Cocos nucifera",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Cocos L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "cocos-nucifera-2": {
+    "id": 51,
+    "input_name": "Cocos nucifera L. 'King'",
+    "display_name": "Cocos nucifera",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Cocos L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "cocos-nucifera-3": {
+    "id": 52,
+    "input_name": "Cocos nucifera L. 'Maypan'",
+    "display_name": "Cocos nucifera",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Cocos L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "coffea-arabica-1": {
+    "id": 53,
+    "input_name": "Coffea arabica L.",
+    "display_name": "Coffea arabica",
+    "family": "Rubiaceae Juss.",
+    "genus": "Coffea L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "coffea-arabica-2": {
+    "id": 54,
+    "input_name": "Coffea arabica L. 'Bourbon'",
+    "display_name": "Coffea arabica",
+    "family": "Rubiaceae Juss.",
+    "genus": "Coffea L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "coffea-arabica-3": {
+    "id": 55,
+    "input_name": "Coffea arabica L. 'Nana'",
+    "display_name": "Coffea arabica",
+    "family": "Rubiaceae Juss.",
+    "genus": "Coffea L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "coffea-canephora": {
+    "id": 56,
+    "input_name": "Coffea canephora Pierre ex A.Froehner",
+    "display_name": "Coffea canephora",
+    "family": "Rubiaceae Juss.",
+    "genus": "Coffea L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "colocasia-esculenta": {
+    "id": 57,
+    "input_name": "Colocasia esculenta (L.) Schott.",
+    "display_name": "Colocasia esculenta",
+    "family": "Araceae Juss.",
+    "genus": "Colocasia Schott",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "colvillea-racemosa": {
+    "id": 58,
+    "input_name": "Colvillea racemosa Bojer ex Hook.",
+    "display_name": "Colvillea racemosa",
+    "family": "Fabaceae Lindl.",
+    "genus": "Colvillea Bojer ex Hook.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "cordia-myxa": {
+    "id": 59,
+    "input_name": "Cordia myxa L. non Forssk.",
+    "display_name": "Cordia myxa",
+    "family": "Cordiaceae R.Br. ex Dumort.",
+    "genus": "Cordia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "couroupita-guianensis": {
+    "id": 60,
+    "input_name": "Couroupita guianensis Auhl.",
+    "display_name": "Couroupita guianensis",
+    "family": "Lecythidaceae A.Rich.",
+    "genus": "Couroupita Aubl.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ctenanthe-amabilis": {
+    "id": 61,
+    "input_name": "Ctenanthe amabilis (E.Morren) H.A.Kenn. & Nicolson",
+    "display_name": "Ctenanthe amabilis",
+    "family": "Marantaceae R.Br.",
+    "genus": "Ctenanthe Eichler",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "cubanola-domingensis": {
+    "id": 62,
+    "input_name": "Cubanola domingensis (Britton) Aiella",
+    "display_name": "Cubanola domingensis",
+    "family": "Rubiaceae Juss.",
+    "genus": "Cubanola Aiello",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "curculigo-capitulata": {
+    "id": 63,
+    "input_name": "Curculigo capitulata (Lour.) Kantze.",
+    "display_name": "Curculigo capitulata",
+    "family": "Hypoxidaceae R.Br.",
+    "genus": "Curculigo Gaertn.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "cyanastrum-cordifolium": {
+    "id": 64,
+    "input_name": "Cyanastrum cordifolium Oliv.",
+    "display_name": "Cyanastrum cordifolium",
+    "family": "Tecophilaeaceae Leyb.",
+    "genus": "Cyanastrum Oliv.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "cyperus-diffusus": {
+    "id": 65,
+    "input_name": "Cyperus diffusus Vahl.",
+    "display_name": "Cyperus diffusus",
+    "family": "Cyperaceae Juss.",
+    "genus": "Cyperus L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "delonix-regia": {
+    "id": 66,
+    "input_name": "Delonix regia (Bojer) Raf.",
+    "display_name": "Delonix regia",
+    "family": "Fabaceae Lindl.",
+    "genus": "Delonix Raf.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "dendrocnide-excelsa": {
+    "id": 67,
+    "input_name": "Dendrocnide excelsa (Wedd.) Chew.",
+    "display_name": "Dendrocnide excelsa",
+    "family": "Urticaceae Juss.",
+    "genus": "Dendrocnide Miq.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "dichrostachys-cinerea": {
+    "id": 68,
+    "input_name": "Dichrostachys cinerea (L.) Wight. et Arn.",
+    "display_name": "Dichrostachys cinerea",
+    "family": "Fabaceae Lindl.",
+    "genus": "Alantsilodendron Villiers",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "dioscorea-alata": {
+    "id": 69,
+    "input_name": "Dioscorea alata L.",
+    "display_name": "Dioscorea alata",
+    "family": "Dioscoreaceae R.Br.",
+    "genus": "Dioscorea Plum. ex L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "dioscorea-oppositifolia": {
+    "id": 70,
+    "input_name": "Dioscorea oppositifolia L.",
+    "display_name": "Dioscorea oppositifolia",
+    "family": "Dioscoreaceae R.Br.",
+    "genus": "Dioscorea Plum. ex L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "dioscorea-polystachya": {
+    "id": 71,
+    "input_name": "Dioscorea polystachya Turcz. (Dioscorea batatas)",
+    "display_name": "Dioscorea polystachya",
+    "family": "Dioscoreaceae R.Br.",
+    "genus": "Dioscorea Plum. ex L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "dischidia-bengalensis": {
+    "id": 72,
+    "input_name": "Dischidia bengalensis Colebr.",
+    "display_name": "Dischidia bengalensis",
+    "family": "Apocynaceae Juss.",
+    "genus": "Dischidia R.Br.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "dischidia-platyphylla": {
+    "id": 73,
+    "input_name": "Dischidia platyphylla Schltr.",
+    "display_name": "Dischidia platyphylla",
+    "family": "Apocynaceae Juss.",
+    "genus": "Dischidia R.Br.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "dischidia-subulata": {
+    "id": 74,
+    "input_name": "Dischidia subulata Warb. Dischidia cordifolia",
+    "display_name": "Dischidia subulata",
+    "family": "Apocynaceae Juss.",
+    "genus": "Dischidia R.Br.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "dischidia-vidalii": {
+    "id": 75,
+    "input_name": "Dischidia vidalii Becc. ",
+    "display_name": "Dischidia vidalii",
+    "family": "Apocynaceae Juss.",
+    "genus": "Dischidia R.Br.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "disocactus-anguliger": {
+    "id": 79,
+    "input_name": "Epiphyllum anguliger (Lem.) G.Don",
+    "display_name": "Disocactus anguliger",
+    "family": "Cactaceae Juss.",
+    "genus": "Disocactus Lindl.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "elaeis-guineensis": {
+    "id": 76,
+    "input_name": "Elaeis guineensis Jacq",
+    "display_name": "Elaeis guineensis",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Elaeis Jacq.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "elettaria-ensal": {
+    "id": 77,
+    "input_name": "Elettaria ensal (Gaertn.) Abeyw.",
+    "display_name": "Elettaria ensal",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Elettaria Maton",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "epidendrum-ciliare": {
+    "id": 78,
+    "input_name": "Epidendum ciliare L.",
+    "display_name": "Epidendrum ciliare",
+    "family": "Orchidaceae Juss.",
+    "genus": "Epidendrum L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "epiphyllum-chrysocardium-1": {
+    "id": 80,
+    "input_name": "Epiphyllum chrysocardium Alex.",
+    "display_name": "Epiphyllum chrysocardium",
+    "family": "Cactaceae Juss.",
+    "genus": "Epiphyllum Haw.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "epiphyllum-chrysocardium-2": {
+    "id": 179,
+    "input_name": "Selenicereus chrysocardium (Alexander) Kimnach",
+    "display_name": "Epiphyllum chrysocardium",
+    "family": "Cactaceae Juss.",
+    "genus": "Epiphyllum Haw.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "epiphyllum-oxypetalum": {
+    "id": 81,
+    "input_name": "Epiphyllum oxypetalum (DC.) Haw.",
+    "display_name": "Epiphyllum oxypetalum",
+    "family": "Cactaceae Juss.",
+    "genus": "Epiphyllum Haw.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "erythroxylum-coca": {
+    "id": 82,
+    "input_name": "Erythroxylum coca Lam",
+    "display_name": "Erythroxylum coca",
+    "family": "Erythroxylaceae Kunth",
+    "genus": "Erythroxylum P.Browne",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "euphorbia-leuconeura": {
+    "id": 83,
+    "input_name": "Euphorbia leuconeura Boiss",
+    "display_name": "Euphorbia leuconeura",
+    "family": "Euphorbiaceae Juss.",
+    "genus": "Euphorbia L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "euterpe-oleracea": {
+    "id": 84,
+    "input_name": "Euterpe oleracea Mart.",
+    "display_name": "Euterpe oleracea",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Euterpe Mart.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-benghalensis": {
+    "id": 85,
+    "input_name": "Ficus benghalensis L.",
+    "display_name": "Ficus benghalensis",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-cyathistipula": {
+    "id": 86,
+    "input_name": "Ficus cyathistipula Warb",
+    "display_name": "Ficus cyathistipula",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-elastica-1": {
+    "id": 87,
+    "input_name": "Ficus elastica Roxb. ex Hornem. 'De la Rouche'",
+    "display_name": "Ficus elastica",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-elastica-2": {
+    "id": 88,
+    "input_name": "Ficus elastica Roxb. ex Hornem. 'Melani'",
+    "display_name": "Ficus elastica",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-lyrata": {
+    "id": 89,
+    "input_name": "Ficus lyrata Warb.",
+    "display_name": "Ficus lyrata",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-obliqua": {
+    "id": 90,
+    "input_name": "Ficus obliqua Forst.",
+    "display_name": "Ficus obliqua",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-rubiginosa-1": {
+    "id": 91,
+    "input_name": "Ficus rubiginosa Desf. ex Vent.",
+    "display_name": "Ficus rubiginosa",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ficus-rubiginosa-2": {
+    "id": 92,
+    "input_name": "Ficus rubiginosa Desf. ex Vent. 'Variegata'",
+    "display_name": "Ficus rubiginosa",
+    "family": "Moraceae Gaudich.",
+    "genus": "Ficus L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "flacourtia-indica": {
+    "id": 93,
+    "input_name": "Flacourtia flavescens Willd.",
+    "display_name": "Flacourtia indica",
+    "family": "Salicaceae Mirb.",
+    "genus": "Flacourtia Comm. ex L'Hér.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "globba-schomburgkii": {
+    "id": 94,
+    "input_name": "Globba schomburgkii Hook.f.",
+    "display_name": "Globba schomburgkii",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Globba L.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "goeppertia-zebrina": {
+    "id": 36,
+    "input_name": "Calathea zebrina (Sims) Lindl.",
+    "display_name": "Goeppertia zebrina",
+    "family": "Marantaceae R.Br.",
+    "genus": "Goeppertia Nees",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "harpullia-arborea": {
+    "id": 95,
+    "input_name": "Harpullia arborea (Blanco) Radlk",
+    "display_name": "Harpullia arborea",
+    "family": "Sapindaceae Juss.",
+    "genus": "Harpullia Roxb.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "hatiora-salicornioides": {
+    "id": 97,
+    "input_name": "Hatiora salicornioides Britton et Rose.",
+    "display_name": "Hatiora salicornioides",
+    "family": "Cactaceae Juss.",
+    "genus": "Hatiora Britton & Rose",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "hedychium-coronarium": {
+    "id": 98,
+    "input_name": "Hedychium coronarium J.G.Koenig.",
+    "display_name": "Hedychium coronarium",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Hedychium J.Koenig",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "hedychium-gardnerianum": {
+    "id": 99,
+    "input_name": "Hedychium gardnerianum Ker.-gawl.",
+    "display_name": "Hedychium gardnerianum",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Hedychium J.Koenig",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "hedychium-horsfieldii-1": {
+    "id": 32,
+    "input_name": "Brachychilum horsfieldii (R.Br. ex Wallich) Petersen",
+    "display_name": "Hedychium horsfieldii",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Hedychium J.Koenig",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "hedychium-horsfieldii-2": {
+    "id": 100,
+    "input_name": "Hedychium horsfieldii R.Br. ex Wall.",
+    "display_name": "Hedychium horsfieldii",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Hedychium J.Koenig",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "heliconia": {
+    "id": 101,
+    "input_name": "Heliconia 'Olympic Flame'",
+    "display_name": "Heliconia",
+    "family": "Heliconiaceae Nakai",
+    "genus": "Heliconia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "heliconia-rostrata": {
+    "id": 102,
+    "input_name": "Heliconia rostrata Ruiz et Pav.",
+    "display_name": "Heliconia rostrata",
+    "family": "Heliconiaceae Nakai",
+    "genus": "Heliconia L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "hoffmannia-ghiesbreghtii": {
+    "id": 104,
+    "input_name": "Hoffmannia ghiesberghtii (Lem.) Hemsl.",
+    "display_name": "Hoffmannia ghiesbreghtii",
+    "family": "Rubiaceae Juss.",
+    "genus": "Hoffmannia Sw.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "hura-crepitans": {
+    "id": 105,
+    "input_name": "Hura crepitans L.",
+    "display_name": "Hura crepitans",
+    "family": "Euphorbiaceae Juss.",
+    "genus": "Hura L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "isolepis-cernua": {
+    "id": 108,
+    "input_name": "Isolepis cernua (Vahl) Roem. et Schukt.",
+    "display_name": "Isolepis cernua",
+    "family": "Cyperaceae Juss.",
+    "genus": "Isolepis R.Br.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "justicia-brandegeeana": {
+    "id": 109,
+    "input_name": "Justicia brandegeana Wassh. & L.B.Sm.",
+    "display_name": "Justicia brandegeeana",
+    "family": "Acanthaceae Juss.",
+    "genus": "Justicia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "justicia-carnea": {
+    "id": 110,
+    "input_name": "Justicia carnea Lindl.",
+    "display_name": "Justicia carnea",
+    "family": "Acanthaceae Juss.",
+    "genus": "Justicia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "khaya-grandifoliola": {
+    "id": 111,
+    "input_name": "Khaya grandifolia C.DC.",
+    "display_name": "Khaya grandifoliola",
+    "family": "Meliaceae Juss.",
+    "genus": "Khaya A.Juss.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "kigelia-africana-africana": {
+    "id": 112,
+    "input_name": "Kigelia pinnata (Jacq.) DC.",
+    "display_name": "Kigelia africana africana",
+    "family": "Bignoniaceae Juss.",
+    "genus": "Kigelia DC.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "kohleria-hirsuta": {
+    "id": 113,
+    "input_name": "Kohleria hirsuta (HBK) Reg.",
+    "display_name": "Kohleria hirsuta",
+    "family": "Gesneriaceae Rich. & Juss.",
+    "genus": "Kohleria Regel",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "lagerstroemia-speciosa": {
+    "id": 114,
+    "input_name": "Lagerstroemia speciosa (L.) Pers.",
+    "display_name": "Lagerstroemia speciosa",
+    "family": "Lythraceae J.St.-Hil.",
+    "genus": "Lagerstroemia L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "mangifera-indica-1": {
+    "id": 115,
+    "input_name": "Mangifera indica L. 'Irwin'",
+    "display_name": "Mangifera indica",
+    "family": "Anacardiaceae R.Br.",
+    "genus": "Mangifera L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "mangifera-indica-2": {
+    "id": 116,
+    "input_name": "Mangifera indica L. 'Kensington'",
+    "display_name": "Mangifera indica",
+    "family": "Anacardiaceae R.Br.",
+    "genus": "Mangifera L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "mangifera-indica-3": {
+    "id": 117,
+    "input_name": "Mangifera indica L. 'Osteen'",
+    "display_name": "Mangifera indica",
+    "family": "Anacardiaceae R.Br.",
+    "genus": "Mangifera L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "medinilla-magnifica": {
+    "id": 118,
+    "input_name": "Medinilla magnifica Lindl.",
+    "display_name": "Medinilla magnifica",
+    "family": "Melastomataceae Juss.",
+    "genus": "Medinilla Gaudich.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "mimosa-aculeaticarpa": {
+    "id": 120,
+    "input_name": "Mimosa aculeaticarpa Ortega",
+    "display_name": "Mimosa aculeaticarpa",
+    "family": "Fabaceae Lindl.",
+    "genus": "Mimosa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "mimosa-polycarpa-spegazzinii": {
+    "id": 121,
+    "input_name": "Mimosa polycarpa Kanth. var. spegazzinii (Pirrota) Burkart.",
+    "display_name": "Mimosa polycarpa spegazzinii",
+    "family": "Fabaceae Lindl.",
+    "genus": "Mimosa L.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "morinda": {
+    "id": 122,
+    "input_name": "Morinda citriodora l",
+    "display_name": "Morinda",
+    "family": "Rubiaceae Juss.",
+    "genus": "Morinda L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "murraya-paniculata": {
+    "id": 123,
+    "input_name": "Murraya paniculata (L.) Jack",
+    "display_name": "Murraya paniculata",
+    "family": "Rutaceae Juss.",
+    "genus": "Murraya J.Koenig",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-coccinea": {
+    "id": 124,
+    "input_name": "Musa coccinea Andrews",
+    "display_name": "Musa coccinea",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-nana": {
+    "id": 126,
+    "input_name": "Musa x nana 'Cavendishii'",
+    "display_name": "Musa nana",
+    "family": null,
+    "genus": null,
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "musa-paradisiaca-1": {
+    "id": 127,
+    "input_name": "Musa x paradisiaca L. 'Aple'",
+    "display_name": "Musa paradisiaca",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-paradisiaca-2": {
+    "id": 128,
+    "input_name": "Musa x paradisiaca L. 'Kreol'",
+    "display_name": "Musa paradisiaca",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-paradisiaca-3": {
+    "id": 129,
+    "input_name": "Musa x paradisiaca L. 'Pakovan'",
+    "display_name": "Musa paradisiaca",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-paradisiaca-4": {
+    "id": 130,
+    "input_name": "Musa x paradisiaca L. 'Prata Ana'",
+    "display_name": "Musa paradisiaca",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-paradisiaca-5": {
+    "id": 131,
+    "input_name": "Musa x paradisiaca L. 'Pray'",
+    "display_name": "Musa paradisiaca",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-paradisiaca-6": {
+    "id": 132,
+    "input_name": "Musa x paradisiaca L. 'Red'",
+    "display_name": "Musa paradisiaca",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-paradisiaca-7": {
+    "id": 134,
+    "input_name": "Musa x paradisiaca L. 'Valerie'",
+    "display_name": "Musa paradisiaca",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "musa-seminifera": {
+    "id": 133,
+    "input_name": "Musa x paradisiaca L. ssp. seminifera Bak.",
+    "display_name": "Musa seminifera",
+    "family": null,
+    "genus": null,
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "musa-velutina": {
+    "id": 125,
+    "input_name": "Musa velutina Wendl. et Drude",
+    "display_name": "Musa velutina",
+    "family": "Musaceae Juss.",
+    "genus": "Musa L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "nautilocalyx-lynchii": {
+    "id": 135,
+    "input_name": "Nautilocalyx lynchii Hook.f.",
+    "display_name": "Nautilocalyx lynchii",
+    "family": "Gesneriaceae Rich. & Juss.",
+    "genus": "Nautilocalyx Linden ex Hanst.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "nephelium-lappaceum": {
+    "id": 119,
+    "input_name": "Nephelium lappaceum",
+    "display_name": "Nephelium lappaceum",
+    "family": "Sapindaceae Juss.",
+    "genus": "Nephelium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "neptunia-plena": {
+    "id": 136,
+    "input_name": "Neptunia plena (L.) Benth.",
+    "display_name": "Neptunia plena",
+    "family": "Fabaceae Lindl.",
+    "genus": "Neptunia Lour.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "oxalis-triangularis": {
+    "id": 137,
+    "input_name": "Oxalis triangularis A. St.-Hil. var. purpurea",
+    "display_name": "Oxalis triangularis",
+    "family": "Oxalidaceae R.Br.",
+    "genus": "Oxalis L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "pachira-aquatica": {
+    "id": 139,
+    "input_name": "Pachira aquatica Aubl.",
+    "display_name": "Pachira aquatica",
+    "family": "Malvaceae Juss.",
+    "genus": "Pachira Aubl.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "pachira-insignis": {
+    "id": 138,
+    "input_name": "Pachira affinis Decne.",
+    "display_name": "Pachira insignis",
+    "family": "Malvaceae Juss.",
+    "genus": "Pachira Aubl.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "palisota-schweinfurthii": {
+    "id": 140,
+    "input_name": "Palisota schweinfurthii C.B.Clarke",
+    "display_name": "Palisota schweinfurthii",
+    "family": "Commelinaceae Mirb.",
+    "genus": "Palisota Rchb. ex Endl.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "passiflora-citrina": {
+    "id": 141,
+    "input_name": "Passiflora citrina J.M.Macdougal",
+    "display_name": "Passiflora citrina",
+    "family": "Passifloraceae Juss. ex Roussel",
+    "genus": "Passiflora L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "passiflora-coriacea": {
+    "id": 142,
+    "input_name": "Passiflora coriacea Juss.",
+    "display_name": "Passiflora coriacea",
+    "family": "Passifloraceae Juss. ex Roussel",
+    "genus": "Passiflora L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "passiflora-edulis": {
+    "id": 143,
+    "input_name": "Passiflora edulis Sims.",
+    "display_name": "Passiflora edulis",
+    "family": "Passifloraceae Juss. ex Roussel",
+    "genus": "Passiflora L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "passiflora-foetida": {
+    "id": 144,
+    "input_name": "Passiflora foetida L.",
+    "display_name": "Passiflora foetida",
+    "family": "Passifloraceae Juss. ex Roussel",
+    "genus": "Passiflora L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "passiflora-incarnata": {
+    "id": 145,
+    "input_name": "Passiflora incarnata L.",
+    "display_name": "Passiflora incarnata",
+    "family": "Passifloraceae Juss. ex Roussel",
+    "genus": "Passiflora L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "passiflora-quadrangularis": {
+    "id": 146,
+    "input_name": "Passiflora quadrangularis L.",
+    "display_name": "Passiflora quadrangularis",
+    "family": "Passifloraceae Juss. ex Roussel",
+    "genus": "Passiflora L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "passiflora-violacea": {
+    "id": 147,
+    "input_name": "Passiflora x violacea 'Atropurpurea'",
+    "display_name": "Passiflora violacea",
+    "family": null,
+    "genus": null,
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "phyllanthus-inflatus": {
+    "id": 148,
+    "input_name": "Phyllanthus inflatus Hutch",
+    "display_name": "Phyllanthus inflatus",
+    "family": "Phyllanthaceae Martinov",
+    "genus": "Phyllanthus L.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "phyllanthus-reticulatus": {
+    "id": 149,
+    "input_name": "Phyllanthus reticulatus Poir.",
+    "display_name": "Phyllanthus reticulatus",
+    "family": "Phyllanthaceae Martinov",
+    "genus": "Phyllanthus L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "pilea-ovalis-1": {
+    "id": 150,
+    "input_name": "Pilea involucrata (Sims) C.H.Wright & Dewar 'Moon Walley'",
+    "display_name": "Pilea ovalis",
+    "family": "Urticaceae Juss.",
+    "genus": "Pilea Lindl.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "pilea-ovalis-2": {
+    "id": 151,
+    "input_name": "Pilea involucrata (Sims) C.H.Wright & Dewar 'Norfolk'",
+    "display_name": "Pilea ovalis",
+    "family": "Urticaceae Juss.",
+    "genus": "Pilea Lindl.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "piper-betle": {
+    "id": 152,
+    "input_name": "Piper betle L.",
+    "display_name": "Piper betle",
+    "family": "Piperaceae Giseke",
+    "genus": "Piper L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "piper-kadsura": {
+    "id": 153,
+    "input_name": "Piper kadzura (Choisy) Ohwi.",
+    "display_name": "Piper kadsura",
+    "family": "Piperaceae Giseke",
+    "genus": "Piper L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "piper-longum": {
+    "id": 154,
+    "input_name": "Piper longum L.",
+    "display_name": "Piper longum",
+    "family": "Piperaceae Giseke",
+    "genus": "Piper L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "piper-magnificum": {
+    "id": 155,
+    "input_name": "Piper magnificum Trel.",
+    "display_name": "Piper magnificum",
+    "family": "Piperaceae Giseke",
+    "genus": "Piper L.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "plumeria-alba": {
+    "id": 156,
+    "input_name": "Plumeria alba L.",
+    "display_name": "Plumeria alba",
+    "family": "Apocynaceae Juss.",
+    "genus": "Plumeria L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "plumeria-rubra": {
+    "id": 157,
+    "input_name": "Plumeria rubra L.",
+    "display_name": "Plumeria rubra",
+    "family": "Apocynaceae Juss.",
+    "genus": "Plumeria L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "polyalthia-suberosa": {
+    "id": 158,
+    "input_name": "Polyalthia suberosa (Raxb.) Thwaites",
+    "display_name": "Polyalthia suberosa",
+    "family": "Annonaceae Juss.",
+    "genus": "Polyalthia Blume",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "pseudorhipsalis-ramulosa": {
+    "id": 159,
+    "input_name": "Pseudorhipsalis ramulosa (Salm-Dyck) Barthlott ",
+    "display_name": "Pseudorhipsalis ramulosa",
+    "family": "Cactaceae Juss.",
+    "genus": "Kimnachia S.Arias & N.Korotkova",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "pseudospondias-microcarpa": {
+    "id": 160,
+    "input_name": "Pseudospondias microcarpa Engl.",
+    "display_name": "Pseudospondias microcarpa",
+    "family": "Anacardiaceae R.Br.",
+    "genus": "Pseudospondias Engl.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "psidium-cattleianum-1": {
+    "id": 161,
+    "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Limon'",
+    "display_name": "Psidium cattleianum",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "psidium-cattleianum-2": {
+    "id": 162,
+    "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Red-Macrocarpa'",
+    "display_name": "Psidium cattleianum",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "psidium-cattleianum-3": {
+    "id": 163,
+    "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Rojo'",
+    "display_name": "Psidium cattleianum",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "psidium-friedrichsthalianum": {
+    "id": 164,
+    "input_name": "Psidium friedrichstahlianum (O.Berg) Niedenzu.",
+    "display_name": "Psidium friedrichsthalianum",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "psidium-guajava-1": {
+    "id": 165,
+    "input_name": "Psidium guajava L. 'Bankog's Gigant'",
+    "display_name": "Psidium guajava",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "psidium-guajava-2": {
+    "id": 166,
+    "input_name": "Psidium guajava L. 'Guajho Blanco'",
+    "display_name": "Psidium guajava",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "psidium-guajava-3": {
+    "id": 167,
+    "input_name": "Psidium guajava L. 'Orange Pulp'",
+    "display_name": "Psidium guajava",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "psidium-guajava-4": {
+    "id": 168,
+    "input_name": "Psidium guajava L. 'Rosa Cubana'",
+    "display_name": "Psidium guajava",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "psidium-guineense": {
+    "id": 169,
+    "input_name": "Psidium guineense Sw.",
+    "display_name": "Psidium guineense",
+    "family": "Myrtaceae Juss.",
+    "genus": "Psidium L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "rauvolfia-tetraphylla": {
+    "id": 170,
+    "input_name": "Rauvolfia tetraphylla",
+    "display_name": "Rauvolfia tetraphylla",
+    "family": "Apocynaceae Juss.",
+    "genus": "Rauvolfia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "ravenala-madagascariensis": {
+    "id": 171,
+    "input_name": "Ravenala madagascariensis Sonn.",
+    "display_name": "Ravenala madagascariensis",
+    "family": "Strelitziaceae Hutch.",
+    "genus": "Ravenala Adans.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "rhipsalis-baccifera": {
+    "id": 172,
+    "input_name": "Rhipsalis baccifera (J.S.Muell.) Stearn",
+    "display_name": "Rhipsalis baccifera",
+    "family": "Cactaceae Juss.",
+    "genus": "Rhipsalis Gaertn.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "rhipsalis-cereuscula": {
+    "id": 173,
+    "input_name": "Rhipsalis cereuscula Haw.",
+    "display_name": "Rhipsalis cereuscula",
+    "family": "Cactaceae Juss.",
+    "genus": "Rhipsalis Gaertn.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "rhipsalis-pentaptera": {
+    "id": 96,
+    "input_name": "Hatiora pentaptera (Pfeiff. ex A. Dietr.) Lem.",
+    "display_name": "Rhipsalis pentaptera",
+    "family": "Cactaceae Juss.",
+    "genus": "Rhipsalis Gaertn.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": false
+  },
+  "rhipsalis-pilocarpa": {
+    "id": 174,
+    "input_name": "Rhipsalis pilocarpa Loefgr.",
+    "display_name": "Rhipsalis pilocarpa",
+    "family": "Cactaceae Juss.",
+    "genus": "Rhipsalis Gaertn.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "rosenbergiodendron-formosum": {
+    "id": 175,
+    "input_name": "Rosenbergiodendron formosum (Jacq.) Fagerl.",
+    "display_name": "Rosenbergiodendron formosum",
+    "family": "Rubiaceae Juss.",
+    "genus": "Rosenbergiodendron Fagerl.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "saccharum-officinarum": {
+    "id": 176,
+    "input_name": "Sacharum officinarum L.",
+    "display_name": "Saccharum officinarum",
+    "family": "Poaceae Barnhart",
+    "genus": "Saccharum L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "salacca-zalacca": {
+    "id": 177,
+    "input_name": "Salacca zalacca (Gaertn.) Voss.",
+    "display_name": "Salacca zalacca",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Salacca Reinw.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "selenicereus-megalanthus": {
+    "id": 106,
+    "input_name": "Hylocereus megalanthus (K.Schum.) Ralf Bauer",
+    "display_name": "Selenicereus megalanthus",
+    "family": "Cactaceae Juss.",
+    "genus": "Selenicereus (A.Berger) Britton & Rose",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "selenicereus-undatus": {
+    "id": 107,
+    "input_name": "Hylocereus undatus (Haw.) Britton et Rose.",
+    "display_name": "Selenicereus undatus",
+    "family": "Cactaceae Juss.",
+    "genus": "Selenicereus (A.Berger) Britton & Rose",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "setaria-palmifolia": {
+    "id": 180,
+    "input_name": "Setaria palmifolia (Koenig) Stapf",
+    "display_name": "Setaria palmifolia",
+    "family": "Poaceae Barnhart",
+    "genus": "Setaria P.Beauv.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "solandra-maxima": {
+    "id": 181,
+    "input_name": "Solandra maxima (Sessé et Moc.) P.Green.",
+    "display_name": "Solandra maxima",
+    "family": "Solanaceae Juss.",
+    "genus": "Solandra Sw.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  },
+  "spathiphyllum-cochlearispathum": {
+    "id": 182,
+    "input_name": "Spathiphyllum cochlearispatum (Liebm.) Engl.",
+    "display_name": "Spathiphyllum cochlearispathum",
+    "family": "Araceae Juss.",
+    "genus": "Spathiphyllum Schott",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "spathodea-campanulata": {
+    "id": 183,
+    "input_name": "Spathodea campanulata Beauv.",
+    "display_name": "Spathodea campanulata",
+    "family": "Bignoniaceae Juss.",
+    "genus": "Spathodea P.Beauv.",
+    "has_image": false,
+    "has_description": false,
+    "has_distribution": true
+  },
+  "spondias-dulcis": {
+    "id": 184,
+    "input_name": "Spondias dulcis",
+    "display_name": "Spondias dulcis",
+    "family": "Anacardiaceae R.Br.",
+    "genus": "Spondias L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "spondias-mombin": {
+    "id": 185,
+    "input_name": "Spondias mombin L.",
+    "display_name": "Spondias mombin",
+    "family": "Anacardiaceae R.Br.",
+    "genus": "Spondias L.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "strelitzia-alba": {
+    "id": 186,
+    "input_name": "Strelitzia alba (L.) Skeels.",
+    "display_name": "Strelitzia alba",
+    "family": "Strelitziaceae Hutch.",
+    "genus": "Strelitzia Banks",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "strelitzia-nicolai": {
+    "id": 187,
+    "input_name": "Strelitzia nicolai Reg. et Körn.",
+    "display_name": "Strelitzia nicolai",
+    "family": "Strelitziaceae Hutch.",
+    "genus": "Strelitzia Banks",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "strophanthus-gratus": {
+    "id": 188,
+    "input_name": "Strophanthus gratus (Wall. et Hook.) Baill.",
+    "display_name": "Strophanthus gratus",
+    "family": "Apocynaceae Juss.",
+    "genus": "Strophanthus DC.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "strophanthus-petersianus": {
+    "id": 189,
+    "input_name": "Strophanthus petersianus Klotzsch.",
+    "display_name": "Strophanthus petersianus",
+    "family": "Apocynaceae Juss.",
+    "genus": "Strophanthus DC.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "syagrus-romanzoffiana": {
+    "id": 190,
+    "input_name": "Syagrus romanzoffianum (Cham.) Glassm",
+    "display_name": "Syagrus romanzoffiana",
+    "family": "Arecaceae Bercht. & J.Presl",
+    "genus": "Syagrus Mart.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "tamarindus-indica": {
+    "id": 191,
+    "input_name": "Tamarindus indica L.",
+    "display_name": "Tamarindus indica",
+    "family": "Fabaceae Lindl.",
+    "genus": "Tamarindus Tourn. ex L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "terminalia-catappa": {
+    "id": 192,
+    "input_name": "Terminalia catappa L.",
+    "display_name": "Terminalia catappa",
+    "family": "Combretaceae R.Br.",
+    "genus": "Terminalia L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "theobroma-cacao": {
+    "id": 193,
+    "input_name": "Theobroma cacao L",
+    "display_name": "Theobroma cacao",
+    "family": "Malvaceae Juss.",
+    "genus": "Theobroma L.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "thunbergia-mysorensis": {
+    "id": 194,
+    "input_name": "Thunbergia mysorensis (Wight) T.Anderson ",
+    "display_name": "Thunbergia mysorensis",
+    "family": "Acanthaceae Juss.",
+    "genus": "Thunbergia Retz.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "vachellia-collinsii": {
+    "id": 1,
+    "input_name": "Acacia collinsii Saff.",
+    "display_name": "Vachellia collinsii",
+    "family": "Fabaceae Lindl.",
+    "genus": "Vachellia Wight & Arn.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "vanilla-planifolia": {
+    "id": 195,
+    "input_name": "Vanilla planifolia Andrews",
+    "display_name": "Vanilla planifolia",
+    "family": "Orchidaceae Juss.",
+    "genus": "Vanilla Plum. ex Mill.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "vanilla-pompona": {
+    "id": 196,
+    "input_name": "Vanilla pompona Schiede",
+    "display_name": "Vanilla pompona",
+    "family": "Orchidaceae Juss.",
+    "genus": "Vanilla Plum. ex Mill.",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
+  },
+  "zingiber-officinale": {
+    "id": 197,
+    "input_name": "Zingiber officinale Roscoe",
+    "display_name": "Zingiber officinale",
+    "family": "Zingiberaceae Martinov",
+    "genus": "Zingiber Mill.",
+    "has_image": true,
+    "has_description": true,
+    "has_distribution": false
+  }
+}
