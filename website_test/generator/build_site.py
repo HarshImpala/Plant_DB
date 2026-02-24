@@ -324,6 +324,32 @@ def compute_quality_metrics(plants):
     }
 
 
+def build_quality_queue_rows(plants):
+    """Build curator queue rows for plants missing key content fields."""
+    checks = [
+        ('image_filename', 'image'),
+        ('description', 'description'),
+        ('native_countries', 'distribution'),
+        ('wikipedia_url', 'wikipedia'),
+        ('toxicity_info', 'toxicity'),
+    ]
+    rows = []
+    for plant in plants:
+        missing = [label for key, label in checks if not plant.get(key)]
+        if not missing:
+            continue
+        rows.append({
+            'slug': plant['slug'],
+            'display_name': plant.get('display_name'),
+            'family': plant.get('family'),
+            'genus': plant.get('genus'),
+            'missing': missing,
+            'missing_count': len(missing),
+        })
+    rows.sort(key=lambda r: (-r['missing_count'], (r['display_name'] or '').lower()))
+    return rows
+
+
 def build_snapshot(plants):
     """Create a compact snapshot used for build-to-build diff reporting."""
     snapshot = {}
@@ -850,6 +876,17 @@ def build_site():
     )
     (OUTPUT_DIR / "stats.html").write_text(html, encoding='utf-8')
 
+    # === Build Content Quality Queue ===
+    print("Building quality queue page...")
+    template = env.get_template('quality_queue.html')
+    quality_rows = build_quality_queue_rows(plants)
+    html = template.render(
+        **base_context,
+        queue_rows=quality_rows,
+        queue_count=len(quality_rows),
+    )
+    (OUTPUT_DIR / "quality-queue.html").write_text(html, encoding='utf-8')
+
     # === Build Collections List Page ===
     print("Building collections list page...")
     template = env.get_template('collections.html')
@@ -891,6 +928,7 @@ def build_site():
         f"{SITE_BASE_URL}/families.html",
         f"{SITE_BASE_URL}/genera.html",
         f"{SITE_BASE_URL}/stats.html",
+        f"{SITE_BASE_URL}/quality-queue.html",
         f"{SITE_BASE_URL}/map.html",
         f"{SITE_BASE_URL}/collections.html",
     ]

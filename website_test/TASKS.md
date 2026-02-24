@@ -65,5 +65,7 @@
 - [x] Generate versioned API-ready JSON exports
   - Progress (2026-02-24): build now emits `output/static/api/v1/*.json` entity exports and `manifest.json`.
   - Progress (2026-02-24): includes plants/families/genera/collections/locations with build version and counts.
-- [ ] Add editor-facing content quality queue page
+- [x] Add editor-facing content quality queue page
+  - Progress (2026-02-24): added generated `quality-queue.html` with per-plant missing-field list and direct links for curation.
+  - Progress (2026-02-24): linked quality queue from footer and sitemap.
 - [ ] Performance pass for larger datasets (search split/gzip/precompute)

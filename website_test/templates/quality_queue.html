@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Content Quality Queue - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<div class="stats-page">
+    <h1>Content Quality Queue</h1>
+    <p>Plants needing curator attention: <strong>{{ queue_count }}</strong></p>
+
+    <section class="stats-section">
+        <h2>Missing Content by Plant</h2>
+        {% if queue_rows %}
+        <div class="family-chart">
+            {% for row in queue_rows %}
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="{{ base_url }}/plant/{{ row.slug }}.html" class="chart-label">{{ row.display_name }}</a>
+                <div>
+                    <span class="common">{{ row.missing | join(', ') }}</span>
+                    {% if row.family or row.genus %}
+                    <div class="common">
+                        {% if row.family %}Family: {{ row.family }}{% endif %}
+                        {% if row.family and row.genus %} | {% endif %}
+                        {% if row.genus %}Genus: {{ row.genus }}{% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+                <span class="chart-value">{{ row.missing_count }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No missing-content items found.</p>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}
