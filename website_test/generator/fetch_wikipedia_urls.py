@@ -9,6 +9,7 @@ import sqlite3
 import requests
 import time
 import json
+import re
 from pathlib import Path
 
 # Paths
@@ -60,20 +61,23 @@ def api_request_with_retry(params: dict, max_retries: int = 3) -> dict | None:
     return None
 
 
-def search_wikidata(query: str) -> dict | None:
-    """Search Wikidata for an entity by name."""
+def _norm(text: str) -> str:
+    return re.sub(r"\s+", " ", (text or "").strip().lower())
+
+
+def search_wikidata(query: str, limit: int = 5) -> list[dict]:
+    """Search Wikidata for entities by name."""
     params = {
         "action": "wbsearchentities",
         "search": query,
         "language": "en",
         "format": "json",
-        "limit": 1,
+        "limit": max(1, min(int(limit), 20)),
     }
     data = api_request_with_retry(params)
-    if data:
-        hits = data.get("search", [])
-        return hits[0] if hits else None
-    return None
+    if not data:
+        return []
+    return data.get("search", []) or []
 
 
 def get_wikipedia_url(qid: str) -> str | None:
@@ -94,6 +98,56 @@ def get_wikipedia_url(qid: str) -> str | None:
     return None
 
 
+def _score_hit(hit: dict, canonical_name: str, scientific_name: str, family: str | None, genus: str | None) -> int:
+    """Heuristic score to choose a better Wikidata candidate."""
+    score = 0
+    label = _norm(hit.get("label", ""))
+    description = _norm(hit.get("description", ""))
+    canonical = _norm(canonical_name or "")
+    scientific = _norm(scientific_name or "")
+
+    plant_terms = ("plant", "species", "genus", "tree", "shrub", "flower", "flora", "botan")
+    if any(term in description for term in plant_terms):
+        score += 25
+    if "disambiguation" in description:
+        score -= 40
+
+    if canonical and label == canonical:
+        score += 60
+    elif canonical and label.startswith(canonical):
+        score += 30
+    elif canonical and canonical in label:
+        score += 15
+
+    if scientific and label == scientific:
+        score += 45
+    elif scientific and scientific in label:
+        score += 20
+
+    if family and _norm(family) in description:
+        score += 8
+    if genus and _norm(genus) in description:
+        score += 8
+
+    return score
+
+
+def pick_best_hit(hits: list[dict], canonical_name: str, scientific_name: str, family: str | None, genus: str | None) -> dict | None:
+    if not hits:
+        return None
+
+    ranked = sorted(
+        ((hit, _score_hit(hit, canonical_name, scientific_name, family, genus)) for hit in hits),
+        key=lambda x: x[1],
+        reverse=True,
+    )
+    best_hit, best_score = ranked[0]
+    # Avoid weak/ambiguous matches.
+    if best_score < 10:
+        return None
+    return best_hit
+
+
 def main():
     """Main function to fetch Wikipedia URLs for all plants."""
     print("Fetching Wikipedia URLs for plants...")
@@ -104,7 +158,7 @@ def main():
     cursor = conn.cursor()
 
     # Get all plants
-    cursor.execute("SELECT id, canonical_name, scientific_name FROM plants")
+    cursor.execute("SELECT id, canonical_name, scientific_name, family, genus FROM plants")
     plants = cursor.fetchall()
     print(f"Found {len(plants)} plants")
 
@@ -114,8 +168,12 @@ def main():
 
     for i, plant in enumerate(plants):
         plant_id = plant["id"]
+        canonical_name = plant["canonical_name"] or ""
+        scientific_name = plant["scientific_name"] or ""
+        family = plant["family"]
+        genus = plant["genus"]
         # Try canonical name first, then scientific name
-        search_name = plant["canonical_name"] or plant["scientific_name"]
+        search_name = canonical_name or scientific_name
 
         if not search_name:
             continue
@@ -127,18 +185,32 @@ def main():
             # "NOT_FOUND" means we searched but no Wikipedia page exists
             wikipedia_url = None if cached_value == "NOT_FOUND" else cached_value
         else:
-            # Search Wikidata
-            hit = search_wikidata(search_name)
             wikipedia_url = None
 
-            if hit:
+            query_candidates = []
+            for q in (
+                canonical_name,
+                scientific_name,
+                f"{canonical_name} plant" if canonical_name else "",
+                f"{scientific_name} plant" if scientific_name else "",
+            ):
+                q = (q or "").strip()
+                if q and q not in query_candidates:
+                    query_candidates.append(q)
+
+            for query in query_candidates:
+                hits = search_wikidata(query, limit=7)
+                hit = pick_best_hit(hits, canonical_name, scientific_name, family, genus)
+                if not hit:
+                    continue
                 qid = hit.get("id")
+                if not qid:
+                    continue
                 wikipedia_url = get_wikipedia_url(qid)
-                # Cache URL or "NOT_FOUND" if no English Wikipedia page
-                cache[cache_key] = wikipedia_url if wikipedia_url else "NOT_FOUND"
-            else:
-                # No Wikidata entry found
-                cache[cache_key] = "NOT_FOUND"
+                if wikipedia_url:
+                    break
+
+            cache[cache_key] = wikipedia_url if wikipedia_url else "NOT_FOUND"
 
             time.sleep(0.5)  # Rate limiting - be gentle with the API
 

@@ -13,7 +13,10 @@
   - Progress (2026-02-24): added `generator/validate_data.py` with checks for final slug uniqueness, missing key name fields, URL format, and missing image file references.
   - Progress (2026-02-24): validator writes `data/validation_report.json` and exits non-zero on critical failures for CI gating.
   - Progress (2026-02-24): wired validation into deploy workflow before build in `.github/workflows/deploy.yml`.
-- [ ] Improve Wikipedia matching quality (disambiguation checks + fallback query strategy in `generator/fetch_wikipedia_urls.py`)
+- [x] Improve Wikipedia matching quality (disambiguation checks + fallback query strategy in `generator/fetch_wikipedia_urls.py`)
+  - Progress (2026-02-24): upgraded Wikidata search to fetch multiple candidates and rank them with botanical relevance scoring.
+  - Progress (2026-02-24): added fallback query strategy (`canonical`, `scientific`, and `... plant` variants) before declaring `NOT_FOUND`.
+  - Progress (2026-02-24): added ambiguity protection to skip weak/disambiguation-like matches.
 - [ ] Optimize build performance by removing N+1 DB query patterns in `generator/build_site.py`
 
 ## UX and Discovery
