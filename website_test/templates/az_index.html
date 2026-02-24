@@ -66,9 +66,9 @@
                     data-has-image="{{ 1 if plant.image_filename else 0 }}"
                     data-has-description="{{ 1 if plant.description else 0 }}">
                     <a href="{{ base_url }}/plant/{{ plant.slug }}.html">
-                        <span class="scientific">{{ plant.canonical_name or plant.scientific_name }}</span>
-                        {% if plant.common_name %}
-                        <span class="common">- {{ plant.common_name }}</span>
+                        <span class="scientific">{{ plant.display_name }}</span>
+                        {% if plant.display_common %}
+                        <span class="common">- {{ plant.display_common }}</span>
                         {% endif %}
                     </a>
                 </li>

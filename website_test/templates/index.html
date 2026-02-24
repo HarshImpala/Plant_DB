@@ -43,15 +43,15 @@
             <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-card">
                 <div class="plant-card-image">
                     {% if plant.image_filename %}
-                    <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.canonical_name }}" loading="lazy">
+                    <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.display_name }}" loading="lazy">
                     {% else %}
                     <div class="placeholder-image"></div>
                     {% endif %}
                 </div>
                 <div class="plant-card-info">
-                    <h3>{{ plant.canonical_name }}</h3>
-                    {% if plant.common_name %}
-                    <p>{{ plant.common_name }}</p>
+                    <h3>{{ plant.display_name }}</h3>
+                    {% if plant.display_common %}
+                    <p>{{ plant.display_common }}</p>
                     {% endif %}
                     {% if plant.family %}
                     <span class="family-badge">{{ plant.family }}</span>
@@ -123,8 +123,8 @@
         let html = '';
         for (const plant of results) {
             html += `<a href="./plant/${plant.slug}.html">
-                <span class="scientific">${plant.canonical_name || plant.scientific_name}</span>
-                ${plant.common_name ? `<br><span class="common">${plant.common_name}</span>` : ''}
+                <span class="scientific">${plant.display_name || plant.canonical_name || plant.scientific_name}</span>
+                ${(plant.display_common || plant.common_name) ? `<br><span class="common">${plant.display_common || plant.common_name}</span>` : ''}
             </a>`;
         }
         resultsBox.innerHTML = html;

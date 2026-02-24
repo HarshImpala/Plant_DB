@@ -235,9 +235,9 @@
         <p class="footer-links"><a href="./stats.html">Collection Statistics</a></p>
     </footer>
 
-    <script src="./static/js/search.js?v=1771961632"></script>
-    <script src="./static/js/controls.js?v=1771961632"></script>
-    <script src="./static/js/lightbox.js?v=1771961632"></script>
+    <script src="./static/js/search.js?v=1771961936"></script>
+    <script src="./static/js/controls.js?v=1771961936"></script>
+    <script src="./static/js/lightbox.js?v=1771961936"></script>
     
 <script>
 // Animated stat count-up
@@ -297,8 +297,8 @@
         let html = '';
         for (const plant of results) {
             html += `<a href="./plant/${plant.slug}.html">
-                <span class="scientific">${plant.canonical_name || plant.scientific_name}</span>
-                ${plant.common_name ? `<br><span class="common">${plant.common_name}</span>` : ''}
+                <span class="scientific">${plant.display_name || plant.canonical_name || plant.scientific_name}</span>
+                ${(plant.display_common || plant.common_name) ? `<br><span class="common">${plant.display_common || plant.common_name}</span>` : ''}
             </a>`;
         }
         resultsBox.innerHTML = html;

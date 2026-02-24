@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}{{ plant.canonical_name or plant.scientific_name }} - Plant Encyclopedia{% endblock %}
+{% block title %}{{ plant.display_name }} - Plant Encyclopedia{% endblock %}
 
 {% block head %}
 {% if plant.description %}
 <meta name="description" content="{{ plant.description[:155] }}{% if plant.description | length > 155 %}...{% endif %}">
 {% else %}
-<meta name="description" content="{{ plant.canonical_name or plant.scientific_name }}{% if plant.common_name %} ({{ plant.common_name }}){% endif %}{% if plant.family %} — family {{ plant.family }}{% endif %}. Taxonomic information, native distribution, and more.">
+<meta name="description" content="{{ plant.display_name }}{% if plant.display_common %} ({{ plant.display_common }}){% endif %}{% if plant.family %} — family {{ plant.family }}{% endif %}. Taxonomic information, native distribution, and more.">
 {% endif %}
 {% if plant_jsonld %}
 <script type="application/ld+json">{{ plant_jsonld | safe }}</script>
@@ -23,14 +23,14 @@
         {% if plant.genus %}
         <a href="{{ base_url }}/genus/{{ plant.genus | slugify }}.html">{{ plant.genus }}</a> &rsaquo;
         {% endif %}
-        <span>{{ plant.canonical_name or plant.scientific_name }}</span>
+        <span>{{ plant.display_name }}</span>
     </nav>
 
     <header class="plant-header">
         <div class="plant-title-row">
-            <h1 class="scientific-name">{{ plant.scientific_name or plant.canonical_name }}</h1>
+            <h1 class="scientific-name">{{ plant.display_scientific }}</h1>
             <button class="copy-name-btn"
-                    data-name="{{ plant.canonical_name or plant.scientific_name }}"
+                    data-name="{{ plant.display_scientific }}"
                     title="Copy scientific name"
                     aria-label="Copy scientific name">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
@@ -39,8 +39,8 @@
                 </svg>
             </button>
         </div>
-        {% if plant.common_name %}
-        <p class="common-name">{{ plant.common_name }}</p>
+        {% if plant.display_common %}
+        <p class="common-name">{{ plant.display_common }}</p>
         {% endif %}
     </header>
 
@@ -49,7 +49,7 @@
             {% if plant.image_filename %}
             <div class="plant-image">
                 <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}"
-                     alt="{{ plant.canonical_name }}">
+                     alt="{{ plant.display_name }}">
                 {% if plant.image_source == 'wikipedia' %}
                 <p class="image-credit">Image source: Wikipedia</p>
                 {% elif plant.image_source %}
@@ -217,15 +217,15 @@
             <div class="related-plant-image">
                 {% if related.image_filename %}
                 <img src="{{ base_url }}/static/images/plants/{{ related.image_filename }}"
-                     alt="{{ related.canonical_name }}" loading="lazy">
+                     alt="{{ related.display_name }}" loading="lazy">
                 {% else %}
                 <div class="placeholder-image"></div>
                 {% endif %}
             </div>
             <div class="related-plant-info">
-                <span class="scientific">{{ related.canonical_name or related.scientific_name }}</span>
-                {% if related.common_name %}
-                <span class="common">{{ related.common_name }}</span>
+                <span class="scientific">{{ related.display_name }}</span>
+                {% if related.display_common %}
+                <span class="common">{{ related.display_common }}</span>
                 {% endif %}
             </div>
         </a>
@@ -241,25 +241,21 @@
         <a href="{{ base_url }}/plant/{{ prev_plant.slug }}.html">
             <span class="plant-nav-arrow">&#8592;</span>
             <span class="plant-nav-label">Previous</span>
-            <span class="plant-nav-name">{{ prev_plant.canonical_name or prev_plant.scientific_name }}</span>
+            <span class="plant-nav-name">{{ prev_plant.display_name }}</span>
         </a>
         {% endif %}
     </div>
     <div class="plant-nav-next">
         {% if next_plant %}
         <a href="{{ base_url }}/plant/{{ next_plant.slug }}.html">
-            <span class="plant-nav-name">{{ next_plant.canonical_name or next_plant.scientific_name }}</span>
+            <span class="plant-nav-name">{{ next_plant.display_name }}</span>
             <span class="plant-nav-label">Next</span>
             <span class="plant-nav-arrow">&#8594;</span>
         </a>
         {% endif %}
     </div>
 </nav>
-{% endif %}
-{% if plant_jsonld %}
-<script type="application/ld+json">{{ plant_jsonld | safe }}</script>
-{% endif %}
-{% endblock %}
+{% endif %}`r`n{% endblock %}
 
 {% block scripts %}
 <script>
@@ -286,8 +282,8 @@
     try {
         const entry = {
             slug: "{{ plant.slug }}",
-            name: "{{ (plant.canonical_name or plant.scientific_name) | replace('"', '&quot;') }}",
-            common_name: "{{ (plant.common_name or '') | replace('"', '&quot;') }}"
+            name: "{{ (plant.display_name or '') | replace('"', '&quot;') }}",
+            common_name: "{{ (plant.display_common or '') | replace('"', '&quot;') }}"
         };
         let recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
         recent = recent.filter(function(p) { return p.slug !== entry.slug; });
@@ -297,4 +293,8 @@
 })();
 </script>
 {% endblock %}
+
+
+
+
 

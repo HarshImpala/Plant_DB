@@ -61,6 +61,18 @@ def get_db_connection():
     return conn
 
 
+def normalize_plant_display_fields(plant):
+    """Attach consistent display-name fields used across templates."""
+    canonical = (plant.get('canonical_name') or '').strip()
+    scientific = (plant.get('scientific_name') or '').strip()
+    input_name = (plant.get('input_name') or '').strip()
+    common = (plant.get('common_name') or '').strip()
+    plant['display_name'] = canonical or scientific or input_name
+    plant['display_scientific'] = scientific or canonical or input_name
+    plant['display_common'] = common
+    return plant
+
+
 def get_all_plants(conn):
     """Get all plants with basic info."""
     cursor = conn.cursor()
@@ -68,6 +80,8 @@ def get_all_plants(conn):
         SELECT * FROM plants ORDER BY canonical_name, scientific_name
     """)
     plants = [dict(row) for row in cursor.fetchall()]
+    for plant in plants:
+        normalize_plant_display_fields(plant)
 
     # Add deterministic unique slugs to each plant.
     # If a base slug appears more than once, suffix all variants as -1..-N.
@@ -159,6 +173,7 @@ def preload_plants_by_category(conn, slug_by_plant_id):
     seen_by_category = defaultdict(set)
     for row in cursor.fetchall():
         d = dict(row)
+        normalize_plant_display_fields(d)
         if d['id'] in seen_by_category[d['category_id']]:
             continue
         seen_by_category[d['category_id']].add(d['id'])
@@ -209,6 +224,9 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
         search_data.append({
             'id': plant['id'],
             'slug': plant['slug'],
+            'display_name': plant['display_name'],
+            'display_scientific': plant['display_scientific'],
+            'display_common': plant['display_common'],
             'canonical_name': plant['canonical_name'],
             'scientific_name': plant['scientific_name'],
             'common_name': plant['common_name'],
@@ -228,15 +246,15 @@ def build_map_locations(plants):
             continue
         grouped[location].append({
             'slug': plant['slug'],
-            'canonical_name': plant.get('canonical_name') or plant.get('scientific_name') or plant.get('input_name'),
-            'common_name': plant.get('common_name'),
+            'display_name': plant.get('display_name'),
+            'display_common': plant.get('display_common'),
             'family': plant.get('family'),
             'genus': plant.get('genus'),
         })
 
     locations = []
     for location in sorted(grouped.keys(), key=str.lower):
-        plants_at_location = sorted(grouped[location], key=lambda p: (p['canonical_name'] or '').lower())
+        plants_at_location = sorted(grouped[location], key=lambda p: (p['display_name'] or '').lower())
         locations.append({
             'location': location,
             'slug': slugify(location) or 'garden-location',

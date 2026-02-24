@@ -65,16 +65,16 @@
         <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-list-item">
             <div class="plant-list-image">
                 {% if plant.image_filename %}
-                <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.canonical_name }}" loading="lazy">
+                    <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.display_name }}" loading="lazy">
                 {% else %}
                 <div class="placeholder-image"></div>
                 {% endif %}
             </div>
             <div class="plant-list-info">
-                <h3>{{ plant.canonical_name or plant.scientific_name }}</h3>
-                {% if plant.common_name %}
-                <p>{{ plant.common_name }}</p>
-                {% endif %}
+                    <h3>{{ plant.display_name }}</h3>
+                    {% if plant.display_common %}
+                    <p>{{ plant.display_common }}</p>
+                    {% endif %}
             </div>
         </a>
         {% endfor %}

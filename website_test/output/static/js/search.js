@@ -93,8 +93,8 @@
         for (const plant of results) {
             html += `
                 <a href="${baseUrl}/plant/${plant.slug}.html">
-                    <span class="scientific">${plant.canonical_name || plant.scientific_name}</span>
-                    ${plant.common_name ? `<br><span class="common">${plant.common_name}</span>` : ''}
+                    <span class="scientific">${plant.display_name || plant.canonical_name || plant.scientific_name}</span>
+                    ${(plant.display_common || plant.common_name) ? `<br><span class="common">${plant.display_common || plant.common_name}</span>` : ''}
                 </a>
             `;
         }

@@ -138,9 +138,9 @@
                 <ul>
                     {% for plant in item.plants %}
                     <li>
-                        <a href="{{ base_url }}/plant/{{ plant.slug }}.html">{{ plant.canonical_name }}</a>
-                        {% if plant.common_name %}
-                        <span class="common"> - {{ plant.common_name }}</span>
+                        <a href="{{ base_url }}/plant/{{ plant.slug }}.html">{{ plant.display_name }}</a>
+                        {% if plant.display_common %}
+                        <span class="common"> - {{ plant.display_common }}</span>
                         {% endif %}
                     </li>
                     {% endfor %}
