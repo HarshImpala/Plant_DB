@@ -246,6 +246,42 @@ def build_map_locations(plants):
     return locations
 
 
+def compute_quality_metrics(plants):
+    """Compute coverage/completeness metrics for the stats dashboard."""
+    total = len(plants) or 1
+    tracked_fields = {
+        'Image': 'image_filename',
+        'Description': 'description',
+        'Distribution': 'native_countries',
+        'Wikipedia URL': 'wikipedia_url',
+        'WFO Link': 'wfo_url',
+        'Garden Location': 'garden_location',
+        'Toxicity Info': 'toxicity_info',
+    }
+
+    coverage_rows = []
+    completeness_points = 0
+    max_points = len(tracked_fields) * len(plants)
+
+    for label, key in tracked_fields.items():
+        count = sum(1 for plant in plants if plant.get(key))
+        completeness_points += count
+        coverage_rows.append({
+            'label': label,
+            'count': count,
+            'missing': len(plants) - count,
+            'pct': round((count / total) * 100, 1),
+        })
+
+    coverage_rows.sort(key=lambda row: row['pct'], reverse=True)
+    overall_completeness = round((completeness_points / max_points) * 100, 1) if max_points else 0.0
+
+    return {
+        'coverage_rows': coverage_rows,
+        'overall_completeness': overall_completeness,
+    }
+
+
 def build_plant_jsonld(plant, common_names, synonyms):
     """Build JSON-LD metadata for a plant page."""
     display_name = plant.get('canonical_name') or plant.get('scientific_name') or plant.get('input_name')
@@ -612,6 +648,7 @@ def build_site():
     print("Building stats page...")
     template = env.get_template('stats.html')
     top_families = sorted(families, key=lambda f: f['plant_count'], reverse=True)[:15]
+    quality_metrics = compute_quality_metrics(plants)
     html = template.render(
         **base_context,
         total_plants=len(plants),
@@ -621,6 +658,8 @@ def build_site():
         total_families=len(families),
         total_genera=len(genera),
         top_families=top_families,
+        coverage_rows=quality_metrics['coverage_rows'],
+        overall_completeness=quality_metrics['overall_completeness'],
     )
     (OUTPUT_DIR / "stats.html").write_text(html, encoding='utf-8')
 

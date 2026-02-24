@@ -35,7 +35,9 @@
 
 ## Do Later
 
-- [ ] Expand stats page into data quality dashboard (coverage + completeness metrics)
+- [x] Expand stats page into data quality dashboard (coverage + completeness metrics)
+  - Progress (2026-02-24): added generator-side quality metric computation (field coverage + overall completeness score).
+  - Progress (2026-02-24): expanded `stats.html` with a Data Quality Dashboard section and coverage bars for key content fields.
 
 ## Platform and Delivery
 

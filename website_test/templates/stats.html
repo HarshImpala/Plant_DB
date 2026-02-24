@@ -47,5 +47,26 @@
             {% endfor %}
         </div>
     </section>
+
+    <section class="stats-section">
+        <h2>Data Quality Dashboard</h2>
+        <div class="stats-grid">
+            <div class="stat-card highlight">
+                <div class="stat-number">{{ overall_completeness }}%</div>
+                <div class="stat-label">Overall Completeness</div>
+            </div>
+        </div>
+        <div class="family-chart quality-chart">
+            {% for row in coverage_rows %}
+            <div class="chart-row">
+                <span class="chart-label">{{ row.label }}</span>
+                <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style="width: {{ row.pct }}%"></div>
+                </div>
+                <span class="chart-value">{{ row.pct }}%</span>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 </div>
 {% endblock %}
