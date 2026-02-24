@@ -1,0 +1,11 @@
+{
+  "total_plants": 196,
+  "critical": [],
+  "warnings": [],
+  "stats": {
+    "plants_with_images": 137,
+    "plants_with_wikipedia": 167,
+    "critical_checks_failed": 0,
+    "warning_checks_failed": 0
+  }
+}

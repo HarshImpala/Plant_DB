@@ -9,7 +9,10 @@
   - Progress (2026-02-24): switched plant writes to SQLite upsert (`ON CONFLICT(input_name) DO UPDATE`) to preserve stable IDs.
   - Progress (2026-02-24): added explicit `--full-rebuild` destructive mode; default run now preserves DB and updates in place.
   - Progress (2026-02-24): relationship/location child records are replaced per plant during import to avoid stale duplicates.
-- [ ] Add a pre-build validation step (duplicate slugs, missing critical fields, broken links) and fail CI on critical issues
+- [x] Add a pre-build validation step (duplicate slugs, missing critical fields, broken links) and fail CI on critical issues
+  - Progress (2026-02-24): added `generator/validate_data.py` with checks for final slug uniqueness, missing key name fields, URL format, and missing image file references.
+  - Progress (2026-02-24): validator writes `data/validation_report.json` and exits non-zero on critical failures for CI gating.
+  - Progress (2026-02-24): wired validation into deploy workflow before build in `.github/workflows/deploy.yml`.
 - [ ] Improve Wikipedia matching quality (disambiguation checks + fallback query strategy in `generator/fetch_wikipedia_urls.py`)
 - [ ] Optimize build performance by removing N+1 DB query patterns in `generator/build_site.py`
 
