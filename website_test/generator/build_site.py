@@ -237,14 +237,32 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
     return search_data
 
 
+def preload_garden_location_map(conn):
+    """Load normalized garden location key/display_name by plant ID."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT pgl.plant_id, gl.location_key, gl.display_name
+        FROM plant_garden_locations pgl
+        JOIN garden_locations gl ON gl.id = pgl.location_id
+    """)
+    return {
+        plant_id: {
+            'garden_location_key': location_key,
+            'garden_location_display': display_name,
+        }
+        for plant_id, location_key, display_name in cursor.fetchall()
+    }
+
+
 def build_map_locations(plants):
     """Build location -> plants mapping for the map page."""
     grouped = defaultdict(list)
     for plant in plants:
-        location = (plant.get('garden_location') or '').strip()
-        if not location:
+        location_key = (plant.get('garden_location_key') or '').strip()
+        location_display = (plant.get('garden_location_display') or plant.get('garden_location') or '').strip()
+        if not location_key or not location_display:
             continue
-        grouped[location].append({
+        grouped[(location_key, location_display)].append({
             'slug': plant['slug'],
             'display_name': plant.get('display_name'),
             'display_common': plant.get('display_common'),
@@ -253,11 +271,12 @@ def build_map_locations(plants):
         })
 
     locations = []
-    for location in sorted(grouped.keys(), key=str.lower):
-        plants_at_location = sorted(grouped[location], key=lambda p: (p['display_name'] or '').lower())
+    for location_key, location_display in sorted(grouped.keys(), key=lambda x: x[1].lower()):
+        plants_at_location = sorted(grouped[(location_key, location_display)], key=lambda p: (p['display_name'] or '').lower())
         locations.append({
-            'location': location,
-            'slug': slugify(location) or 'garden-location',
+            'location': location_display,
+            'location_key': location_key,
+            'slug': slugify(location_display) or 'garden-location',
             'plant_count': len(plants_at_location),
             'plants': plants_at_location,
         })
@@ -488,6 +507,14 @@ def build_site():
     if PLACEHOLDER_IMAGES:
         for p in plants:
             p['image_filename'] = None
+    garden_locations_by_plant = preload_garden_location_map(conn)
+    for plant in plants:
+        location_info = garden_locations_by_plant.get(plant['id'])
+        if location_info:
+            plant.update(location_info)
+        else:
+            plant['garden_location_key'] = None
+            plant['garden_location_display'] = (plant.get('garden_location') or '').strip() or None
     families = get_categories(conn, 'family')
     genera = get_categories(conn, 'genus')
     synonyms_by_plant = preload_plant_synonyms(conn)

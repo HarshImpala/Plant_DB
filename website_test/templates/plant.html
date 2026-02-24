@@ -165,12 +165,12 @@
             </section>
             {% endif %}
 
-            {% if plant.garden_location %}
+            {% if plant.garden_location_display %}
             <section class="plant-section">
                 <h2>Botanical Garden Location</h2>
-                <p>{{ plant.garden_location }}</p>
+                <p>{{ plant.garden_location_display }}</p>
                 <p>
-                    <a href="{{ base_url }}/map.html?location={{ plant.garden_location | urlencode }}">
+                    <a href="{{ base_url }}/map.html?location={{ plant.garden_location_key or (plant.garden_location_display | urlencode) }}">
                         View this location on the map page
                     </a>
                 </p>

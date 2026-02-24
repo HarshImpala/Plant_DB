@@ -56,7 +56,9 @@
 - [x] Add duplicate-detection review report in import pipeline
   - Progress (2026-02-24): added post-import duplicate analysis in `generator/import_data.py`.
   - Progress (2026-02-24): writes `data/duplicate_review_report.json` with exact duplicate groups and same-family/genus fuzzy candidates.
-- [ ] Normalize `garden_location` into stable location IDs
+- [x] Normalize `garden_location` into stable location IDs
+  - Progress (2026-02-24): added normalized location tables (`garden_locations`, `plant_garden_locations`) and deterministic keys (`loc-...`) in import pipeline.
+  - Progress (2026-02-24): updated build/map/plant flow to use stable location keys for deep links and location indexing.
 - [ ] Add "changed since last build" diff artifacts
 - [ ] Generate versioned API-ready JSON exports
 - [ ] Add editor-facing content quality queue page

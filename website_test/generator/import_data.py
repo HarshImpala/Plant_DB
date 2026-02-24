@@ -132,12 +132,32 @@ def create_database():
         )
     """)
 
+    # Normalized garden locations (stable location IDs/keys)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS garden_locations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            location_key TEXT UNIQUE NOT NULL,
+            display_name TEXT UNIQUE NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS plant_garden_locations (
+            plant_id INTEGER PRIMARY KEY,
+            location_id INTEGER NOT NULL,
+            FOREIGN KEY (plant_id) REFERENCES plants(id),
+            FOREIGN KEY (location_id) REFERENCES garden_locations(id)
+        )
+    """)
+
     # Create indexes for faster lookups
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_plants_canonical ON plants(canonical_name)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_plants_family ON plants(family)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_plants_genus ON plants(genus)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_synonyms_plant ON plant_synonyms(plant_id)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_common_names_plant ON plant_common_names(plant_id)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_garden_locations_key ON garden_locations(location_key)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_plant_garden_locations_loc ON plant_garden_locations(location_id)")
 
     conn.commit()
     return conn
@@ -374,6 +394,55 @@ def _norm_name(value):
     return re.sub(r"\s+", " ", value).strip()
 
 
+def _location_key(value):
+    normalized = _norm_name(value)
+    if not normalized:
+        return ""
+    return f"loc-{normalized.replace(' ', '-')}"
+
+
+def normalize_garden_locations(conn):
+    """Normalize free-text garden_location values into stable location keys."""
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM plant_garden_locations")
+    cursor.execute("""
+        SELECT id, garden_location
+        FROM plants
+        WHERE garden_location IS NOT NULL AND TRIM(garden_location) <> ''
+        ORDER BY id
+    """)
+    rows = cursor.fetchall()
+    linked = 0
+
+    for plant_id, display_name in rows:
+        display_name = display_name.strip()
+        location_key = _location_key(display_name)
+        if not location_key:
+            continue
+        cursor.execute("""
+            INSERT INTO garden_locations (location_key, display_name)
+            VALUES (?, ?)
+            ON CONFLICT(display_name) DO UPDATE SET
+                location_key=excluded.location_key
+        """, (location_key, display_name))
+        cursor.execute("SELECT id FROM garden_locations WHERE display_name = ?", (display_name,))
+        location_id = cursor.fetchone()[0]
+        cursor.execute("""
+            INSERT INTO plant_garden_locations (plant_id, location_id)
+            VALUES (?, ?)
+            ON CONFLICT(plant_id) DO UPDATE SET
+                location_id=excluded.location_id
+        """, (plant_id, location_id))
+        linked += 1
+
+    cursor.execute("""
+        DELETE FROM garden_locations
+        WHERE id NOT IN (SELECT DISTINCT location_id FROM plant_garden_locations)
+    """)
+    conn.commit()
+    print(f"Normalized garden locations: {linked} plants linked")
+
+
 def generate_duplicate_review_report(conn):
     """Generate a duplicate-candidate review report for curator review."""
     cursor = conn.cursor()
@@ -513,6 +582,7 @@ def main():
     print(f"Synonyms: {synonym_count}")
     print(f"Common names: {common_name_count}")
     print(f"Categories: {category_count}")
+    normalize_garden_locations(conn)
     generate_duplicate_review_report(conn)
 
     conn.close()

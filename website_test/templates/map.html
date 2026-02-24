@@ -133,7 +133,10 @@
         </div>
         <div id="location-groups">
             {% for item in map_locations %}
-            <div class="location-group" data-location="{{ item.location | lower }}" id="location-{{ item.slug }}">
+            <div class="location-group"
+                 data-location="{{ item.location | lower }}"
+                 data-location-key="{{ item.location_key }}"
+                 id="location-{{ item.location_key }}">
                 <h3>{{ item.location }} <span class="common">({{ item.plant_count }})</span></h3>
                 <ul>
                     {% for plant in item.plants %}
@@ -158,14 +161,16 @@
     const input = document.getElementById('location-filter');
     const groups = Array.from(document.querySelectorAll('.location-group'));
     const params = new URLSearchParams(window.location.search);
-    const locationParam = (params.get('location') || '').trim().toLowerCase();
+    const locationParamRaw = (params.get('location') || '').trim();
+    const locationParam = locationParamRaw.toLowerCase();
 
     function applyFilter() {
         const q = (input.value || '').trim().toLowerCase();
         groups.forEach(function(group) {
             const location = group.dataset.location || '';
+            const locationKey = group.dataset.locationKey || '';
             const text = group.textContent.toLowerCase();
-            group.hidden = q && !location.includes(q) && !text.includes(q);
+            group.hidden = q && !location.includes(q) && !locationKey.includes(q) && !text.includes(q);
         });
     }
 
@@ -175,7 +180,9 @@
         input.value = locationParam;
         applyFilter();
         const target = groups.find(function(group) {
-            return (group.dataset.location || '').includes(locationParam);
+            const locationKey = (group.dataset.locationKey || '').toLowerCase();
+            const locationText = (group.dataset.location || '').toLowerCase();
+            return locationKey === locationParam || locationText.includes(locationParam);
         });
         if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
