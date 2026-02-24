@@ -62,6 +62,8 @@
 - [x] Add "changed since last build" diff artifacts
   - Progress (2026-02-24): added snapshot/diff generation in `generator/build_site.py`.
   - Progress (2026-02-24): build now writes `data/build_snapshot.json` and `data/build_diff_report.json` with added/removed/changed plant records.
-- [ ] Generate versioned API-ready JSON exports
+- [x] Generate versioned API-ready JSON exports
+  - Progress (2026-02-24): build now emits `output/static/api/v1/*.json` entity exports and `manifest.json`.
+  - Progress (2026-02-24): includes plants/families/genera/collections/locations with build version and counts.
 - [ ] Add editor-facing content quality queue page
 - [ ] Performance pass for larger datasets (search split/gzip/precompute)

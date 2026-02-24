@@ -389,6 +389,67 @@ def write_build_diff_report(plants):
     return report
 
 
+def write_api_exports(build_version, plants, families, genera, collections, map_locations):
+    """Write versioned JSON exports for future API-driven UI features."""
+    api_dir = OUTPUT_DIR / "static" / "api" / "v1"
+    api_dir.mkdir(parents=True, exist_ok=True)
+
+    plants_export = []
+    for plant in plants:
+        plants_export.append({
+            'id': plant['id'],
+            'slug': plant['slug'],
+            'display_name': plant.get('display_name'),
+            'display_scientific': plant.get('display_scientific'),
+            'display_common': plant.get('display_common'),
+            'family': plant.get('family'),
+            'genus': plant.get('genus'),
+            'garden_location_key': plant.get('garden_location_key'),
+            'garden_location_display': plant.get('garden_location_display'),
+            'has_image': bool(plant.get('image_filename')),
+            'has_description': bool(plant.get('description')),
+            'has_distribution': bool(plant.get('native_countries')),
+        })
+
+    families_export = [{'name': f['name'], 'slug': f['slug'], 'plant_count': f['plant_count']} for f in families]
+    genera_export = [{'name': g['name'], 'slug': g['slug'], 'plant_count': g['plant_count']} for g in genera]
+    collections_export = [
+        {'slug': c['slug'], 'name_en': c['name_en'], 'name_hu': c['name_hu'], 'plant_count': c['plant_count']}
+        for c in collections
+    ]
+    locations_export = [
+        {'location_key': l['location_key'], 'location': l['location'], 'plant_count': l['plant_count']}
+        for l in map_locations
+    ]
+
+    manifest = {
+        'version': 'v1',
+        'build_version': build_version,
+        'generated_at_unix': int(build_version),
+        'counts': {
+            'plants': len(plants_export),
+            'families': len(families_export),
+            'genera': len(genera_export),
+            'collections': len(collections_export),
+            'locations': len(locations_export),
+        },
+        'files': {
+            'plants': 'plants.json',
+            'families': 'families.json',
+            'genera': 'genera.json',
+            'collections': 'collections.json',
+            'locations': 'locations.json',
+        },
+    }
+
+    (api_dir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf-8')
+    (api_dir / "plants.json").write_text(json.dumps(plants_export, ensure_ascii=False), encoding='utf-8')
+    (api_dir / "families.json").write_text(json.dumps(families_export, ensure_ascii=False), encoding='utf-8')
+    (api_dir / "genera.json").write_text(json.dumps(genera_export, ensure_ascii=False), encoding='utf-8')
+    (api_dir / "collections.json").write_text(json.dumps(collections_export, ensure_ascii=False), encoding='utf-8')
+    (api_dir / "locations.json").write_text(json.dumps(locations_export, ensure_ascii=False), encoding='utf-8')
+
+
 def build_plant_jsonld(plant, common_names, synonyms):
     """Build JSON-LD metadata for a plant page."""
     display_name = plant.get('canonical_name') or plant.get('scientific_name') or plant.get('input_name')
@@ -765,6 +826,10 @@ def build_site():
     search_data_dir = OUTPUT_DIR / "static" / "data"
     search_data_dir.mkdir(parents=True, exist_ok=True)
     (search_data_dir / "search-data.json").write_text(json.dumps(search_data, ensure_ascii=False), encoding='utf-8')
+
+    # === Build API Exports ===
+    print("Building API exports...")
+    write_api_exports(build_version, plants, families, genera, collections, map_locations)
 
     # === Build Stats Page ===
     print("Building stats page...")
