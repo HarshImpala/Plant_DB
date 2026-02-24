@@ -89,26 +89,6 @@ def get_all_plants(conn):
     return plants
 
 
-def get_plant_synonyms(conn, plant_id):
-    """Get synonyms for a plant."""
-    cursor = conn.cursor()
-    cursor.execute("""
-        SELECT DISTINCT synonym_name FROM plant_synonyms
-        WHERE plant_id = ? ORDER BY synonym_name
-    """, (plant_id,))
-    return [row['synonym_name'] for row in cursor.fetchall()]
-
-
-def get_plant_common_names(conn, plant_id):
-    """Get common names for a plant."""
-    cursor = conn.cursor()
-    cursor.execute("""
-        SELECT DISTINCT common_name FROM plant_common_names
-        WHERE plant_id = ? ORDER BY common_name
-    """, (plant_id,))
-    return [row['common_name'] for row in cursor.fetchall()]
-
-
 def get_categories(conn, category_type):
     """Get all categories of a specific type with plant counts."""
     cursor = conn.cursor()
@@ -129,22 +109,60 @@ def get_categories(conn, category_type):
     return categories
 
 
-def get_plants_in_category(conn, category_id):
-    """Get all plants in a category."""
+def build_plant_slug_map(plants):
+    """Create a fast lookup of plant ID to precomputed unique slug."""
+    return {plant['id']: plant['slug'] for plant in plants}
+
+
+def preload_plant_synonyms(conn):
+    """Load synonyms for all plants in one query."""
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT p.* FROM plants p
-        JOIN plant_categories pc ON p.id = pc.plant_id
-        WHERE pc.category_id = ?
-        ORDER BY p.canonical_name, p.scientific_name
-    """, (category_id,))
-    plants = [dict(row) for row in cursor.fetchall()]
+        SELECT DISTINCT plant_id, synonym_name
+        FROM plant_synonyms
+        ORDER BY plant_id, synonym_name
+    """)
+    grouped = defaultdict(list)
+    for plant_id, synonym_name in cursor.fetchall():
+        grouped[plant_id].append(synonym_name)
+    return grouped
 
-    for plant in plants:
-        name = plant['canonical_name'] or plant['scientific_name'] or plant['input_name']
-        plant['slug'] = slugify(name)
 
-    return plants
+def preload_plant_common_names(conn):
+    """Load common names for all plants in one query."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT DISTINCT plant_id, common_name
+        FROM plant_common_names
+        ORDER BY plant_id, common_name
+    """)
+    grouped = defaultdict(list)
+    for plant_id, common_name in cursor.fetchall():
+        grouped[plant_id].append(common_name)
+    return grouped
+
+
+def preload_plants_by_category(conn, slug_by_plant_id):
+    """Load plants grouped by category ID in one query."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT
+            pc.category_id,
+            p.*
+        FROM plant_categories pc
+        JOIN plants p ON p.id = pc.plant_id
+        ORDER BY pc.category_id, p.canonical_name, p.scientific_name
+    """)
+    grouped = defaultdict(list)
+    seen_by_category = defaultdict(set)
+    for row in cursor.fetchall():
+        d = dict(row)
+        if d['id'] in seen_by_category[d['category_id']]:
+            continue
+        seen_by_category[d['category_id']].add(d['id'])
+        d['slug'] = slug_by_plant_id.get(d['id'], f"plant-{d['id']}")
+        grouped[d['category_id']].append(d)
+    return grouped
 
 
 def group_by_letter(items, key='name'):
@@ -161,13 +179,13 @@ def group_by_letter(items, key='name'):
     return grouped
 
 
-def build_search_data(plants, conn):
+def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
     """Build JSON search data for client-side search."""
     search_data = []
 
     for plant in plants:
-        common_names = get_plant_common_names(conn, plant['id'])
-        synonyms = get_plant_synonyms(conn, plant['id'])
+        common_names = common_names_by_plant.get(plant['id'], [])
+        synonyms = synonyms_by_plant.get(plant['id'], [])
 
         search_data.append({
             'id': plant['id'],
@@ -317,6 +335,10 @@ def build_site():
             p['image_filename'] = None
     families = get_categories(conn, 'family')
     genera = get_categories(conn, 'genus')
+    synonyms_by_plant = preload_plant_synonyms(conn)
+    common_names_by_plant = preload_plant_common_names(conn)
+    slug_by_plant_id = build_plant_slug_map(plants)
+    plants_by_category = preload_plants_by_category(conn, slug_by_plant_id)
     collections, plant_to_collection = load_collections(plants)
     seed_collections_db(conn, collections)
     print(f"Loaded {len(collections)} collections, seeded to DB")
@@ -397,7 +419,7 @@ def build_site():
     template = env.get_template('category.html')
 
     for family in families:
-        family_plants = get_plants_in_category(conn, family['id'])
+        family_plants = plants_by_category.get(family['id'], [])
         html = template.render(
             base_url='..', build_version=build_version,
             category=family,
@@ -411,7 +433,7 @@ def build_site():
     # === Build Individual Genus Pages ===
     print("Building genus pages...")
     for genus in genera:
-        genus_plants = get_plants_in_category(conn, genus['id'])
+        genus_plants = plants_by_category.get(genus['id'], [])
         html = template.render(
             base_url='..', build_version=build_version,
             category=genus,
@@ -437,8 +459,8 @@ def build_site():
             family_map[p['family']].append(p)
 
     for i, plant in enumerate(plants):
-        synonyms = get_plant_synonyms(conn, plant['id'])
-        common_names = get_plant_common_names(conn, plant['id'])
+        synonyms = synonyms_by_plant.get(plant['id'], [])
+        common_names = common_names_by_plant.get(plant['id'], [])
         prev_plant = plants[i - 1] if i > 0 else None
         next_plant = plants[i + 1] if i < len(plants) - 1 else None
 
@@ -468,7 +490,7 @@ def build_site():
 
     # === Build Search Data ===
     print("Building search data...")
-    search_data = build_search_data(plants, conn)
+    search_data = build_search_data(plants, synonyms_by_plant, common_names_by_plant)
     search_data_dir = OUTPUT_DIR / "static" / "data"
     search_data_dir.mkdir(parents=True, exist_ok=True)
     (search_data_dir / "search-data.json").write_text(json.dumps(search_data, ensure_ascii=False), encoding='utf-8')

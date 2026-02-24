@@ -17,7 +17,9 @@
   - Progress (2026-02-24): upgraded Wikidata search to fetch multiple candidates and rank them with botanical relevance scoring.
   - Progress (2026-02-24): added fallback query strategy (`canonical`, `scientific`, and `... plant` variants) before declaring `NOT_FOUND`.
   - Progress (2026-02-24): added ambiguity protection to skip weak/disambiguation-like matches.
-- [ ] Optimize build performance by removing N+1 DB query patterns in `generator/build_site.py`
+- [x] Optimize build performance by removing N+1 DB query patterns in `generator/build_site.py`
+  - Progress (2026-02-24): switched plant page/search/category data hydration to shared preloaded maps instead of per-plant/per-category DB lookups.
+  - Progress (2026-02-24): category preload now reuses canonical generated slugs (`slug_by_plant_id`) and deduplicates repeated plant/category rows.
 
 ## UX and Discovery
 
