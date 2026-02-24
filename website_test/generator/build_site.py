@@ -179,6 +179,23 @@ def group_by_letter(items, key='name'):
     return grouped
 
 
+def split_list_field(value):
+    """Split comma/semicolon separated text into normalized unique tokens."""
+    if not value:
+        return []
+    parts = re.split(r'[;,]', value)
+    cleaned = []
+    seen = set()
+    for part in parts:
+        token = part.strip()
+        token_key = token.lower()
+        if not token or token_key in seen:
+            continue
+        seen.add(token_key)
+        cleaned.append(token)
+    return cleaned
+
+
 def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
     """Build JSON search data for client-side search."""
     search_data = []
@@ -371,6 +388,12 @@ def build_site():
     template = env.get_template('az_index.html')
     plants_by_letter = group_by_letter(plants, key='canonical_name')
     used_letters = {letter for letter, items in plants_by_letter.items() if items}
+    facet_families = sorted({p['family'] for p in plants if p.get('family')}, key=str.lower)
+    facet_genera = sorted({p['genus'] for p in plants if p.get('genus')}, key=str.lower)
+    facet_regions = sorted(
+        {region for p in plants for region in split_list_field(p.get('native_regions'))},
+        key=str.lower,
+    )
 
     html = template.render(
         **base_context,
@@ -378,6 +401,9 @@ def build_site():
         letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ',
         used_letters=used_letters,
         plants_by_letter=plants_by_letter,
+        facet_families=facet_families,
+        facet_genera=facet_genera,
+        facet_regions=facet_regions,
     )
     (OUTPUT_DIR / "az-index.html").write_text(html, encoding='utf-8')
 

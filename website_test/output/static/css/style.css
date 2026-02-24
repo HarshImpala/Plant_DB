@@ -770,6 +770,64 @@ html[data-theme="dark"] .country-badge {
 }
 
 /* === A-Z Index & Category List === */
+.facet-panel {
+    margin: 1rem 0 1.25rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    background: var(--color-header-bg);
+}
+
+.facet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+
+.facet-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.facet-field select {
+    min-height: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: var(--color-white);
+    color: var(--color-text);
+    padding: 0.25rem 0.5rem;
+}
+
+.facet-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.facet-reset {
+    padding: 0.375rem 0.625rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: var(--color-white);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.facet-reset:hover {
+    border-color: var(--color-accent);
+}
+
+.facet-results {
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
 .letter-nav {
     display: flex;
     flex-wrap: wrap;
@@ -804,6 +862,11 @@ html[data-theme="dark"] .country-badge {
 .letter-link.active:hover {
     background: var(--color-link-hover);
     text-decoration: none;
+}
+
+.letter-link.disabled {
+    opacity: 0.35;
+    pointer-events: none;
 }
 
 .letter-section {

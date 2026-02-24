@@ -23,7 +23,9 @@
 
 ## UX and Discovery
 
-- [ ] Add faceted browsing/filtering (family, genus, native region, toxicity, has image/description)
+- [x] Add faceted browsing/filtering (family, genus, native region, toxicity, has image/description)
+  - Progress (2026-02-24): implemented facet controls on `az-index.html` for family, genus, native region, toxicity info, image presence, and description presence.
+  - Progress (2026-02-24): added client-side filtering with live visible-count updates and dynamic letter navigation disabling for filtered-out sections.
 - [ ] Add structured metadata (JSON-LD) for plant pages in `templates/plant.html`
 - [ ] Integrate `garden_location` with map/plant pages for "find in garden" workflows
 

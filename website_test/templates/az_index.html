@@ -6,6 +6,44 @@
 <div class="az-index-page">
     <h1>A-Z Plant Index</h1>
     <p>Browse all {{ plant_count }} plants alphabetically by scientific name.</p>
+    <section class="facet-panel" aria-label="Filter plants">
+        <div class="facet-grid">
+            <label class="facet-field">
+                <span>Family</span>
+                <select id="facet-family">
+                    <option value="">All families</option>
+                    {% for family in facet_families %}
+                    <option value="{{ family|lower }}">{{ family }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label class="facet-field">
+                <span>Genus</span>
+                <select id="facet-genus">
+                    <option value="">All genera</option>
+                    {% for genus in facet_genera %}
+                    <option value="{{ genus|lower }}">{{ genus }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label class="facet-field">
+                <span>Native region</span>
+                <select id="facet-region">
+                    <option value="">All regions</option>
+                    {% for region in facet_regions %}
+                    <option value="{{ region|lower }}">{{ region }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+        <div class="facet-toggles">
+            <label><input type="checkbox" id="facet-toxic"> Has toxicity info</label>
+            <label><input type="checkbox" id="facet-image"> Has image</label>
+            <label><input type="checkbox" id="facet-description"> Has description</label>
+            <button type="button" id="facet-reset" class="facet-reset">Reset</button>
+        </div>
+        <p class="facet-results" id="facet-results">{{ plant_count }} plants shown</p>
+    </section>
 
     <nav class="letter-nav">
         {% for letter in letters %}
@@ -20,7 +58,13 @@
             <h2>{{ letter }}</h2>
             <ul>
                 {% for plant in plants %}
-                <li>
+                <li class="plant-item"
+                    data-family="{{ (plant.family or '')|lower }}"
+                    data-genus="{{ (plant.genus or '')|lower }}"
+                    data-native="{{ (plant.native_regions or '')|lower }}"
+                    data-has-toxicity="{{ 1 if plant.toxicity_info else 0 }}"
+                    data-has-image="{{ 1 if plant.image_filename else 0 }}"
+                    data-has-description="{{ 1 if plant.description else 0 }}">
                     <a href="{{ base_url }}/plant/{{ plant.slug }}.html">
                         <span class="scientific">{{ plant.canonical_name or plant.scientific_name }}</span>
                         {% if plant.common_name %}
@@ -35,4 +79,83 @@
         {% endfor %}
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const family = document.getElementById('facet-family');
+    const genus = document.getElementById('facet-genus');
+    const region = document.getElementById('facet-region');
+    const toxic = document.getElementById('facet-toxic');
+    const image = document.getElementById('facet-image');
+    const description = document.getElementById('facet-description');
+    const reset = document.getElementById('facet-reset');
+    const resultText = document.getElementById('facet-results');
+    const items = Array.from(document.querySelectorAll('.plant-item'));
+    const sections = Array.from(document.querySelectorAll('.letter-section'));
+    const links = Array.from(document.querySelectorAll('.letter-link'));
+
+    function nativeMatches(nativeText, selectedRegion) {
+        if (!selectedRegion) return true;
+        const tokens = nativeText.split(/[;,]/).map(function(v) { return v.trim(); }).filter(Boolean);
+        return tokens.includes(selectedRegion);
+    }
+
+    function applyFilters() {
+        const selectedFamily = family.value;
+        const selectedGenus = genus.value;
+        const selectedRegion = region.value;
+        const requireToxic = toxic.checked;
+        const requireImage = image.checked;
+        const requireDescription = description.checked;
+        let visibleCount = 0;
+
+        items.forEach(function(item) {
+            const matchFamily = !selectedFamily || item.dataset.family === selectedFamily;
+            const matchGenus = !selectedGenus || item.dataset.genus === selectedGenus;
+            const matchRegion = nativeMatches(item.dataset.native, selectedRegion);
+            const matchToxic = !requireToxic || item.dataset.hasToxicity === '1';
+            const matchImage = !requireImage || item.dataset.hasImage === '1';
+            const matchDescription = !requireDescription || item.dataset.hasDescription === '1';
+            const visible = matchFamily && matchGenus && matchRegion && matchToxic && matchImage && matchDescription;
+            item.hidden = !visible;
+            if (visible) visibleCount += 1;
+        });
+
+        sections.forEach(function(section) {
+            const sectionItems = section.querySelectorAll('.plant-item:not([hidden])');
+            section.hidden = sectionItems.length === 0;
+        });
+
+        links.forEach(function(link) {
+            const targetId = link.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (!target || target.hidden) {
+                link.classList.remove('active');
+                link.classList.add('disabled');
+            } else {
+                link.classList.add('active');
+                link.classList.remove('disabled');
+            }
+        });
+
+        resultText.textContent = visibleCount + ' plants shown';
+    }
+
+    [family, genus, region, toxic, image, description].forEach(function(control) {
+        control.addEventListener('change', applyFilters);
+    });
+
+    reset.addEventListener('click', function() {
+        family.value = '';
+        genus.value = '';
+        region.value = '';
+        toxic.checked = false;
+        image.checked = false;
+        description.checked = false;
+        applyFilters();
+    });
+})();
+</script>
 {% endblock %}
