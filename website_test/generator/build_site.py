@@ -67,10 +67,24 @@ def get_all_plants(conn):
     """)
     plants = [dict(row) for row in cursor.fetchall()]
 
-    # Add slug to each plant
+    # Add deterministic unique slugs to each plant.
+    # If a base slug appears more than once, suffix all variants as -1..-N.
+    base_counts = defaultdict(int)
     for plant in plants:
         name = plant['canonical_name'] or plant['scientific_name'] or plant['input_name']
-        plant['slug'] = slugify(name)
+        base = slugify(name) or f"plant-{plant['id']}"
+        plant['_base_slug'] = base
+        base_counts[base] += 1
+
+    base_seen = defaultdict(int)
+    for plant in plants:
+        base = plant['_base_slug']
+        if base_counts[base] == 1:
+            plant['slug'] = base
+        else:
+            base_seen[base] += 1
+            plant['slug'] = f"{base}-{base_seen[base]}"
+        plant.pop('_base_slug', None)
 
     return plants
 

@@ -8,6 +8,7 @@ Designed to be extensible - new data sources can be added easily.
 import sqlite3
 import pandas as pd
 from pathlib import Path
+import argparse
 
 
 # Paths
@@ -163,12 +164,22 @@ def import_taxonomy_data(conn, df_taxonomy):
             gbif_usage_key = str(int(gbif_usage_key))  # Convert to string, remove decimal
             gbif_url = f"https://www.gbif.org/species/{gbif_usage_key}"
 
-        # Insert main plant record
+        # Upsert main plant record while preserving existing plant ID.
         cursor.execute("""
-            INSERT OR REPLACE INTO plants (
+            INSERT INTO plants (
                 input_name, scientific_name, canonical_name, common_name,
                 family, genus, wfo_id, gbif_usage_key, gbif_url
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(input_name) DO UPDATE SET
+                scientific_name=excluded.scientific_name,
+                canonical_name=excluded.canonical_name,
+                common_name=excluded.common_name,
+                family=excluded.family,
+                genus=excluded.genus,
+                wfo_id=excluded.wfo_id,
+                gbif_usage_key=excluded.gbif_usage_key,
+                gbif_url=excluded.gbif_url,
+                updated_at=CURRENT_TIMESTAMP
         """, (
             input_name,
             row.get('gbif_scientificName') if not pd.isna(row.get('gbif_scientificName')) else None,
@@ -181,12 +192,13 @@ def import_taxonomy_data(conn, df_taxonomy):
             gbif_url,
         ))
 
-        plant_id = cursor.lastrowid
+        cursor.execute("SELECT id FROM plants WHERE input_name = ?", (input_name,))
+        plant_id = cursor.fetchone()[0]
 
-        # If this was a replace, get the actual ID
-        if plant_id == 0:
-            cursor.execute("SELECT id FROM plants WHERE input_name = ?", (input_name,))
-            plant_id = cursor.fetchone()[0]
+        # Replace relationship records so incremental imports stay consistent.
+        cursor.execute("DELETE FROM plant_synonyms WHERE plant_id = ?", (plant_id,))
+        cursor.execute("DELETE FROM plant_common_names WHERE plant_id = ?", (plant_id,))
+        cursor.execute("DELETE FROM plant_categories WHERE plant_id = ?", (plant_id,))
 
         # Import synonyms from GBIF
         synonyms = parse_pipe_separated(row.get('gbif_synonyms'))
@@ -284,6 +296,9 @@ def import_location_data(conn, df_location):
             continue
         plant_id = result[0]
 
+        # Replace location records for this plant on each import.
+        cursor.execute("DELETE FROM plant_native_regions WHERE plant_id = ?", (plant_id,))
+
         # Import individual countries from WFO
         countries = row.get('wfo_native_countries')
         if countries and not pd.isna(countries):
@@ -348,19 +363,30 @@ def import_curator_data(conn):
 
 def main():
     """Main import function."""
+    parser = argparse.ArgumentParser(description="Import plant data into SQLite database.")
+    parser.add_argument(
+        "--full-rebuild",
+        action="store_true",
+        help="Delete and recreate the database before importing (destructive).",
+    )
+    args = parser.parse_args()
+
     print("Starting data import...")
     print(f"Database path: {DB_PATH}")
 
     # Ensure data directory exists
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Create fresh database
-    if DB_PATH.exists():
+    # Full rebuild is explicit. Default behavior is incremental update.
+    if args.full_rebuild and DB_PATH.exists():
         DB_PATH.unlink()
-        print("Removed existing database")
+        print("Removed existing database (--full-rebuild)")
 
     conn = create_database()
-    print("Created database schema")
+    if args.full_rebuild:
+        print("Created database schema (full rebuild)")
+    else:
+        print("Ensured database schema (incremental mode)")
 
     # Import taxonomy data
     print(f"\nReading taxonomy file: {TAXONOMY_FILE}")
