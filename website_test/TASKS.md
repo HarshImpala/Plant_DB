@@ -39,4 +39,6 @@
 
 ## Platform and Delivery
 
-- [ ] Refine GitHub Pages workflow trigger strategy (build from main, deploy artifact) in `.github/workflows/deploy.yml`
+- [x] Refine GitHub Pages workflow trigger strategy (build from main, deploy artifact) in `.github/workflows/deploy.yml`
+  - Progress (2026-02-24): updated workflow triggers to `main` for `push` and `pull_request`, with path filters to avoid unnecessary builds.
+  - Progress (2026-02-24): added `actions/configure-pages@v5` and gated deploy job to push/manual runs while preserving artifact-based deployment.

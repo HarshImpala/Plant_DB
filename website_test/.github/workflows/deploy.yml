@@ -2,8 +2,22 @@ name: Build & Deploy Plant Encyclopedia
 
 on:
   push:
-    branches: [gh-pages]
-  workflow_dispatch:   # allows manual trigger from GitHub UI
+    branches: [main]
+    paths:
+      - ".github/workflows/deploy.yml"
+      - "generator/**"
+      - "templates/**"
+      - "static/**"
+      - "data/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/deploy.yml"
+      - "generator/**"
+      - "templates/**"
+      - "static/**"
+      - "data/**"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,6 +34,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -44,6 +61,7 @@ jobs:
           path: output
 
   deploy:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
