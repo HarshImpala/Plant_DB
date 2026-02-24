@@ -1,0 +1,885 @@
+{
+  "summary": {
+    "plant_count": 196,
+    "exact_canonical_duplicate_groups": 14,
+    "exact_scientific_duplicate_groups": 14,
+    "similar_name_candidate_pairs": 0
+  },
+  "exact_canonical_duplicates": [
+    {
+      "normalized_name": "musa paradisiaca",
+      "count": 7,
+      "plants": [
+        {
+          "id": 127,
+          "input_name": "Musa x paradisiaca L. 'Aple'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 128,
+          "input_name": "Musa x paradisiaca L. 'Kreol'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 129,
+          "input_name": "Musa x paradisiaca L. 'Pakovan'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 130,
+          "input_name": "Musa x paradisiaca L. 'Prata Ana'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 131,
+          "input_name": "Musa x paradisiaca L. 'Pray'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 132,
+          "input_name": "Musa x paradisiaca L. 'Red'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 134,
+          "input_name": "Musa x paradisiaca L. 'Valerie'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "carica papaya",
+      "count": 6,
+      "plants": [
+        {
+          "id": 38,
+          "input_name": "Carica papaya L.",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 39,
+          "input_name": "Carica papaya L. 'Nana'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 40,
+          "input_name": "Carica papaya L. 'Pasar Orange'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 41,
+          "input_name": "Carica papaya L. 'Solo'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 42,
+          "input_name": "Carica papaya L. 'Solo-Waimanalo'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 43,
+          "input_name": "Carica papaya L. 'Sunset'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "psidium guajava",
+      "count": 4,
+      "plants": [
+        {
+          "id": 165,
+          "input_name": "Psidium guajava L. 'Bankog's Gigant'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 166,
+          "input_name": "Psidium guajava L. 'Guajho Blanco'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 167,
+          "input_name": "Psidium guajava L. 'Orange Pulp'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 168,
+          "input_name": "Psidium guajava L. 'Rosa Cubana'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "averrhoa carambola",
+      "count": 3,
+      "plants": [
+        {
+          "id": 27,
+          "input_name": "Averrhoa carambola L.",
+          "canonical_name": "Averrhoa carambola",
+          "scientific_name": "Averrhoa carambola L.",
+          "family": "Oxalidaceae R.Br.",
+          "genus": "Averrhoa L."
+        },
+        {
+          "id": 29,
+          "input_name": "Averrhoa carambola L. 'Fwang Tung'’",
+          "canonical_name": "Averrhoa carambola",
+          "scientific_name": "Averrhoa carambola L.",
+          "family": "Oxalidaceae R.Br.",
+          "genus": "Averrhoa L."
+        },
+        {
+          "id": 28,
+          "input_name": "Averrhoa carambola L. ’B10’",
+          "canonical_name": "Averrhoa carambola",
+          "scientific_name": "Averrhoa carambola L.",
+          "family": "Oxalidaceae R.Br.",
+          "genus": "Averrhoa L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "cocos nucifera",
+      "count": 3,
+      "plants": [
+        {
+          "id": 50,
+          "input_name": "Cocos nucifera L.",
+          "canonical_name": "Cocos nucifera",
+          "scientific_name": "Cocos nucifera L.",
+          "family": "Arecaceae Bercht. & J.Presl",
+          "genus": "Cocos L."
+        },
+        {
+          "id": 51,
+          "input_name": "Cocos nucifera L. 'King'",
+          "canonical_name": "Cocos nucifera",
+          "scientific_name": "Cocos nucifera L.",
+          "family": "Arecaceae Bercht. & J.Presl",
+          "genus": "Cocos L."
+        },
+        {
+          "id": 52,
+          "input_name": "Cocos nucifera L. 'Maypan'",
+          "canonical_name": "Cocos nucifera",
+          "scientific_name": "Cocos nucifera L.",
+          "family": "Arecaceae Bercht. & J.Presl",
+          "genus": "Cocos L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "coffea arabica",
+      "count": 3,
+      "plants": [
+        {
+          "id": 53,
+          "input_name": "Coffea arabica L.",
+          "canonical_name": "Coffea arabica",
+          "scientific_name": "Coffea arabica L.",
+          "family": "Rubiaceae Juss.",
+          "genus": "Coffea L."
+        },
+        {
+          "id": 54,
+          "input_name": "Coffea arabica L. 'Bourbon'",
+          "canonical_name": "Coffea arabica",
+          "scientific_name": "Coffea arabica L.",
+          "family": "Rubiaceae Juss.",
+          "genus": "Coffea L."
+        },
+        {
+          "id": 55,
+          "input_name": "Coffea arabica L. 'Nana'",
+          "canonical_name": "Coffea arabica",
+          "scientific_name": "Coffea arabica L.",
+          "family": "Rubiaceae Juss.",
+          "genus": "Coffea L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "mangifera indica",
+      "count": 3,
+      "plants": [
+        {
+          "id": 115,
+          "input_name": "Mangifera indica L. 'Irwin'",
+          "canonical_name": "Mangifera indica",
+          "scientific_name": "Mangifera indica L.",
+          "family": "Anacardiaceae R.Br.",
+          "genus": "Mangifera L."
+        },
+        {
+          "id": 116,
+          "input_name": "Mangifera indica L. 'Kensington'",
+          "canonical_name": "Mangifera indica",
+          "scientific_name": "Mangifera indica L.",
+          "family": "Anacardiaceae R.Br.",
+          "genus": "Mangifera L."
+        },
+        {
+          "id": 117,
+          "input_name": "Mangifera indica L. 'Osteen'",
+          "canonical_name": "Mangifera indica",
+          "scientific_name": "Mangifera indica L.",
+          "family": "Anacardiaceae R.Br.",
+          "genus": "Mangifera L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "psidium cattleianum",
+      "count": 3,
+      "plants": [
+        {
+          "id": 161,
+          "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Limon'",
+          "canonical_name": "Psidium cattleianum",
+          "scientific_name": "Psidium cattleianum Afzel. ex Sabine",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 162,
+          "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Red-Macrocarpa'",
+          "canonical_name": "Psidium cattleianum",
+          "scientific_name": "Psidium cattleianum Afzel. ex Sabine",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 163,
+          "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Rojo'",
+          "canonical_name": "Psidium cattleianum",
+          "scientific_name": "Psidium cattleianum Afzel. ex Sabine",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "alpinia zerumbet",
+      "count": 2,
+      "plants": [
+        {
+          "id": 11,
+          "input_name": "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm.",
+          "canonical_name": "Alpinia zerumbet",
+          "scientific_name": "Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Alpinia Roxb."
+        },
+        {
+          "id": 12,
+          "input_name": "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm. 'Variegata'",
+          "canonical_name": "Alpinia zerumbet",
+          "scientific_name": "Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Alpinia Roxb."
+        }
+      ]
+    },
+    {
+      "normalized_name": "epiphyllum chrysocardium",
+      "count": 2,
+      "plants": [
+        {
+          "id": 80,
+          "input_name": "Epiphyllum chrysocardium Alex.",
+          "canonical_name": "Epiphyllum chrysocardium",
+          "scientific_name": "Epiphyllum chrysocardium Alexander",
+          "family": "Cactaceae Juss.",
+          "genus": "Epiphyllum Haw."
+        },
+        {
+          "id": 179,
+          "input_name": "Selenicereus chrysocardium (Alexander) Kimnach",
+          "canonical_name": "Epiphyllum chrysocardium",
+          "scientific_name": "Epiphyllum chrysocardium Alexander",
+          "family": "Cactaceae Juss.",
+          "genus": "Epiphyllum Haw."
+        }
+      ]
+    },
+    {
+      "normalized_name": "ficus elastica",
+      "count": 2,
+      "plants": [
+        {
+          "id": 87,
+          "input_name": "Ficus elastica Roxb. ex Hornem. 'De la Rouche'",
+          "canonical_name": "Ficus elastica",
+          "scientific_name": "Ficus elastica Roxb.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        },
+        {
+          "id": 88,
+          "input_name": "Ficus elastica Roxb. ex Hornem. 'Melani'",
+          "canonical_name": "Ficus elastica",
+          "scientific_name": "Ficus elastica Roxb.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "ficus rubiginosa",
+      "count": 2,
+      "plants": [
+        {
+          "id": 91,
+          "input_name": "Ficus rubiginosa Desf. ex Vent.",
+          "canonical_name": "Ficus rubiginosa",
+          "scientific_name": "Ficus rubiginosa Desf. ex Vent.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        },
+        {
+          "id": 92,
+          "input_name": "Ficus rubiginosa Desf. ex Vent. 'Variegata'",
+          "canonical_name": "Ficus rubiginosa",
+          "scientific_name": "Ficus rubiginosa Desf. ex Vent.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "hedychium horsfieldii",
+      "count": 2,
+      "plants": [
+        {
+          "id": 32,
+          "input_name": "Brachychilum horsfieldii (R.Br. ex Wallich) Petersen",
+          "canonical_name": "Hedychium horsfieldii",
+          "scientific_name": "Hedychium horsfieldii R.Br. ex Wall.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Hedychium J.Koenig"
+        },
+        {
+          "id": 100,
+          "input_name": "Hedychium horsfieldii R.Br. ex Wall.",
+          "canonical_name": "Hedychium horsfieldii",
+          "scientific_name": "Hedychium horsfieldii R.Br. ex Wall.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Hedychium J.Koenig"
+        }
+      ]
+    },
+    {
+      "normalized_name": "pilea ovalis",
+      "count": 2,
+      "plants": [
+        {
+          "id": 150,
+          "input_name": "Pilea involucrata (Sims) C.H.Wright & Dewar 'Moon Walley'",
+          "canonical_name": "Pilea ovalis",
+          "scientific_name": "Pilea ovalis Griseb.",
+          "family": "Urticaceae Juss.",
+          "genus": "Pilea Lindl."
+        },
+        {
+          "id": 151,
+          "input_name": "Pilea involucrata (Sims) C.H.Wright & Dewar 'Norfolk'",
+          "canonical_name": "Pilea ovalis",
+          "scientific_name": "Pilea ovalis Griseb.",
+          "family": "Urticaceae Juss.",
+          "genus": "Pilea Lindl."
+        }
+      ]
+    }
+  ],
+  "exact_scientific_duplicates": [
+    {
+      "normalized_name": "musa paradisiaca l",
+      "count": 7,
+      "plants": [
+        {
+          "id": 127,
+          "input_name": "Musa x paradisiaca L. 'Aple'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 128,
+          "input_name": "Musa x paradisiaca L. 'Kreol'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 129,
+          "input_name": "Musa x paradisiaca L. 'Pakovan'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 130,
+          "input_name": "Musa x paradisiaca L. 'Prata Ana'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 131,
+          "input_name": "Musa x paradisiaca L. 'Pray'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 132,
+          "input_name": "Musa x paradisiaca L. 'Red'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        },
+        {
+          "id": 134,
+          "input_name": "Musa x paradisiaca L. 'Valerie'",
+          "canonical_name": "Musa paradisiaca",
+          "scientific_name": "Musa ×paradisiaca L.",
+          "family": "Musaceae Juss.",
+          "genus": "Musa L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "carica papaya l",
+      "count": 6,
+      "plants": [
+        {
+          "id": 38,
+          "input_name": "Carica papaya L.",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 39,
+          "input_name": "Carica papaya L. 'Nana'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 40,
+          "input_name": "Carica papaya L. 'Pasar Orange'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 41,
+          "input_name": "Carica papaya L. 'Solo'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 42,
+          "input_name": "Carica papaya L. 'Solo-Waimanalo'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        },
+        {
+          "id": 43,
+          "input_name": "Carica papaya L. 'Sunset'",
+          "canonical_name": "Carica papaya",
+          "scientific_name": "Carica papaya L.",
+          "family": "Caricaceae Dumort.",
+          "genus": "Carica L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "psidium guajava l",
+      "count": 4,
+      "plants": [
+        {
+          "id": 165,
+          "input_name": "Psidium guajava L. 'Bankog's Gigant'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 166,
+          "input_name": "Psidium guajava L. 'Guajho Blanco'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 167,
+          "input_name": "Psidium guajava L. 'Orange Pulp'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 168,
+          "input_name": "Psidium guajava L. 'Rosa Cubana'",
+          "canonical_name": "Psidium guajava",
+          "scientific_name": "Psidium guajava L.",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "averrhoa carambola l",
+      "count": 3,
+      "plants": [
+        {
+          "id": 27,
+          "input_name": "Averrhoa carambola L.",
+          "canonical_name": "Averrhoa carambola",
+          "scientific_name": "Averrhoa carambola L.",
+          "family": "Oxalidaceae R.Br.",
+          "genus": "Averrhoa L."
+        },
+        {
+          "id": 29,
+          "input_name": "Averrhoa carambola L. 'Fwang Tung'’",
+          "canonical_name": "Averrhoa carambola",
+          "scientific_name": "Averrhoa carambola L.",
+          "family": "Oxalidaceae R.Br.",
+          "genus": "Averrhoa L."
+        },
+        {
+          "id": 28,
+          "input_name": "Averrhoa carambola L. ’B10’",
+          "canonical_name": "Averrhoa carambola",
+          "scientific_name": "Averrhoa carambola L.",
+          "family": "Oxalidaceae R.Br.",
+          "genus": "Averrhoa L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "cocos nucifera l",
+      "count": 3,
+      "plants": [
+        {
+          "id": 50,
+          "input_name": "Cocos nucifera L.",
+          "canonical_name": "Cocos nucifera",
+          "scientific_name": "Cocos nucifera L.",
+          "family": "Arecaceae Bercht. & J.Presl",
+          "genus": "Cocos L."
+        },
+        {
+          "id": 51,
+          "input_name": "Cocos nucifera L. 'King'",
+          "canonical_name": "Cocos nucifera",
+          "scientific_name": "Cocos nucifera L.",
+          "family": "Arecaceae Bercht. & J.Presl",
+          "genus": "Cocos L."
+        },
+        {
+          "id": 52,
+          "input_name": "Cocos nucifera L. 'Maypan'",
+          "canonical_name": "Cocos nucifera",
+          "scientific_name": "Cocos nucifera L.",
+          "family": "Arecaceae Bercht. & J.Presl",
+          "genus": "Cocos L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "coffea arabica l",
+      "count": 3,
+      "plants": [
+        {
+          "id": 53,
+          "input_name": "Coffea arabica L.",
+          "canonical_name": "Coffea arabica",
+          "scientific_name": "Coffea arabica L.",
+          "family": "Rubiaceae Juss.",
+          "genus": "Coffea L."
+        },
+        {
+          "id": 54,
+          "input_name": "Coffea arabica L. 'Bourbon'",
+          "canonical_name": "Coffea arabica",
+          "scientific_name": "Coffea arabica L.",
+          "family": "Rubiaceae Juss.",
+          "genus": "Coffea L."
+        },
+        {
+          "id": 55,
+          "input_name": "Coffea arabica L. 'Nana'",
+          "canonical_name": "Coffea arabica",
+          "scientific_name": "Coffea arabica L.",
+          "family": "Rubiaceae Juss.",
+          "genus": "Coffea L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "mangifera indica l",
+      "count": 3,
+      "plants": [
+        {
+          "id": 115,
+          "input_name": "Mangifera indica L. 'Irwin'",
+          "canonical_name": "Mangifera indica",
+          "scientific_name": "Mangifera indica L.",
+          "family": "Anacardiaceae R.Br.",
+          "genus": "Mangifera L."
+        },
+        {
+          "id": 116,
+          "input_name": "Mangifera indica L. 'Kensington'",
+          "canonical_name": "Mangifera indica",
+          "scientific_name": "Mangifera indica L.",
+          "family": "Anacardiaceae R.Br.",
+          "genus": "Mangifera L."
+        },
+        {
+          "id": 117,
+          "input_name": "Mangifera indica L. 'Osteen'",
+          "canonical_name": "Mangifera indica",
+          "scientific_name": "Mangifera indica L.",
+          "family": "Anacardiaceae R.Br.",
+          "genus": "Mangifera L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "psidium cattleianum afzel ex sabine",
+      "count": 3,
+      "plants": [
+        {
+          "id": 161,
+          "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Limon'",
+          "canonical_name": "Psidium cattleianum",
+          "scientific_name": "Psidium cattleianum Afzel. ex Sabine",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 162,
+          "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Red-Macrocarpa'",
+          "canonical_name": "Psidium cattleianum",
+          "scientific_name": "Psidium cattleianum Afzel. ex Sabine",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        },
+        {
+          "id": 163,
+          "input_name": "Psidium cattleyanum Afzel. ex Sabine 'Rojo'",
+          "canonical_name": "Psidium cattleianum",
+          "scientific_name": "Psidium cattleianum Afzel. ex Sabine",
+          "family": "Myrtaceae Juss.",
+          "genus": "Psidium L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "alpinia zerumbet pers b l burtt r m sm",
+      "count": 2,
+      "plants": [
+        {
+          "id": 11,
+          "input_name": "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm.",
+          "canonical_name": "Alpinia zerumbet",
+          "scientific_name": "Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Alpinia Roxb."
+        },
+        {
+          "id": 12,
+          "input_name": "Alpinia zerumbet (Pers.) B. L. Burtt et Rosemary M. Sm. 'Variegata'",
+          "canonical_name": "Alpinia zerumbet",
+          "scientific_name": "Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Alpinia Roxb."
+        }
+      ]
+    },
+    {
+      "normalized_name": "epiphyllum chrysocardium alexander",
+      "count": 2,
+      "plants": [
+        {
+          "id": 80,
+          "input_name": "Epiphyllum chrysocardium Alex.",
+          "canonical_name": "Epiphyllum chrysocardium",
+          "scientific_name": "Epiphyllum chrysocardium Alexander",
+          "family": "Cactaceae Juss.",
+          "genus": "Epiphyllum Haw."
+        },
+        {
+          "id": 179,
+          "input_name": "Selenicereus chrysocardium (Alexander) Kimnach",
+          "canonical_name": "Epiphyllum chrysocardium",
+          "scientific_name": "Epiphyllum chrysocardium Alexander",
+          "family": "Cactaceae Juss.",
+          "genus": "Epiphyllum Haw."
+        }
+      ]
+    },
+    {
+      "normalized_name": "ficus elastica roxb",
+      "count": 2,
+      "plants": [
+        {
+          "id": 87,
+          "input_name": "Ficus elastica Roxb. ex Hornem. 'De la Rouche'",
+          "canonical_name": "Ficus elastica",
+          "scientific_name": "Ficus elastica Roxb.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        },
+        {
+          "id": 88,
+          "input_name": "Ficus elastica Roxb. ex Hornem. 'Melani'",
+          "canonical_name": "Ficus elastica",
+          "scientific_name": "Ficus elastica Roxb.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "ficus rubiginosa desf ex vent",
+      "count": 2,
+      "plants": [
+        {
+          "id": 91,
+          "input_name": "Ficus rubiginosa Desf. ex Vent.",
+          "canonical_name": "Ficus rubiginosa",
+          "scientific_name": "Ficus rubiginosa Desf. ex Vent.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        },
+        {
+          "id": 92,
+          "input_name": "Ficus rubiginosa Desf. ex Vent. 'Variegata'",
+          "canonical_name": "Ficus rubiginosa",
+          "scientific_name": "Ficus rubiginosa Desf. ex Vent.",
+          "family": "Moraceae Gaudich.",
+          "genus": "Ficus L."
+        }
+      ]
+    },
+    {
+      "normalized_name": "hedychium horsfieldii r br ex wall",
+      "count": 2,
+      "plants": [
+        {
+          "id": 32,
+          "input_name": "Brachychilum horsfieldii (R.Br. ex Wallich) Petersen",
+          "canonical_name": "Hedychium horsfieldii",
+          "scientific_name": "Hedychium horsfieldii R.Br. ex Wall.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Hedychium J.Koenig"
+        },
+        {
+          "id": 100,
+          "input_name": "Hedychium horsfieldii R.Br. ex Wall.",
+          "canonical_name": "Hedychium horsfieldii",
+          "scientific_name": "Hedychium horsfieldii R.Br. ex Wall.",
+          "family": "Zingiberaceae Martinov",
+          "genus": "Hedychium J.Koenig"
+        }
+      ]
+    },
+    {
+      "normalized_name": "pilea ovalis griseb",
+      "count": 2,
+      "plants": [
+        {
+          "id": 150,
+          "input_name": "Pilea involucrata (Sims) C.H.Wright & Dewar 'Moon Walley'",
+          "canonical_name": "Pilea ovalis",
+          "scientific_name": "Pilea ovalis Griseb.",
+          "family": "Urticaceae Juss.",
+          "genus": "Pilea Lindl."
+        },
+        {
+          "id": 151,
+          "input_name": "Pilea involucrata (Sims) C.H.Wright & Dewar 'Norfolk'",
+          "canonical_name": "Pilea ovalis",
+          "scientific_name": "Pilea ovalis Griseb.",
+          "family": "Urticaceae Juss.",
+          "genus": "Pilea Lindl."
+        }
+      ]
+    }
+  ],
+  "same_family_genus_similar_name": []
+}

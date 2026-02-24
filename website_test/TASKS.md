@@ -53,7 +53,9 @@
 - [x] Normalize taxonomy/name display rules across templates and cards
   - Progress (2026-02-24): introduced normalized display fields (`display_name`, `display_scientific`, `display_common`) in generator data shaping.
   - Progress (2026-02-24): updated cards/lists/search/plant templates to use the same display fields consistently.
-- [ ] Add duplicate-detection review report in import pipeline
+- [x] Add duplicate-detection review report in import pipeline
+  - Progress (2026-02-24): added post-import duplicate analysis in `generator/import_data.py`.
+  - Progress (2026-02-24): writes `data/duplicate_review_report.json` with exact duplicate groups and same-family/genus fuzzy candidates.
 - [ ] Normalize `garden_location` into stable location IDs
 - [ ] Add "changed since last build" diff artifacts
 - [ ] Generate versioned API-ready JSON exports

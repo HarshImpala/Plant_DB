@@ -9,6 +9,10 @@ import sqlite3
 import pandas as pd
 from pathlib import Path
 import argparse
+import json
+import re
+from difflib import SequenceMatcher
+from itertools import combinations
 
 
 # Paths
@@ -317,6 +321,7 @@ def import_location_data(conn, df_location):
 CURATOR_DATA_FILE = DATA_DIR / "curator_data.csv"
 
 CURATOR_FIELDS = ["toxicity_info", "garden_location", "curator_comments", "image_source"]
+DUPLICATE_REPORT_PATH = DATA_DIR / "duplicate_review_report.json"
 
 
 def import_curator_data(conn):
@@ -359,6 +364,96 @@ def import_curator_data(conn):
 
     conn.commit()
     print(f"Curator data: {updated} plants updated, {skipped} rows skipped (empty).")
+
+
+def _norm_name(value):
+    if not value:
+        return ""
+    value = value.lower().strip()
+    value = re.sub(r"[^a-z0-9]+", " ", value)
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def generate_duplicate_review_report(conn):
+    """Generate a duplicate-candidate review report for curator review."""
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, input_name, canonical_name, scientific_name, family, genus
+        FROM plants
+        ORDER BY canonical_name, scientific_name, input_name
+    """)
+    rows = [dict(zip([c[0] for c in cursor.description], r)) for r in cursor.fetchall()]
+
+    canonical_groups = {}
+    scientific_groups = {}
+    family_genus_groups = {}
+    for row in rows:
+        canonical_key = _norm_name(row.get("canonical_name"))
+        scientific_key = _norm_name(row.get("scientific_name"))
+        fg_key = (row.get("family") or "", row.get("genus") or "")
+        if canonical_key:
+            canonical_groups.setdefault(canonical_key, []).append(row)
+        if scientific_key:
+            scientific_groups.setdefault(scientific_key, []).append(row)
+        family_genus_groups.setdefault(fg_key, []).append(row)
+
+    exact_canonical_duplicates = [
+        {
+            "normalized_name": key,
+            "count": len(group),
+            "plants": group,
+        }
+        for key, group in canonical_groups.items()
+        if len(group) > 1
+    ]
+    exact_scientific_duplicates = [
+        {
+            "normalized_name": key,
+            "count": len(group),
+            "plants": group,
+        }
+        for key, group in scientific_groups.items()
+        if len(group) > 1
+    ]
+
+    similar_name_candidates = []
+    for (family, genus), group in family_genus_groups.items():
+        if len(group) < 2 or len(group) > 25:
+            continue
+        for a, b in combinations(group, 2):
+            a_name = _norm_name(a.get("canonical_name") or a.get("scientific_name") or a.get("input_name"))
+            b_name = _norm_name(b.get("canonical_name") or b.get("scientific_name") or b.get("input_name"))
+            if not a_name or not b_name or a_name == b_name:
+                continue
+            ratio = SequenceMatcher(None, a_name, b_name).ratio()
+            if ratio >= 0.92:
+                similar_name_candidates.append({
+                    "family": family,
+                    "genus": genus,
+                    "similarity": round(ratio, 3),
+                    "a": a,
+                    "b": b,
+                })
+
+    report = {
+        "summary": {
+            "plant_count": len(rows),
+            "exact_canonical_duplicate_groups": len(exact_canonical_duplicates),
+            "exact_scientific_duplicate_groups": len(exact_scientific_duplicates),
+            "similar_name_candidate_pairs": len(similar_name_candidates),
+        },
+        "exact_canonical_duplicates": sorted(exact_canonical_duplicates, key=lambda x: x["count"], reverse=True),
+        "exact_scientific_duplicates": sorted(exact_scientific_duplicates, key=lambda x: x["count"], reverse=True),
+        "same_family_genus_similar_name": sorted(similar_name_candidates, key=lambda x: x["similarity"], reverse=True),
+    }
+    DUPLICATE_REPORT_PATH.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(
+        "Duplicate review report written: "
+        f"{DUPLICATE_REPORT_PATH} "
+        f"(exact canonical groups={report['summary']['exact_canonical_duplicate_groups']}, "
+        f"exact scientific groups={report['summary']['exact_scientific_duplicate_groups']}, "
+        f"similar pairs={report['summary']['similar_name_candidate_pairs']})"
+    )
 
 
 def main():
@@ -418,6 +513,7 @@ def main():
     print(f"Synonyms: {synonym_count}")
     print(f"Common names: {common_name_count}")
     print(f"Categories: {category_count}")
+    generate_duplicate_review_report(conn)
 
     conn.close()
 
