@@ -68,4 +68,6 @@
 - [x] Add editor-facing content quality queue page
   - Progress (2026-02-24): added generated `quality-queue.html` with per-plant missing-field list and direct links for curation.
   - Progress (2026-02-24): linked quality queue from footer and sitemap.
-- [ ] Performance pass for larger datasets (search split/gzip/precompute)
+- [x] Performance pass for larger datasets (search split/gzip/precompute)
+  - Progress (2026-02-24): sharded search dataset by prefix (`search-shard-*.json`) with lightweight `search-index.json`.
+  - Progress (2026-02-24): updated client search to load only needed shard for current query, with full-data fallback.

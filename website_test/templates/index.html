@@ -130,14 +130,14 @@
         resultsBox.innerHTML = html;
     }
 
-    input.addEventListener('input', function() {
+    input.addEventListener('input', async function() {
         const query = this.value.trim();
         if (query.length < 2) {
             resultsBox.classList.remove('active');
             return;
         }
         if (typeof window.plantSearch === 'function') {
-            const results = window.plantSearch(query);
+            const results = await window.plantSearch(query);
             renderHeroResults(results);
             resultsBox.classList.add('active');
         }

@@ -2,8 +2,11 @@
 
 (function() {
     let searchData = [];
+    let shardIndex = null;
+    const shardCache = {};
     let searchInput = document.getElementById('search-input');
     let searchResults = document.getElementById('search-results');
+    let searchToken = 0;
 
     // Determine base URL from current page
     function getBaseUrl() {
@@ -16,14 +19,63 @@
         return '.';
     }
 
-    // Load search data
+    function getShardKey(query) {
+        const first = (query || '').trim().toLowerCase().charAt(0);
+        return /[a-z]/.test(first) ? first : '_';
+    }
+
+    async function loadShard(baseUrl, key) {
+        if (shardCache[key]) {
+            return shardCache[key];
+        }
+        const response = await fetch(baseUrl + '/static/data/search-shard-' + key + '.json');
+        if (!response.ok) {
+            shardCache[key] = [];
+            return shardCache[key];
+        }
+        shardCache[key] = await response.json();
+        return shardCache[key];
+    }
+
+    // Load search index or fallback full file.
     async function loadSearchData() {
         try {
             const baseUrl = getBaseUrl();
+            const indexResponse = await fetch(baseUrl + '/static/data/search-index.json');
+            if (indexResponse.ok) {
+                shardIndex = await indexResponse.json();
+                return;
+            }
             const response = await fetch(baseUrl + '/static/data/search-data.json');
             searchData = await response.json();
+            shardCache['*'] = searchData;
         } catch (error) {
             console.error('Failed to load search data:', error);
+        }
+    }
+
+    async function ensureDataForQuery(query) {
+        const baseUrl = getBaseUrl();
+        if (!query || query.length < 2) {
+            searchData = [];
+            return;
+        }
+        if (shardIndex) {
+            const key = getShardKey(query);
+            searchData = await loadShard(baseUrl, key);
+            return;
+        }
+        if (shardCache['*']) {
+            searchData = shardCache['*'];
+            return;
+        }
+        try {
+            const response = await fetch(baseUrl + '/static/data/search-data.json');
+            searchData = await response.json();
+            shardCache['*'] = searchData;
+        } catch (error) {
+            console.error('Failed to fetch fallback search data:', error);
+            searchData = [];
         }
     }
 
@@ -104,7 +156,9 @@
 
     // Event handlers
     if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
+        searchInput.addEventListener('input', async function(e) {
+            searchToken += 1;
+            const currentToken = searchToken;
             const query = e.target.value.trim();
 
             if (query.length < 2) {
@@ -112,6 +166,10 @@
                 return;
             }
 
+            await ensureDataForQuery(query);
+            if (currentToken !== searchToken) {
+                return;
+            }
             const results = search(query);
             renderResults(results);
             searchResults.classList.add('active');
@@ -160,5 +218,8 @@
     loadSearchData();
 
     // Expose for hero search
-    window.plantSearch = search;
+    window.plantSearch = async function(query) {
+        await ensureDataForQuery(query);
+        return search(query);
+    };
 })();

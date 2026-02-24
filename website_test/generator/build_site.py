@@ -239,6 +239,25 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
     return search_data
 
 
+def write_search_shards(search_data, search_data_dir):
+    """Write prefix-sharded search files for lighter client fetches."""
+    buckets = defaultdict(list)
+    for item in search_data:
+        candidate = (item.get('display_name') or item.get('canonical_name') or item.get('scientific_name') or '').strip().lower()
+        first = candidate[:1]
+        key = first if first.isalpha() else '_'
+        buckets[key].append(item)
+
+    index = {
+        'version': 1,
+        'bucket_keys': sorted(buckets.keys()),
+        'total_items': len(search_data),
+    }
+    (search_data_dir / "search-index.json").write_text(json.dumps(index, ensure_ascii=False), encoding='utf-8')
+    for key, items in buckets.items():
+        (search_data_dir / f"search-shard-{key}.json").write_text(json.dumps(items, ensure_ascii=False), encoding='utf-8')
+
+
 def preload_garden_location_map(conn):
     """Load normalized garden location key/display_name by plant ID."""
     cursor = conn.cursor()
@@ -852,6 +871,7 @@ def build_site():
     search_data_dir = OUTPUT_DIR / "static" / "data"
     search_data_dir.mkdir(parents=True, exist_ok=True)
     (search_data_dir / "search-data.json").write_text(json.dumps(search_data, ensure_ascii=False), encoding='utf-8')
+    write_search_shards(search_data, search_data_dir)
 
     # === Build API Exports ===
     print("Building API exports...")
