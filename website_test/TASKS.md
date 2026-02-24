@@ -44,3 +44,16 @@
 - [x] Refine GitHub Pages workflow trigger strategy (build from main, deploy artifact) in `.github/workflows/deploy.yml`
   - Progress (2026-02-24): updated workflow triggers to `main` for `push` and `pull_request`, with path filters to avoid unnecessary builds.
   - Progress (2026-02-24): added `actions/configure-pages@v5` and gated deploy job to push/manual runs while preserving artifact-based deployment.
+
+## Next Improvements
+
+- [x] Add automated regression checks for generated pages (`generator/smoke_test.py`)
+  - Progress (2026-02-24): added smoke checks for broken internal links/assets and invalid/empty JSON-LD in generated HTML.
+  - Progress (2026-02-24): wired smoke test into CI workflow after site build so deploy is blocked on failures.
+- [ ] Normalize taxonomy/name display rules across templates and cards
+- [ ] Add duplicate-detection review report in import pipeline
+- [ ] Normalize `garden_location` into stable location IDs
+- [ ] Add "changed since last build" diff artifacts
+- [ ] Generate versioned API-ready JSON exports
+- [ ] Add editor-facing content quality queue page
+- [ ] Performance pass for larger datasets (search split/gzip/precompute)
