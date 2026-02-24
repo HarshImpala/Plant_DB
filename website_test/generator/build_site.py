@@ -217,6 +217,61 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
     return search_data
 
 
+def build_plant_jsonld(plant, common_names, synonyms):
+    """Build JSON-LD metadata for a plant page."""
+    display_name = plant.get('canonical_name') or plant.get('scientific_name') or plant.get('input_name')
+    page_url = f"{SITE_BASE_URL}/plant/{plant['slug']}.html"
+    jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Taxon",
+        "name": display_name,
+        "url": page_url,
+    }
+
+    if plant.get('description'):
+        jsonld["description"] = plant['description']
+
+    alternate_names = []
+    scientific_name = plant.get('scientific_name')
+    if scientific_name and scientific_name != display_name:
+        alternate_names.append(scientific_name)
+    if plant.get('common_name'):
+        alternate_names.append(plant['common_name'])
+    alternate_names.extend(common_names[:8])
+    alternate_names.extend(synonyms[:8])
+    if alternate_names:
+        seen = set()
+        unique_names = []
+        for name in alternate_names:
+            key = name.strip().lower()
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            unique_names.append(name)
+        if unique_names:
+            jsonld["alternateName"] = unique_names
+
+    if plant.get('image_filename'):
+        jsonld["image"] = f"{SITE_BASE_URL}/static/images/plants/{plant['image_filename']}"
+
+    if plant.get('wfo_id'):
+        jsonld["identifier"] = f"WFO:{plant['wfo_id']}"
+
+    same_as = [url for url in (plant.get('wfo_url'), plant.get('gbif_url'), plant.get('wikipedia_url')) if url]
+    if same_as:
+        jsonld["sameAs"] = same_as
+
+    parent_taxa = []
+    if plant.get('genus'):
+        parent_taxa.append(plant['genus'])
+    if plant.get('family'):
+        parent_taxa.append(plant['family'])
+    if parent_taxa:
+        jsonld["parentTaxon"] = " > ".join(parent_taxa)
+
+    return json.dumps(jsonld, ensure_ascii=False, separators=(',', ':'))
+
+
 def load_collections(plants):
     """Load collections from JSON, resolve plant references, and seed the DB."""
     if not COLLECTIONS_PATH.exists():
@@ -499,6 +554,7 @@ def build_site():
         related_plants = related[:6]
 
         plant_collection = plant_to_collection.get(plant.get('canonical_name'))
+        plant_jsonld = build_plant_jsonld(plant, common_names, synonyms)
         html = template.render(
             base_url='..', build_version=build_version,
             plant=plant,
@@ -508,6 +564,7 @@ def build_site():
             next_plant=next_plant,
             related_plants=related_plants,
             plant_collection=plant_collection,
+            plant_jsonld=plant_jsonld,
         )
         (OUTPUT_DIR / "plant" / f"{plant['slug']}.html").write_text(html, encoding='utf-8')
 

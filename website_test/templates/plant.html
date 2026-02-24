@@ -8,6 +8,9 @@
 {% else %}
 <meta name="description" content="{{ plant.canonical_name or plant.scientific_name }}{% if plant.common_name %} ({{ plant.common_name }}){% endif %}{% if plant.family %} — family {{ plant.family }}{% endif %}. Taxonomic information, native distribution, and more.">
 {% endif %}
+{% if plant_jsonld %}
+<script type="application/ld+json">{{ plant_jsonld | safe }}</script>
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -248,6 +251,9 @@
     </div>
 </nav>
 {% endif %}
+{% if plant_jsonld %}
+<script type="application/ld+json">{{ plant_jsonld | safe }}</script>
+{% endif %}
 {% endblock %}
 
 {% block scripts %}
@@ -286,3 +292,4 @@
 })();
 </script>
 {% endblock %}
+
