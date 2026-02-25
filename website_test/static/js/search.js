@@ -79,6 +79,37 @@
         }
     }
 
+    async function ensureFullSearchData() {
+        if (shardCache['*']) {
+            searchData = shardCache['*'];
+            return;
+        }
+        const baseUrl = getBaseUrl();
+        try {
+            const response = await fetch(baseUrl + '/static/data/search-data.json');
+            if (!response.ok) {
+                searchData = [];
+                return;
+            }
+            searchData = await response.json();
+            shardCache['*'] = searchData;
+        } catch (error) {
+            console.error('Failed to fetch full search data:', error);
+            searchData = [];
+        }
+    }
+
+    async function searchWithFallback(query) {
+        await ensureDataForQuery(query);
+        let results = search(query);
+        // Shard prefix can miss substring matches (e.g. "test" in "aaa_test_plant").
+        if (results.length === 0 && shardIndex) {
+            await ensureFullSearchData();
+            results = search(query);
+        }
+        return results;
+    }
+
     // Search function
     function search(query) {
         if (!query || query.length < 2) {
@@ -166,11 +197,10 @@
                 return;
             }
 
-            await ensureDataForQuery(query);
+            const results = await searchWithFallback(query);
             if (currentToken !== searchToken) {
                 return;
             }
-            const results = search(query);
             renderResults(results);
             searchResults.classList.add('active');
         });
@@ -219,7 +249,6 @@
 
     // Expose for hero search
     window.plantSearch = async function(query) {
-        await ensureDataForQuery(query);
-        return search(query);
+        return searchWithFallback(query);
     };
 })();
