@@ -1,4 +1,4 @@
-﻿# Website Test - Tasks
+# Website Test - Tasks
 
 ## Priority Tasks
 
@@ -71,3 +71,10 @@
 - [x] Performance pass for larger datasets (search split/gzip/precompute)
   - Progress (2026-02-24): sharded search dataset by prefix (`search-shard-*.json`) with lightweight `search-index.json`.
   - Progress (2026-02-24): updated client search to load only needed shard for current query, with full-data fallback.
+
+## Toxicity Roadmap
+
+- [ ] Add source-level confidence weighting for toxicity evidence
+- [ ] Add structured `toxicity_status` fields in DB and write consensus back to `plants`
+- [ ] Build toxicity pages in site (`/toxicity`, `/toxicity/toxic`, `/toxicity/possibly-toxic`)
+- [ ] Add manual override layer for curator-reviewed toxicity decisions

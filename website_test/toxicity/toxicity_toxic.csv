@@ -1,0 +1,23 @@
+id,canonical_name,scientific_name,common_name,overall_status,humans_status,cats_status,dogs_status,toxicity_info,classification_reason
+2,Acalypha hispida,Acalypha hispida Burm.f.,chenilleplant,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+6,Aglaonema modestum,Aglaonema modestum Schott ex Engl.,Chinese evergreen,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+30,Begonia listada,Begonia listada L.B.Sm. & Wassh.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+31,Begonia solimutata,Begonia solimutata L.B.Sm. & Wassh.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+57,Colocasia esculenta,Colocasia esculenta (L.) Schott,Taro,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+85,Ficus benghalensis,Ficus benghalensis L.,Bengal fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+86,Ficus cyathistipula,Ficus cyathistipula Warb.,likumo,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+87,Ficus elastica,Ficus elastica Roxb.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+88,Ficus elastica,Ficus elastica Roxb.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+89,Ficus lyrata,Ficus lyrata Warb.,Fiddleleaf Fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+90,Ficus obliqua,Ficus obliqua G.Forst.,small-leaf fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+91,Ficus rubiginosa,Ficus rubiginosa Desf. ex Vent.,rusty fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+92,Ficus rubiginosa,Ficus rubiginosa Desf. ex Vent.,rusty fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+36,Goeppertia zebrina,Goeppertia zebrina (Sims) Nees,Zebraplant,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+98,Hedychium coronarium,Hedychium coronarium J.Koenig,butterfly-lily,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+99,Hedychium gardnerianum,Hedychium gardnerianum Sheph. ex Ker Gawl.,ginger-lily,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+137,Oxalis triangularis,Oxalis triangularis A.St.-Hil.,Wood Sorrel,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+139,Pachira aquatica,Pachira aquatica Aubl.,Guiana-Chestnut,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+150,Pilea ovalis,Pilea ovalis Griseb.,,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+151,Pilea ovalis,Pilea ovalis Griseb.,,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+107,Selenicereus undatus,Selenicereus undatus (Haw.) D.R.Hunt,Nightblooming Cactus,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+182,Spathiphyllum cochlearispathum,Spathiphyllum cochlearispathum (Liebm.) Engl.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info

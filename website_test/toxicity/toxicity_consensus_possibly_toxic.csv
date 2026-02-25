@@ -1,0 +1,35 @@
+id,canonical_name,scientific_name,common_name,family,base_overall_status,external_humans_status,external_cats_status,external_dogs_status,auto_sources_count,consensus_humans_status,consensus_cats_status,consensus_dogs_status,consensus_overall_status,direct_evidence_signal,family_inference,confidence,source_urls_used,evidence_notes
+5,Aglaonema costatum,Aglaonema costatum N.E.Br.,Fox's aglaonema,Araceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+7,Aglaonema nitidum,Aglaonema nitidum (Jack) Kunth,aglaonema aroid,Araceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+9,Alpinia purpurata,Alpinia purpurata (Vieill.) K.Schum.,Red Ginger,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+10,Alpinia vittata,Alpinia vittata W.Bull,variegate-ginger,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+11,Alpinia zerumbet,Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.,Shellplant,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+12,Alpinia zerumbet,Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.,Shellplant,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+15,Anthurium digitatum,Anthurium digitatum (Jacq.) Schott,,Araceae Juss.,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (3 toxic species in family)
+16,Anthurium schlechtendalii,Anthurium schlechtendalii Kunth,Laceleaf,Araceae Juss.,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (3 toxic species in family)
+17,Anthurium vittariifolium,Anthurium vittariifolium Engl.,,Araceae Juss.,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (3 toxic species in family)
+35,Caladium bicolor,Caladium bicolor (Aiton) Vent.,Heart of Jesus,Araceae Juss.,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (3 toxic species in family)
+67,Dendrocnide excelsa,Dendrocnide excelsa (Wedd.) Chew,,Urticaceae Juss.,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+68,Dichrostachys cinerea,Dichrostachys cinerea (L.) Wight & Arn.,Aroma,Fabaceae Lindl.,unknown,unknown,unknown,unknown,6,possibly_toxic,unknown,unknown,possibly_toxic,yes,,,,
+77,Elettaria ensal,Elettaria ensal (Gaertn.) Abeyw.,,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+94,Globba schomburgkii,Globba schomburgkii Hook.f.,Dancing girl ginger,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+32,Hedychium horsfieldii,Hedychium horsfieldii R.Br. ex Wall.,,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)
+100,Hedychium horsfieldii,Hedychium horsfieldii R.Br. ex Wall.,,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+104,Hoffmannia ghiesbreghtii,Hoffmannia ghiesbreghtii (Lem.) Hemsl.,,Rubiaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,unknown,unknown,possibly_toxic,yes,,,,
+109,Justicia brandegeeana,Justicia brandegeeana Wassh. & L.B.Sm.,false hop,Acanthaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,unknown,unknown,possibly_toxic,yes,,,,
+110,Justicia carnea,Justicia carnea Lindl.,plumeflower,Acanthaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+115,Mangifera indica,Mangifera indica L.,Mango,Anacardiaceae R.Br.,unknown,unknown,unknown,unknown,6,possibly_toxic,unknown,unknown,possibly_toxic,yes,,,,
+141,Passiflora citrina,Passiflora citrina J.M.Mac Dougal,,Passifloraceae Juss. ex Roussel,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+142,Passiflora coriacea,Passiflora coriacea Juss.,bat-leaf passionflower,Passifloraceae Juss. ex Roussel,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+143,Passiflora edulis,Passiflora edulis Sims,Passion Fruit,Passifloraceae Juss. ex Roussel,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+144,Passiflora foetida,Passiflora foetida L.,Killip,Passifloraceae Juss. ex Roussel,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+145,Passiflora incarnata,Passiflora incarnata L.,maypop,Passifloraceae Juss. ex Roussel,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+146,Passiflora quadrangularis,Passiflora quadrangularis L.,Giant Granadilla,Passifloraceae Juss. ex Roussel,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+147,Passiflora violacea,Passiflora ×violacea Loisel.,Violet passionflower,,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+156,Plumeria alba,Plumeria alba L.,milktree,Apocynaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+157,Plumeria rubra,Plumeria rubra L.,Frangipani,Apocynaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+169,Psidium guineense,Psidium guineense Sw.,Guinea Guava,Myrtaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,unknown,unknown,possibly_toxic,yes,,,,
+184,Spondias dulcis,Spondias dulcis Parkinson,Jew-plum,Anacardiaceae R.Br.,unknown,unknown,unknown,unknown,6,possibly_toxic,possibly_toxic,possibly_toxic,possibly_toxic,yes,,,,
+195,Vanilla planifolia,Vanilla planifolia Andrews,Vanilla,Orchidaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,unknown,unknown,possibly_toxic,yes,,,,
+196,Vanilla pompona,Vanilla pompona Schiede,pompona vanilla,Orchidaceae Juss.,unknown,unknown,unknown,unknown,6,possibly_toxic,unknown,unknown,possibly_toxic,yes,,,,
+197,Zingiber officinale,Zingiber officinale Roscoe,Garden Ginger,Zingiberaceae Martinov,unknown,unknown,unknown,unknown,6,unknown,unknown,unknown,possibly_toxic,no,family known toxic,,,family known toxic (2 toxic species in family)

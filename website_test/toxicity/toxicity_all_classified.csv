@@ -1,0 +1,197 @@
+id,canonical_name,scientific_name,common_name,overall_status,humans_status,cats_status,dogs_status,toxicity_info,classification_reason
+2,Acalypha hispida,Acalypha hispida Burm.f.,chenilleplant,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+3,Acorus gramineus,Acorus gramineus Aiton,Slender Sweet-flag,unknown,unknown,unknown,unknown,,no toxicity_info
+4,Adenanthera microsperma,Adenanthera microsperma Teijsm. & Binn.,phai,unknown,unknown,unknown,unknown,,no toxicity_info
+5,Aglaonema costatum,Aglaonema costatum N.E.Br.,Fox's aglaonema,unknown,unknown,unknown,unknown,,no toxicity_info
+6,Aglaonema modestum,Aglaonema modestum Schott ex Engl.,Chinese evergreen,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+7,Aglaonema nitidum,Aglaonema nitidum (Jack) Kunth,aglaonema aroid,unknown,unknown,unknown,unknown,,no toxicity_info
+8,Allamanda schottii,Allamanda schottii Pohl,Bush Allamanda,unknown,unknown,unknown,unknown,,no toxicity_info
+9,Alpinia purpurata,Alpinia purpurata (Vieill.) K.Schum.,Red Ginger,unknown,unknown,unknown,unknown,,no toxicity_info
+10,Alpinia vittata,Alpinia vittata W.Bull,variegate-ginger,unknown,unknown,unknown,unknown,,no toxicity_info
+11,Alpinia zerumbet,Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.,Shellplant,unknown,unknown,unknown,unknown,,no toxicity_info
+12,Alpinia zerumbet,Alpinia zerumbet (Pers.) B.L.Burtt & R.M.Sm.,Shellplant,unknown,unknown,unknown,unknown,,no toxicity_info
+13,Ananas comosus,Ananas comosus (L.) Merr.,Pineapple,unknown,unknown,unknown,unknown,,no toxicity_info
+14,Angraecum eburneum,Angraecum eburneum Bory,,unknown,unknown,unknown,unknown,,no toxicity_info
+15,Anthurium digitatum,Anthurium digitatum (Jacq.) Schott,,unknown,unknown,unknown,unknown,,no toxicity_info
+16,Anthurium schlechtendalii,Anthurium schlechtendalii Kunth,Laceleaf,unknown,unknown,unknown,unknown,,no toxicity_info
+17,Anthurium vittariifolium,Anthurium vittariifolium Engl.,,unknown,unknown,unknown,unknown,,no toxicity_info
+18,Aristolochia fimbriata,Aristolochia fimbriata Cham.,,unknown,unknown,unknown,unknown,,no toxicity_info
+19,Aristolochia gigantea,Aristolochia gigantea Mart. & Zucc.,duckflower,unknown,unknown,unknown,unknown,,no toxicity_info
+20,Aristolochia grandiflora,Aristolochia grandiflora Sw.,duckflower,unknown,unknown,unknown,unknown,,no toxicity_info
+21,Aristolochia labiata,Aristolochia labiata Willd.,rooster-flower,unknown,unknown,unknown,unknown,,no toxicity_info
+22,Aristolochia maxima,Aristolochia maxima Jacq.,Florida Dutchman's Pipe,unknown,unknown,unknown,unknown,,no toxicity_info
+23,Aristolochia ringens,Aristolochia ringens Vahl,Gaping Dutchman's Pipe,unknown,unknown,unknown,unknown,,no toxicity_info
+24,Aristolochia trilobata,Aristolochia trilobata L.,Dutchman's Pipe,unknown,unknown,unknown,unknown,,no toxicity_info
+25,Aristolochia zollingeriana,Aristolochia zollingeriana Miq.,,unknown,unknown,unknown,unknown,,no toxicity_info
+26,Asplenium nidus,Asplenium nidus L.,Hawai'I Birdnest Fern,unknown,unknown,unknown,unknown,,no toxicity_info
+27,Averrhoa carambola,Averrhoa carambola L.,caramba,unknown,unknown,unknown,unknown,,no toxicity_info
+28,Averrhoa carambola,Averrhoa carambola L.,caramba,unknown,unknown,unknown,unknown,,no toxicity_info
+29,Averrhoa carambola,Averrhoa carambola L.,caramba,unknown,unknown,unknown,unknown,,no toxicity_info
+30,Begonia listada,Begonia listada L.B.Sm. & Wassh.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+31,Begonia solimutata,Begonia solimutata L.B.Sm. & Wassh.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+178,Breynia androgyna,Breynia androgyna (L.) Chakrab. & N.P.Balakr.,Katuk,unknown,unknown,unknown,unknown,,no toxicity_info
+33,Breynia disticha,Breynia disticha J.R.Forst. & G.Forst.,Snowbush,unknown,unknown,unknown,unknown,,no toxicity_info
+34,Brownea coccinea capitella,Brownea coccinea subsp. capitella (Jacq.) D.Velázquez & G.Agostini,,unknown,unknown,unknown,unknown,,no toxicity_info
+35,Caladium bicolor,Caladium bicolor (Aiton) Vent.,Heart of Jesus,unknown,unknown,unknown,unknown,,no toxicity_info
+37,Canna glauca,Canna glauca L.,Louisiana canna,unknown,unknown,unknown,unknown,,no toxicity_info
+38,Carica papaya,Carica papaya L.,Pape,unknown,unknown,unknown,unknown,,no toxicity_info
+39,Carica papaya,Carica papaya L.,Pape,unknown,unknown,unknown,unknown,,no toxicity_info
+40,Carica papaya,Carica papaya L.,Pape,unknown,unknown,unknown,unknown,,no toxicity_info
+41,Carica papaya,Carica papaya L.,Pape,unknown,unknown,unknown,unknown,,no toxicity_info
+42,Carica papaya,Carica papaya L.,Pape,unknown,unknown,unknown,unknown,,no toxicity_info
+43,Carica papaya,Carica papaya L.,Pape,unknown,unknown,unknown,unknown,,no toxicity_info
+44,Castanospermum australe,Castanospermum australe A.Cunn. ex Mudie,beantree,unknown,unknown,unknown,unknown,,no toxicity_info
+45,Cinnamomum parthenoxylon,Cinnamomum parthenoxylon (Jack) Meisn.,Selasian Wood,unknown,unknown,unknown,unknown,,no toxicity_info
+46,Clerodendrum splendens,Clerodendrum splendens G.Don,,unknown,unknown,unknown,unknown,,no toxicity_info
+47,Clerodendrum thomsoniae,Clerodendrum thomsoniae Balf.f.,bagflower,unknown,unknown,unknown,unknown,,no toxicity_info
+48,Clusia rosea,Clusia rosea Jacq.,pitch apple,unknown,unknown,unknown,unknown,,no toxicity_info
+49,Coccothrinax readii,Coccothrinax readii H.J.Quero,Nah-kaax,unknown,unknown,unknown,unknown,,no toxicity_info
+50,Cocos nucifera,Cocos nucifera L.,Copra,unknown,unknown,unknown,unknown,,no toxicity_info
+51,Cocos nucifera,Cocos nucifera L.,Copra,unknown,unknown,unknown,unknown,,no toxicity_info
+52,Cocos nucifera,Cocos nucifera L.,Copra,unknown,unknown,unknown,unknown,,no toxicity_info
+53,Coffea arabica,Coffea arabica L.,Coffee,unknown,unknown,unknown,unknown,,no toxicity_info
+54,Coffea arabica,Coffea arabica L.,Coffee,unknown,unknown,unknown,unknown,,no toxicity_info
+55,Coffea arabica,Coffea arabica L.,Coffee,unknown,unknown,unknown,unknown,,no toxicity_info
+56,Coffea canephora,Coffea canephora Pierre ex A.Froehner,Robusta Coffee,unknown,unknown,unknown,unknown,,no toxicity_info
+57,Colocasia esculenta,Colocasia esculenta (L.) Schott,Taro,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+58,Colvillea racemosa,Colvillea racemosa Bojer ex Hook.,,unknown,unknown,unknown,unknown,,no toxicity_info
+59,Cordia myxa,Cordia myxa L.,Lasoda,unknown,unknown,unknown,unknown,,no toxicity_info
+60,Couroupita guianensis,Couroupita guianensis Aubl.,Cannonball Tree,unknown,unknown,unknown,unknown,,no toxicity_info
+61,Ctenanthe amabilis,Ctenanthe amabilis (É.Morren) H.Kenn. & Nicolson,,unknown,unknown,unknown,unknown,,no toxicity_info
+62,Cubanola domingensis,Cubanola domingensis (Britton) Aiello,,unknown,unknown,unknown,unknown,,no toxicity_info
+63,Curculigo capitulata,Curculigo capitulata (Lour.) Kuntze,palm-grass,unknown,unknown,unknown,unknown,,no toxicity_info
+64,Cyanastrum cordifolium,Cyanastrum cordifolium Oliv.,,unknown,unknown,unknown,unknown,,no toxicity_info
+65,Cyperus diffusus,Cyperus diffusus Vahl,Diffused Flatsedge,unknown,unknown,unknown,unknown,,no toxicity_info
+66,Delonix regia,Delonix regia (Bojer ex Hook.) Raf.,Flamboyan,unknown,unknown,unknown,unknown,,no toxicity_info
+67,Dendrocnide excelsa,Dendrocnide excelsa (Wedd.) Chew,,unknown,unknown,unknown,unknown,,no toxicity_info
+68,Dichrostachys cinerea,Dichrostachys cinerea (L.) Wight & Arn.,Aroma,unknown,unknown,unknown,unknown,,no toxicity_info
+69,Dioscorea alata,Dioscorea alata L.,Yams,unknown,unknown,unknown,unknown,,no toxicity_info
+70,Dioscorea oppositifolia,Dioscorea oppositifolia L.,Chinese yam,unknown,unknown,unknown,unknown,,no toxicity_info
+71,Dioscorea polystachya,Dioscorea polystachya Turcz.,Chinese Yam,unknown,unknown,unknown,unknown,,no toxicity_info
+72,Dischidia bengalensis,Dischidia bengalensis Colebr.,,unknown,unknown,unknown,unknown,,no toxicity_info
+73,Dischidia platyphylla,Dischidia platyphylla Schltr.,,unknown,unknown,unknown,unknown,,no toxicity_info
+74,Dischidia subulata,Dischidia subulata Warb.,,unknown,unknown,unknown,unknown,,no toxicity_info
+75,Dischidia vidalii,Dischidia vidalii Becc.,,unknown,unknown,unknown,unknown,,no toxicity_info
+79,Disocactus anguliger,Disocactus anguliger (Lem.) M.Á.Cruz & S.Arias,fishbone-cactus,unknown,unknown,unknown,unknown,,no toxicity_info
+76,Elaeis guineensis,Elaeis guineensis Jacq.,Oil palm,unknown,unknown,unknown,unknown,,no toxicity_info
+77,Elettaria ensal,Elettaria ensal (Gaertn.) Abeyw.,,unknown,unknown,unknown,unknown,,no toxicity_info
+78,Epidendrum ciliare,Epidendrum ciliare L.,Eyelash Orchid,unknown,unknown,unknown,unknown,,no toxicity_info
+80,Epiphyllum chrysocardium,Epiphyllum chrysocardium Alexander,,unknown,unknown,unknown,unknown,,no toxicity_info
+179,Epiphyllum chrysocardium,Epiphyllum chrysocardium Alexander,,unknown,unknown,unknown,unknown,,no toxicity_info
+81,Epiphyllum oxypetalum,Epiphyllum oxypetalum (DC.) Haw.,Dutchman's Pipe Cactus,unknown,unknown,unknown,unknown,,no toxicity_info
+82,Erythroxylum coca,Erythroxylum coca Lam.,Coca,unknown,unknown,unknown,unknown,,no toxicity_info
+83,Euphorbia leuconeura,Euphorbia leuconeura Boiss.,,unknown,unknown,unknown,unknown,,no toxicity_info
+84,Euterpe oleracea,Euterpe oleracea Mart.,Assai Palm,unknown,unknown,unknown,unknown,,no toxicity_info
+85,Ficus benghalensis,Ficus benghalensis L.,Bengal fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+86,Ficus cyathistipula,Ficus cyathistipula Warb.,likumo,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+87,Ficus elastica,Ficus elastica Roxb.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+88,Ficus elastica,Ficus elastica Roxb.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+89,Ficus lyrata,Ficus lyrata Warb.,Fiddleleaf Fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+90,Ficus obliqua,Ficus obliqua G.Forst.,small-leaf fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+91,Ficus rubiginosa,Ficus rubiginosa Desf. ex Vent.,rusty fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+92,Ficus rubiginosa,Ficus rubiginosa Desf. ex Vent.,rusty fig,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+93,Flacourtia indica,Flacourtia indica (Burm.fil.) Merr.,batoko-plum,unknown,unknown,unknown,unknown,,no toxicity_info
+94,Globba schomburgkii,Globba schomburgkii Hook.f.,Dancing girl ginger,unknown,unknown,unknown,unknown,,no toxicity_info
+36,Goeppertia zebrina,Goeppertia zebrina (Sims) Nees,Zebraplant,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+95,Harpullia arborea,Harpullia arborea (Blanco) Radlk.,Tulip-wood tree,unknown,unknown,unknown,unknown,,no toxicity_info
+97,Hatiora salicornioides,Hatiora salicornioides Britton & Rose,dancing-bones,unknown,unknown,unknown,unknown,,no toxicity_info
+98,Hedychium coronarium,Hedychium coronarium J.Koenig,butterfly-lily,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+99,Hedychium gardnerianum,Hedychium gardnerianum Sheph. ex Ker Gawl.,ginger-lily,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+32,Hedychium horsfieldii,Hedychium horsfieldii R.Br. ex Wall.,,unknown,unknown,unknown,unknown,,no toxicity_info
+100,Hedychium horsfieldii,Hedychium horsfieldii R.Br. ex Wall.,,unknown,unknown,unknown,unknown,,no toxicity_info
+101,Heliconia,Heliconia L.,Heliconia,unknown,unknown,unknown,unknown,,no toxicity_info
+102,Heliconia rostrata,Heliconia rostrata Ruiz & Pav.,False Bird of Paradise,unknown,unknown,unknown,unknown,,no toxicity_info
+104,Hoffmannia ghiesbreghtii,Hoffmannia ghiesbreghtii (Lem.) Hemsl.,,unknown,unknown,unknown,unknown,,no toxicity_info
+105,Hura crepitans,Hura crepitans L.,Sandbox tree,unknown,unknown,unknown,unknown,,no toxicity_info
+108,Isolepis cernua,Isolepis cernua (Vahl) Roem. & Schult.,low bulrush,unknown,unknown,unknown,unknown,,no toxicity_info
+109,Justicia brandegeeana,Justicia brandegeeana Wassh. & L.B.Sm.,false hop,unknown,unknown,unknown,unknown,,no toxicity_info
+110,Justicia carnea,Justicia carnea Lindl.,plumeflower,unknown,unknown,unknown,unknown,,no toxicity_info
+111,Khaya grandifoliola,Khaya grandifoliola C.DC.,Beninwood,unknown,unknown,unknown,unknown,,no toxicity_info
+112,Kigelia africana africana,Kigelia africana subsp. africana,,unknown,unknown,unknown,unknown,,no toxicity_info
+113,Kohleria hirsuta,Kohleria hirsuta (Kunth) Regel,,unknown,unknown,unknown,unknown,,no toxicity_info
+114,Lagerstroemia speciosa,Lagerstroemia speciosa (L.) Pers.,Jarul,unknown,unknown,unknown,unknown,,no toxicity_info
+115,Mangifera indica,Mangifera indica L.,Mango,unknown,unknown,unknown,unknown,,no toxicity_info
+116,Mangifera indica,Mangifera indica L.,Mango,unknown,unknown,unknown,unknown,,no toxicity_info
+117,Mangifera indica,Mangifera indica L.,Mango,unknown,unknown,unknown,unknown,,no toxicity_info
+118,Medinilla magnifica,Medinilla magnifica Lindl.,pink medinilla,unknown,unknown,unknown,unknown,,no toxicity_info
+120,Mimosa aculeaticarpa,Mimosa aculeaticarpa Ortega,catclaw mimosa,unknown,unknown,unknown,unknown,,no toxicity_info
+121,Mimosa polycarpa spegazzinii,Mimosa polycarpa var. spegazzinii (Pirotta) Burkart,,unknown,unknown,unknown,unknown,,no toxicity_info
+122,Morinda,Morinda L.,,unknown,unknown,unknown,unknown,,no toxicity_info
+123,Murraya paniculata,Murraya paniculata (L.) Jacq.,,unknown,unknown,unknown,unknown,,no toxicity_info
+124,Musa coccinea,Musa coccinea Andrews,Okinawa Torch,unknown,unknown,unknown,unknown,,no toxicity_info
+126,Musa nana,Musa nana Lour.,,unknown,unknown,unknown,unknown,,no toxicity_info
+127,Musa paradisiaca,Musa ×paradisiaca L.,banana,unknown,unknown,unknown,unknown,,no toxicity_info
+128,Musa paradisiaca,Musa ×paradisiaca L.,banana,unknown,unknown,unknown,unknown,,no toxicity_info
+129,Musa paradisiaca,Musa ×paradisiaca L.,banana,unknown,unknown,unknown,unknown,,no toxicity_info
+130,Musa paradisiaca,Musa ×paradisiaca L.,banana,unknown,unknown,unknown,unknown,,no toxicity_info
+131,Musa paradisiaca,Musa ×paradisiaca L.,banana,unknown,unknown,unknown,unknown,,no toxicity_info
+132,Musa paradisiaca,Musa ×paradisiaca L.,banana,unknown,unknown,unknown,unknown,,no toxicity_info
+134,Musa paradisiaca,Musa ×paradisiaca L.,banana,unknown,unknown,unknown,unknown,,no toxicity_info
+133,Musa seminifera,Musa seminifera Lour.,,unknown,unknown,unknown,unknown,,no toxicity_info
+125,Musa velutina,Musa velutina H.Wendl. & Drude,hairy banana,unknown,unknown,unknown,unknown,,no toxicity_info
+135,Nautilocalyx lynchii,Nautilocalyx lynchii (Hook.fil.) Sprague,,unknown,unknown,unknown,unknown,,no toxicity_info
+119,Nephelium lappaceum,Nephelium lappaceum L.,pulasan,unknown,unknown,unknown,unknown,,no toxicity_info
+136,Neptunia plena,Neptunia plena (L.) Benth.,Waterthistle,unknown,unknown,unknown,unknown,,no toxicity_info
+137,Oxalis triangularis,Oxalis triangularis A.St.-Hil.,Wood Sorrel,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+139,Pachira aquatica,Pachira aquatica Aubl.,Guiana-Chestnut,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+138,Pachira insignis,Pachira insignis (Sw.) Sav.,,unknown,unknown,unknown,unknown,,no toxicity_info
+140,Palisota schweinfurthii,Palisota schweinfurthii C.B.Clarke,,unknown,unknown,unknown,unknown,,no toxicity_info
+141,Passiflora citrina,Passiflora citrina J.M.Mac Dougal,,unknown,unknown,unknown,unknown,,no toxicity_info
+142,Passiflora coriacea,Passiflora coriacea Juss.,bat-leaf passionflower,unknown,unknown,unknown,unknown,,no toxicity_info
+143,Passiflora edulis,Passiflora edulis Sims,Passion Fruit,unknown,unknown,unknown,unknown,,no toxicity_info
+144,Passiflora foetida,Passiflora foetida L.,Killip,unknown,unknown,unknown,unknown,,no toxicity_info
+145,Passiflora incarnata,Passiflora incarnata L.,maypop,unknown,unknown,unknown,unknown,,no toxicity_info
+146,Passiflora quadrangularis,Passiflora quadrangularis L.,Giant Granadilla,unknown,unknown,unknown,unknown,,no toxicity_info
+147,Passiflora violacea,Passiflora ×violacea Loisel.,Violet passionflower,unknown,unknown,unknown,unknown,,no toxicity_info
+148,Phyllanthus inflatus,Phyllanthus inflatus Hutch.,,unknown,unknown,unknown,unknown,,no toxicity_info
+149,Phyllanthus reticulatus,Phyllanthus reticulatus Poir.,Potato bush,unknown,unknown,unknown,unknown,,no toxicity_info
+150,Pilea ovalis,Pilea ovalis Griseb.,,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+151,Pilea ovalis,Pilea ovalis Griseb.,,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+152,Piper betle,Piper betle L.,betel,unknown,unknown,unknown,unknown,,no toxicity_info
+153,Piper kadsura,Piper kadsura (Choisy) Ohwi,Kadsura pepper,unknown,unknown,unknown,unknown,,no toxicity_info
+154,Piper longum,Piper longum L.,long pepper,unknown,unknown,unknown,unknown,,no toxicity_info
+155,Piper magnificum,Piper magnificum Gentil ex Trel.,,unknown,unknown,unknown,unknown,,no toxicity_info
+156,Plumeria alba,Plumeria alba L.,milktree,unknown,unknown,unknown,unknown,,no toxicity_info
+157,Plumeria rubra,Plumeria rubra L.,Frangipani,unknown,unknown,unknown,unknown,,no toxicity_info
+158,Polyalthia suberosa,Polyalthia suberosa (Roxb.) Thwaites,Polyalthia plant,unknown,unknown,unknown,unknown,,no toxicity_info
+159,Pseudorhipsalis ramulosa,Pseudorhipsalis ramulosa (Salm-Dyck) Barthlott,,unknown,unknown,unknown,unknown,,no toxicity_info
+160,Pseudospondias microcarpa,Pseudospondias microcarpa (A.Rich.) Engl.,bume,unknown,unknown,unknown,unknown,,no toxicity_info
+161,Psidium cattleianum,Psidium cattleianum Afzel. ex Sabine,Cattley guava,unknown,unknown,unknown,unknown,,no toxicity_info
+162,Psidium cattleianum,Psidium cattleianum Afzel. ex Sabine,Cattley guava,unknown,unknown,unknown,unknown,,no toxicity_info
+163,Psidium cattleianum,Psidium cattleianum Afzel. ex Sabine,Cattley guava,unknown,unknown,unknown,unknown,,no toxicity_info
+164,Psidium friedrichsthalianum,Psidium friedrichsthalianum (O.Berg) Nied.,wild guava,unknown,unknown,unknown,unknown,,no toxicity_info
+165,Psidium guajava,Psidium guajava L.,Guava,unknown,unknown,unknown,unknown,,no toxicity_info
+166,Psidium guajava,Psidium guajava L.,Guava,unknown,unknown,unknown,unknown,,no toxicity_info
+167,Psidium guajava,Psidium guajava L.,Guava,unknown,unknown,unknown,unknown,,no toxicity_info
+168,Psidium guajava,Psidium guajava L.,Guava,unknown,unknown,unknown,unknown,,no toxicity_info
+169,Psidium guineense,Psidium guineense Sw.,Guinea Guava,unknown,unknown,unknown,unknown,,no toxicity_info
+170,Rauvolfia tetraphylla,Rauvolfia tetraphylla L.,milkbush,unknown,unknown,unknown,unknown,,no toxicity_info
+171,Ravenala madagascariensis,Ravenala madagascariensis Sonn.,"Traveller's tree, Traveller's palm",unknown,unknown,unknown,unknown,,no toxicity_info
+172,Rhipsalis baccifera,Rhipsalis baccifera (J.S.Muell.) Stearn,Mistletoe Cactus,unknown,unknown,unknown,unknown,,no toxicity_info
+173,Rhipsalis cereuscula,Rhipsalis cereuscula Haw.,Rice Cactus,unknown,unknown,unknown,unknown,,no toxicity_info
+96,Rhipsalis pentaptera,Rhipsalis pentaptera Pfeiff. ex A.Dietr.,,unknown,unknown,unknown,unknown,,no toxicity_info
+174,Rhipsalis pilocarpa,Rhipsalis pilocarpa Loefgr.,,unknown,unknown,unknown,unknown,,no toxicity_info
+175,Rosenbergiodendron formosum,Rosenbergiodendron formosum (Jacq.) Fagerl.,,unknown,unknown,unknown,unknown,,no toxicity_info
+176,Saccharum officinarum,Saccharum officinarum L.,Sugarcane,unknown,unknown,unknown,unknown,,no toxicity_info
+177,Salacca zalacca,Salacca zalacca (Gaertn.) Voss,salak,unknown,unknown,unknown,unknown,,no toxicity_info
+106,Selenicereus megalanthus,Selenicereus megalanthus (Schum. ex Vaupel) Moran,,unknown,unknown,unknown,unknown,,no toxicity_info
+107,Selenicereus undatus,Selenicereus undatus (Haw.) D.R.Hunt,Nightblooming Cactus,toxic,unknown,not_toxic,not_toxic,"Non-toxic to dogs, cats, horses. (Source: ASPCA)",keyword classification from toxicity_info
+180,Setaria palmifolia,Setaria palmifolia (J.Koenig) Stapf,Palmgrass,unknown,unknown,unknown,unknown,,no toxicity_info
+181,Solandra maxima,Solandra maxima (Moc. & Sessé) P.S.Green,chalice cup vine,unknown,unknown,unknown,unknown,,no toxicity_info
+182,Spathiphyllum cochlearispathum,Spathiphyllum cochlearispathum (Liebm.) Engl.,,toxic,unknown,toxic,toxic,"Toxic to dogs, cats, horses. (Source: ASPCA, genus-level)",keyword classification from toxicity_info
+183,Spathodea campanulata,Spathodea campanulata Beauverd,Nandi Flame,unknown,unknown,unknown,unknown,,no toxicity_info
+184,Spondias dulcis,Spondias dulcis Parkinson,Jew-plum,unknown,unknown,unknown,unknown,,no toxicity_info
+185,Spondias mombin,Spondias mombin L.,Hogplum,unknown,unknown,unknown,unknown,,no toxicity_info
+186,Strelitzia alba,Strelitzia alba (L.f.) Skeels,,unknown,unknown,unknown,unknown,,no toxicity_info
+187,Strelitzia nicolai,Strelitzia nicolai Regel & Körn.,Bird-Of-Paradise Tree,unknown,unknown,unknown,unknown,,no toxicity_info
+188,Strophanthus gratus,Strophanthus gratus (Wall. & Hook.) Baill.,Ouabain,unknown,unknown,unknown,unknown,,no toxicity_info
+189,Strophanthus petersianus,Strophanthus petersianus Klotzsch,,unknown,unknown,unknown,unknown,,no toxicity_info
+190,Syagrus romanzoffiana,Syagrus romanzoffiana (Cham.) Glassman,Queen Palm,unknown,unknown,unknown,unknown,,no toxicity_info
+191,Tamarindus indica,Tamarindus indica L.,Tormon,unknown,unknown,unknown,unknown,,no toxicity_info
+192,Terminalia catappa,Terminalia catappa L.,Almond,unknown,unknown,unknown,unknown,,no toxicity_info
+193,Theobroma cacao,Theobroma cacao L.,Cacao,unknown,unknown,unknown,unknown,,no toxicity_info
+194,Thunbergia mysorensis,Thunbergia mysorensis (Wight) T.Anderson ex Bedd.,Mysore trumpetvine,unknown,unknown,unknown,unknown,,no toxicity_info
+1,Vachellia collinsii,Vachellia collinsii (Saff.) Seigler & Ebinger,bull horn acacia,unknown,unknown,unknown,unknown,,no toxicity_info
+195,Vanilla planifolia,Vanilla planifolia Andrews,Vanilla,unknown,unknown,unknown,unknown,,no toxicity_info
+196,Vanilla pompona,Vanilla pompona Schiede,pompona vanilla,unknown,unknown,unknown,unknown,,no toxicity_info
+197,Zingiber officinale,Zingiber officinale Roscoe,Garden Ginger,unknown,unknown,unknown,unknown,,no toxicity_info
