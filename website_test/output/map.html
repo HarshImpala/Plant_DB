@@ -18,8 +18,8 @@
     
 <style>
     .map-page {
-        padding: 2rem 1rem;
-        max-width: 1200px;
+        padding: 1rem;
+        max-width: 1400px;
         margin: 0 auto;
     }
     .map-page h2 {
@@ -37,12 +37,44 @@
         overflow: hidden;
         background: #f5f5f5;
     }
-    .pdf-container iframe {
-        width: 100%;
-        height: 80vh;
-        min-height: 600px;
-        border: none;
+    .pdf-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        padding: 0.5rem 0.75rem;
+        background: var(--color-header-bg, #f8f8f8);
+        border-bottom: 1px solid var(--color-border-light, #e5e5e5);
+    }
+    .pdf-toolbar button {
+        border: 1px solid var(--color-border, #cfcfcf);
+        background: var(--color-white, #fff);
+        color: var(--color-text, #111);
+        border-radius: 4px;
+        padding: 0.35rem 0.55rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+    .pdf-toolbar button:hover {
+        border-color: var(--color-accent, #2e7d32);
+    }
+    .pdf-toolbar .pdf-page-label {
+        margin-left: 0.35rem;
+        margin-right: 0.25rem;
+        color: var(--color-text-light, #666);
+        font-size: 0.9rem;
+    }
+    .pdf-canvas-wrap {
+        overflow: visible;
         display: block;
+        padding: 0.75rem;
+        background: #ebebeb;
+    }
+    .pdf-canvas-page {
+        display: block;
+        margin: 0 auto 0.85rem;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     }
     .pdf-fallback {
         padding: 2rem;
@@ -67,6 +99,31 @@
         border: 1px solid var(--color-border, #ddd);
         border-radius: 6px;
         background: var(--color-white, #fff);
+    }
+    .station-index {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border: 1px solid var(--color-border, #ddd);
+        border-radius: 6px;
+        background: var(--color-white, #fff);
+    }
+    .station-index ol {
+        margin: 0.75rem 0 0;
+        padding-left: 1.25rem;
+    }
+    .station-index li {
+        margin-bottom: 0.55rem;
+        line-height: 1.35;
+    }
+    .station-title {
+        font-weight: 600;
+    }
+    .station-en {
+        color: var(--color-text-light, #666);
+    }
+    .station-note {
+        color: var(--color-text-light, #666);
+        font-size: 0.9rem;
     }
     .location-filter {
         margin: 0.75rem 0 1rem;
@@ -152,17 +209,23 @@
     <p class="map-subtitle">Fovariosi Allat- es Novenykert - Fuveszkert, 2021</p>
 
     <div class="pdf-container">
-        <iframe
-            src="./static/maps/Fuveszkert_terkepes_2021.0503.pdf"
-            title="Fuveszkert Garden Map 2021"
-            type="application/pdf">
-            <div class="pdf-fallback">
-                <p>Your browser cannot display the PDF inline.</p>
-                <a class="pdf-download-link"
-                   href="./static/maps/Fuveszkert_terkepes_2021.0503.pdf"
-                   download>Download Map PDF</a>
+        <div id="pdf-viewer">
+            <div class="pdf-toolbar">
+                <span class="pdf-page-label" id="pdf-page-info">Pages: -</span>
+                <button type="button" id="pdf-zoom-out">-</button>
+                <button type="button" id="pdf-zoom-in">+</button>
+                <button type="button" id="pdf-fit-width">Fit Width</button>
             </div>
-        </iframe>
+            <div class="pdf-canvas-wrap" id="pdf-canvas-wrap">
+                <div id="pdf-pages" aria-label="Garden map PDF pages"></div>
+            </div>
+        </div>
+        <div class="pdf-fallback" id="pdf-fallback" style="display:none">
+            <p>Could not load inline PDF viewer.</p>
+            <a class="pdf-download-link"
+               href="./static/maps/Fuveszkert_terkepes_2021.0503.pdf"
+               download>Download Map PDF</a>
+        </div>
     </div>
 
     <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted,#666);">
@@ -170,6 +233,38 @@
             Open in new tab
         </a>
     </p>
+
+    <section class="station-index">
+        <h3>Stations and Collection Links</h3>
+        <p class="map-subtitle">Mapped from the garden station list (1-25). Collection page links are included where applicable.</p>
+        <ol>
+            <li><span class="station-title">A Fuveszkert tortenete es attekintese</span> <span class="station-en">- History and overview</span> <span class="station-note">(general stop)</span></li>
+            <li><a href="./collection/deciduous-trees-shrubs.html"><span class="station-title">A Kitaibel Pal szobra es a mersekelt ovi lombos fak</span> <span class="station-en">- Kitaibel statue and temperate forest trees</span></a></li>
+            <li><a href="./collection/tropical-aquatic-plants.html"><span class="station-title">Tropusi tunderrzsak</span> <span class="station-en">- Tropical water lilies</span></a> + <a href="./collection/carnivorous-plants.html"><span class="station-title">rovaremeszto novenyek</span> <span class="station-en">- carnivorous plants</span></a></li>
+            <li><a href="./collection/araceae.html"><span class="station-title">Kontyviragfelek</span> <span class="station-en">- Arums</span></a></li>
+            <li><a href="./collection/bromeliaceae.html"><span class="station-title">Ananaszfelek</span> <span class="station-en">- Bromeliads</span></a></li>
+            <li><a href="./collection/tropical-ferns-shade-plants.html"><span class="station-title">Tropusi pafranyok</span> <span class="station-en">- Tropical ferns</span></a></li>
+            <li><a href="./collection/orchids.html"><span class="station-title">Tropusi orchideak</span> <span class="station-en">- Tropical orchids</span></a></li>
+            <li><a href="./collection/succulent-plants.html"><span class="station-title">Pozsgas novenyek</span> <span class="station-en">- Tropical succulents</span></a></li>
+            <li><a href="./collection/cacti.html"><span class="station-title">Kaktuszok</span> <span class="station-en">- Cacti</span></a></li>
+            <li><a href="./collection/australian-plants.html"><span class="station-title">Ausztral novenyek</span> <span class="station-en">- Australian plants</span></a></li>
+            <li><span class="station-title">Juranyi Lajos emlekmuve</span> <span class="station-en">- Juranyi statue</span> <span class="station-note">(statue, no collection page)</span></li>
+            <li><a href="./collection/palms.html"><span class="station-title">Palmahaz kupola</span> <span class="station-en">- Palmhouse cupola</span></a></li>
+            <li><a href="./collection/tropical-crop-plants.html"><span class="station-title">Tropusi haszonnovenyek</span> <span class="station-en">- Tropical crops</span></a></li>
+            <li><a href="./collection/subtropical-plants.html"><span class="station-title">Szubtropusi novenyek</span> <span class="station-en">- Subtropical plants</span></a></li>
+            <li><a href="./collection/frost-tolerant-subtropical.html"><span class="station-title">Fagyturo szubtropusi novenyek</span> <span class="station-en">- Winter tolerant subtropical plants</span></a></li>
+            <li><a href="./collection/crop-plants-medicinal.html"><span class="station-title">Haszonnovenyek</span> <span class="station-en">- Crops</span></a></li>
+            <li><a href="./collection/broadleaved-evergreens.html"><span class="station-title">Orokzold lombos fak</span> <span class="station-en">- Evergreen trees</span></a> + <a href="./collection/deciduous-forest-understorey.html"><span class="station-en">Hungarian deciduous forest herbs</span></a></li>
+            <li><a href="./collection/east-asian-garden.html"><span class="station-title">Japankert</span> <span class="station-en">- Japanese garden</span></a></li>
+            <li><a href="./collection/cupressaceae-yew.html"><span class="station-title">Ciprusfelek, tiszafafelek</span> <span class="station-en">- Cypresses and Taxusses</span></a></li>
+            <li><a href="./collection/living-fossils.html"><span class="station-title">Elo kovuletek</span> <span class="station-en">- Living fossils</span></a></li>
+            <li><a href="./collection/rosaceae.html"><span class="station-title">Rozsakert es a kastely homlokzata</span> <span class="station-en">- Rose garden and the Castle facade</span></a></li>
+            <li><a href="./collection/dry-grassland-middle-mountains.html"><span class="station-title">Magyar kozephegysegek szaraz gyepei</span> <span class="station-en">- Dry grasslands of Hungarian middle mountains</span></a></li>
+            <li><a href="./collection/high-mountain-rock-gardens.html"><span class="station-title">Magashegysegi sziklakertek</span> <span class="station-en">- Highland rockeries</span></a></li>
+            <li><a href="./collection/needle-leaved-evergreens.html"><span class="station-title">Tulevelu orokzoldek</span> <span class="station-en">- Coniferous trees</span></a></li>
+            <li><span class="station-title">Jozsef nador szobra</span> <span class="station-en">- Joseph palatine statue</span> <span class="station-note">(statue, no collection page)</span></li>
+        </ol>
+    </section>
 
     <section class="location-index">
         <h3>Find Plants by Garden Location</h3>
@@ -195,10 +290,103 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772020709"></script>
-    <script src="./static/js/controls.js?v=1772020709"></script>
-    <script src="./static/js/lightbox.js?v=1772020709"></script>
+    <script src="./static/js/search.js?v=1772023383"></script>
+    <script src="./static/js/controls.js?v=1772023383"></script>
+    <script src="./static/js/lightbox.js?v=1772023383"></script>
     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+<script>
+(function() {
+    const viewer = document.getElementById('pdf-viewer');
+    const fallback = document.getElementById('pdf-fallback');
+    const pagesHost = document.getElementById('pdf-pages');
+    const canvasWrap = document.getElementById('pdf-canvas-wrap');
+    const pageInfo = document.getElementById('pdf-page-info');
+    const zoomInBtn = document.getElementById('pdf-zoom-in');
+    const zoomOutBtn = document.getElementById('pdf-zoom-out');
+    const fitWidthBtn = document.getElementById('pdf-fit-width');
+    const pdfUrl = "./static/maps/Fuveszkert_terkepes_2021.0503.pdf";
+
+    function showFallback() {
+        if (viewer) viewer.style.display = 'none';
+        if (fallback) fallback.style.display = 'block';
+    }
+
+    function initPdfViewer() {
+        if (!window.pdfjsLib || !pagesHost || !canvasWrap) {
+            showFallback();
+            return;
+        }
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+        let pdfDoc = null;
+        let scale = 1.2;
+
+        async function renderAllPages() {
+            if (!pdfDoc) return;
+            pagesHost.innerHTML = "";
+            for (let i = 1; i <= pdfDoc.numPages; i += 1) {
+                const page = await pdfDoc.getPage(i);
+                const viewport = page.getViewport({ scale: scale });
+                const canvas = document.createElement('canvas');
+                canvas.className = 'pdf-canvas-page';
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                pagesHost.appendChild(canvas);
+                const ctx = canvas.getContext('2d');
+                await page.render({
+                    canvasContext: ctx,
+                    viewport: viewport
+                }).promise;
+            }
+            pageInfo.textContent = "Pages: " + pdfDoc.numPages;
+        }
+
+        async function fitWidth() {
+            if (!pdfDoc) return;
+            const page = await pdfDoc.getPage(1);
+            const baseViewport = page.getViewport({ scale: 1 });
+            const targetWidth = Math.max(320, canvasWrap.clientWidth - 24);
+            scale = targetWidth / baseViewport.width;
+            await renderAllPages();
+        }
+
+        zoomInBtn.addEventListener('click', async function() {
+            scale = Math.min(3, scale + 0.15);
+            await renderAllPages();
+        });
+        zoomOutBtn.addEventListener('click', async function() {
+            scale = Math.max(0.5, scale - 0.15);
+            await renderAllPages();
+        });
+        fitWidthBtn.addEventListener('click', async function() {
+            await fitWidth();
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 900) {
+                fitWidth().catch(function() {});
+            }
+        });
+
+        window.pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+            pdfDoc = pdf;
+            fitWidth().catch(function() {
+                showFallback();
+            });
+        }).catch(function() {
+            showFallback();
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPdfViewer);
+    } else {
+        initPdfViewer();
+    }
+})();
+</script>
 <script>
 (function() {
     const input = document.getElementById('location-filter');

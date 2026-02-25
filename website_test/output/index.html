@@ -104,7 +104,7 @@
 
     <section class="recent-section">
         <h2 data-translate="featured_title">Featured Plants</h2>
-        <div class="plant-grid">
+        <div class="plant-grid" id="featured-plant-grid">
             
             <a href="./plant/acalypha-hispida.html" class="plant-card">
                 <div class="plant-card-image">
@@ -115,7 +115,7 @@
                 <div class="plant-card-info">
                     <h3>Acalypha hispida</h3>
                     
-                    <p>Moukiana Mkomba / Érdes Szépcsalán</p>
+                    <p>Philippine-Medusa / Érdes Szépcsalán</p>
                     
                     
                     <span class="family-badge">Euphorbiaceae Juss.</span>
@@ -149,7 +149,7 @@
                 <div class="plant-card-info">
                     <h3>Clusia rosea</h3>
                     
-                    <p>Florida Clusia</p>
+                    <p>Scotch-Attorney</p>
                     
                     
                     <span class="family-badge">Clusiaceae Lindl.</span>
@@ -183,7 +183,7 @@
                 <div class="plant-card-info">
                     <h3>Hedychium coronarium</h3>
                     
-                    <p>'Awapuhi-Ke'Oke'O / Fehér Gyömbérliliom</p>
+                    <p>Butterfly-Ginger / Fehér Gyömbérliliom</p>
                     
                     
                     <span class="family-badge">Zingiberaceae Martinov</span>
@@ -258,9 +258,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772020709"></script>
-    <script src="./static/js/controls.js?v=1772020709"></script>
-    <script src="./static/js/lightbox.js?v=1772020709"></script>
+    <script src="./static/js/search.js?v=1772023383"></script>
+    <script src="./static/js/controls.js?v=1772023383"></script>
+    <script src="./static/js/lightbox.js?v=1772023383"></script>
     
 <script>
 // Animated stat count-up
@@ -304,6 +304,33 @@
         }).join('');
         section.style.display = '';
     } catch(e) {}
+})();
+</script>
+
+<script>
+// Defensive featured fallback for stale/empty deployments
+(function() {
+    const grid = document.getElementById('featured-plant-grid');
+    if (!grid || grid.querySelector('.plant-card')) return;
+    function cardHtml(plant) {
+        const name = plant.display_name || plant.canonical_name || plant.scientific_name || 'Unknown plant';
+        const common = plant.display_common || plant.common_name || '';
+        return `<a href="./plant/${plant.slug}.html" class="plant-card">
+            <div class="plant-card-image"><div class="placeholder-image"></div></div>
+            <div class="plant-card-info">
+                <h3>${name}</h3>
+                ${common ? `<p>${common}</p>` : ''}
+            </div>
+        </a>`;
+    }
+    fetch('./static/data/search-data.json')
+        .then(function(r) { return r.ok ? r.json() : []; })
+        .then(function(items) {
+            if (!Array.isArray(items) || !items.length) return;
+            const picked = items.slice(0, 8);
+            grid.innerHTML = picked.map(cardHtml).join('');
+        })
+        .catch(function() {});
 })();
 </script>
 
