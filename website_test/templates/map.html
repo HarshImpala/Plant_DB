@@ -24,12 +24,47 @@
         overflow: hidden;
         background: #f5f5f5;
     }
-    .pdf-container iframe {
-        width: 100%;
-        height: calc(100vh - 120px);
-        min-height: 760px;
-        border: none;
+    .pdf-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        padding: 0.5rem 0.75rem;
+        background: var(--color-header-bg, #f8f8f8);
+        border-bottom: 1px solid var(--color-border-light, #e5e5e5);
+    }
+    .pdf-toolbar button {
+        border: 1px solid var(--color-border, #cfcfcf);
+        background: var(--color-white, #fff);
+        color: var(--color-text, #111);
+        border-radius: 4px;
+        padding: 0.35rem 0.55rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+    .pdf-toolbar button:hover {
+        border-color: var(--color-accent, #2e7d32);
+    }
+    .pdf-toolbar .pdf-page-label {
+        margin-left: 0.35rem;
+        margin-right: 0.25rem;
+        color: var(--color-text-light, #666);
+        font-size: 0.9rem;
+    }
+    .pdf-canvas-wrap {
+        height: calc(100vh - 170px);
+        min-height: 700px;
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0.75rem;
+        background: #ebebeb;
+    }
+    #pdf-canvas {
         display: block;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     }
     .pdf-fallback {
         padding: 2rem;
@@ -118,9 +153,9 @@
         font-size: 0.85rem;
     }
     @media (max-width: 700px) {
-        .pdf-container iframe {
-            height: 82vh;
-            min-height: 620px;
+        .pdf-canvas-wrap {
+            height: 80vh;
+            min-height: 560px;
         }
         .location-group ul {
             column-count: 1;
@@ -135,17 +170,25 @@
     <p class="map-subtitle">Fovariosi Allat- es Novenykert - Fuveszkert, 2021</p>
 
     <div class="pdf-container">
-        <iframe
-            src="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf"
-            title="Fuveszkert Garden Map 2021"
-            type="application/pdf">
-            <div class="pdf-fallback">
-                <p>Your browser cannot display the PDF inline.</p>
-                <a class="pdf-download-link"
-                   href="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf"
-                   download>Download Map PDF</a>
+        <div id="pdf-viewer">
+            <div class="pdf-toolbar">
+                <button type="button" id="pdf-prev">Prev</button>
+                <button type="button" id="pdf-next">Next</button>
+                <span class="pdf-page-label" id="pdf-page-info">Page 1 / 1</span>
+                <button type="button" id="pdf-zoom-out">-</button>
+                <button type="button" id="pdf-zoom-in">+</button>
+                <button type="button" id="pdf-fit-width">Fit Width</button>
             </div>
-        </iframe>
+            <div class="pdf-canvas-wrap" id="pdf-canvas-wrap">
+                <canvas id="pdf-canvas" aria-label="Garden map PDF page"></canvas>
+            </div>
+        </div>
+        <div class="pdf-fallback" id="pdf-fallback" style="display:none">
+            <p>Could not load inline PDF viewer.</p>
+            <a class="pdf-download-link"
+               href="{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf"
+               download>Download Map PDF</a>
+        </div>
     </div>
 
     <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted,#666);">
@@ -217,6 +260,131 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+<script>
+(function() {
+    const viewer = document.getElementById('pdf-viewer');
+    const fallback = document.getElementById('pdf-fallback');
+    const canvas = document.getElementById('pdf-canvas');
+    const canvasWrap = document.getElementById('pdf-canvas-wrap');
+    const pageInfo = document.getElementById('pdf-page-info');
+    const prevBtn = document.getElementById('pdf-prev');
+    const nextBtn = document.getElementById('pdf-next');
+    const zoomInBtn = document.getElementById('pdf-zoom-in');
+    const zoomOutBtn = document.getElementById('pdf-zoom-out');
+    const fitWidthBtn = document.getElementById('pdf-fit-width');
+    const pdfUrl = "{{ base_url }}/static/maps/Fuveszkert_terkepes_2021.0503.pdf";
+
+    function showFallback() {
+        if (viewer) viewer.style.display = 'none';
+        if (fallback) fallback.style.display = 'block';
+    }
+
+    function initPdfViewer() {
+        if (!window.pdfjsLib || !canvas || !canvasWrap) {
+            showFallback();
+            return;
+        }
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+        const ctx = canvas.getContext('2d');
+        let pdfDoc = null;
+        let pageNum = 1;
+        let scale = 1.2;
+        let isRendering = false;
+        let queuedPage = null;
+
+        function updateButtons() {
+            if (!pdfDoc) return;
+            prevBtn.disabled = pageNum <= 1;
+            nextBtn.disabled = pageNum >= pdfDoc.numPages;
+            pageInfo.textContent = "Page " + pageNum + " / " + pdfDoc.numPages;
+        }
+
+        function queueRender(num) {
+            if (isRendering) {
+                queuedPage = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        function renderPage(num) {
+            isRendering = true;
+            pdfDoc.getPage(num).then(function(page) {
+                const viewport = page.getViewport({ scale: scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                return page.render(renderContext).promise;
+            }).then(function() {
+                isRendering = false;
+                updateButtons();
+                if (queuedPage !== null) {
+                    const p = queuedPage;
+                    queuedPage = null;
+                    renderPage(p);
+                }
+            }).catch(function() {
+                showFallback();
+            });
+        }
+
+        function fitWidth() {
+            if (!pdfDoc) return;
+            pdfDoc.getPage(pageNum).then(function(page) {
+                const baseViewport = page.getViewport({ scale: 1 });
+                const targetWidth = Math.max(320, canvasWrap.clientWidth - 24);
+                scale = targetWidth / baseViewport.width;
+                queueRender(pageNum);
+            });
+        }
+
+        prevBtn.addEventListener('click', function() {
+            if (!pdfDoc || pageNum <= 1) return;
+            pageNum -= 1;
+            queueRender(pageNum);
+        });
+        nextBtn.addEventListener('click', function() {
+            if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
+            pageNum += 1;
+            queueRender(pageNum);
+        });
+        zoomInBtn.addEventListener('click', function() {
+            scale = Math.min(3, scale + 0.15);
+            queueRender(pageNum);
+        });
+        zoomOutBtn.addEventListener('click', function() {
+            scale = Math.max(0.5, scale - 0.15);
+            queueRender(pageNum);
+        });
+        fitWidthBtn.addEventListener('click', fitWidth);
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 900) {
+                fitWidth();
+            }
+        });
+
+        window.pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+            pdfDoc = pdf;
+            fitWidth();
+        }).catch(function() {
+            showFallback();
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPdfViewer);
+    } else {
+        initPdfViewer();
+    }
+})();
+</script>
 <script>
 (function() {
     const input = document.getElementById('location-filter');
