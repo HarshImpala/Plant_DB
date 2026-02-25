@@ -39,6 +39,7 @@ def create_database():
             scientific_name TEXT,
             canonical_name TEXT,
             common_name TEXT,
+            common_name_hungarian TEXT,
             family TEXT,
             genus TEXT,
             wfo_id TEXT,
@@ -185,6 +186,7 @@ def ensure_plants_schema_columns(conn):
             columns.add(new_name)
 
     add_columns = [
+        ("common_name_hungarian", "TEXT"),
         ("wikipedia_url_english", "TEXT"),
         ("wikipedia_url_hungarian", "TEXT"),
         ("description_english", "TEXT"),

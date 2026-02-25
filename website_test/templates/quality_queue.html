@@ -4,23 +4,27 @@
 
 {% block content %}
 <div class="stats-page">
-    <h1>Content Quality Queue</h1>
-    <p>Plants needing curator attention: <strong>{{ queue_count }}</strong></p>
+    <h1 data-translate="content_quality_queue">Content Quality Queue</h1>
+    <p><span data-translate="plants_needing_attention">Plants needing curator attention</span>: <strong>{{ queue_count }}</strong></p>
 
     <section class="stats-section">
-        <h2>Missing Content by Plant</h2>
+        <h2 data-translate="missing_content_by_plant">Missing Content by Plant</h2>
         {% if queue_rows %}
         <div class="family-chart">
             {% for row in queue_rows %}
             <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
                 <a href="{{ base_url }}/plant/{{ row.slug }}.html" class="chart-label">{{ row.display_name }}</a>
                 <div>
-                    <span class="common">{{ row.missing | join(', ') }}</span>
+                    <span class="common">
+                        {% for item in row.missing %}
+                        <span data-translate="{{ item }}">{{ item }}</span>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </span>
                     {% if row.family or row.genus %}
                     <div class="common">
-                        {% if row.family %}Family: {{ row.family }}{% endif %}
+                        {% if row.family %}<span data-translate="family_label">Family</span>: {{ row.family }}{% endif %}
                         {% if row.family and row.genus %} | {% endif %}
-                        {% if row.genus %}Genus: {{ row.genus }}{% endif %}
+                        {% if row.genus %}<span data-translate="genus_label">Genus</span>: {{ row.genus }}{% endif %}
                     </div>
                     {% endif %}
                 </div>
@@ -29,7 +33,7 @@
             {% endfor %}
         </div>
         {% else %}
-        <p>No missing-content items found.</p>
+        <p data-translate="no_missing_content_items">No missing-content items found.</p>
         {% endif %}
     </section>
 </div>

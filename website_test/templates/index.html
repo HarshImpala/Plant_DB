@@ -5,39 +5,57 @@
 {% block content %}
 <div class="home-page">
     <section class="hero">
-        <h1>Plant Encyclopedia</h1>
-        <p>Explore our collection of <span class="stat-count" data-target="{{ plant_count }}">{{ plant_count }}</span> plant species with detailed taxonomic information, distribution data, and more.</p>
+        <h1 data-translate="hero_title">Plant Encyclopedia</h1>
+        <p data-translate="hero_description">Explore our collection of plant species with detailed taxonomic information, distribution data, and more.</p>
+        <p>
+            <span class="lang-en">Plants indexed:</span>
+            <span class="lang-hu">Nyilvántartott növények:</span>
+            <span class="stat-count" data-target="{{ plant_count }}">{{ plant_count }}</span>
+        </p>
         <div class="hero-search">
-            <input type="text" id="hero-search" placeholder="Search for a plant..." autocomplete="off">
+            <input type="text" id="hero-search" placeholder="Search for a plant..." data-translate="search_placeholder" autocomplete="off">
             <div id="hero-search-results" class="search-results hero-search-results"></div>
         </div>
     </section>
 
     <section id="recently-viewed-section" class="recently-viewed-section" style="display:none">
-        <h2>Recently Viewed</h2>
+        <h2>
+            <span class="lang-en">Recently Viewed</span>
+            <span class="lang-hu">Nemrég megtekintett</span>
+        </h2>
         <div id="recently-viewed-list" class="recently-viewed-list"></div>
     </section>
 
     <section class="browse-section">
-        <h2>Browse Plants</h2>
+        <h2 data-translate="browse_title">Browse Plants</h2>
         <div class="browse-options">
             <a href="{{ base_url }}/az-index.html" class="browse-card">
-                <h3>A-Z Index</h3>
-                <p>Browse all plants alphabetically by scientific name</p>
+                <h3 data-translate="browse_az_title">A-Z Index</h3>
+                <p data-translate="browse_az_desc">Browse all plants alphabetically by scientific name</p>
             </a>
             <a href="{{ base_url }}/families.html" class="browse-card">
-                <h3>By Family</h3>
-                <p>Explore <span class="stat-count" data-target="{{ family_count }}">{{ family_count }}</span> plant families</p>
+                <h3 data-translate="browse_family_title">By Family</h3>
+                <p>
+                    <span class="lang-en">Explore</span>
+                    <span class="lang-hu">Felfedezés</span>
+                    <span class="stat-count" data-target="{{ family_count }}">{{ family_count }}</span>
+                    <span data-translate="browse_family_desc">plant families</span>
+                </p>
             </a>
             <a href="{{ base_url }}/genera.html" class="browse-card">
-                <h3>By Genus</h3>
-                <p>Browse <span class="stat-count" data-target="{{ genus_count }}">{{ genus_count }}</span> genera</p>
+                <h3 data-translate="browse_genus_title">By Genus</h3>
+                <p>
+                    <span class="lang-en">Browse</span>
+                    <span class="lang-hu">Böngéssze</span>
+                    <span class="stat-count" data-target="{{ genus_count }}">{{ genus_count }}</span>
+                    <span data-translate="browse_genus_desc">genera</span>
+                </p>
             </a>
         </div>
     </section>
 
     <section class="recent-section">
-        <h2>Featured Plants</h2>
+        <h2 data-translate="featured_title">Featured Plants</h2>
         <div class="plant-grid">
             {% for plant in featured_plants %}
             <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-card">
@@ -50,8 +68,8 @@
                 </div>
                 <div class="plant-card-info">
                     <h3>{{ plant.display_name }}</h3>
-                    {% if plant.display_common %}
-                    <p>{{ plant.display_common }}</p>
+                    {% if plant.display_common_combined %}
+                    <p>{{ plant.display_common_combined }}</p>
                     {% endif %}
                     {% if plant.family %}
                     <span class="family-badge">{{ plant.family }}</span>
@@ -117,7 +135,8 @@
 
     function renderHeroResults(results) {
         if (results.length === 0) {
-            resultsBox.innerHTML = '<div class="no-results" style="padding:1rem;color:#666;">No plants found</div>';
+            const noResultsText = (window.getTranslation && window.getTranslation('no_results')) || 'No plants found';
+            resultsBox.innerHTML = '<div class="no-results" style="padding:1rem;color:#666;">' + noResultsText + '</div>';
             return;
         }
         let html = '';

@@ -35,9 +35,9 @@
             </div>
             <div class="plant-list-info">
                     <h3>{{ plant.display_name }}</h3>
-                    {% if plant.display_common %}
-                    <p>{{ plant.display_common }}</p>
-                    {% endif %}
+                        {% if plant.display_common_combined %}
+                        <p>{{ plant.display_common_combined }}</p>
+                        {% endif %}
             </div>
         </a>
         {% endfor %}

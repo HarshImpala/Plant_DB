@@ -39,8 +39,8 @@
                 </svg>
             </button>
         </div>
-        {% if plant.display_common %}
-        <p class="common-name">{{ plant.display_common }}</p>
+        {% if plant.display_common_combined %}
+        <p class="common-name">{{ plant.display_common_combined }}</p>
         {% endif %}
     </header>
 
@@ -67,17 +67,17 @@
             {% endif %}
 
             <table class="info-table">
-                <caption>Classification</caption>
+                <caption data-translate="classification">Classification</caption>
                 <tbody>
                     {% if plant.family %}
                     <tr>
-                        <th>Family</th>
+                        <th data-translate="family">Family</th>
                         <td><a href="{{ base_url }}/family/{{ plant.family | slugify }}.html">{{ plant.family }}</a></td>
                     </tr>
                     {% endif %}
                     {% if plant.genus %}
                     <tr>
-                        <th>Genus</th>
+                        <th data-translate="genus">Genus</th>
                         <td><a href="{{ base_url }}/genus/{{ plant.genus | slugify }}.html">{{ plant.genus }}</a></td>
                     </tr>
                     {% endif %}
@@ -97,15 +97,44 @@
                     {% endif %}
                     {% if plant.wfo_id %}
                     <tr>
-                        <th>WFO ID</th>
+                        <th data-translate="wfo_id">WFO ID</th>
                         <td>{{ plant.wfo_id }}</td>
                     </tr>
                     {% endif %}
                 </tbody>
             </table>
 
+            <table class="info-table">
+                <caption>
+                    <span class="lang-en">Toxicity</span>
+                    <span class="lang-hu">Mergezes</span>
+                </caption>
+                <tbody>
+                    <tr>
+                        <th>
+                            <span class="lang-en">Humans</span>
+                            <span class="lang-hu">Emberek</span>
+                        </th>
+                        <td>
+                            <span class="lang-en">{{ plant.toxicity_humans_status_en }}</span>
+                            <span class="lang-hu">{{ plant.toxicity_humans_status_hu }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span class="lang-en">Cats/Dogs</span>
+                            <span class="lang-hu">Macskak/Kutyak</span>
+                        </th>
+                        <td>
+                            <span class="lang-en">{{ plant.toxicity_pets_status_en }}</span>
+                            <span class="lang-hu">{{ plant.toxicity_pets_status_hu }}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
             <div class="external-links">
-                <h3>External Links</h3>
+                <h3 data-translate="external_links">External Links</h3>
                 {% if plant.wfo_url or plant.gbif_url or plant.wikipedia_url_english or plant.wikipedia_url_hungarian %}
                 <ul>
                     {% if plant.wfo_url %}
@@ -115,10 +144,12 @@
                     <li><a href="{{ plant.gbif_url }}" target="_blank" rel="noopener">GBIF</a></li>
                     {% endif %}
                     {% if plant.wikipedia_url_english %}
-                    <li class="lang-en"><a href="{{ plant.wikipedia_url_english }}" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    <li class="lang-en"><a href="{{ plant.wikipedia_url_english }}" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
+                    <li class="lang-hu"><a href="{{ plant.wikipedia_url_english }}" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
                     {% endif %}
                     {% if plant.wikipedia_url_hungarian %}
-                    <li class="lang-hu"><a href="{{ plant.wikipedia_url_hungarian }}" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
+                    <li class="lang-en"><a href="{{ plant.wikipedia_url_hungarian }}" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
+                    <li class="lang-hu"><a href="{{ plant.wikipedia_url_hungarian }}" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
                     {% endif %}
                 </ul>
                 {% endif %}
@@ -132,7 +163,7 @@
         <div class="plant-main">
             {% if plant.description_english or plant.description_hungarian %}
             <section class="plant-section">
-                <h2>About</h2>
+                <h2 data-translate="about">About</h2>
                 {% if plant.description_english %}
                 <p class="lang-en">{{ plant.description_english }}</p>
                 {% endif %}
@@ -143,13 +174,18 @@
                     <em>(machine translated)</em>
                     {% endif %}
                 </p>
+                {% elif plant.description_english %}
+                <p class="lang-hu">
+                    {{ plant.description_english }}
+                    <em>(English fallback)</em>
+                </p>
                 {% endif %}
             </section>
             {% endif %}
 
             {% if common_names %}
             <section class="plant-section">
-                <h2>Common Names</h2>
+                <h2 data-translate="common_names">Common Names</h2>
                 <ul class="common-names-list">
                     {% for name in common_names %}
                     <li>{{ name }}</li>
@@ -160,7 +196,7 @@
 
             {% if plant.native_countries %}
             <section class="plant-section">
-                <h2>Native Distribution</h2>
+                <h2 data-translate="native_distribution">Native Distribution</h2>
                 <div class="country-badges">
                     {% for country in plant.native_countries.split(' | ') %}
                     <span class="country-badge">{{ country.strip() }}</span>
@@ -168,19 +204,19 @@
                 </div>
                 {% if plant.native_regions_display %}
                 <details>
-                    <summary>Detailed Regions</summary>
+                    <summary data-translate="detailed_regions">Detailed Regions</summary>
                     <p>{{ plant.native_regions_display }}</p>
                 </details>
                 {% endif %}
                 {% if plant.native_confidence %}
-                <p class="confidence-note">Data confidence: {{ plant.native_confidence }}</p>
+                <p class="confidence-note"><span data-translate="data_confidence">Data confidence</span>: {{ plant.native_confidence }}</p>
                 {% endif %}
             </section>
             {% endif %}
 
             {% if plant.garden_location_display %}
             <section class="plant-section">
-                <h2>Botanical Garden Location</h2>
+                <h2 data-translate="garden_location">Botanical Garden Location</h2>
                 <p>{{ plant.garden_location_display }}</p>
                 <p>
                     <a href="{{ base_url }}/map.html?location={{ plant.garden_location_key or (plant.garden_location_display | urlencode) }}">
@@ -192,9 +228,12 @@
 
             {% if synonyms %}
             <section class="plant-section">
-                <h2>Synonyms</h2>
+                <h2 data-translate="synonyms">Synonyms</h2>
                 <details>
-                    <summary>Show {{ synonyms | length }} synonyms</summary>
+                    <summary>
+                        <span class="lang-en">Show {{ synonyms | length }} synonyms</span>
+                        <span class="lang-hu">{{ synonyms | length }} szinonima megjelenítése</span>
+                    </summary>
                     <ul class="synonyms-list">
                         {% for synonym in synonyms %}
                         <li>{{ synonym }}</li>
@@ -206,7 +245,7 @@
 
             {% if plant.toxicity_info %}
             <section class="plant-section toxicity-section">
-                <h2>Toxicity</h2>
+                <h2 data-translate="toxicity_info">Toxicity Information</h2>
                 <p>{{ plant.toxicity_info }}</p>
             </section>
             {% endif %}
@@ -223,7 +262,7 @@
 
 {% if related_plants %}
 <section class="related-plants-section">
-    <h2>Related Plants</h2>
+    <h2 data-translate="related_plants">Related Plants</h2>
     <div class="related-plants-grid">
         {% for related in related_plants %}
         <a href="{{ base_url }}/plant/{{ related.slug }}.html" class="related-plant-card">
@@ -237,8 +276,8 @@
             </div>
             <div class="related-plant-info">
                 <span class="scientific">{{ related.display_name }}</span>
-                {% if related.display_common %}
-                <span class="common">{{ related.display_common }}</span>
+                {% if related.display_common_combined %}
+                <span class="common">{{ related.display_common_combined }}</span>
                 {% endif %}
             </div>
         </a>
@@ -251,19 +290,35 @@
 <nav class="plant-nav">
     <div class="plant-nav-prev">
         {% if prev_plant %}
-        <a href="{{ base_url }}/plant/{{ prev_plant.slug }}.html">
-            <span class="plant-nav-arrow">&#8592;</span>
-            <span class="plant-nav-label">Previous</span>
-            <span class="plant-nav-name">{{ prev_plant.display_name }}</span>
+        <a href="{{ base_url }}/plant/{{ prev_plant.slug }}.html" class="plant-nav-link">
+            {% if prev_plant.image_filename %}
+            <span class="plant-nav-thumb">
+                <img src="{{ base_url }}/static/images/plants/{{ prev_plant.image_filename }}"
+                     alt="{{ prev_plant.display_name }}" loading="lazy">
+            </span>
+            {% endif %}
+            <span class="plant-nav-text">
+                <span class="plant-nav-arrow">&#8592;</span>
+                <span class="plant-nav-label" data-translate="previous">Previous</span>
+                <span class="plant-nav-name">{{ prev_plant.display_name }}</span>
+            </span>
         </a>
         {% endif %}
     </div>
     <div class="plant-nav-next">
         {% if next_plant %}
-        <a href="{{ base_url }}/plant/{{ next_plant.slug }}.html">
-            <span class="plant-nav-name">{{ next_plant.display_name }}</span>
-            <span class="plant-nav-label">Next</span>
-            <span class="plant-nav-arrow">&#8594;</span>
+        <a href="{{ base_url }}/plant/{{ next_plant.slug }}.html" class="plant-nav-link">
+            <span class="plant-nav-text">
+                <span class="plant-nav-name">{{ next_plant.display_name }}</span>
+                <span class="plant-nav-label" data-translate="next">Next</span>
+                <span class="plant-nav-arrow">&#8594;</span>
+            </span>
+            {% if next_plant.image_filename %}
+            <span class="plant-nav-thumb">
+                <img src="{{ base_url }}/static/images/plants/{{ next_plant.image_filename }}"
+                     alt="{{ next_plant.display_name }}" loading="lazy">
+            </span>
+            {% endif %}
         </a>
         {% endif %}
     </div>
@@ -297,7 +352,7 @@
         const entry = {
             slug: "{{ plant.slug }}",
             name: "{{ (plant.display_name or '') | replace('"', '&quot;') }}",
-            common_name: "{{ (plant.display_common or '') | replace('"', '&quot;') }}"
+            common_name: "{{ (plant.display_common_combined or '') | replace('"', '&quot;') }}"
         };
         let recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
         recent = recent.filter(function(p) { return p.slug !== entry.slug; });

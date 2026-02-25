@@ -21,7 +21,7 @@
     <header class="site-header">
         <div class="header-content">
             <a href="./index.html" class="site-logo">
-                <h1>Plant Encyclopedia</h1>
+                <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
             <nav class="main-nav">
                 <ul>
@@ -53,39 +53,57 @@
         
 <div class="home-page">
     <section class="hero">
-        <h1>Plant Encyclopedia</h1>
-        <p>Explore our collection of <span class="stat-count" data-target="196">196</span> plant species with detailed taxonomic information, distribution data, and more.</p>
+        <h1 data-translate="hero_title">Plant Encyclopedia</h1>
+        <p data-translate="hero_description">Explore our collection of plant species with detailed taxonomic information, distribution data, and more.</p>
+        <p>
+            <span class="lang-en">Plants indexed:</span>
+            <span class="lang-hu">Nyilvántartott növények:</span>
+            <span class="stat-count" data-target="196">196</span>
+        </p>
         <div class="hero-search">
-            <input type="text" id="hero-search" placeholder="Search for a plant..." autocomplete="off">
+            <input type="text" id="hero-search" placeholder="Search for a plant..." data-translate="search_placeholder" autocomplete="off">
             <div id="hero-search-results" class="search-results hero-search-results"></div>
         </div>
     </section>
 
     <section id="recently-viewed-section" class="recently-viewed-section" style="display:none">
-        <h2>Recently Viewed</h2>
+        <h2>
+            <span class="lang-en">Recently Viewed</span>
+            <span class="lang-hu">Nemrég megtekintett</span>
+        </h2>
         <div id="recently-viewed-list" class="recently-viewed-list"></div>
     </section>
 
     <section class="browse-section">
-        <h2>Browse Plants</h2>
+        <h2 data-translate="browse_title">Browse Plants</h2>
         <div class="browse-options">
             <a href="./az-index.html" class="browse-card">
-                <h3>A-Z Index</h3>
-                <p>Browse all plants alphabetically by scientific name</p>
+                <h3 data-translate="browse_az_title">A-Z Index</h3>
+                <p data-translate="browse_az_desc">Browse all plants alphabetically by scientific name</p>
             </a>
             <a href="./families.html" class="browse-card">
-                <h3>By Family</h3>
-                <p>Explore <span class="stat-count" data-target="53">53</span> plant families</p>
+                <h3 data-translate="browse_family_title">By Family</h3>
+                <p>
+                    <span class="lang-en">Explore</span>
+                    <span class="lang-hu">Felfedezés</span>
+                    <span class="stat-count" data-target="53">53</span>
+                    <span data-translate="browse_family_desc">plant families</span>
+                </p>
             </a>
             <a href="./genera.html" class="browse-card">
-                <h3>By Genus</h3>
-                <p>Browse <span class="stat-count" data-target="105">105</span> genera</p>
+                <h3 data-translate="browse_genus_title">By Genus</h3>
+                <p>
+                    <span class="lang-en">Browse</span>
+                    <span class="lang-hu">Böngéssze</span>
+                    <span class="stat-count" data-target="105">105</span>
+                    <span data-translate="browse_genus_desc">genera</span>
+                </p>
             </a>
         </div>
     </section>
 
     <section class="recent-section">
-        <h2>Featured Plants</h2>
+        <h2 data-translate="featured_title">Featured Plants</h2>
         <div class="plant-grid">
             
             <a href="./plant/acalypha-hispida.html" class="plant-card">
@@ -97,7 +115,7 @@
                 <div class="plant-card-info">
                     <h3>Acalypha hispida</h3>
                     
-                    <p>chenilleplant</p>
+                    <p>Chenilleplant / Érdes Szépcsalán</p>
                     
                     
                     <span class="family-badge">Euphorbiaceae Juss.</span>
@@ -114,7 +132,7 @@
                 <div class="plant-card-info">
                     <h3>Aristolochia trilobata</h3>
                     
-                    <p>Dutchman's Pipe</p>
+                    <p>Dutchman'S Pipe / Háromkaréjú Farkasalma</p>
                     
                     
                     <span class="family-badge">Aristolochiaceae Juss.</span>
@@ -131,7 +149,7 @@
                 <div class="plant-card-info">
                     <h3>Clusia rosea</h3>
                     
-                    <p>pitch apple</p>
+                    <p>Pitch Apple</p>
                     
                     
                     <span class="family-badge">Clusiaceae Lindl.</span>
@@ -148,7 +166,7 @@
                 <div class="plant-card-info">
                     <h3>Dioscorea alata</h3>
                     
-                    <p>Yams</p>
+                    <p>Yams / Fehér Jamszgyökér</p>
                     
                     
                     <span class="family-badge">Dioscoreaceae R.Br.</span>
@@ -165,7 +183,7 @@
                 <div class="plant-card-info">
                     <h3>Hedychium coronarium</h3>
                     
-                    <p>butterfly-lily</p>
+                    <p>Butterfly-Lily / Fehér Gyömbérliliom</p>
                     
                     
                     <span class="family-badge">Zingiberaceae Martinov</span>
@@ -182,7 +200,7 @@
                 <div class="plant-card-info">
                     <h3>Musa paradisiaca</h3>
                     
-                    <p>banana</p>
+                    <p>Banana</p>
                     
                     
                     <span class="family-badge">Musaceae Juss.</span>
@@ -199,7 +217,7 @@
                 <div class="plant-card-info">
                     <h3>Piper kadsura</h3>
                     
-                    <p>Kadsura pepper</p>
+                    <p>Kadsura Pepper / Japán Bors</p>
                     
                     
                     <span class="family-badge">Piperaceae Giseke</span>
@@ -216,6 +234,8 @@
                 <div class="plant-card-info">
                     <h3>Selenicereus megalanthus</h3>
                     
+                    <p>Nagyvirágú Kúszókaktusz</p>
+                    
                     
                     <span class="family-badge">Cactaceae Juss.</span>
                     
@@ -231,16 +251,16 @@
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</p>
+        <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
         <p class="footer-links">
-            <a href="./stats.html">Collection Statistics</a> |
-            <a href="./quality-queue.html">Content Quality Queue</a>
+            <a href="./stats.html" data-translate="collection_statistics">Collection Statistics</a> |
+            <a href="./quality-queue.html" data-translate="content_quality_queue">Content Quality Queue</a>
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772012462"></script>
-    <script src="./static/js/controls.js?v=1772012462"></script>
-    <script src="./static/js/lightbox.js?v=1772012462"></script>
+    <script src="./static/js/search.js?v=1772020551"></script>
+    <script src="./static/js/controls.js?v=1772020551"></script>
+    <script src="./static/js/lightbox.js?v=1772020551"></script>
     
 <script>
 // Animated stat count-up
@@ -294,7 +314,8 @@
 
     function renderHeroResults(results) {
         if (results.length === 0) {
-            resultsBox.innerHTML = '<div class="no-results" style="padding:1rem;color:#666;">No plants found</div>';
+            const noResultsText = (window.getTranslation && window.getTranslation('no_results')) || 'No plants found';
+            resultsBox.innerHTML = '<div class="no-results" style="padding:1rem;color:#666;">' + noResultsText + '</div>';
             return;
         }
         let html = '';

@@ -27,10 +27,14 @@
             featured_title: "Featured Plants",
 
             // Plant page
+            about: "About",
             classification: "Classification",
             family: "Family",
             genus: "Genus",
             external_links: "External Links",
+            wfo_id: "WFO ID",
+            wikipedia_en: "Wikipedia (EN)",
+            wikipedia_hu: "Wikipedia (HU)",
             description: "Description",
             common_names: "Common Names",
             native_distribution: "Native Distribution",
@@ -38,9 +42,19 @@
             detailed_regions: "Detailed Regions",
             data_confidence: "Data confidence",
             toxicity_info: "Toxicity Information",
+            toxicity_block_title: "Toxicity",
+            toxicity_humans: "Humans",
+            toxicity_cats_dogs: "Cats/Dogs",
+            toxicity_status_toxic: "toxic",
+            toxicity_status_not_toxic: "not toxic",
+            toxicity_status_unknown: "unknown",
+            toxicity_status_family_known_toxic: "family known toxic",
             garden_location: "Botanical Garden Location",
             synonyms: "Synonyms",
             show_synonyms: "Show synonyms",
+            related_plants: "Related Plants",
+            previous: "Previous",
+            next: "Next",
 
             // A-Z Index
             az_title: "A-Z Plant Index",
@@ -55,12 +69,38 @@
             plant: "plant",
 
             // Footer
-            footer_text: "Plant Encyclopedia. Data sources: GBIF, World Flora Online.",
+            footer_text: "Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.",
+            collection_statistics: "Collection Statistics",
+            content_quality_queue: "Content Quality Queue",
 
             // Misc
             image_coming_soon: "Image coming soon",
             no_results: "No plants found",
-            adopt_me: "Adopt me!"
+            adopt_me: "Adopt me!",
+            total_plants: "Total Plants",
+            with_photos: "With Photos",
+            with_descriptions: "With Descriptions",
+            with_distribution_data: "With Distribution Data",
+            top_families_by_species: "Top Families by Species Count",
+            data_quality_dashboard: "Data Quality Dashboard",
+            overall_completeness: "Overall Completeness",
+            quality_image: "Image",
+            quality_description: "Description",
+            quality_distribution: "Distribution",
+            quality_wikipedia_url: "Wikipedia URL",
+            quality_wfo_link: "WFO Link",
+            quality_garden_location: "Garden Location",
+            quality_toxicity_info: "Toxicity Info",
+            plants_needing_attention: "Plants needing curator attention",
+            missing_content_by_plant: "Missing Content by Plant",
+            family_label: "Family",
+            genus_label: "Genus",
+            no_missing_content_items: "No missing-content items found.",
+            missing_image: "image",
+            missing_description: "description",
+            missing_distribution: "distribution",
+            missing_wikipedia: "wikipedia",
+            missing_toxicity: "toxicity"
         },
         hu: {
             // Header
@@ -86,10 +126,14 @@
             featured_title: "Kiemelt növények",
 
             // Plant page
+            about: "Leírás",
             classification: "Besorolás",
             family: "Család",
             genus: "Nemzetség",
             external_links: "Külső linkek",
+            wfo_id: "WFO azonosító",
+            wikipedia_en: "Wikipédia (EN)",
+            wikipedia_hu: "Wikipédia (HU)",
             description: "Leírás",
             common_names: "Köznevek",
             native_distribution: "Természetes elterjedés",
@@ -100,6 +144,9 @@
             garden_location: "Botanikus kerti elhelyezkedés",
             synonyms: "Szinonimák",
             show_synonyms: "Szinonimák mutatása",
+            related_plants: "Kapcsolódó növények",
+            previous: "Előző",
+            next: "Következő",
 
             // A-Z Index
             az_title: "A-Z Növény Index",
@@ -114,12 +161,38 @@
             plant: "növény",
 
             // Footer
-            footer_text: "Növény Enciklopédia. Adatforrások: GBIF, World Flora Online.",
+            footer_text: "Növény Enciklopédia. Adatforrások: GBIF, World Flora Online, Wikipedia.",
+            collection_statistics: "Gyűjtemény statisztika",
+            content_quality_queue: "Tartalmi minőségi sor",
 
             // Misc
             image_coming_soon: "Kép hamarosan",
             no_results: "Nem található növény",
-            adopt_me: "Fogadj örökbe!"
+            adopt_me: "Fogadj örökbe!",
+            total_plants: "Összes növény",
+            with_photos: "Fotóval",
+            with_descriptions: "Leírással",
+            with_distribution_data: "Elterjedési adattal",
+            top_families_by_species: "Legnagyobb családok fajszám szerint",
+            data_quality_dashboard: "Adatminőségi áttekintő",
+            overall_completeness: "Teljesség összesen",
+            quality_image: "Kép",
+            quality_description: "Leírás",
+            quality_distribution: "Elterjedés",
+            quality_wikipedia_url: "Wikipédia URL",
+            quality_wfo_link: "WFO hivatkozás",
+            quality_garden_location: "Kerti helyszín",
+            quality_toxicity_info: "Mérgezési információ",
+            plants_needing_attention: "Kurátori figyelmet igénylő növények",
+            missing_content_by_plant: "Hiányzó tartalom növényenként",
+            family_label: "Család",
+            genus_label: "Nemzetség",
+            no_missing_content_items: "Nincs hiányzó tartalmú elem.",
+            missing_image: "kép",
+            missing_description: "leírás",
+            missing_distribution: "elterjedés",
+            missing_wikipedia: "wikipédia",
+            missing_toxicity: "mérgezés"
         }
     };
 

@@ -24,11 +24,26 @@ CACHE_PATH = DATA_DIR / "wikipedia_intro_cache.json"
 WIKIPEDIA_API_EN = "https://en.wikipedia.org/w/api.php"
 WIKIPEDIA_API_HU = "https://hu.wikipedia.org/w/api.php"
 MYMEMORY_API = "https://api.mymemory.translated.net/get"
+TRANSLATION_MAX_CHARS = 450
 
 HEADERS = {
     "User-Agent": "plant-encyclopedia/1.0 (botanical garden project)",
     "Accept": "application/json",
 }
+
+
+def is_invalid_translation_text(candidate: str) -> bool:
+    candidate_lc = (candidate or "").strip().lower()
+    if not candidate_lc:
+        return True
+    error_markers = (
+        "query length limit exceeded",
+        "max allowed query",
+        "too many requests",
+        "invalid language pair",
+        "null",
+    )
+    return any(marker in candidate_lc for marker in error_markers)
 
 
 def load_cache() -> dict:
@@ -153,22 +168,75 @@ def get_page_intro(page_title: str, lang: str) -> str | None:
 
 def translate_en_to_hu(text: str) -> str | None:
     """Translate English text to Hungarian using MyMemory public API."""
-    params = {
-        "q": text,
-        "langpair": "en|hu",
-    }
-    data = api_request_with_retry(MYMEMORY_API, params, max_retries=2)
-    if not data:
+    def split_into_chunks(value: str, max_len: int) -> list[str]:
+        normalized = re.sub(r"\s+", " ", value).strip()
+        if not normalized:
+            return []
+        if len(normalized) <= max_len:
+            return [normalized]
+
+        sentence_parts = re.split(r"(?<=[.!?])\s+", normalized)
+        chunks = []
+        current = ""
+        for sentence in sentence_parts:
+            sentence = sentence.strip()
+            if not sentence:
+                continue
+            if len(sentence) > max_len:
+                words = sentence.split()
+                buffer = ""
+                for word in words:
+                    trial = f"{buffer} {word}".strip()
+                    if len(trial) <= max_len:
+                        buffer = trial
+                    else:
+                        if buffer:
+                            chunks.append(buffer)
+                        buffer = word
+                if buffer:
+                    if current:
+                        chunks.append(current)
+                        current = ""
+                    chunks.append(buffer)
+                continue
+
+            trial = f"{current} {sentence}".strip()
+            if len(trial) <= max_len:
+                current = trial
+            else:
+                if current:
+                    chunks.append(current)
+                current = sentence
+        if current:
+            chunks.append(current)
+        return chunks
+
+    chunks = split_into_chunks(text, TRANSLATION_MAX_CHARS)
+    if not chunks:
         return None
 
-    response = data.get("responseData", {})
-    translated = response.get("translatedText")
-    if not translated:
+    translated_chunks = []
+    for chunk in chunks:
+        params = {
+            "q": chunk,
+            "langpair": "en|hu",
+        }
+        data = api_request_with_retry(MYMEMORY_API, params, max_retries=2)
+        if not data:
+            return None
+        response = data.get("responseData", {})
+        translated = (response.get("translatedText") or "").strip()
+        if is_invalid_translation_text(translated):
+            return None
+        translated_chunks.append(translated)
+        time.sleep(0.15)
+
+    final_translation = " ".join(translated_chunks).strip()
+    if is_invalid_translation_text(final_translation):
         return None
-    translated = translated.strip()
-    if not translated or translated.lower() == text.strip().lower():
+    if final_translation.lower() == text.strip().lower():
         return None
-    return translated
+    return final_translation
 
 
 def translation_cache_key(text: str) -> str:
@@ -264,7 +332,12 @@ def main():
         if not description_hu and description_en:
             tr_key = translation_cache_key(description_en)
             if tr_key in cache:
-                translated_hu = None if cache[tr_key] == "NO_TRANSLATION" else cache[tr_key]
+                cached_translation = cache[tr_key]
+                if cached_translation == "NO_TRANSLATION" or is_invalid_translation_text(cached_translation):
+                    translated_hu = None
+                    cache[tr_key] = "NO_TRANSLATION"
+                else:
+                    translated_hu = cached_translation
             else:
                 translated_hu = translate_en_to_hu(description_en)
                 cache[tr_key] = translated_hu if translated_hu else "NO_TRANSLATION"

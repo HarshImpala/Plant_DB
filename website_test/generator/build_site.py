@@ -74,6 +74,14 @@ def clean_native_regions(value):
     return text.strip()
 
 
+def normalize_common_name(value):
+    """Normalize display capitalization for common names."""
+    text = (value or '').strip()
+    if not text:
+        return ''
+    return text.title()
+
+
 def normalize_plant_display_fields(plant):
     """Attach consistent display-name fields used across templates."""
     plant['wikipedia_url_english'] = (
@@ -93,10 +101,21 @@ def normalize_plant_display_fields(plant):
     canonical = (plant.get('canonical_name') or '').strip()
     scientific = (plant.get('scientific_name') or '').strip()
     input_name = (plant.get('input_name') or '').strip()
-    common = (plant.get('common_name') or '').strip()
+    common_en = normalize_common_name(plant.get('common_name'))
+    common_hu = normalize_common_name(plant.get('common_name_hungarian'))
+    if common_en and common_hu:
+        if common_en.lower() == common_hu.lower():
+            common_combined = common_en
+        else:
+            common_combined = f"{common_en} / {common_hu}"
+    else:
+        common_combined = common_en or common_hu
     plant['display_name'] = canonical or scientific or input_name
     plant['display_scientific'] = scientific or canonical or input_name
-    plant['display_common'] = common
+    plant['display_common_en'] = common_en
+    plant['display_common_hu'] = common_hu
+    plant['display_common'] = common_combined
+    plant['display_common_combined'] = common_combined
     plant['native_regions_display'] = clean_native_regions(plant.get('native_regions'))
     return plant
 
@@ -182,7 +201,7 @@ def preload_plant_common_names(conn):
     """)
     grouped = defaultdict(list)
     for plant_id, common_name in cursor.fetchall():
-        grouped[plant_id].append(common_name)
+        grouped[plant_id].append(normalize_common_name(common_name))
     return grouped
 
 
@@ -255,9 +274,11 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
             'display_name': plant['display_name'],
             'display_scientific': plant['display_scientific'],
             'display_common': plant['display_common'],
+            'display_common_hu': plant.get('display_common_hu'),
             'canonical_name': plant['canonical_name'],
             'scientific_name': plant['scientific_name'],
             'common_name': plant['common_name'],
+            'common_name_hungarian': plant.get('common_name_hungarian'),
             'common_names': common_names[:10],  # Limit for file size
             'synonyms': synonyms[:10],  # Limit for file size
         })
@@ -333,28 +354,118 @@ def build_map_locations(plants):
     return locations
 
 
+def _toxicity_flags_from_text(text):
+    """Extract simple toxicity flags from free-text toxicity_info."""
+    t = (text or "").strip().lower()
+    if not t:
+        return {
+            'pets_toxic': False,
+            'pets_not_toxic': False,
+            'humans_toxic': False,
+            'humans_not_toxic': False,
+        }
+
+    pets_toxic = False
+    pets_not_toxic = False
+    humans_toxic = False
+    humans_not_toxic = False
+
+    has_toxic_word = 'toxic' in t
+    has_not_toxic_phrase = 'non-toxic' in t or 'not toxic' in t
+
+    has_pets = any(word in t for word in ('dog', 'dogs', 'cat', 'cats', 'pet', 'pets', 'horse', 'horses'))
+    has_humans = any(word in t for word in ('human', 'humans', 'people', 'person'))
+
+    if has_pets and has_toxic_word and not has_not_toxic_phrase:
+        pets_toxic = True
+    if has_pets and has_not_toxic_phrase:
+        pets_not_toxic = True
+
+    if has_humans and has_toxic_word and not has_not_toxic_phrase:
+        humans_toxic = True
+    if has_humans and has_not_toxic_phrase:
+        humans_not_toxic = True
+
+    return {
+        'pets_toxic': pets_toxic,
+        'pets_not_toxic': pets_not_toxic,
+        'humans_toxic': humans_toxic,
+        'humans_not_toxic': humans_not_toxic,
+    }
+
+
+def attach_toxicity_statuses(plants):
+    """Attach normalized toxicity statuses to each plant for UI display."""
+    hu_status_map = {
+        'toxic': 'mergezo',
+        'not toxic': 'nem mergezo',
+        'unknown': 'ismeretlen',
+        'family known toxic': 'csaladban ismerten mergezo',
+    }
+    family_toxic_counts = defaultdict(int)
+
+    for plant in plants:
+        flags = _toxicity_flags_from_text(plant.get('toxicity_info'))
+        plant['_tox_flags'] = flags
+        family = (plant.get('family') or '').strip().lower()
+        if family and (flags['pets_toxic'] or flags['humans_toxic']):
+            family_toxic_counts[family] += 1
+
+    for plant in plants:
+        flags = plant.get('_tox_flags', {})
+        family = (plant.get('family') or '').strip().lower()
+        family_known_toxic = bool(family and family_toxic_counts.get(family, 0) >= 2)
+
+        if flags.get('humans_toxic'):
+            human_status = 'toxic'
+        elif flags.get('humans_not_toxic'):
+            human_status = 'not toxic'
+        elif family_known_toxic:
+            human_status = 'family known toxic'
+        else:
+            human_status = 'unknown'
+
+        if flags.get('pets_toxic'):
+            pets_status = 'toxic'
+        elif flags.get('pets_not_toxic'):
+            pets_status = 'not toxic'
+        elif family_known_toxic:
+            pets_status = 'family known toxic'
+        else:
+            pets_status = 'unknown'
+
+        plant['toxicity_humans_status'] = human_status
+        plant['toxicity_pets_status'] = pets_status
+        plant['toxicity_humans_status_en'] = human_status
+        plant['toxicity_pets_status_en'] = pets_status
+        plant['toxicity_humans_status_hu'] = hu_status_map[human_status]
+        plant['toxicity_pets_status_hu'] = hu_status_map[pets_status]
+        plant.pop('_tox_flags', None)
+
+
 def compute_quality_metrics(plants):
     """Compute coverage/completeness metrics for the stats dashboard."""
     total = len(plants) or 1
-    tracked_fields = {
-        'Image': 'image_filename',
-        'Description': 'description',
-        'Distribution': 'native_countries',
-        'Wikipedia URL': 'wikipedia_url',
-        'WFO Link': 'wfo_url',
-        'Garden Location': 'garden_location',
-        'Toxicity Info': 'toxicity_info',
-    }
+    tracked_fields = [
+        ('Image', 'quality_image', 'image_filename'),
+        ('Description', 'quality_description', 'description'),
+        ('Distribution', 'quality_distribution', 'native_countries'),
+        ('Wikipedia URL', 'quality_wikipedia_url', 'wikipedia_url'),
+        ('WFO Link', 'quality_wfo_link', 'wfo_url'),
+        ('Garden Location', 'quality_garden_location', 'garden_location'),
+        ('Toxicity Info', 'quality_toxicity_info', 'toxicity_info'),
+    ]
 
     coverage_rows = []
     completeness_points = 0
     max_points = len(tracked_fields) * len(plants)
 
-    for label, key in tracked_fields.items():
+    for label, label_key, key in tracked_fields:
         count = sum(1 for plant in plants if plant.get(key))
         completeness_points += count
         coverage_rows.append({
             'label': label,
+            'label_key': label_key,
             'count': count,
             'missing': len(plants) - count,
             'pct': round((count / total) * 100, 1),
@@ -372,11 +483,11 @@ def compute_quality_metrics(plants):
 def build_quality_queue_rows(plants):
     """Build curator queue rows for plants missing key content fields."""
     checks = [
-        ('image_filename', 'image'),
-        ('description', 'description'),
-        ('native_countries', 'distribution'),
-        ('wikipedia_url', 'wikipedia'),
-        ('toxicity_info', 'toxicity'),
+        ('image_filename', 'missing_image'),
+        ('description', 'missing_description'),
+        ('native_countries', 'missing_distribution'),
+        ('wikipedia_url', 'missing_wikipedia'),
+        ('toxicity_info', 'missing_toxicity'),
     ]
     rows = []
     for plant in plants:
@@ -706,6 +817,7 @@ def build_site():
 
     # Get all data
     plants = get_all_plants(conn)
+    attach_toxicity_statuses(plants)
     if PLACEHOLDER_IMAGES:
         for p in plants:
             p['image_filename'] = None

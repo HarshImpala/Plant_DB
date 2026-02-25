@@ -4,24 +4,24 @@
 
 {% block content %}
 <div class="stats-page">
-    <h1>Collection Statistics</h1>
+    <h1 data-translate="collection_statistics">Collection Statistics</h1>
 
     <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-number">{{ total_plants }}</div>
-            <div class="stat-label">Total Plants</div>
+            <div class="stat-label" data-translate="total_plants">Total Plants</div>
         </div>
         <div class="stat-card highlight">
             <div class="stat-number">{{ plants_with_images }}</div>
-            <div class="stat-label">With Photos</div>
+            <div class="stat-label" data-translate="with_photos">With Photos</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">{{ plants_with_descriptions }}</div>
-            <div class="stat-label">With Descriptions</div>
+            <div class="stat-label" data-translate="with_descriptions">With Descriptions</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">{{ plants_with_distribution }}</div>
-            <div class="stat-label">With Distribution Data</div>
+            <div class="stat-label" data-translate="with_distribution_data">With Distribution Data</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">{{ total_families }}</div>
@@ -34,7 +34,7 @@
     </div>
 
     <section class="stats-section">
-        <h2>Top Families by Species Count</h2>
+        <h2 data-translate="top_families_by_species">Top Families by Species Count</h2>
         <div class="family-chart">
             {% for fam in top_families %}
             <div class="chart-row">
@@ -49,17 +49,17 @@
     </section>
 
     <section class="stats-section">
-        <h2>Data Quality Dashboard</h2>
+        <h2 data-translate="data_quality_dashboard">Data Quality Dashboard</h2>
         <div class="stats-grid">
             <div class="stat-card highlight">
                 <div class="stat-number">{{ overall_completeness }}%</div>
-                <div class="stat-label">Overall Completeness</div>
+                <div class="stat-label" data-translate="overall_completeness">Overall Completeness</div>
             </div>
         </div>
         <div class="family-chart quality-chart">
             {% for row in coverage_rows %}
             <div class="chart-row">
-                <span class="chart-label">{{ row.label }}</span>
+                <span class="chart-label" data-translate="{{ row.label_key }}">{{ row.label }}</span>
                 <div class="chart-bar-track">
                     <div class="chart-bar-fill" style="width: {{ row.pct }}%"></div>
                 </div>
