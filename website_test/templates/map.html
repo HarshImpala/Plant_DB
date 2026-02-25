@@ -55,6 +55,31 @@
         border-radius: 6px;
         background: var(--color-white, #fff);
     }
+    .station-index {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border: 1px solid var(--color-border, #ddd);
+        border-radius: 6px;
+        background: var(--color-white, #fff);
+    }
+    .station-index ol {
+        margin: 0.75rem 0 0;
+        padding-left: 1.25rem;
+    }
+    .station-index li {
+        margin-bottom: 0.55rem;
+        line-height: 1.35;
+    }
+    .station-title {
+        font-weight: 600;
+    }
+    .station-en {
+        color: var(--color-text-light, #666);
+    }
+    .station-note {
+        color: var(--color-text-light, #666);
+        font-size: 0.9rem;
+    }
     .location-filter {
         margin: 0.75rem 0 1rem;
     }
@@ -124,6 +149,38 @@
             Open in new tab
         </a>
     </p>
+
+    <section class="station-index">
+        <h3>Stations and Collection Links</h3>
+        <p class="map-subtitle">Mapped from the garden station list (1-25). Collection page links are included where applicable.</p>
+        <ol>
+            <li><span class="station-title">A Fuveszkert tortenete es attekintese</span> <span class="station-en">- History and overview</span> <span class="station-note">(general stop)</span></li>
+            <li><a href="{{ base_url }}/collection/deciduous-trees-shrubs.html"><span class="station-title">A Kitaibel Pal szobra es a mersekelt ovi lombos fak</span> <span class="station-en">- Kitaibel statue and temperate forest trees</span></a></li>
+            <li><a href="{{ base_url }}/collection/tropical-aquatic-plants.html"><span class="station-title">Tropusi tunderrzsak</span> <span class="station-en">- Tropical water lilies</span></a> + <a href="{{ base_url }}/collection/carnivorous-plants.html"><span class="station-title">rovaremeszto novenyek</span> <span class="station-en">- carnivorous plants</span></a></li>
+            <li><a href="{{ base_url }}/collection/araceae.html"><span class="station-title">Kontyviragfelek</span> <span class="station-en">- Arums</span></a></li>
+            <li><a href="{{ base_url }}/collection/bromeliaceae.html"><span class="station-title">Ananaszfelek</span> <span class="station-en">- Bromeliads</span></a></li>
+            <li><a href="{{ base_url }}/collection/tropical-ferns-shade-plants.html"><span class="station-title">Tropusi pafranyok</span> <span class="station-en">- Tropical ferns</span></a></li>
+            <li><a href="{{ base_url }}/collection/orchids.html"><span class="station-title">Tropusi orchideak</span> <span class="station-en">- Tropical orchids</span></a></li>
+            <li><a href="{{ base_url }}/collection/succulent-plants.html"><span class="station-title">Pozsgas novenyek</span> <span class="station-en">- Tropical succulents</span></a></li>
+            <li><a href="{{ base_url }}/collection/cacti.html"><span class="station-title">Kaktuszok</span> <span class="station-en">- Cacti</span></a></li>
+            <li><a href="{{ base_url }}/collection/australian-plants.html"><span class="station-title">Ausztral novenyek</span> <span class="station-en">- Australian plants</span></a></li>
+            <li><span class="station-title">Juranyi Lajos emlekmuve</span> <span class="station-en">- Juranyi statue</span> <span class="station-note">(statue, no collection page)</span></li>
+            <li><a href="{{ base_url }}/collection/palms.html"><span class="station-title">Palmahaz kupola</span> <span class="station-en">- Palmhouse cupola</span></a></li>
+            <li><a href="{{ base_url }}/collection/tropical-crop-plants.html"><span class="station-title">Tropusi haszonnovenyek</span> <span class="station-en">- Tropical crops</span></a></li>
+            <li><a href="{{ base_url }}/collection/subtropical-plants.html"><span class="station-title">Szubtropusi novenyek</span> <span class="station-en">- Subtropical plants</span></a></li>
+            <li><a href="{{ base_url }}/collection/frost-tolerant-subtropical.html"><span class="station-title">Fagyturo szubtropusi novenyek</span> <span class="station-en">- Winter tolerant subtropical plants</span></a></li>
+            <li><a href="{{ base_url }}/collection/crop-plants-medicinal.html"><span class="station-title">Haszonnovenyek</span> <span class="station-en">- Crops</span></a></li>
+            <li><a href="{{ base_url }}/collection/broadleaved-evergreens.html"><span class="station-title">Orokzold lombos fak</span> <span class="station-en">- Evergreen trees</span></a> + <a href="{{ base_url }}/collection/deciduous-forest-understorey.html"><span class="station-en">Hungarian deciduous forest herbs</span></a></li>
+            <li><a href="{{ base_url }}/collection/east-asian-garden.html"><span class="station-title">Japankert</span> <span class="station-en">- Japanese garden</span></a></li>
+            <li><a href="{{ base_url }}/collection/cupressaceae-yew.html"><span class="station-title">Ciprusfelek, tiszafafelek</span> <span class="station-en">- Cypresses and Taxusses</span></a></li>
+            <li><a href="{{ base_url }}/collection/living-fossils.html"><span class="station-title">Elo kovuletek</span> <span class="station-en">- Living fossils</span></a></li>
+            <li><a href="{{ base_url }}/collection/rosaceae.html"><span class="station-title">Rozsakert es a kastely homlokzata</span> <span class="station-en">- Rose garden and the Castle facade</span></a></li>
+            <li><a href="{{ base_url }}/collection/dry-grassland-middle-mountains.html"><span class="station-title">Magyar kozephegysegek szaraz gyepei</span> <span class="station-en">- Dry grasslands of Hungarian middle mountains</span></a></li>
+            <li><a href="{{ base_url }}/collection/high-mountain-rock-gardens.html"><span class="station-title">Magashegysegi sziklakertek</span> <span class="station-en">- Highland rockeries</span></a></li>
+            <li><a href="{{ base_url }}/collection/needle-leaved-evergreens.html"><span class="station-title">Tulevelu orokzoldek</span> <span class="station-en">- Coniferous trees</span></a></li>
+            <li><span class="station-title">Jozsef nador szobra</span> <span class="station-en">- Joseph palatine statue</span> <span class="station-note">(statue, no collection page)</span></li>
+        </ol>
+    </section>
 
     <section class="location-index">
         <h3>Find Plants by Garden Location</h3>
