@@ -302,6 +302,25 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
     for plant in plants:
         common_names = common_names_by_plant.get(plant['id'], [])
         synonyms = synonyms_by_plant.get(plant['id'], [])
+        merged_common_names = []
+        seen_common = set()
+
+        def add_common(name):
+            normalized = normalize_common_name(name)
+            if not normalized:
+                return
+            key = normalized.lower()
+            if key in seen_common:
+                return
+            seen_common.add(key)
+            merged_common_names.append(normalized)
+
+        add_common(plant.get('common_name'))
+        add_common(plant.get('common_name_hungarian'))
+        add_common(plant.get('display_common_en'))
+        add_common(plant.get('display_common_hu'))
+        for name in common_names:
+            add_common(name)
 
         search_data.append({
             'id': plant['id'],
@@ -314,7 +333,7 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
             'scientific_name': plant['scientific_name'],
             'common_name': plant['common_name'],
             'common_name_hungarian': plant.get('common_name_hungarian'),
-            'common_names': common_names[:10],  # Limit for file size
+            'common_names': merged_common_names[:40],
             'synonyms': synonyms[:10],  # Limit for file size
         })
 
@@ -324,11 +343,43 @@ def build_search_data(plants, synonyms_by_plant, common_names_by_plant):
 def write_search_shards(search_data, search_data_dir):
     """Write prefix-sharded search files for lighter client fetches."""
     buckets = defaultdict(list)
-    for item in search_data:
-        candidate = (item.get('display_name') or item.get('canonical_name') or item.get('scientific_name') or '').strip().lower()
+
+    def shard_key_for_text(text):
+        candidate = (text or '').strip().lower()
         first = candidate[:1]
-        key = first if first.isalpha() else '_'
-        buckets[key].append(item)
+        return first if first.isalpha() else None
+
+    for item in search_data:
+        shard_keys = set()
+
+        for text in (
+            item.get('display_name'),
+            item.get('canonical_name'),
+            item.get('scientific_name'),
+            item.get('common_name'),
+            item.get('common_name_hungarian'),
+            item.get('display_common'),
+            item.get('display_common_hu'),
+        ):
+            key = shard_key_for_text(text)
+            if key:
+                shard_keys.add(key)
+
+        for text in item.get('common_names', []):
+            key = shard_key_for_text(text)
+            if key:
+                shard_keys.add(key)
+
+        for text in item.get('synonyms', []):
+            key = shard_key_for_text(text)
+            if key:
+                shard_keys.add(key)
+
+        if not shard_keys:
+            shard_keys.add('_')
+
+        for key in shard_keys:
+            buckets[key].append(item)
 
     index = {
         'version': 1,
