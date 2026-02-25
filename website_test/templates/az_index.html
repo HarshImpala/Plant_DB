@@ -61,7 +61,7 @@
                 <li class="plant-item"
                     data-family="{{ (plant.family or '')|lower }}"
                     data-genus="{{ (plant.genus or '')|lower }}"
-                    data-native="{{ (plant.native_regions or '')|lower }}"
+                    data-native="{{ (plant.native_regions_display or '')|lower }}"
                     data-has-toxicity="{{ 1 if plant.toxicity_info else 0 }}"
                     data-has-image="{{ 1 if plant.image_filename else 0 }}"
                     data-has-description="{{ 1 if plant.description else 0 }}">

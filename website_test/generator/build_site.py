@@ -63,6 +63,17 @@ def get_db_connection():
     return conn
 
 
+def clean_native_regions(value):
+    """Strip source metadata tail from native region text."""
+    text = (value or '').strip()
+    if not text:
+        return ''
+    text = re.sub(r'\s*\|\s*Provided by:.*$', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'\s*Provided by:.*$', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'\s*\|\s*$', '', text)
+    return text.strip()
+
+
 def normalize_plant_display_fields(plant):
     """Attach consistent display-name fields used across templates."""
     canonical = (plant.get('canonical_name') or '').strip()
@@ -72,6 +83,7 @@ def normalize_plant_display_fields(plant):
     plant['display_name'] = canonical or scientific or input_name
     plant['display_scientific'] = scientific or canonical or input_name
     plant['display_common'] = common
+    plant['native_regions_display'] = clean_native_regions(plant.get('native_regions'))
     return plant
 
 
@@ -740,7 +752,7 @@ def build_site():
     facet_families = sorted({p['family'] for p in plants if p.get('family')}, key=str.lower)
     facet_genera = sorted({p['genus'] for p in plants if p.get('genus')}, key=str.lower)
     facet_regions = sorted(
-        {region for p in plants for region in split_list_field(p.get('native_regions'))},
+        {region for p in plants for region in split_list_field(p.get('native_regions_display'))},
         key=str.lower,
     )
 

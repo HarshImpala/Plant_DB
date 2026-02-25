@@ -153,10 +153,10 @@
                     <span class="country-badge">{{ country.strip() }}</span>
                     {% endfor %}
                 </div>
-                {% if plant.native_regions %}
+                {% if plant.native_regions_display %}
                 <details>
                     <summary>Detailed Regions</summary>
-                    <p>{{ plant.native_regions }}</p>
+                    <p>{{ plant.native_regions_display }}</p>
                 </details>
                 {% endif %}
                 {% if plant.native_confidence %}
@@ -255,7 +255,8 @@
         {% endif %}
     </div>
 </nav>
-{% endif %}`r`n{% endblock %}
+{% endif %}
+{% endblock %}
 
 {% block scripts %}
 <script>
