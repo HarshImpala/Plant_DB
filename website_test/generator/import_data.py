@@ -213,16 +213,88 @@ def parse_pipe_separated(value):
 
 
 def choose_primary_english_name(row):
-    """Pick a better primary English name from GBIF fields."""
-    # Prefer the first item from gbif_english_names because gbif_english_name
-    # can be an alternate/common trade term (e.g. "Copra" for coconut).
-    names = parse_pipe_separated(row.get('gbif_english_names'))
-    if names:
-        return names[0]
+    """Pick the best display English name from GBIF fields."""
+
+    def split_alias_blob(value):
+        text = str(value or "").strip()
+        if not text:
+            return []
+        # Some rows contain comma-joined aliases in one pipe segment.
+        if "," in text:
+            parts = [p.strip() for p in text.split(",") if p.strip()]
+            if len(parts) > 1:
+                return parts
+        return [text]
+
     raw = row.get('gbif_english_name')
-    if pd.isna(raw) or not raw:
+    raw_preferred = None
+    raw_boost = 0
+    if not pd.isna(raw) and raw:
+        raw_preferred = str(raw).strip(" \"'`").lower()
+        token_positions = []
+        for idx, token in enumerate(parse_pipe_separated(row.get('gbif_english_names'))):
+            for split_name in split_alias_blob(token):
+                cleaned = split_name.strip(" \"'`").lower()
+                if cleaned == raw_preferred:
+                    token_positions.append(idx)
+        if token_positions and min(token_positions) <= 2:
+            raw_boost = 5
+
+    def score_candidate(name):
+        n = (name or "").strip()
+        if not n:
+            return -999
+        score = 0
+        words = [w for w in re.split(r"\s+", n) if w]
+        if n[0].isupper():
+            score += 30
+        if all(ord(ch) < 128 for ch in n):
+            score += 10
+        if 1 <= len(words) <= 3:
+            score += 12
+        elif len(words) > 4:
+            score -= 15
+        if "-" in n:
+            score += 6
+        if "'" in n or "’" in n:
+            score -= 35
+        if n.islower():
+            score -= 15
+        if any(ch.isdigit() for ch in n):
+            score -= 30
+        if raw_preferred and n.lower() == raw_preferred:
+            score += raw_boost
+        return score
+
+    candidates = []
+    for idx, token in enumerate(parse_pipe_separated(row.get('gbif_english_names'))):
+        for split_name in split_alias_blob(token):
+            cleaned = split_name.strip(" \"'`")
+            if cleaned:
+                candidates.append((cleaned, idx))
+
+    if not pd.isna(raw) and raw:
+        cleaned_raw = str(raw).strip(" \"'`")
+        if cleaned_raw:
+            # Include direct GBIF single-value field as fallback/tiebreaker.
+            candidates.append((cleaned_raw, 999))
+
+    if not candidates:
         return None
-    return str(raw).strip()
+
+    # Deduplicate while preserving best source position.
+    best_by_key = {}
+    for name, pos in candidates:
+        key = name.lower()
+        existing = best_by_key.get(key)
+        if existing is None or pos < existing[1]:
+            best_by_key[key] = (name, pos)
+
+    ranked = sorted(
+        best_by_key.values(),
+        key=lambda item: (-score_candidate(item[0]), item[1], item[0]),
+    )
+    return ranked[0][0]
 
 
 def import_taxonomy_data(conn, df_taxonomy):
