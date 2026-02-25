@@ -137,6 +137,7 @@ def get_all_plants(conn):
         name = plant['canonical_name'] or plant['scientific_name'] or plant['input_name']
         base = slugify(name) or f"plant-{plant['id']}"
         plant['_base_slug'] = base
+        plant['base_slug'] = base
         base_counts[base] += 1
 
     base_seen = defaultdict(int)
@@ -175,6 +176,40 @@ def get_categories(conn, category_type):
 def build_plant_slug_map(plants):
     """Create a fast lookup of plant ID to precomputed unique slug."""
     return {plant['id']: plant['slug'] for plant in plants}
+
+
+def build_legacy_slug_redirects(plants):
+    """Map legacy unsuffixed slugs to the first canonical duplicate page."""
+    grouped = defaultdict(list)
+    for plant in plants:
+        grouped[plant.get('base_slug')].append(plant['slug'])
+
+    redirects = {}
+    for base_slug, slugs in grouped.items():
+        if not base_slug or len(slugs) <= 1:
+            continue
+        sorted_slugs = sorted(slugs, key=str.lower)
+        if base_slug not in sorted_slugs:
+            redirects[base_slug] = sorted_slugs[0]
+    return redirects
+
+
+def render_redirect_page(target_href):
+    """Return a tiny HTML redirect page."""
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url={target_href}">
+  <link rel="canonical" href="{target_href}">
+  <title>Redirecting...</title>
+  <script>window.location.replace({json.dumps(target_href)});</script>
+</head>
+<body>
+  <p>Redirecting to <a href="{target_href}">{target_href}</a>...</p>
+</body>
+</html>
+"""
 
 
 def preload_plant_synonyms(conn):
@@ -859,8 +894,11 @@ def build_site():
     print("Building homepage...")
     template = env.get_template('index.html')
     plants_with_images = [p for p in plants if p.get('image_filename')]
-    step = max(1, len(plants_with_images) // 8)
-    featured_plants = plants_with_images[::step][:8]
+    featured_source = plants_with_images if plants_with_images else plants
+    step = max(1, len(featured_source) // 8)
+    featured_plants = featured_source[::step][:8]
+    if not featured_plants:
+        featured_plants = plants[:8]
     html = template.render(
         **base_context,
         plant_count=len(plants),
@@ -1002,6 +1040,13 @@ def build_site():
 
         if (i + 1) % 50 == 0:
             print(f"  Built {i + 1}/{len(plants)} plant pages...")
+
+    # Legacy compatibility: keep old unsuffixed plant URLs working.
+    legacy_redirects = build_legacy_slug_redirects(plants)
+    for legacy_slug, target_slug in legacy_redirects.items():
+        target_href = f"./{target_slug}.html"
+        redirect_html = render_redirect_page(target_href)
+        (OUTPUT_DIR / "plant" / f"{legacy_slug}.html").write_text(redirect_html, encoding='utf-8')
 
     # === Build Search Data ===
     print("Building search data...")
