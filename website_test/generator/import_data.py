@@ -212,6 +212,19 @@ def parse_pipe_separated(value):
     return [item.strip() for item in str(value).split('|') if item.strip()]
 
 
+def choose_primary_english_name(row):
+    """Pick a better primary English name from GBIF fields."""
+    # Prefer the first item from gbif_english_names because gbif_english_name
+    # can be an alternate/common trade term (e.g. "Copra" for coconut).
+    names = parse_pipe_separated(row.get('gbif_english_names'))
+    if names:
+        return names[0]
+    raw = row.get('gbif_english_name')
+    if pd.isna(raw) or not raw:
+        return None
+    return str(raw).strip()
+
+
 def import_taxonomy_data(conn, df_taxonomy):
     """Import data from the taxonomy Excel file."""
     cursor = conn.cursor()
@@ -250,7 +263,7 @@ def import_taxonomy_data(conn, df_taxonomy):
             input_name,
             row.get('gbif_scientificName') if not pd.isna(row.get('gbif_scientificName')) else None,
             row.get('gbif_canonicalName') if not pd.isna(row.get('gbif_canonicalName')) else None,
-            row.get('gbif_english_name') if not pd.isna(row.get('gbif_english_name')) else None,
+            choose_primary_english_name(row),
             row.get('wfo_family') if not pd.isna(row.get('wfo_family')) else None,
             row.get('wfo_genus') if not pd.isna(row.get('wfo_genus')) else None,
             row.get('wfo_match_wfo_id') if not pd.isna(row.get('wfo_match_wfo_id')) else None,
