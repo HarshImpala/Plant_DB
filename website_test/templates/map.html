@@ -52,17 +52,14 @@
         font-size: 0.9rem;
     }
     .pdf-canvas-wrap {
-        height: calc(100vh - 170px);
-        min-height: 700px;
-        overflow: auto;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        overflow: visible;
+        display: block;
         padding: 0.75rem;
         background: #ebebeb;
     }
-    #pdf-canvas {
+    .pdf-canvas-page {
         display: block;
+        margin: 0 auto 0.85rem;
         background: #fff;
         box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     }
@@ -153,10 +150,6 @@
         font-size: 0.85rem;
     }
     @media (max-width: 700px) {
-        .pdf-canvas-wrap {
-            height: 80vh;
-            min-height: 560px;
-        }
         .location-group ul {
             column-count: 1;
         }
@@ -172,15 +165,13 @@
     <div class="pdf-container">
         <div id="pdf-viewer">
             <div class="pdf-toolbar">
-                <button type="button" id="pdf-prev">Prev</button>
-                <button type="button" id="pdf-next">Next</button>
-                <span class="pdf-page-label" id="pdf-page-info">Page 1 / 1</span>
+                <span class="pdf-page-label" id="pdf-page-info">Pages: -</span>
                 <button type="button" id="pdf-zoom-out">-</button>
                 <button type="button" id="pdf-zoom-in">+</button>
                 <button type="button" id="pdf-fit-width">Fit Width</button>
             </div>
             <div class="pdf-canvas-wrap" id="pdf-canvas-wrap">
-                <canvas id="pdf-canvas" aria-label="Garden map PDF page"></canvas>
+                <div id="pdf-pages" aria-label="Garden map PDF pages"></div>
             </div>
         </div>
         <div class="pdf-fallback" id="pdf-fallback" style="display:none">
@@ -265,11 +256,9 @@
 (function() {
     const viewer = document.getElementById('pdf-viewer');
     const fallback = document.getElementById('pdf-fallback');
-    const canvas = document.getElementById('pdf-canvas');
+    const pagesHost = document.getElementById('pdf-pages');
     const canvasWrap = document.getElementById('pdf-canvas-wrap');
     const pageInfo = document.getElementById('pdf-page-info');
-    const prevBtn = document.getElementById('pdf-prev');
-    const nextBtn = document.getElementById('pdf-next');
     const zoomInBtn = document.getElementById('pdf-zoom-in');
     const zoomOutBtn = document.getElementById('pdf-zoom-out');
     const fitWidthBtn = document.getElementById('pdf-fit-width');
@@ -281,98 +270,68 @@
     }
 
     function initPdfViewer() {
-        if (!window.pdfjsLib || !canvas || !canvasWrap) {
+        if (!window.pdfjsLib || !pagesHost || !canvasWrap) {
             showFallback();
             return;
         }
         window.pdfjsLib.GlobalWorkerOptions.workerSrc =
             "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-        const ctx = canvas.getContext('2d');
         let pdfDoc = null;
-        let pageNum = 1;
         let scale = 1.2;
-        let isRendering = false;
-        let queuedPage = null;
 
-        function updateButtons() {
+        async function renderAllPages() {
             if (!pdfDoc) return;
-            prevBtn.disabled = pageNum <= 1;
-            nextBtn.disabled = pageNum >= pdfDoc.numPages;
-            pageInfo.textContent = "Page " + pageNum + " / " + pdfDoc.numPages;
-        }
-
-        function queueRender(num) {
-            if (isRendering) {
-                queuedPage = num;
-            } else {
-                renderPage(num);
-            }
-        }
-
-        function renderPage(num) {
-            isRendering = true;
-            pdfDoc.getPage(num).then(function(page) {
+            pagesHost.innerHTML = "";
+            for (let i = 1; i <= pdfDoc.numPages; i += 1) {
+                const page = await pdfDoc.getPage(i);
                 const viewport = page.getViewport({ scale: scale });
-                canvas.height = viewport.height;
+                const canvas = document.createElement('canvas');
+                canvas.className = 'pdf-canvas-page';
                 canvas.width = viewport.width;
-                const renderContext = {
+                canvas.height = viewport.height;
+                pagesHost.appendChild(canvas);
+                const ctx = canvas.getContext('2d');
+                await page.render({
                     canvasContext: ctx,
                     viewport: viewport
-                };
-                return page.render(renderContext).promise;
-            }).then(function() {
-                isRendering = false;
-                updateButtons();
-                if (queuedPage !== null) {
-                    const p = queuedPage;
-                    queuedPage = null;
-                    renderPage(p);
-                }
-            }).catch(function() {
-                showFallback();
-            });
+                }).promise;
+            }
+            pageInfo.textContent = "Pages: " + pdfDoc.numPages;
         }
 
-        function fitWidth() {
+        async function fitWidth() {
             if (!pdfDoc) return;
-            pdfDoc.getPage(pageNum).then(function(page) {
-                const baseViewport = page.getViewport({ scale: 1 });
-                const targetWidth = Math.max(320, canvasWrap.clientWidth - 24);
-                scale = targetWidth / baseViewport.width;
-                queueRender(pageNum);
-            });
+            const page = await pdfDoc.getPage(1);
+            const baseViewport = page.getViewport({ scale: 1 });
+            const targetWidth = Math.max(320, canvasWrap.clientWidth - 24);
+            scale = targetWidth / baseViewport.width;
+            await renderAllPages();
         }
 
-        prevBtn.addEventListener('click', function() {
-            if (!pdfDoc || pageNum <= 1) return;
-            pageNum -= 1;
-            queueRender(pageNum);
-        });
-        nextBtn.addEventListener('click', function() {
-            if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
-            pageNum += 1;
-            queueRender(pageNum);
-        });
-        zoomInBtn.addEventListener('click', function() {
+        zoomInBtn.addEventListener('click', async function() {
             scale = Math.min(3, scale + 0.15);
-            queueRender(pageNum);
+            await renderAllPages();
         });
-        zoomOutBtn.addEventListener('click', function() {
+        zoomOutBtn.addEventListener('click', async function() {
             scale = Math.max(0.5, scale - 0.15);
-            queueRender(pageNum);
+            await renderAllPages();
         });
-        fitWidthBtn.addEventListener('click', fitWidth);
+        fitWidthBtn.addEventListener('click', async function() {
+            await fitWidth();
+        });
 
         window.addEventListener('resize', function() {
             if (window.innerWidth <= 900) {
-                fitWidth();
+                fitWidth().catch(function() {});
             }
         });
 
         window.pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
             pdfDoc = pdf;
-            fitWidth();
+            fitWidth().catch(function() {
+                showFallback();
+            });
         }).catch(function() {
             showFallback();
         });
