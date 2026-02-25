@@ -477,6 +477,12 @@ html[data-theme="dark"] .plant-image.placeholder {
     background: var(--color-bg);
 }
 
+.toxicity-source-note {
+    margin: -0.5rem 0 1rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+}
+
 .external-links {
     background: var(--color-header-bg);
     border: 1px solid var(--color-border-light);

@@ -132,6 +132,12 @@
                     </tr>
                 </tbody>
             </table>
+            {% if plant.toxicity_source %}
+            <p class="toxicity-source-note">
+                <span class="lang-en">Source: {{ plant.toxicity_source }}</span>
+                <span class="lang-hu">Forras: {{ plant.toxicity_source }}</span>
+            </p>
+            {% endif %}
 
             <div class="external-links">
                 <h3 data-translate="external_links">External Links</h3>
@@ -240,13 +246,6 @@
                         {% endfor %}
                     </ul>
                 </details>
-            </section>
-            {% endif %}
-
-            {% if plant.toxicity_info %}
-            <section class="plant-section toxicity-section">
-                <h2 data-translate="toxicity_info">Toxicity Information</h2>
-                <p>{{ plant.toxicity_info }}</p>
             </section>
             {% endif %}
 

@@ -480,6 +480,26 @@ def _toxicity_flags_from_text(text):
     }
 
 
+def _extract_toxicity_source(text):
+    """Extract a source citation from free-text toxicity info."""
+    raw = (text or "").strip()
+    if not raw:
+        return None
+
+    # Typical forms:
+    # "... (Source: ASPCA)"
+    # "... Source: ASPCA"
+    m = re.search(r"\(source:\s*([^)]+)\)", raw, flags=re.IGNORECASE)
+    if m:
+        return m.group(1).strip()
+
+    m = re.search(r"source:\s*(.+)$", raw, flags=re.IGNORECASE)
+    if m:
+        return m.group(1).strip().strip("().")
+
+    return None
+
+
 def attach_toxicity_statuses(plants):
     """Attach normalized toxicity statuses to each plant for UI display."""
     hu_status_map = {
@@ -526,6 +546,7 @@ def attach_toxicity_statuses(plants):
         plant['toxicity_pets_status_en'] = pets_status
         plant['toxicity_humans_status_hu'] = hu_status_map[human_status]
         plant['toxicity_pets_status_hu'] = hu_status_map[pets_status]
+        plant['toxicity_source'] = _extract_toxicity_source(plant.get('toxicity_info'))
         plant.pop('_tox_flags', None)
 
 
