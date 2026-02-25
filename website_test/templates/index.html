@@ -56,7 +56,7 @@
 
     <section class="recent-section">
         <h2 data-translate="featured_title">Featured Plants</h2>
-        <div class="plant-grid">
+        <div class="plant-grid" id="featured-plant-grid">
             {% for plant in featured_plants %}
             <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-card">
                 <div class="plant-card-image">
@@ -125,6 +125,33 @@
         }).join('');
         section.style.display = '';
     } catch(e) {}
+})();
+</script>
+
+<script>
+// Defensive featured fallback for stale/empty deployments
+(function() {
+    const grid = document.getElementById('featured-plant-grid');
+    if (!grid || grid.querySelector('.plant-card')) return;
+    function cardHtml(plant) {
+        const name = plant.display_name || plant.canonical_name || plant.scientific_name || 'Unknown plant';
+        const common = plant.display_common || plant.common_name || '';
+        return `<a href="./plant/${plant.slug}.html" class="plant-card">
+            <div class="plant-card-image"><div class="placeholder-image"></div></div>
+            <div class="plant-card-info">
+                <h3>${name}</h3>
+                ${common ? `<p>${common}</p>` : ''}
+            </div>
+        </a>`;
+    }
+    fetch('./static/data/search-data.json')
+        .then(function(r) { return r.ok ? r.json() : []; })
+        .then(function(items) {
+            if (!Array.isArray(items) || !items.length) return;
+            const picked = items.slice(0, 8);
+            grid.innerHTML = picked.map(cardHtml).join('');
+        })
+        .catch(function() {});
 })();
 </script>
 
