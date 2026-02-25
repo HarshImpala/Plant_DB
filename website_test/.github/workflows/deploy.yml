@@ -2,7 +2,7 @@ name: Build & Deploy Plant Encyclopedia
 
 on:
   push:
-    branches: [main]
+    branches: [main, gh_pages]
     paths:
       - ".github/workflows/deploy.yml"
       - "generator/**"
@@ -10,7 +10,7 @@ on:
       - "static/**"
       - "data/**"
   pull_request:
-    branches: [main]
+    branches: [main, gh_pages]
     paths:
       - ".github/workflows/deploy.yml"
       - "generator/**"
