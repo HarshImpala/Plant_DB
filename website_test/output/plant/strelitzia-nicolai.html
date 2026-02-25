@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/2763112" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Strelitzia_nicolai" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Strelitzia_nicolai" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,10 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Strelitzia nicolai, commonly known as the wild banana or giant white bird of paradise, is a species of banana-like plants with erect woody stems reaching a height of 7–8 m (23–26 ft), and the clumps formed can spread as far as 3.5 m (11 ft). Strelitzia nicolai is among the few plants which have been verified to contain the pigment bilirubin, which is usually found in animals.</p>
+                
+                <p class="lang-en">Strelitzia nicolai, commonly known as the wild banana or giant white bird of paradise, is a species of banana-like plants with erect woody stems reaching a height of 7–8 m (23–26 ft), and the clumps formed can spread as far as 3.5 m (11 ft). Strelitzia nicolai is among the few plants which have been verified to contain the pigment bilirubin, which is usually found in animals.</p>
+                
+                
             </section>
             
 
@@ -303,9 +307,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

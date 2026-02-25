@@ -81,6 +81,20 @@ def api_request_with_retry(params: dict, max_retries: int = 3) -> dict | None:
     return None
 
 
+def ensure_columns(conn):
+    """Ensure wikipedia URL columns exist and legacy column is migrated."""
+    cursor = conn.cursor()
+    cursor.execute("PRAGMA table_info(plants)")
+    columns = {row[1] for row in cursor.fetchall()}
+    if "wikipedia_url" in columns and "wikipedia_url_english" not in columns:
+        cursor.execute("ALTER TABLE plants RENAME COLUMN wikipedia_url TO wikipedia_url_english")
+        columns.remove("wikipedia_url")
+        columns.add("wikipedia_url_english")
+    if "wikipedia_url_english" not in columns:
+        cursor.execute("ALTER TABLE plants ADD COLUMN wikipedia_url_english TEXT")
+    conn.commit()
+
+
 def get_page_image_url(page_title: str, thumb_width: int = 800) -> str | None:
     """Get the thumbnail image URL for a Wikipedia page using pageimages API."""
     params = {
@@ -179,12 +193,13 @@ def main():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
+    ensure_columns(conn)
 
     # Get plants with Wikipedia URLs
     cursor.execute("""
-        SELECT id, canonical_name, scientific_name, wikipedia_url, image_filename
+        SELECT id, canonical_name, scientific_name, wikipedia_url_english, image_filename
         FROM plants
-        WHERE wikipedia_url IS NOT NULL
+        WHERE wikipedia_url_english IS NOT NULL
     """)
     plants = cursor.fetchall()
     print(f"Found {len(plants)} plants with Wikipedia URLs")
@@ -197,7 +212,7 @@ def main():
     for i, plant in enumerate(plants):
         plant_id = plant["id"]
         canonical_name = plant["canonical_name"] or plant["scientific_name"]
-        wikipedia_url = plant["wikipedia_url"]
+        wikipedia_url = plant["wikipedia_url_english"]
         existing_image = plant["image_filename"]
 
         # Skip if already has an image

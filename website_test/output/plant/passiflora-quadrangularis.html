@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/2874183" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Passiflora_quadrangularis" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Passiflora_quadrangularis" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/%C3%93ri%C3%A1s_passi%C3%B3gy%C3%BCm%C3%B6lcs" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Passiflora quadrangularis, the giant granadilla, barbadine (Trinidad), grenadine (Haiti), giant tumbo or badea (Spanish pronunciation: [baˈðe.a]), is a species of plant in the family Passifloraceae. It produces the largest fruit of any species within the genus Passiflora. It is a perennial climber native to the Neotropics.</p>
+                
+                <p class="lang-en">Passiflora quadrangularis, the giant granadilla, barbadine (Trinidad), grenadine (Haiti), giant tumbo or badea (Spanish pronunciation: [baˈðe.a]), is a species of plant in the family Passifloraceae. It produces the largest fruit of any species within the genus Passiflora. It is a perennial climber native to the Neotropics.</p>
+                
+                
+                <p class="lang-hu">
+                    Az óriás passiógyümölcs (Passiflora quadrangularis) a legnagyobb termésű golgotavirág. Szára négyszögletes, sötétzöld levele tenyérnyi. Mintegy 12 cm átmérőjű virágának szirmai sötétpiros-bordók, rojtkoszorúja fehéren tarkázott sötétlila, és a virágszirmok síkjára merőlegesen csőszerű képletet alkot. Illata rendkívül erőteljes, bódító.
+                    
+                </p>
+                
             </section>
             
 
@@ -361,9 +372,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

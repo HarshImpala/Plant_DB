@@ -61,6 +61,22 @@ def api_request_with_retry(params: dict, max_retries: int = 3) -> dict | None:
     return None
 
 
+def ensure_columns(conn):
+    """Ensure wikipedia URL columns exist and legacy column is migrated."""
+    cursor = conn.cursor()
+    cursor.execute("PRAGMA table_info(plants)")
+    columns = {row[1] for row in cursor.fetchall()}
+    if "wikipedia_url" in columns and "wikipedia_url_english" not in columns:
+        cursor.execute("ALTER TABLE plants RENAME COLUMN wikipedia_url TO wikipedia_url_english")
+        columns.remove("wikipedia_url")
+        columns.add("wikipedia_url_english")
+    if "wikipedia_url_english" not in columns:
+        cursor.execute("ALTER TABLE plants ADD COLUMN wikipedia_url_english TEXT")
+    if "wikipedia_url_hungarian" not in columns:
+        cursor.execute("ALTER TABLE plants ADD COLUMN wikipedia_url_hungarian TEXT")
+    conn.commit()
+
+
 def _norm(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "").strip().lower())
 
@@ -80,22 +96,22 @@ def search_wikidata(query: str, limit: int = 5) -> list[dict]:
     return data.get("search", []) or []
 
 
-def get_wikipedia_url(qid: str) -> str | None:
-    """Get English Wikipedia URL for a Wikidata entity."""
+def get_wikipedia_urls(qid: str) -> tuple[str | None, str | None]:
+    """Get English and Hungarian Wikipedia URLs for a Wikidata entity."""
     params = {
         "action": "wbgetentities",
         "ids": qid,
         "props": "sitelinks/urls",
-        "sitefilter": "enwiki",
         "format": "json",
     }
     data = api_request_with_retry(params)
     if data:
         entity = data.get("entities", {}).get(qid, {})
         sitelinks = entity.get("sitelinks", {})
-        enwiki = sitelinks.get("enwiki", {})
-        return enwiki.get("url")
-    return None
+        enwiki_url = sitelinks.get("enwiki", {}).get("url")
+        huwiki_url = sitelinks.get("huwiki", {}).get("url")
+        return enwiki_url, huwiki_url
+    return None, None
 
 
 def _score_hit(hit: dict, canonical_name: str, scientific_name: str, family: str | None, genus: str | None) -> int:
@@ -156,6 +172,7 @@ def main():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
+    ensure_columns(conn)
 
     # Get all plants
     cursor.execute("SELECT id, canonical_name, scientific_name, family, genus FROM plants")
@@ -182,10 +199,18 @@ def main():
         cache_key = search_name.lower().strip()
         if cache_key in cache:
             cached_value = cache[cache_key]
-            # "NOT_FOUND" means we searched but no Wikipedia page exists
-            wikipedia_url = None if cached_value == "NOT_FOUND" else cached_value
+            if cached_value == "NOT_FOUND":
+                wikipedia_url_english = None
+                wikipedia_url_hungarian = None
+            elif isinstance(cached_value, dict):
+                wikipedia_url_english = cached_value.get("en")
+                wikipedia_url_hungarian = cached_value.get("hu")
+            else:
+                wikipedia_url_english = cached_value
+                wikipedia_url_hungarian = None
         else:
-            wikipedia_url = None
+            wikipedia_url_english = None
+            wikipedia_url_hungarian = None
 
             query_candidates = []
             for q in (
@@ -206,18 +231,28 @@ def main():
                 qid = hit.get("id")
                 if not qid:
                     continue
-                wikipedia_url = get_wikipedia_url(qid)
-                if wikipedia_url:
+                wikipedia_url_english, wikipedia_url_hungarian = get_wikipedia_urls(qid)
+                if wikipedia_url_english or wikipedia_url_hungarian:
                     break
 
-            cache[cache_key] = wikipedia_url if wikipedia_url else "NOT_FOUND"
+            if wikipedia_url_english or wikipedia_url_hungarian:
+                cache[cache_key] = {
+                    "en": wikipedia_url_english,
+                    "hu": wikipedia_url_hungarian,
+                }
+            else:
+                cache[cache_key] = "NOT_FOUND"
 
             time.sleep(0.5)  # Rate limiting - be gentle with the API
 
-        if wikipedia_url:
+        if wikipedia_url_english or wikipedia_url_hungarian:
             cursor.execute(
-                "UPDATE plants SET wikipedia_url = ? WHERE id = ?",
-                (wikipedia_url, plant_id)
+                """
+                UPDATE plants
+                SET wikipedia_url_english = ?, wikipedia_url_hungarian = ?
+                WHERE id = ?
+                """,
+                (wikipedia_url_english, wikipedia_url_hungarian, plant_id),
             )
             found_count += 1
 

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,8 @@
                     <li><a href="https://www.gbif.org/species/2833834" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Angraecum_eburneum" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Angraecum_eburneum" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -149,7 +150,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Angraecum eburneum is a species of orchid. Their common name the "comet orchid". They generally grow up to 2 metres (6 ft 7 in) in height and grows 10 to 15 flowers per plant. They are native to Madagascar, Comoros, Seychelles, Réunion, Mauritius, Kenya, and Tanzania. It is the national flower of Seychelles.</p>
+                
+                <p class="lang-en">Angraecum eburneum is a species of orchid. Their common name the "comet orchid". They generally grow up to 2 metres (6 ft 7 in) in height and grows 10 to 15 flowers per plant. They are native to Madagascar, Comoros, Seychelles, Réunion, Mauritius, Kenya, and Tanzania. It is the national flower of Seychelles.</p>
+                
+                
+                <p class="lang-hu">
+                    Az Angraecum eburneum egy orchideafaj. Köznapi nevük "üstökös orchidea". Általában 2 méter (6 láb 7 hüvelyk) magasra nőnek, és növényenként 10-15 virágot termesztenek. Madagaszkáron, a Comore-szigeteken, a Seychelle-szigeteken, Réunionban, Mauritiuson, Kenyában és Tanzániában őshonosak. Ez a Seychelle-szigetek nemzeti virága.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -306,9 +317,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

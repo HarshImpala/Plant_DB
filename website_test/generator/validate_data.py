@@ -44,7 +44,8 @@ def main():
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
     cur.execute(
-        "SELECT id, input_name, canonical_name, scientific_name, wfo_url, gbif_url, wikipedia_url, image_filename "
+        "SELECT id, input_name, canonical_name, scientific_name, wfo_url, gbif_url, "
+        "wikipedia_url_english, wikipedia_url_hungarian, image_filename "
         "FROM plants"
     )
     rows = cur.fetchall()
@@ -73,11 +74,12 @@ def main():
     # 2) Validate URL format (warning-only).
     bad_url_rows = []
     for row in rows:
-        plant_id, _, _, _, wfo_url, gbif_url, wikipedia_url, _ = row
+        plant_id, _, _, _, wfo_url, gbif_url, wikipedia_url_english, wikipedia_url_hungarian, _ = row
         for field, value in (
             ("wfo_url", wfo_url),
             ("gbif_url", gbif_url),
-            ("wikipedia_url", wikipedia_url),
+            ("wikipedia_url_english", wikipedia_url_english),
+            ("wikipedia_url_hungarian", wikipedia_url_hungarian),
         ):
             if value and not _is_http_url(value):
                 bad_url_rows.append({"id": plant_id, "field": field, "value": value})
@@ -92,7 +94,7 @@ def main():
     missing_image_files = []
     for row in rows:
         plant_id = row[0]
-        image_filename = row[7]
+        image_filename = row[8]
         if image_filename:
             image_path = IMAGES_DIR / image_filename
             if not image_path.exists():
@@ -133,8 +135,8 @@ def main():
         })
 
     report["stats"] = {
-        "plants_with_images": sum(1 for r in rows if r[7]),
-        "plants_with_wikipedia": sum(1 for r in rows if r[6]),
+        "plants_with_images": sum(1 for r in rows if r[8]),
+        "plants_with_wikipedia": sum(1 for r in rows if r[6] or r[7]),
         "critical_checks_failed": len(report["critical"]),
         "warning_checks_failed": len(report["warnings"]),
     }
@@ -154,4 +156,3 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/3190593" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Spondias_mombin" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Spondias_mombin" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Spondias mombin, also known as yellow mombin, hog plum, amra or cajazeira, is a species of tree and flowering plant in the family Anacardiaceae. It is native to the tropical Americas, including the West Indies. The tree was introduced by the Portuguese in South Asia in the beginning of the 17th century. It has been naturalized in parts of Africa, India, Nepal, Bangladesh, Sri Lanka, The Bahamas, Indonesia, and other Caribbean islands. It is rarely cultivated except in parts of the Brazilian Northeast. The mature fruit has a leathery skin and a thin layer of pulp. The seed has an oil content of 31.5%.</p>
+                
+                <p class="lang-en">Spondias mombin, also known as yellow mombin, hog plum, amra or cajazeira, is a species of tree and flowering plant in the family Anacardiaceae. It is native to the tropical Americas, including the West Indies. The tree was introduced by the Portuguese in South Asia in the beginning of the 17th century. It has been naturalized in parts of Africa, India, Nepal, Bangladesh, Sri Lanka, The Bahamas, Indonesia, and other Caribbean islands. It is rarely cultivated except in parts of the Brazilian Northeast. The mature fruit has a leathery skin and a thin layer of pulp. The seed has an oil content of 31.5%.</p>
+                
+                
+                <p class="lang-hu">
+                    QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -411,9 +422,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

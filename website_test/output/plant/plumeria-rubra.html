@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/3169674" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Plumeria_rubra" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Plumeria_rubra" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/V%C3%B6r%C3%B6s_frangip%C3%A1ni" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Plumeria rubra is a deciduous plant species belonging to the genus Plumeria. Originally native to Mexico, Central America, Colombia and Venezuela, it has been widely cultivated in subtropical and tropical climates worldwide and is a popular garden and park plant, as well as being used in temples and cemeteries. It grows as a spreading tree to 7–8 m (23–26 ft) high and wide, and is flushed with fragrant flowers of shades of pink, white and yellow over the summer and autumn. Its common names include frangipani, red paucipan, red-jasmine, red frangipani, common frangipani, temple tree, calachuchi, or simply plumeria. Despite its common name, the species is not a "true jasmine" and not of the genus Jasminum.</p>
+                
+                <p class="lang-en">Plumeria rubra is a deciduous plant species belonging to the genus Plumeria. Originally native to Mexico, Central America, Colombia and Venezuela, it has been widely cultivated in subtropical and tropical climates worldwide and is a popular garden and park plant, as well as being used in temples and cemeteries. It grows as a spreading tree to 7–8 m (23–26 ft) high and wide, and is flushed with fragrant flowers of shades of pink, white and yellow over the summer and autumn. Its common names include frangipani, red paucipan, red-jasmine, red frangipani, common frangipani, temple tree, calachuchi, or simply plumeria. Despite its common name, the species is not a "true jasmine" and not of the genus Jasminum.</p>
+                
+                
+                <p class="lang-hu">
+                    A vörös frangipáni, vagy templomfa, pagodafa, (Plumeria rubra) a meténgfélék (Apocynaceae) családjában a frangipáni (Plumeria) nemzetség egyik, dísznövényként talán legismertebb faja.
+                    
+                </p>
+                
             </section>
             
 
@@ -467,9 +478,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

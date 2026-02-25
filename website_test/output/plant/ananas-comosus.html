@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/5288819" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Pineapple" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Pineapple" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Termesztett_anan%C3%A1sz" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>The pineapple (Ananas comosus) is a tropical plant with an edible fruit; it is the most economically significant plant in the family Bromeliaceae. The pineapple is indigenous to South America, where it has been cultivated for many centuries. The introduction of the pineapple plant to Europe in the 17th century made it a significant cultural icon of luxury. Since the 1820s, pineapple has been commercially grown in greenhouses and many tropical plantations. The fruit, particularly its juice, has diverse uses in cuisines and desserts. Pineapples grow as a small shrub; the individual flowers of the unpollinated plant fuse to form a multiple fruit. The plant normally propagates from the offset produced at the top of the fruit or from a side shoot, and typically matures within a year.</p>
+                
+                <p class="lang-en">The pineapple (Ananas comosus) is a tropical plant with an edible fruit; it is the most economically significant plant in the family Bromeliaceae. The pineapple is indigenous to South America, where it has been cultivated for many centuries. The introduction of the pineapple plant to Europe in the 17th century made it a significant cultural icon of luxury. Since the 1820s, pineapple has been commercially grown in greenhouses and many tropical plantations. The fruit, particularly its juice, has diverse uses in cuisines and desserts. Pineapples grow as a small shrub; the individual flowers of the unpollinated plant fuse to form a multiple fruit. The plant normally propagates from the offset produced at the top of the fruit or from a side shoot, and typically matures within a year.</p>
+                
+                
+                <p class="lang-hu">
+                    A termesztett ananász (Ananas comosus) az egyszikűek (Liliopsida) osztályának perjevirágúak (Poales) rendjébe, ezen belül a broméliafélék (Bromeliaceae) családjába tartozó faj.
+                    
+                </p>
+                
             </section>
             
 
@@ -336,9 +347,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

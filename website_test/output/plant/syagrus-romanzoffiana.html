@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/5293897" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Syagrus_romanzoffiana" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Syagrus_romanzoffiana" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Kir%C3%A1lyn%C5%91p%C3%A1lma" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Syagrus romanzoffiana, the queen palm, cocos palm or Jerivá, is a palm native to South America, introduced throughout the world as a popular ornamental garden tree. S. romanzoffiana is a medium-sized palm, quickly reaching maturity at a height of up to 15 m (49 ft) tall, with pinnate leaves having as many as 494 pinnae (leaflets), although more typically around 300, each pinna being around 50 centimetres (18 in) in length and 3–5 centimetres (1–2 in) in width.</p>
+                
+                <p class="lang-en">Syagrus romanzoffiana, the queen palm, cocos palm or Jerivá, is a palm native to South America, introduced throughout the world as a popular ornamental garden tree. S. romanzoffiana is a medium-sized palm, quickly reaching maturity at a height of up to 15 m (49 ft) tall, with pinnate leaves having as many as 494 pinnae (leaflets), although more typically around 300, each pinna being around 50 centimetres (18 in) in length and 3–5 centimetres (1–2 in) in width.</p>
+                
+                
+                <p class="lang-hu">
+                    A királynőpálma (Syagrus romanzoffiana, Syagrus romanzoffianum, korábban Arecastrum romanzoffianum, illetve Cocos plumosa) a pálmafélék (Arecaceae) családjában a Cocoeae nemzetségcsoport Syagrus nemzetségének legismertebb és elterjedtebb faja.
+                    
+                </p>
+                
             </section>
             
 
@@ -397,9 +408,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

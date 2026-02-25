@@ -125,7 +125,7 @@
 
     // ===== THEME TOGGLE =====
     function initTheme() {
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeButton(savedTheme);
     }
@@ -198,6 +198,14 @@
 
         // Update HTML lang attribute
         document.documentElement.lang = lang;
+
+        // Localize "Adopt me" destination by language
+        const adoptUrl = lang === 'en'
+            ? 'https://www.fuveszkert.org/adoption-program/'
+            : 'https://www.fuveszkert.org/orokbefogadas/';
+        document.querySelectorAll('.adopt-btn').forEach(el => {
+            el.setAttribute('href', adoptUrl);
+        });
     }
 
     // ===== INITIALIZATION =====

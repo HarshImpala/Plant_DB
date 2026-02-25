@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/2762920" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Musa_coccinea" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Musa_coccinea" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Musa_coccinea" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Musa coccinea, commonly known as scarlet banana or red-flowering banana, is a species of flowering plant in the banana and plantain family Musaceae, native to tropical China (in Guangdong, Guangxi, and southeastern Yunnan) and Vietnam. It is a bat-pollinated evergreen perennial, placed in section Callimusa (now including the former section Australimusa), having a diploid chromosome number of 2n = 20. The flower cluster is more rounded than in the related species M. beccarii. It is made up of erect spirals of red bracts which enclose tubular yellow flowers. The inedible fruits are orange, only about 2 cm (0.8 in) long, and contain seeds. The species is cultivated for its ornamental value, being grown, for example, along with heliconias in commercial farms in Hawaii. It does not tolerate temperatures below 10 °C (50 °F), so in temperate zones requires protection during the winter months. In the UK it has gained the Royal Horticultural Society's Award of Garden Merit. M. coccinea is a known host in the New World of the red palm mite (Raoiella indica).</p>
+                
+                <p class="lang-en">Musa coccinea, commonly known as scarlet banana or red-flowering banana, is a species of flowering plant in the banana and plantain family Musaceae, native to tropical China (in Guangdong, Guangxi, and southeastern Yunnan) and Vietnam. It is a bat-pollinated evergreen perennial, placed in section Callimusa (now including the former section Australimusa), having a diploid chromosome number of 2n = 20. The flower cluster is more rounded than in the related species M. beccarii. It is made up of erect spirals of red bracts which enclose tubular yellow flowers. The inedible fruits are orange, only about 2 cm (0.8 in) long, and contain seeds. The species is cultivated for its ornamental value, being grown, for example, along with heliconias in commercial farms in Hawaii. It does not tolerate temperatures below 10 °C (50 °F), so in temperate zones requires protection during the winter months. In the UK it has gained the Royal Horticultural Society's Award of Garden Merit. M. coccinea is a known host in the New World of the red palm mite (Raoiella indica).</p>
+                
+                
+                <p class="lang-hu">
+                    A Musa coccinea az egyszikűek (Liliopsida) osztályának gyömbérvirágúak (Zingiberales) rendjébe, ezen belül a banánfélék (Musaceae) családjába tartozó faj.
+                    
+                </p>
+                
             </section>
             
 
@@ -359,9 +370,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/2895528" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Coffea_canephora" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Coffea_canephora" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Robuszta_k%C3%A1v%C3%A9" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Coffea canephora (especially C. canephora var. robusta, syn. Coffea robusta, or commonly robusta coffee) is a species of coffee plant that has its origins in central and western sub-Saharan Africa. It is a species of flowering plant in the family Rubiaceae. Though widely known as Coffea robusta, the plant is scientifically identified as Coffea canephora, which has two main varieties, robusta and nganda. Coffea canephora represents between 40% and 45% of global coffee production, with Coffea arabica constituting most of the remainder. There are several differences between the composition of coffee beans from C. arabica and C. canephora. Beans from C. canephora tend to have lower acidity, more bitterness, and a more woody and less fruity flavor compared to C. arabica beans. Most of it is used for instant coffee.</p>
+                
+                <p class="lang-en">Coffea canephora (especially C. canephora var. robusta, syn. Coffea robusta, or commonly robusta coffee) is a species of coffee plant that has its origins in central and western sub-Saharan Africa. It is a species of flowering plant in the family Rubiaceae. Though widely known as Coffea robusta, the plant is scientifically identified as Coffea canephora, which has two main varieties, robusta and nganda. Coffea canephora represents between 40% and 45% of global coffee production, with Coffea arabica constituting most of the remainder. There are several differences between the composition of coffee beans from C. arabica and C. canephora. Beans from C. canephora tend to have lower acidity, more bitterness, and a more woody and less fruity flavor compared to C. arabica beans. Most of it is used for instant coffee.</p>
+                
+                
+                <p class="lang-hu">
+                    A robuszta kávé (Coffea canephora) a kávé (Coffea) nemzetség haszonnövényként termesztett egyik faja. Az arab kávé után a második leggyakrabban termesztett kávéfaj a világon. Mindkét faj feldolgozott magjából készül a világszerte közkedvelt ital, a kávé. A robuszta kávé magjai sárgásszürke színűek, kerekdedek és egyenes bevágás van rajtuk. A növény az arab kávénál ellenállóbb és alkalmazkodóképesebb (jobban tűri a magasabb hőmérsékletet és a páratartalmat, alacsonyabb tengerszint feletti magasságokban is termeszthető, kevésbé érzékeny a kártevőkkel szemben), viszont a magjából készült kávé kevésbé aromás és magasabb a koffeintartalma is. S habár ezen tulajdonságai miatt olcsóbb kávé állítható elő belőle, az Indonéziában termő Kopi Luwak vagy Civet Coffee fajtájából a legdrágábbak közé tartozó kávé készül. A robuszta kávét csupán az 1800-as évek végén fedezték fel Afrikában az Egyenlítő mentén a Nílus-expedíció során. Ezt követően jelent meg Európában Olaszországban a belőle készült kávé. Az olcsóbb robusztának köszönhetően a kávé szélesebb társadalmi rétegek számára is elérhetővé vált, a kereslet növekedésével pedig megindult a kávékészítés gyorsabb és hatékonyabb módjainak fejlődése is. Ennek köszönhetően jelentek meg az eszpresszó kávék és Olaszországban az első kávébárok.
+                    
+                </p>
+                
             </section>
             
 
@@ -438,9 +449,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

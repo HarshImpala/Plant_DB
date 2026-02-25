@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/3190016" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Harpullia_arborea" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Harpullia_arborea" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Harpullia arborea, commonly known as Cooktown tulipwood in Australia, is species of flowering plant in the family Sapindaceae is native to the Indian subcontinent, Sri Lanka throughout Mainland Southeast Asia and Malesia to Queensland in Australia and the Western Pacific. It is a tree with paripinnate leaves with 6 to 10 leaflets, small pink or pale green flowers arranged in leaf axils or on old woody stems, and orange-yellow to red capsules containing shiny black seeds.</p>
+                
+                <p class="lang-en">Harpullia arborea, commonly known as Cooktown tulipwood in Australia, is species of flowering plant in the family Sapindaceae is native to the Indian subcontinent, Sri Lanka throughout Mainland Southeast Asia and Malesia to Queensland in Australia and the Western Pacific. It is a tree with paripinnate leaves with 6 to 10 leaflets, small pink or pale green flowers arranged in leaf axils or on old woody stems, and orange-yellow to red capsules containing shiny black seeds.</p>
+                
+                
+                <p class="lang-hu">
+                    A Harpullia arborea, amelyet Ausztráliában Cooktown tulipánfa néven ismernek, az indiai szubkontinensen, Srí Lankán Délkelet-Ázsiában és Malesiában, az ausztráliai Queenslandben és a Csendes-óceán nyugati részén őshonos Sapindaceae családba tartozó virágos növényfaj. Ez egy paripinnate levelekkel, 6-10 szórólappal, kis rózsaszín vagy halványzöld virágokkal, leveles axilekkel vagy régi fás szárakkal, valamint narancssárga-vörös kapszulákkal, amelyek fényes fekete magokat tartalmaznak.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -352,9 +363,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

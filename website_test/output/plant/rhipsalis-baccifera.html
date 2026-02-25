@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/3084036" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Rhipsalis_baccifera" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Rhipsalis_baccifera" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Rhipsalis_baccifera" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Rhipsalis baccifera, commonly known as the mistletoe cactus, is an epiphytic cactus which originates in Central and South America, the Caribbean, and Florida. It is also found throughout the tropics of Africa and into Sri Lanka where it is known in Sinhala as nawahandi (නවහන්දි). This is the only cactus species naturally occurring outside the Americas. One hypothesis is that it was introduced to the Old World by migratory birds, long enough ago for the Old World populations to be regarded as distinct subspecies. An alternative hypothesis holds that the species initially crossed the Atlantic Ocean on European ships trading between South America and Africa, after which birds may have spread it more widely.</p>
+                
+                <p class="lang-en">Rhipsalis baccifera, commonly known as the mistletoe cactus, is an epiphytic cactus which originates in Central and South America, the Caribbean, and Florida. It is also found throughout the tropics of Africa and into Sri Lanka where it is known in Sinhala as nawahandi (නවහන්දි). This is the only cactus species naturally occurring outside the Americas. One hypothesis is that it was introduced to the Old World by migratory birds, long enough ago for the Old World populations to be regarded as distinct subspecies. An alternative hypothesis holds that the species initially crossed the Atlantic Ocean on European ships trading between South America and Africa, after which birds may have spread it more widely.</p>
+                
+                
+                <p class="lang-hu">
+                    A Rhipsalis baccifera egy széles körben elterjedt és termesztett epifita kaktusz, a vesszőkaktuszok nemzetségének típusfaja. Rengeteg alfaja és helyi formája létezik, rendszertana még jelenleg is viták tárgyát képezi. Az egyetlen olyan kaktuszfaj, amely gyaníthatóan őshonosan előfordul az Óvilág esőerdeiben. Néhány alfaja: Rhipsalis baccifera subsp. cleistogama Rhipsalis baccifera subsp. erythrocarpa Rhipsalis baccifera subsp. hileiabaiana Rhipsalis baccifera subsp. horrida Rhipsalis baccifera subsp. mauritiana Rhipsalis baccifera subsp. shaferi
+                    
+                </p>
+                
             </section>
             
 
@@ -401,9 +412,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

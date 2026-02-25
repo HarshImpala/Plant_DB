@@ -76,6 +76,20 @@ def clean_native_regions(value):
 
 def normalize_plant_display_fields(plant):
     """Attach consistent display-name fields used across templates."""
+    plant['wikipedia_url_english'] = (
+        plant.get('wikipedia_url_english') or plant.get('wikipedia_url')
+    )
+    plant['wikipedia_url_hungarian'] = plant.get('wikipedia_url_hungarian')
+    plant['description_english'] = (
+        plant.get('description_english') or plant.get('description')
+    )
+    plant['description_hungarian'] = plant.get('description_hungarian')
+    plant['description_hungarian_is_translated'] = int(plant.get('description_hungarian_is_translated') or 0)
+
+    # Compatibility aliases used by existing templates/metrics.
+    plant['wikipedia_url'] = plant['wikipedia_url_english']
+    plant['description'] = plant['description_english']
+
     canonical = (plant.get('canonical_name') or '').strip()
     scientific = (plant.get('scientific_name') or '').strip()
     input_name = (plant.get('input_name') or '').strip()

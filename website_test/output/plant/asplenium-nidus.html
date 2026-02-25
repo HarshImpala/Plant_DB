@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/2650676" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Asplenium_nidus" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Asplenium_nidus" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Asplenium nidus is an epiphytic species of fern in the family Aspleniaceae, native to tropical southeastern Asia, eastern Australia, Hawaii (ʻēkaha in Hawaiian), Polynesia, Christmas Island, India, and eastern Africa. It is known by the common names bird's-nest fern (a name shared by some other aspleniums) or simply nest fern.</p>
+                
+                <p class="lang-en">Asplenium nidus is an epiphytic species of fern in the family Aspleniaceae, native to tropical southeastern Asia, eastern Australia, Hawaii (ʻēkaha in Hawaiian), Polynesia, Christmas Island, India, and eastern Africa. It is known by the common names bird's-nest fern (a name shared by some other aspleniums) or simply nest fern.</p>
+                
+                
+                <p class="lang-hu">
+                    Az Asplenium nidus egy epifitikus páfrányfaj az Aspleniaceae családban, amely a trópusi délkelet-Ázsiában, Kelet-Ausztráliában, Hawaii-n (hawaii nyelven ʻēkaha), Polinéziában, Karácsony-szigeten, Indiában és Kelet-Afrikában őshonos. A madárfészek páfrány (más aspleniumokkal közös név) vagy egyszerűen a páfrány fészke néven ismert.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -334,9 +345,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

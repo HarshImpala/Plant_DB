@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/5361899" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Ficus_lyrata" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Ficus_lyrata" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Ficus lyrata, commonly known as the fiddle-leaf fig, banjo fig, fiddle-leaved fig tree, lyre leaf fig tree, or lyre-leaved fig tree, is a species of plant in the mulberry and fig family Moraceae. It is native to western Africa, but is cultivated around the world as an ornamental plant. It has received the Royal Horticultural Society's Award of Garden Merit.</p>
+                
+                <p class="lang-en">Ficus lyrata, commonly known as the fiddle-leaf fig, banjo fig, fiddle-leaved fig tree, lyre leaf fig tree, or lyre-leaved fig tree, is a species of plant in the mulberry and fig family Moraceae. It is native to western Africa, but is cultivated around the world as an ornamental plant. It has received the Royal Horticultural Society's Award of Garden Merit.</p>
+                
+                
+                <p class="lang-hu">
+                    A ficus lyrata, közismert nevén a hegedűlevelű füge, a bendzsófüge, a hegedűlevelű fügefa, a lantlevelű fügefa vagy a líralevelű fügefa a Moraceae eperfa és fügefélék családjába tartozó növényfaj. Nyugat-Afrikában őshonos, de világszerte dísznövényként termesztik. Megkapta a Királyi Kertészeti Társaság Kertészeti Díját.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -374,9 +385,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

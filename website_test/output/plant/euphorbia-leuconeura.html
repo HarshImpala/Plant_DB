@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,8 @@
                     <li><a href="https://www.gbif.org/species/3066177" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Euphorbia_leuconeura" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Euphorbia_leuconeura" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -149,7 +150,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Euphorbia leuconeura is a species of flowering plant in the family Euphorbiaceae. Its common name is Madagascar jewel. It is endemic to Madagascar where its natural habitat is forest undergrowth in rocky areas. It can grow to a height of 1.8 m (6 ft), as a branching small tree, and propagates by shooting its seeds several feet into the air. It is threatened by habitat loss.</p>
+                
+                <p class="lang-en">Euphorbia leuconeura is a species of flowering plant in the family Euphorbiaceae. Its common name is Madagascar jewel. It is endemic to Madagascar where its natural habitat is forest undergrowth in rocky areas. It can grow to a height of 1.8 m (6 ft), as a branching small tree, and propagates by shooting its seeds several feet into the air. It is threatened by habitat loss.</p>
+                
+                
+                <p class="lang-hu">
+                    Az Euphorbia leuconeura az Euphorbiaceae családba tartozó virágos növényfaj. Köznapi neve Madagaszkár ékszere. Madagaszkáron endemikus, ahol természetes élőhelye az erdei aljnövényzet a sziklás területeken. 1,8 m (6 láb) magasra tud nőni, mint egy elágazó kis fa, és úgy szaporodik, hogy magjait több lábbal a levegőbe lövi. Élőhelyvesztés fenyegeti.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -274,9 +285,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

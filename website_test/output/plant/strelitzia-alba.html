@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,8 @@
                     <li><a href="https://www.gbif.org/species/2763106" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Strelitzia_alba" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Strelitzia_alba" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -149,7 +150,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Strelitzia alba also known as white-flowered wild banana, or Cape wild banana is a plant of the Bird of Paradise family and is endemic to the Garden Route along the southernmost coastal regions of the district of Humansdorp Eastern and district of Knysna in Western Cape in South Africa. It grows in evergreen forest, gorges, and on slopes along the rivers. Strelitzia alba is referred to in the Red List of South African plants as not endangered (Least Concern). Phakamani Xaba of Kirstenbosch Botanical Gardens visited the wild populations several times and came to a different view of the threat status. It has been observed that collectors have removed many of the side shoots required for vegetative propagation, in the populations there are no young plants or seedlings and the seeds are always harvested before they reach the soil.</p>
+                
+                <p class="lang-en">Strelitzia alba also known as white-flowered wild banana, or Cape wild banana is a plant of the Bird of Paradise family and is endemic to the Garden Route along the southernmost coastal regions of the district of Humansdorp Eastern and district of Knysna in Western Cape in South Africa. It grows in evergreen forest, gorges, and on slopes along the rivers. Strelitzia alba is referred to in the Red List of South African plants as not endangered (Least Concern). Phakamani Xaba of Kirstenbosch Botanical Gardens visited the wild populations several times and came to a different view of the threat status. It has been observed that collectors have removed many of the side shoots required for vegetative propagation, in the populations there are no young plants or seedlings and the seeds are always harvested before they reach the soil.</p>
+                
+                
+                <p class="lang-hu">
+                    QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -290,9 +301,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

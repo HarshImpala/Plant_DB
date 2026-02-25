@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,10 @@
                     <li><a href="https://www.gbif.org/species/3942259" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Selenicereus_megalanthus" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Selenicereus_megalanthus" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Nagyvir%C3%A1g%C3%BA_k%C3%BAsz%C3%B3kaktusz" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -149,7 +152,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Selenicereus megalanthus, synonym Hylocereus megalanthus, is a cactus species in the genus Selenicereus that is native to northern South America, where it is known, along with its fruit, by the name of pitahaya. The species is grown commercially for its yellow fruit, but is also an impressive ornamental climbing vine with perhaps the largest flowers of all cacti. The yellow skinned fruit of S. megalanthus has thorns, unlike the green, red or yellow skinned dragon fruits of S. undatus, S. monacanthus and their cultivated hybrids. S. megalanthus is commonly known as "yellow dragon fruit", "yellow pitahaya", "kirin fruit", or "yellow pitaya". This name leads at times to confusion, as unrelated cultivars of other dragonfruit species can also have yellow skinned fruit. One example of a yellow dragonfruit cultivar not related to S. megalanthus is 'Australian Gold'.</p>
+                
+                <p class="lang-en">Selenicereus megalanthus, synonym Hylocereus megalanthus, is a cactus species in the genus Selenicereus that is native to northern South America, where it is known, along with its fruit, by the name of pitahaya. The species is grown commercially for its yellow fruit, but is also an impressive ornamental climbing vine with perhaps the largest flowers of all cacti. The yellow skinned fruit of S. megalanthus has thorns, unlike the green, red or yellow skinned dragon fruits of S. undatus, S. monacanthus and their cultivated hybrids. S. megalanthus is commonly known as "yellow dragon fruit", "yellow pitahaya", "kirin fruit", or "yellow pitaya". This name leads at times to confusion, as unrelated cultivars of other dragonfruit species can also have yellow skinned fruit. One example of a yellow dragonfruit cultivar not related to S. megalanthus is 'Australian Gold'.</p>
+                
+                
+                <p class="lang-hu">
+                    A nagyvirágú kúszókaktusz (Hylocereus megalanthus) egy széles körben elterjedt és termesztett kultúrnövény. Termése az ún. sárga pitaja. Korábban a Selenicereus nemzetségbe sorolták; egyes forrásokban ma is így szerepel.
+                    
+                </p>
+                
             </section>
             
 
@@ -315,9 +326,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

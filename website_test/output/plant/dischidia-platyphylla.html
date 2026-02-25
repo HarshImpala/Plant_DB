@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,8 @@
                     <li><a href="https://www.gbif.org/species/3582027" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Dischidia_platyphylla" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Dischidia_platyphylla" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -149,7 +150,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Dischidia platyphylla is a species of plant in the genus Dischidia native to the Philippines. Its name (platyphylla) refers to the flattened leaves, which as it climbs may cling in a shingle-like way to trees, similar to related species like Dischidia imbricata. These leaves are a form of domatia, which act as a shelter for ants in an example of mutualism with ants that is found in several species of Dischidia.</p>
+                
+                <p class="lang-en">Dischidia platyphylla is a species of plant in the genus Dischidia native to the Philippines. Its name (platyphylla) refers to the flattened leaves, which as it climbs may cling in a shingle-like way to trees, similar to related species like Dischidia imbricata. These leaves are a form of domatia, which act as a shelter for ants in an example of mutualism with ants that is found in several species of Dischidia.</p>
+                
+                
+                <p class="lang-hu">
+                    A Dischidia platyphylla a Fülöp-szigeteken őshonos növényfaj a Dischidia nemzetségben. Neve (platyphylla) a lapított levelekre utal, amelyek mászás közben zsindelyszerűen tapadhatnak a fákhoz, hasonlóan a rokon fajokhoz, mint például a Dischidia imbricata. Ezek a levelek a domatia egyik formája, amely a hangyák menedékhelyeként szolgál, a hangyákkal való kölcsönösség példájaként, amely számos Dischidia fajban megtalálható.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -293,9 +304,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

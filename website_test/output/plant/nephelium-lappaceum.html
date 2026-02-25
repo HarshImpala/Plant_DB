@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/5421126" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Rambutan" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Rambutan" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Rambut%C3%A1n" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Rambutan ( ram-BOO-tən; Indonesian pronunciation: [rambutan];Nephelium lappaceum) is a medium-sized tropical tree in the family Sapindaceae. The name also refers to the edible fruit produced by this tree. The rambutan is native to Southeast Asia. It is closely related to several other edible tropical fruits, including the lychee, longan, pulasan, and quenepa.</p>
+                
+                <p class="lang-en">Rambutan ( ram-BOO-tən; Indonesian pronunciation: [rambutan];Nephelium lappaceum) is a medium-sized tropical tree in the family Sapindaceae. The name also refers to the edible fruit produced by this tree. The rambutan is native to Southeast Asia. It is closely related to several other edible tropical fruits, including the lychee, longan, pulasan, and quenepa.</p>
+                
+                
+                <p class="lang-hu">
+                    A rambután vagy hamis licsi (Nephelium lappaceum) Délkelet-Ázsiában honos. A licsi, longána (sárkányszem), a pulaszán és a mézbogyó rokona; a trópusi síkvidékek lakója, ahol a licsi nem terem, termése is nagyobb. Hosszú, puha tüskében végződő szemölcsök borítják. Innen ered az eredeti név (rambut). Magköpenye a Távol-Keleten nagyra becsült csemege nyersen és kompótként. Indonéziában az egyik legnépszerűbb gyümölcs.
+                    
+                </p>
+                
             </section>
             
 
@@ -309,9 +320,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

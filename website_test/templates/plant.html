@@ -3,8 +3,8 @@
 {% block title %}{{ plant.display_name }} - Plant Encyclopedia{% endblock %}
 
 {% block head %}
-{% if plant.description %}
-<meta name="description" content="{{ plant.description[:155] }}{% if plant.description | length > 155 %}...{% endif %}">
+{% if plant.description_english %}
+<meta name="description" content="{{ plant.description_english[:155] }}{% if plant.description_english | length > 155 %}...{% endif %}">
 {% else %}
 <meta name="description" content="{{ plant.display_name }}{% if plant.display_common %} ({{ plant.display_common }}){% endif %}{% if plant.family %} — family {{ plant.family }}{% endif %}. Taxonomic information, native distribution, and more.">
 {% endif %}
@@ -106,7 +106,7 @@
 
             <div class="external-links">
                 <h3>External Links</h3>
-                {% if plant.wfo_url or plant.gbif_url or plant.wikipedia_url %}
+                {% if plant.wfo_url or plant.gbif_url or plant.wikipedia_url_english or plant.wikipedia_url_hungarian %}
                 <ul>
                     {% if plant.wfo_url %}
                     <li><a href="{{ plant.wfo_url }}" target="_blank" rel="noopener">World Flora Online</a></li>
@@ -114,8 +114,11 @@
                     {% if plant.gbif_url %}
                     <li><a href="{{ plant.gbif_url }}" target="_blank" rel="noopener">GBIF</a></li>
                     {% endif %}
-                    {% if plant.wikipedia_url %}
-                    <li><a href="{{ plant.wikipedia_url }}" target="_blank" rel="noopener">Wikipedia</a></li>
+                    {% if plant.wikipedia_url_english %}
+                    <li class="lang-en"><a href="{{ plant.wikipedia_url_english }}" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    {% endif %}
+                    {% if plant.wikipedia_url_hungarian %}
+                    <li class="lang-hu"><a href="{{ plant.wikipedia_url_hungarian }}" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     {% endif %}
                 </ul>
                 {% endif %}
@@ -127,10 +130,20 @@
         </aside>
 
         <div class="plant-main">
-            {% if plant.description %}
+            {% if plant.description_english or plant.description_hungarian %}
             <section class="plant-section">
                 <h2>About</h2>
-                <p>{{ plant.description }}</p>
+                {% if plant.description_english %}
+                <p class="lang-en">{{ plant.description_english }}</p>
+                {% endif %}
+                {% if plant.description_hungarian %}
+                <p class="lang-hu">
+                    {{ plant.description_hungarian }}
+                    {% if plant.description_hungarian_is_translated %}
+                    <em>(machine translated)</em>
+                    {% endif %}
+                </p>
+                {% endif %}
             </section>
             {% endif %}
 

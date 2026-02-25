@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/2703912" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Saccharum_officinarum" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Saccharum_officinarum" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,10 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Saccharum officinarum is a large, strong-growing species of grass in the sugarcane genus. Its stout stalks are rich in sucrose, a disaccharide sugar which accumulates in the stalk internodes. It originated in New Guinea, and is now cultivated in tropical and subtropical countries worldwide for the production of sugar, ethanol and other products. It is one of the most productive and most intensively cultivated kinds of sugarcane.</p>
+                
+                <p class="lang-en">Saccharum officinarum is a large, strong-growing species of grass in the sugarcane genus. Its stout stalks are rich in sucrose, a disaccharide sugar which accumulates in the stalk internodes. It originated in New Guinea, and is now cultivated in tropical and subtropical countries worldwide for the production of sugar, ethanol and other products. It is one of the most productive and most intensively cultivated kinds of sugarcane.</p>
+                
+                
             </section>
             
 
@@ -452,9 +456,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

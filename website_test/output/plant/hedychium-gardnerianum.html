@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/2758700" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Hedychium_gardnerianum" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Hedychium_gardnerianum" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Hedychium gardnerianum, the Kahili ginger, Kahila garland-lily or ginger lily, is a species of flowering plant in the ginger family Zingiberaceae, native to the Himalayas in India, Nepal, and Bhutan. It is an erect herbaceous perennial growing to 8 ft (2.4 m) tall with long, bright green leaves clasping the tall stems. The very fragrant pale yellow and red flowers are held in dense spikes above the foliage. They appear towards the end of summer.</p>
+                
+                <p class="lang-en">Hedychium gardnerianum, the Kahili ginger, Kahila garland-lily or ginger lily, is a species of flowering plant in the ginger family Zingiberaceae, native to the Himalayas in India, Nepal, and Bhutan. It is an erect herbaceous perennial growing to 8 ft (2.4 m) tall with long, bright green leaves clasping the tall stems. The very fragrant pale yellow and red flowers are held in dense spikes above the foliage. They appear towards the end of summer.</p>
+                
+                
+                <p class="lang-hu">
+                    A Hedychium gardnerianum, a Kahili gyömbér, a Kahila girlandliliom vagy a gyömbérliliom a Zingiberaceae gyömbérfélék családjába tartozó virágos növényfaj, amely a Himalájában őshonos Indiában, Nepálban és Bhutánban. Ez egy felálló lágyszárú évelő növény, amely 2,4 m (8 láb) magasra nő, hosszú, élénkzöld levelekkel, amelyek a magas szárakat összeszorítják. A nagyon illatos halványsárga és piros virágokat sűrű tüskék tartják a lombozat felett. Nyár vége felé jelennek meg.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -327,9 +338,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

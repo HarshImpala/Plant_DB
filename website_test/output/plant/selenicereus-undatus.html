@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/10334868" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Selenicereus_undatus" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Selenicereus_undatus" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Hull%C3%A1mos_k%C3%BAsz%C3%B3kaktusz" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Selenicereus undatus, the white-fleshed pitahaya, is a species of the genus Selenicereus (formerly Hylocereus) in the family Cactaceae and is the most cultivated species in the genus. It is used both as an ornamental vine and as a fruit crop, the pitahaya or dragon fruit. Like all true cacti, the genus originates in the Americas. S. undatus is native from Mexico to Honduras; it may be a hybrid.</p>
+                
+                <p class="lang-en">Selenicereus undatus, the white-fleshed pitahaya, is a species of the genus Selenicereus (formerly Hylocereus) in the family Cactaceae and is the most cultivated species in the genus. It is used both as an ornamental vine and as a fruit crop, the pitahaya or dragon fruit. Like all true cacti, the genus originates in the Americas. S. undatus is native from Mexico to Honduras; it may be a hybrid.</p>
+                
+                
+                <p class="lang-hu">
+                    A hullámos kúszókaktusz (Hylocereus undatus) epifita kaktusz. Termése, a vörös pitaja végett világszerte termesztik.
+                    
+                </p>
+                
             </section>
             
 
@@ -365,9 +376,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

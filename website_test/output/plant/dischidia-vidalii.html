@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,8 @@
                     <li><a href="https://www.gbif.org/species/8017070" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Dischidia_vidalii" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Dischidia_vidalii" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -149,7 +150,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Dischidia vidalii, commonly known as ant plant or kangaroo pocket, is a plant in the frangipani family Apocynaceae native to the Philippines. It is a climbing plant with clusters of pink or magenta flowers. Like some other species in the genus — e.g. Dischidia major — and in the related genus Hoya, this species has evolved a symbiotic relationship with ants. In addition to small, oval leaves the plant develops significantly larger, hollow leaves where additional roots grow, and these leaves are colonised by ants.</p>
+                
+                <p class="lang-en">Dischidia vidalii, commonly known as ant plant or kangaroo pocket, is a plant in the frangipani family Apocynaceae native to the Philippines. It is a climbing plant with clusters of pink or magenta flowers. Like some other species in the genus — e.g. Dischidia major — and in the related genus Hoya, this species has evolved a symbiotic relationship with ants. In addition to small, oval leaves the plant develops significantly larger, hollow leaves where additional roots grow, and these leaves are colonised by ants.</p>
+                
+                
+                <p class="lang-hu">
+                    QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -299,9 +310,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

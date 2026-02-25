@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,8 @@
                     <li><a href="https://www.gbif.org/species/6365157" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Kohleria_hirsuta" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Kohleria_hirsuta" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -149,7 +150,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Kohleria hirsuta, the woolly kohleria, is a species of flowering plant in the family Gesneriaceae, native to northern South America, and introduced to the Dominican Republic. In 1993, as its synonym Kohleria eriantha, it gained the Royal Horticultural Society's Award of Garden Merit as a hothouse plant, but this award appears to have been rescinded.</p>
+                
+                <p class="lang-en">Kohleria hirsuta, the woolly kohleria, is a species of flowering plant in the family Gesneriaceae, native to northern South America, and introduced to the Dominican Republic. In 1993, as its synonym Kohleria eriantha, it gained the Royal Horticultural Society's Award of Garden Merit as a hothouse plant, but this award appears to have been rescinded.</p>
+                
+                
+                <p class="lang-hu">
+                    A Kohleria hirsuta, a gyapjas kohleria egy virágos növényfaj a Gesneriaceae családban, amely Dél-Amerika északi részén őshonos, és a Dominikai Köztársaságban honos. 1993-ban a Kohleria eriantha szinonimájaként elnyerte a Royal Horticultural Society Garden Merit díját melegházi növényként, de úgy tűnik, hogy ezt a díjat visszavonták.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -374,9 +385,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/7262354" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Ficus_cyathistipula" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Ficus_cyathistipula" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>''Ficus cyathistipula'', the African fig tree, is a species of fig that is native to the tropical forest regions of Africa. They may be small trees, shrubs or hemi-epiphytic lianas, and are widespread in the moist tropics, where they may be found in Afromontane or rainforest, often overhanging pools. The figs are reddish when ripe, and have thick, spongy walls that enable them to float on water. They are named for their cup-shaped (cyathus-) and persistent stipules (stipula).</p>
+                
+                <p class="lang-en">''Ficus cyathistipula'', the African fig tree, is a species of fig that is native to the tropical forest regions of Africa. They may be small trees, shrubs or hemi-epiphytic lianas, and are widespread in the moist tropics, where they may be found in Afromontane or rainforest, often overhanging pools. The figs are reddish when ripe, and have thick, spongy walls that enable them to float on water. They are named for their cup-shaped (cyathus-) and persistent stipules (stipula).</p>
+                
+                
+                <p class="lang-hu">
+                    A „Ficus cyathistipula”, az afrikai fügefa egy olyan fügefaj, amely Afrika trópusi erdős régióiban őshonos. Ezek lehetnek kis fák, cserjék vagy félepifita lianák, és elterjedtek a nedves trópusokon, ahol megtalálhatók Afromontánban vagy esőerdőben, gyakran túlnyúló medencékben. A füge vöröses, amikor érett, és vastag, szivacsos falakkal rendelkezik, amelyek lehetővé teszik számukra, hogy lebegjenek a vízen. Csésze alakú (cyathus-) és kitartó tüskékről (stipula) kapták a nevüket.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -388,9 +399,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

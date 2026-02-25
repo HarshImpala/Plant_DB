@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/7565198" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Passiflora_coriacea" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Passiflora_coriacea" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,10 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Passiflora coriacea, commonly known as the wild sweet calabash or bat leaved passion flower, is a tropical vine in the family Passifloraceae. It is fast-growing, with distinct bi-lobed leaves resembling bat wings and purple ornamental fruit that are oval in shape. The leaves are coriaceous (leathery), hence the name. The yellowish-green flowers are typically 2.5 - 3.5 cm wide and form a terminal raceme.</p>
+                
+                <p class="lang-en">Passiflora coriacea, commonly known as the wild sweet calabash or bat leaved passion flower, is a tropical vine in the family Passifloraceae. It is fast-growing, with distinct bi-lobed leaves resembling bat wings and purple ornamental fruit that are oval in shape. The leaves are coriaceous (leathery), hence the name. The yellowish-green flowers are typically 2.5 - 3.5 cm wide and form a terminal raceme.</p>
+                
+                
             </section>
             
 
@@ -365,9 +369,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

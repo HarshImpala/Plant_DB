@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,10 @@
                     <li><a href="https://www.gbif.org/species/10771315" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Disocactus_anguliger" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Disocactus_anguliger" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Epiphyllum_anguliger" target="_blank" rel="noopener">Wikipedia (HU)</a></li>
                     
                 </ul>
                 
@@ -151,7 +154,15 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Disocactus anguliger (syn. Epiphyllum anguliger), commonly known as the fishbone cactus or zig zag cactus, is a cactus species native to Mexico. The species is commonly grown as an ornamental for its fragrant flowers in the fall.</p>
+                
+                <p class="lang-en">Disocactus anguliger (syn. Epiphyllum anguliger), commonly known as the fishbone cactus or zig zag cactus, is a cactus species native to Mexico. The species is commonly grown as an ornamental for its fragrant flowers in the fall.</p>
+                
+                
+                <p class="lang-hu">
+                    Az Epiphyllum anguliger egy mexikói eredetű epifita kaktusz, melyet széles körben termesztenek érdekes alakú karéjos hajtásai és illatos, éjjel nyíló fehér virágaiért. Az × Epicactus hibridek létrehozásában azonban csak kis szerepet játszott. A fajt először T. Hartweg gyűjtötte 1846-ban, és a Horticultural Society of London terjesztette el a kertkultúrában.
+                    
+                </p>
+                
             </section>
             
 
@@ -347,9 +358,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

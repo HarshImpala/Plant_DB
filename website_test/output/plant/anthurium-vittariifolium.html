@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -134,7 +134,8 @@
                     <li><a href="https://www.gbif.org/species/2873406" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Anthurium_vittariifolium" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Anthurium_vittariifolium" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -149,7 +150,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Anthurium vittariifolium is a species of flowering plant in the genus Anthurium (family Araceae) native to the Amazon basin; southeast Colombia, Ecuador, Peru, and northern Brazil. With its long, pendulous leaves that can reach 2.4 m (8 ft), it is among those commonly known as "strap-leaved" anthuriums. It grows as an epiphyte at lower elevations of moist tropical forests, and is a member of the section Leptanthurium along with Anthurium gracile.</p>
+                
+                <p class="lang-en">Anthurium vittariifolium is a species of flowering plant in the genus Anthurium (family Araceae) native to the Amazon basin; southeast Colombia, Ecuador, Peru, and northern Brazil. With its long, pendulous leaves that can reach 2.4 m (8 ft), it is among those commonly known as "strap-leaved" anthuriums. It grows as an epiphyte at lower elevations of moist tropical forests, and is a member of the section Leptanthurium along with Anthurium gracile.</p>
+                
+                
+                <p class="lang-hu">
+                    Az Anthurium vittariifolium az Anthurium (Araceae család) nembe tartozó virágos növényfaj, amely az Amazonas-medencében, Délkelet-Kolumbiában, Ecuadorban, Peruban és Brazília északi részén őshonos. Hosszú, medálos leveleivel, amelyek elérhetik a 2,4 m-t (8 láb), a „szíjas” anturiumok közé tartozik. A nedves trópusi erdők alacsonyabb szintjein epifitként nő, és az Anthurium gracile mellett a Leptanthurium szekció tagja.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -277,9 +288,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

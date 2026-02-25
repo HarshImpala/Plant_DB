@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         // Apply theme immediately to prevent flash
         (function() {
-            var theme = localStorage.getItem('theme') || 'light';
+            var theme = localStorage.getItem('theme') || 'dark';
             var lang = localStorage.getItem('lang') || 'en';
             document.documentElement.setAttribute('data-theme', theme);
             document.documentElement.setAttribute('data-lang', lang);
@@ -136,7 +136,8 @@
                     <li><a href="https://www.gbif.org/species/2873807" target="_blank" rel="noopener">GBIF</a></li>
                     
                     
-                    <li><a href="https://en.wikipedia.org/wiki/Acorus_gramineus" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Acorus_gramineus" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+                    
                     
                 </ul>
                 
@@ -151,7 +152,17 @@
             
             <section class="plant-section">
                 <h2>About</h2>
-                <p>Acorus gramineus, commonly known as Japanese sweet flag, Japanese rush, grassy-leaved sweet flag, and grass-leaf sweet flag, is a botanical species belonging to the genus Acorus, native to Japan, Korea, and eastern Asia. The plant usually grows in wetlands and shallow water. The genome of A. gramineus has been published by independent research groups in 2022 and 2023.</p>
+                
+                <p class="lang-en">Acorus gramineus, commonly known as Japanese sweet flag, Japanese rush, grassy-leaved sweet flag, and grass-leaf sweet flag, is a botanical species belonging to the genus Acorus, native to Japan, Korea, and eastern Asia. The plant usually grows in wetlands and shallow water. The genome of A. gramineus has been published by independent research groups in 2022 and 2023.</p>
+                
+                
+                <p class="lang-hu">
+                    Az Acorus gramineus, közismert nevén a japán édes zászló, a japán rohanás, a füves levelű édes zászló és a fűlevelű édes zászló az Acorus nemzetséghez tartozó botanikai faj, amely Japánban, Koreában és Kelet-Ázsiában őshonos. A növény általában vizes élőhelyeken és sekély vízben nő. Az A. gramineus genomját független kutatócsoportok publikálták 2022-ben és 2023-ban.
+                    
+                    <em>(machine translated)</em>
+                    
+                </p>
+                
             </section>
             
 
@@ -324,9 +335,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772009230"></script>
-    <script src="../static/js/controls.js?v=1772009230"></script>
-    <script src="../static/js/lightbox.js?v=1772009230"></script>
+    <script src="../static/js/search.js?v=1772012462"></script>
+    <script src="../static/js/controls.js?v=1772012462"></script>
+    <script src="../static/js/lightbox.js?v=1772012462"></script>
     
 <script>
 // Copy scientific name

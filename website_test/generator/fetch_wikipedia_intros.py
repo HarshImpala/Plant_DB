@@ -1,17 +1,19 @@
 """
-Fetch Wikipedia introductions for plants.
+Fetch English and Hungarian Wikipedia introductions for plants.
 
-This script fetches the first paragraph from Wikipedia for each plant
-that has a Wikipedia URL and stores it in the description field.
+If no Hungarian page intro is available, this script attempts to machine
+translate the English intro and marks it with a translation flag.
 """
 
-import sqlite3
-import requests
-import time
+import hashlib
 import json
-import re
+import sqlite3
+import time
 from pathlib import Path
+import re
 from urllib.parse import unquote, urlparse
+
+import requests
 
 # Paths
 BASE_DIR = Path(__file__).parent.parent
@@ -19,7 +21,9 @@ DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "plants.db"
 CACHE_PATH = DATA_DIR / "wikipedia_intro_cache.json"
 
-WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
+WIKIPEDIA_API_EN = "https://en.wikipedia.org/w/api.php"
+WIKIPEDIA_API_HU = "https://hu.wikipedia.org/w/api.php"
+MYMEMORY_API = "https://api.mymemory.translated.net/get"
 
 HEADERS = {
     "User-Agent": "plant-encyclopedia/1.0 (botanical garden project)",
@@ -39,62 +43,94 @@ def save_cache(cache: dict) -> None:
     CACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def ensure_columns(conn):
+    """Ensure intro columns exist and legacy column is migrated."""
+    cursor = conn.cursor()
+    cursor.execute("PRAGMA table_info(plants)")
+    columns = {row[1] for row in cursor.fetchall()}
+
+    if "description" in columns and "description_english" not in columns:
+        cursor.execute("ALTER TABLE plants RENAME COLUMN description TO description_english")
+        columns.remove("description")
+        columns.add("description_english")
+
+    if "wikipedia_url" in columns and "wikipedia_url_english" not in columns:
+        cursor.execute("ALTER TABLE plants RENAME COLUMN wikipedia_url TO wikipedia_url_english")
+        columns.remove("wikipedia_url")
+        columns.add("wikipedia_url_english")
+
+    add_columns = [
+        ("wikipedia_url_english", "TEXT"),
+        ("wikipedia_url_hungarian", "TEXT"),
+        ("description_english", "TEXT"),
+        ("description_hungarian", "TEXT"),
+        ("description_hungarian_is_translated", "INTEGER DEFAULT 0"),
+    ]
+    for column_name, definition in add_columns:
+        if column_name not in columns:
+            cursor.execute(f"ALTER TABLE plants ADD COLUMN {column_name} {definition}")
+
+    cursor.execute(
+        "UPDATE plants SET description_hungarian_is_translated = 0 "
+        "WHERE description_hungarian_is_translated IS NULL"
+    )
+    conn.commit()
+
+
 def get_page_title_from_url(wikipedia_url: str) -> str | None:
     """Extract the page title from a Wikipedia URL."""
     parsed = urlparse(wikipedia_url)
-    if '/wiki/' in parsed.path:
-        title = parsed.path.split('/wiki/')[-1]
+    if "/wiki/" in parsed.path:
+        title = parsed.path.split("/wiki/")[-1]
         return unquote(title)
     return None
 
 
-def api_request_with_retry(params: dict, max_retries: int = 3) -> dict | None:
+def api_request_with_retry(url: str, params: dict, max_retries: int = 3) -> dict | None:
     """Make API request with retry on rate limit."""
     for attempt in range(max_retries):
         try:
-            r = requests.get(WIKIPEDIA_API, params=params, headers=HEADERS, timeout=30)
-            if r.status_code == 429:
+            response = requests.get(url, params=params, headers=HEADERS, timeout=30)
+            if response.status_code == 429:
                 wait_time = 2 ** (attempt + 1)
                 print(f"  Rate limited, waiting {wait_time}s...")
                 time.sleep(wait_time)
                 continue
-            r.raise_for_status()
-            return r.json()
-        except requests.exceptions.RequestException as e:
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as exc:
             if attempt < max_retries - 1:
                 wait_time = 2 ** (attempt + 1)
                 print(f"  Request error, retrying in {wait_time}s...")
                 time.sleep(wait_time)
             else:
-                print(f"  Request failed: {e}")
+                print(f"  Request failed: {exc}")
                 return None
     return None
 
 
 def clean_text(text: str) -> str:
     """Clean Wikipedia text by removing references and extra whitespace."""
-    # Remove reference markers like [1], [2], etc.
-    text = re.sub(r'\[\d+\]', '', text)
-    # Remove pronunciation guides in parentheses at the start
-    text = re.sub(r'^\s*\([^)]*pronunciation[^)]*\)\s*', '', text, flags=re.IGNORECASE)
-    # Clean up multiple spaces
-    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r"\[\d+\]", "", text)
+    text = re.sub(r"^\s*\([^)]*pronunciation[^)]*\)\s*", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\s+", " ", text)
     return text.strip()
 
 
-def get_page_intro(page_title: str) -> str | None:
+def get_page_intro(page_title: str, lang: str) -> str | None:
     """Get the introduction/first paragraph from a Wikipedia page."""
+    api_url = WIKIPEDIA_API_HU if lang == "hu" else WIKIPEDIA_API_EN
     params = {
         "action": "query",
         "titles": page_title,
         "prop": "extracts",
-        "exintro": True,  # Only get intro section
-        "explaintext": True,  # Plain text, no HTML
+        "exintro": True,
+        "explaintext": True,
         "exsectionformat": "plain",
         "format": "json",
     }
 
-    data = api_request_with_retry(params)
+    data = api_request_with_retry(api_url, params)
     if not data:
         return None
 
@@ -104,106 +140,173 @@ def get_page_intro(page_title: str) -> str | None:
             return None
         extract = page_data.get("extract", "")
         if extract:
-            # Clean up the text
             extract = clean_text(extract)
-            # Get first paragraph (up to first double newline or reasonable length)
-            paragraphs = extract.split('\n\n')
+            paragraphs = extract.split("\n\n")
             if paragraphs:
                 first_para = paragraphs[0].strip()
-                # If first paragraph is too short, try to include more
                 if len(first_para) < 100 and len(paragraphs) > 1:
-                    first_para = '\n\n'.join(paragraphs[:2]).strip()
+                    first_para = "\n\n".join(paragraphs[:2]).strip()
                 return first_para
         return None
-
     return None
+
+
+def translate_en_to_hu(text: str) -> str | None:
+    """Translate English text to Hungarian using MyMemory public API."""
+    params = {
+        "q": text,
+        "langpair": "en|hu",
+    }
+    data = api_request_with_retry(MYMEMORY_API, params, max_retries=2)
+    if not data:
+        return None
+
+    response = data.get("responseData", {})
+    translated = response.get("translatedText")
+    if not translated:
+        return None
+    translated = translated.strip()
+    if not translated or translated.lower() == text.strip().lower():
+        return None
+    return translated
+
+
+def translation_cache_key(text: str) -> str:
+    digest = hashlib.sha1(text.encode("utf-8")).hexdigest()
+    return f"tr:en-hu:{digest}"
 
 
 def main():
     """Main function to fetch Wikipedia introductions for all plants."""
-    print("Fetching Wikipedia introductions for plants...")
+    print("Fetching Wikipedia introductions for plants (EN + HU)...")
     print(f"Database: {DB_PATH}")
 
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
+    ensure_columns(conn)
 
-    # Get plants with Wikipedia URLs
-    cursor.execute("""
-        SELECT id, canonical_name, scientific_name, wikipedia_url, description
+    cursor.execute(
+        """
+        SELECT
+            id,
+            canonical_name,
+            scientific_name,
+            wikipedia_url_english,
+            wikipedia_url_hungarian,
+            description_english,
+            description_hungarian,
+            description_hungarian_is_translated
         FROM plants
-        WHERE wikipedia_url IS NOT NULL
-    """)
+        WHERE wikipedia_url_english IS NOT NULL OR wikipedia_url_hungarian IS NOT NULL
+        """
+    )
     plants = cursor.fetchall()
-    print(f"Found {len(plants)} plants with Wikipedia URLs")
+    print(f"Found {len(plants)} plants with at least one Wikipedia URL")
 
     cache = load_cache()
-    fetched_count = 0
+    en_fetched_count = 0
+    hu_fetched_count = 0
+    hu_translated_count = 0
     skipped_count = 0
     failed_count = 0
 
     for i, plant in enumerate(plants):
         plant_id = plant["id"]
-        canonical_name = plant["canonical_name"] or plant["scientific_name"]
-        wikipedia_url = plant["wikipedia_url"]
-        existing_desc = plant["description"]
+        canonical_name = plant["canonical_name"] or plant["scientific_name"] or f"#{plant_id}"
+        en_url = plant["wikipedia_url_english"]
+        hu_url = plant["wikipedia_url_hungarian"]
+        description_en = (plant["description_english"] or "").strip()
+        description_hu = (plant["description_hungarian"] or "").strip()
+        hu_is_translated = int(plant["description_hungarian_is_translated"] or 0)
 
-        # Skip if already has a description
-        if existing_desc:
-            skipped_count += 1
-            continue
+        updates = {}
+        touched = False
 
-        # Get page title from URL
-        page_title = get_page_title_from_url(wikipedia_url)
-        if not page_title:
-            print(f"  Could not extract title from: {wikipedia_url}")
-            failed_count += 1
-            continue
+        if not description_en and en_url:
+            en_title = get_page_title_from_url(en_url)
+            if en_title:
+                cache_key = f"en:{en_title.lower()}"
+                if cache_key in cache:
+                    intro_en = None if cache[cache_key] == "NO_INTRO" else cache[cache_key]
+                else:
+                    intro_en = get_page_intro(en_title, "en")
+                    cache[cache_key] = intro_en if intro_en else "NO_INTRO"
+                    time.sleep(0.4)
 
-        cache_key = page_title.lower()
-
-        # Check cache
-        if cache_key in cache:
-            intro = cache[cache_key]
-            if intro == "NO_INTRO":
-                skipped_count += 1
-                continue
-        else:
-            # Fetch from Wikipedia
-            intro = get_page_intro(page_title)
-
-            if intro:
-                cache[cache_key] = intro
+                if intro_en:
+                    updates["description_english"] = intro_en
+                    description_en = intro_en
+                    en_fetched_count += 1
+                    touched = True
             else:
-                cache[cache_key] = "NO_INTRO"
-                skipped_count += 1
+                failed_count += 1
+
+        if (not description_hu or hu_is_translated == 1) and hu_url:
+            hu_title = get_page_title_from_url(hu_url)
+            if hu_title:
+                cache_key = f"hu:{hu_title.lower()}"
+                if cache_key in cache:
+                    intro_hu = None if cache[cache_key] == "NO_INTRO" else cache[cache_key]
+                else:
+                    intro_hu = get_page_intro(hu_title, "hu")
+                    cache[cache_key] = intro_hu if intro_hu else "NO_INTRO"
+                    time.sleep(0.4)
+
+                if intro_hu:
+                    updates["description_hungarian"] = intro_hu
+                    updates["description_hungarian_is_translated"] = 0
+                    description_hu = intro_hu
+                    hu_is_translated = 0
+                    hu_fetched_count += 1
+                    touched = True
+
+        if not description_hu and description_en:
+            tr_key = translation_cache_key(description_en)
+            if tr_key in cache:
+                translated_hu = None if cache[tr_key] == "NO_TRANSLATION" else cache[tr_key]
+            else:
+                translated_hu = translate_en_to_hu(description_en)
+                cache[tr_key] = translated_hu if translated_hu else "NO_TRANSLATION"
                 time.sleep(0.3)
-                continue
 
-            time.sleep(0.5)  # Rate limiting
+            if translated_hu:
+                updates["description_hungarian"] = translated_hu
+                updates["description_hungarian_is_translated"] = 1
+                description_hu = translated_hu
+                hu_is_translated = 1
+                hu_translated_count += 1
+                touched = True
 
-        if intro and intro != "NO_INTRO":
-            # Update database
-            cursor.execute(
-                "UPDATE plants SET description = ? WHERE id = ?",
-                (intro, plant_id)
+        if touched:
+            set_parts = [f"{col} = ?" for col in updates.keys()]
+            values = list(updates.values()) + [plant_id]
+            cursor.execute(f"UPDATE plants SET {', '.join(set_parts)} WHERE id = ?", values)
+            print(
+                f"  [{i + 1}/{len(plants)}] Updated: {canonical_name} "
+                f"(en={'description_english' in updates}, hu={'description_hungarian' in updates}, "
+                f"translated={updates.get('description_hungarian_is_translated', hu_is_translated) == 1})"
             )
-            fetched_count += 1
-            print(f"  [{i+1}/{len(plants)}] Fetched: {canonical_name}")
+        else:
+            skipped_count += 1
 
-        # Save progress periodically
         if (i + 1) % 20 == 0:
             save_cache(cache)
             conn.commit()
-            print(f"  Progress: {i + 1}/{len(plants)} ({fetched_count} fetched)")
+            print(
+                f"  Progress: {i + 1}/{len(plants)} "
+                f"(en={en_fetched_count}, hu={hu_fetched_count}, hu_translated={hu_translated_count})"
+            )
 
     save_cache(cache)
     conn.commit()
     conn.close()
 
-    print(f"\n=== Complete ===")
-    print(f"Fetched: {fetched_count}")
-    print(f"Skipped (no intro/already had): {skipped_count}")
+    print("\n=== Complete ===")
+    print(f"English intros fetched: {en_fetched_count}")
+    print(f"Hungarian intros fetched: {hu_fetched_count}")
+    print(f"Hungarian intros translated: {hu_translated_count}")
+    print(f"Skipped (already had/no source): {skipped_count}")
     print(f"Failed: {failed_count}")
 
 

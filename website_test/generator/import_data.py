@@ -45,7 +45,8 @@ def create_database():
             wfo_url TEXT,
             gbif_usage_key TEXT,
             gbif_url TEXT,
-            wikipedia_url TEXT,
+            wikipedia_url_english TEXT,
+            wikipedia_url_hungarian TEXT,
             native_countries TEXT,
             native_regions TEXT,
             native_confidence TEXT,
@@ -54,12 +55,16 @@ def create_database():
             garden_location TEXT,
             image_filename TEXT,
             image_source TEXT,
-            description TEXT,
+            description_english TEXT,
+            description_hungarian TEXT,
+            description_hungarian_is_translated INTEGER DEFAULT 0,
             curator_comments TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
+
+    ensure_plants_schema_columns(conn)
 
     # Synonyms table (one-to-many)
     cursor.execute("""
@@ -161,6 +166,41 @@ def create_database():
 
     conn.commit()
     return conn
+
+
+def ensure_plants_schema_columns(conn):
+    """Upgrade existing plants table columns without destructive rebuild."""
+    cursor = conn.cursor()
+    cursor.execute("PRAGMA table_info(plants)")
+    columns = {row[1] for row in cursor.fetchall()}
+
+    renames = [
+        ("wikipedia_url", "wikipedia_url_english"),
+        ("description", "description_english"),
+    ]
+    for old_name, new_name in renames:
+        if old_name in columns and new_name not in columns:
+            cursor.execute(f"ALTER TABLE plants RENAME COLUMN {old_name} TO {new_name}")
+            columns.remove(old_name)
+            columns.add(new_name)
+
+    add_columns = [
+        ("wikipedia_url_english", "TEXT"),
+        ("wikipedia_url_hungarian", "TEXT"),
+        ("description_english", "TEXT"),
+        ("description_hungarian", "TEXT"),
+        ("description_hungarian_is_translated", "INTEGER DEFAULT 0"),
+    ]
+    for column_name, column_def in add_columns:
+        if column_name not in columns:
+            cursor.execute(f"ALTER TABLE plants ADD COLUMN {column_name} {column_def}")
+
+    cursor.execute("""
+        UPDATE plants
+        SET description_hungarian_is_translated = 0
+        WHERE description_hungarian_is_translated IS NULL
+    """)
+    conn.commit()
 
 
 def parse_pipe_separated(value):
