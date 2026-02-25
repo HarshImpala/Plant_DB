@@ -12,6 +12,7 @@ data/wikipedia_cache.json
 __pycache__/
 *.pyc
 *.pyo
+.db-journal
 .venv/
 venv/
 *.egg-info/
