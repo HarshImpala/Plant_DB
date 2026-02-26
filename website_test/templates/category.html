@@ -5,22 +5,29 @@
 {% block content %}
 <div class="category-page">
     <nav class="breadcrumb">
-        <a href="{{ base_url }}/index.html">Home</a> &rsaquo;
+        <a href="{{ base_url }}/index.html" data-translate="nav_home">Home</a> &rsaquo;
         <a href="{{ base_url }}/{{ category_type_plural }}.html">{{ category_type_title }}</a> &rsaquo;
         <span>{{ category.name }}</span>
     </nav>
 
     <h1>{{ category.name }}</h1>
-    <p class="category-meta">{{ category_type_title }}: {{ plants | length }} plant{% if plants | length != 1 %}s{% endif %}</p>
+    <p class="category-meta">
+        {{ category_type_title }}: {{ plants | length }}
+        {% if plants | length != 1 %}
+        <span data-translate="plants">plants</span>
+        {% else %}
+        <span data-translate="plant">plant</span>
+        {% endif %}
+    </p>
 
     {% if category.description %}
     <p class="category-description">{{ category.description }}</p>
     {% endif %}
 
     <div class="sort-bar">
-        <span class="sort-label">Sort by:</span>
-        <button class="sort-btn active" data-sort="scientific">Scientific name</button>
-        <button class="sort-btn" data-sort="common">Common name</button>
+        <span class="sort-label" data-translate="sort_by">Sort by:</span>
+        <button class="sort-btn active" data-sort="scientific" data-translate="scientific_name">Scientific name</button>
+        <button class="sort-btn" data-sort="common" data-translate="common_name">Common name</button>
     </div>
 
     <div class="plant-list-grid">

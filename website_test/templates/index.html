@@ -134,7 +134,8 @@
     const grid = document.getElementById('featured-plant-grid');
     if (!grid || grid.querySelector('.plant-card')) return;
     function cardHtml(plant) {
-        const name = plant.display_name || plant.canonical_name || plant.scientific_name || 'Unknown plant';
+        const fallbackName = (window.getTranslation && window.getTranslation('unknown_plant')) || 'Unknown plant';
+        const name = plant.display_name || plant.canonical_name || plant.scientific_name || fallbackName;
         const common = plant.display_common || plant.common_name || '';
         return `<a href="./plant/${plant.slug}.html" class="plant-card">
             <div class="plant-card-image"><div class="placeholder-image"></div></div>

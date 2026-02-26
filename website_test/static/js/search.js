@@ -168,7 +168,8 @@
         const baseUrl = getBaseUrl();
 
         if (results.length === 0) {
-            searchResults.innerHTML = '<div class="no-results" style="padding: 1rem; color: #666;">No plants found</div>';
+            const noResultsText = (window.getTranslation && window.getTranslation('no_results')) || 'No plants found';
+            searchResults.innerHTML = '<div class="no-results" style="padding: 1rem; color: #666;">' + noResultsText + '</div>';
             return;
         }
 

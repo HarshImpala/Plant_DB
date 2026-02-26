@@ -4,32 +4,35 @@
 
 {% block content %}
 <div class="az-index-page">
-    <h1>A-Z Plant Index</h1>
-    <p>Browse all {{ plant_count }} plants alphabetically by scientific name.</p>
-    <section class="facet-panel" aria-label="Filter plants">
+    <h1 data-translate="az_title">A-Z Plant Index</h1>
+    <p>
+        <span class="lang-en">Browse all {{ plant_count }} plants alphabetically by scientific name.</span>
+        <span class="lang-hu">Az összes {{ plant_count }} növény ábécé sorrendben tudományos név szerint.</span>
+    </p>
+    <section class="facet-panel" aria-label="Filter plants" data-translate-aria-label="filter_plants">
         <div class="facet-grid">
             <label class="facet-field">
-                <span>Family</span>
+                <span data-translate="family_filter">Family</span>
                 <select id="facet-family">
-                    <option value="">All families</option>
+                    <option value="" data-translate="all_families">All families</option>
                     {% for family in facet_families %}
                     <option value="{{ family|lower }}">{{ family }}</option>
                     {% endfor %}
                 </select>
             </label>
             <label class="facet-field">
-                <span>Genus</span>
+                <span data-translate="genus_filter">Genus</span>
                 <select id="facet-genus">
-                    <option value="">All genera</option>
+                    <option value="" data-translate="all_genera">All genera</option>
                     {% for genus in facet_genera %}
                     <option value="{{ genus|lower }}">{{ genus }}</option>
                     {% endfor %}
                 </select>
             </label>
             <label class="facet-field">
-                <span>Native region</span>
+                <span data-translate="native_region">Native region</span>
                 <select id="facet-region">
-                    <option value="">All regions</option>
+                    <option value="" data-translate="all_regions">All regions</option>
                     {% for region in facet_regions %}
                     <option value="{{ region|lower }}">{{ region }}</option>
                     {% endfor %}
@@ -37,12 +40,12 @@
             </label>
         </div>
         <div class="facet-toggles">
-            <label><input type="checkbox" id="facet-toxic"> Has toxicity info</label>
-            <label><input type="checkbox" id="facet-image"> Has image</label>
-            <label><input type="checkbox" id="facet-description"> Has description</label>
-            <button type="button" id="facet-reset" class="facet-reset">Reset</button>
+            <label><input type="checkbox" id="facet-toxic"> <span data-translate="has_toxicity">Has toxicity info</span></label>
+            <label><input type="checkbox" id="facet-image"> <span data-translate="has_image">Has image</span></label>
+            <label><input type="checkbox" id="facet-description"> <span data-translate="has_description">Has description</span></label>
+            <button type="button" id="facet-reset" class="facet-reset" data-translate="reset_filters">Reset</button>
         </div>
-        <p class="facet-results" id="facet-results">{{ plant_count }} plants shown</p>
+        <p class="facet-results" id="facet-results">{{ plant_count }} <span data-translate="plants_shown">plants shown</span></p>
     </section>
 
     <nav class="letter-nav">
@@ -140,7 +143,8 @@
             }
         });
 
-        resultText.textContent = visibleCount + ' plants shown';
+        const suffix = (window.getTranslation && window.getTranslation('plants_shown')) || 'plants shown';
+        resultText.textContent = visibleCount + ' ' + suffix;
     }
 
     [family, genus, region, toxic, image, description].forEach(function(control) {

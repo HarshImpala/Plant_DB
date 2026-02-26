@@ -16,7 +16,7 @@
 {% block content %}
 <article class="plant-page">
     <nav class="breadcrumb">
-        <a href="{{ base_url }}/index.html">Home</a> &rsaquo;
+        <a href="{{ base_url }}/index.html" data-translate="nav_home">Home</a> &rsaquo;
         {% if plant.family %}
         <a href="{{ base_url }}/family/{{ plant.family | slugify }}.html">{{ plant.family }}</a> &rsaquo;
         {% endif %}
@@ -31,8 +31,8 @@
             <h1 class="scientific-name">{{ plant.display_scientific }}</h1>
             <button class="copy-name-btn"
                     data-name="{{ plant.display_scientific }}"
-                    title="Copy scientific name"
-                    aria-label="Copy scientific name">
+                    title="Copy scientific name" data-translate-title="copy_scientific_name"
+                    aria-label="Copy scientific name" data-translate-aria-label="copy_scientific_name">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -51,9 +51,9 @@
                 <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}"
                      alt="{{ plant.display_name }}">
                 {% if plant.image_source == 'wikipedia' %}
-                <p class="image-credit">Image source: Wikipedia</p>
+                <p class="image-credit"><span data-translate="image_source">Image source</span>: Wikipedia</p>
                 {% elif plant.image_source %}
-                <p class="image-credit">Image source: {{ plant.image_source }}</p>
+                <p class="image-credit"><span data-translate="image_source">Image source</span>: {{ plant.image_source }}</p>
                 {% endif %}
             </div>
             {% else %}
@@ -62,7 +62,7 @@
                     <path d="M2 22c1.25-1.25 2.08-2.83 2.5-4.5C5 15 5 12 7 9c2-3 6-5 10-5-1 4-3 7-6 9-3 2-5 5-5 9"/>
                     <path d="M12 17c0-4 2-7 5-9"/>
                 </svg>
-                <span>No image available</span>
+                <span data-translate="no_image_available">No image available</span>
             </div>
             {% endif %}
 
@@ -105,15 +105,11 @@
             </table>
 
             <table class="info-table">
-                <caption>
-                    <span class="lang-en">Toxicity</span>
-                    <span class="lang-hu">Mergezes</span>
-                </caption>
+                <caption data-translate="toxicity_block_title">Toxicity</caption>
                 <tbody>
                     <tr>
                         <th>
-                            <span class="lang-en">Humans</span>
-                            <span class="lang-hu">Emberek</span>
+                            <span data-translate="toxicity_humans">Humans</span>
                         </th>
                         <td>
                             <span class="lang-en">{{ plant.toxicity_humans_status_en }}</span>
@@ -122,8 +118,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <span class="lang-en">Cats/Dogs</span>
-                            <span class="lang-hu">Macskak/Kutyak</span>
+                            <span data-translate="toxicity_cats_dogs">Cats/Dogs</span>
                         </th>
                         <td>
                             <span class="lang-en">{{ plant.toxicity_pets_status_en }}</span>
@@ -134,8 +129,7 @@
             </table>
             {% if plant.toxicity_source %}
             <p class="toxicity-source-note">
-                <span class="lang-en">Source: {{ plant.toxicity_source }}</span>
-                <span class="lang-hu">Forras: {{ plant.toxicity_source }}</span>
+                <span data-translate="toxicity_source">Source</span>: {{ plant.toxicity_source }}
             </p>
             {% endif %}
 
@@ -177,13 +171,13 @@
                 <p class="lang-hu">
                     {{ plant.description_hungarian }}
                     {% if plant.description_hungarian_is_translated %}
-                    <em>(machine translated)</em>
+                    <em data-translate="machine_translated">(machine translated)</em>
                     {% endif %}
                 </p>
                 {% elif plant.description_english %}
                 <p class="lang-hu">
                     {{ plant.description_english }}
-                    <em>(English fallback)</em>
+                    <em data-translate="english_fallback">(English fallback)</em>
                 </p>
                 {% endif %}
             </section>
@@ -226,7 +220,7 @@
                 <p>{{ plant.garden_location_display }}</p>
                 <p>
                     <a href="{{ base_url }}/map.html?location={{ plant.garden_location_key or (plant.garden_location_display | urlencode) }}">
-                        View this location on the map page
+                        <span data-translate="view_on_map">View this location on the map page</span>
                     </a>
                 </p>
             </section>
@@ -251,7 +245,7 @@
 
             {% if plant.curator_comments %}
             <section class="plant-section curator-section">
-                <h2>Curator's Comments</h2>
+                <h2 data-translate="curator_comments">Curator's Comments</h2>
                 <p>{{ plant.curator_comments }}</p>
             </section>
             {% endif %}
@@ -331,13 +325,15 @@
 (function() {
     var btn = document.querySelector('.copy-name-btn');
     if (!btn || !navigator.clipboard) return;
+    var copyLabel = (window.getTranslation && window.getTranslation('copy_scientific_name')) || 'Copy scientific name';
+    var copiedLabel = (window.getTranslation && window.getTranslation('copied')) || 'Copied!';
     btn.addEventListener('click', function() {
         navigator.clipboard.writeText(btn.dataset.name).then(function() {
             btn.classList.add('copied');
-            btn.title = 'Copied!';
+            btn.title = copiedLabel;
             setTimeout(function() {
                 btn.classList.remove('copied');
-                btn.title = 'Copy scientific name';
+                btn.title = copyLabel;
             }, 2000);
         });
     });

@@ -50,6 +50,7 @@
 - [x] Add automated regression checks for generated pages (`generator/smoke_test.py`)
   - Progress (2026-02-24): added smoke checks for broken internal links/assets and invalid/empty JSON-LD in generated HTML.
   - Progress (2026-02-24): wired smoke test into CI workflow after site build so deploy is blocked on failures.
+- [ ] Improve mobile layout and usability (navigation, filters, cards, map, and search)
 - [x] Normalize taxonomy/name display rules across templates and cards
   - Progress (2026-02-24): introduced normalized display fields (`display_name`, `display_scientific`, `display_common`) in generator data shaping.
   - Progress (2026-02-24): updated cards/lists/search/plant templates to use the same display fields consistently.

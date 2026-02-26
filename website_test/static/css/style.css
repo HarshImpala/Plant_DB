@@ -44,6 +44,10 @@ body {
     background-color: var(--color-bg);
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 a {
     color: var(--color-link);
     text-decoration: none;
@@ -169,6 +173,65 @@ img {
 .search-results .common {
     color: var(--color-text-light);
     font-size: 0.875rem;
+}
+
+/* === Language Modal === */
+.language-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 17, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 1rem;
+}
+
+.language-modal[hidden] {
+    display: none;
+}
+
+.language-modal-card {
+    width: min(420px, 100%);
+    background: var(--color-white);
+    border-radius: 12px;
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.language-modal-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.language-modal-card p {
+    color: var(--color-text-light);
+    margin-bottom: 1.25rem;
+}
+
+.language-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.language-modal-btn {
+    border: 1px solid var(--color-border);
+    background: var(--color-header-bg);
+    color: var(--color-text);
+    border-radius: 6px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.language-modal-btn:hover {
+    background: var(--color-white);
+    border-color: var(--color-accent);
 }
 
 /* === Main Content === */
@@ -1508,5 +1571,230 @@ html[data-theme="dark"] .stat-card.highlight {
 
     .hero h1 {
         font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .hero {
+        padding: 2rem 0.75rem;
+        border-radius: 6px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-search input {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .browse-options {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .browse-card {
+        padding: 1rem;
+    }
+
+    .plant-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .plant-card-info {
+        padding: 0.75rem;
+    }
+
+    .plant-card-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .recently-viewed-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .recently-viewed-item {
+        flex: 0 0 auto;
+        min-width: 180px;
+    }
+
+    .facet-panel {
+        padding: 0.75rem;
+    }
+
+    .facet-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .facet-toggles {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .facet-toggles label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .facet-reset {
+        width: 100%;
+        text-align: center;
+    }
+
+    .letter-nav {
+        padding: 0.5rem;
+        gap: 0.2rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .letter-link {
+        width: 1.8rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
+        font-size: 0.85rem;
+    }
+
+    .letter-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .breadcrumb {
+        font-size: 0.8125rem;
+        line-height: 1.4;
+    }
+
+    .plant-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .plant-header .common-name {
+        font-size: 1rem;
+    }
+
+    .plant-content {
+        gap: 1.25rem;
+    }
+
+    .plant-sidebar {
+        order: 0;
+    }
+
+    .info-table {
+        font-size: 0.8125rem;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 0.4rem;
+    }
+
+    .external-links {
+        padding: 0.75rem;
+    }
+
+    .adopt-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .plant-section h2 {
+        font-size: 1.1rem;
+    }
+
+    .country-badge {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    .related-plants-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .plant-nav {
+        flex-direction: column;
+    }
+
+    .plant-nav-prev,
+    .plant-nav-next {
+        width: 100%;
+        text-align: left;
+    }
+
+    .plant-nav-next .plant-nav-text {
+        align-items: flex-start;
+    }
+
+    .plant-nav a {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .map-page {
+        padding: 0;
+    }
+
+    .map-page .pdf-toolbar {
+        gap: 0.35rem;
+        padding: 0.5rem;
+    }
+
+    .map-page .pdf-toolbar button {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .map-page .pdf-page-label {
+        font-size: 0.8rem;
+        margin-left: 0;
+    }
+
+    .station-index,
+    .location-index {
+        padding: 0.75rem;
+    }
+
+    .location-group ul {
+        column-count: 1;
+    }
+
+    .location-group h3 {
+        font-size: 0.95rem;
+    }
+
+    .location-filter input {
+        max-width: 100%;
+    }
+
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-card-body {
+        padding: 0.9rem;
+    }
+
+    .collection-card-body h2 {
+        font-size: 1rem;
+    }
+
+    .collection-card-body p {
+        font-size: 0.85rem;
     }
 }
