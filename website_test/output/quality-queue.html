@@ -1,0 +1,3807 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'dark';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Content Quality Queue - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="site-logo">
+                <h1 data-translate="site_title">Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="./az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li><a href="./families.html" data-translate="nav_families">Families</a></li>
+                    <li><a href="./genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="./map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="./collections.html" data-translate="nav_collections">Collections</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        
+<div class="stats-page">
+    <h1 data-translate="content_quality_queue">Content Quality Queue</h1>
+    <p><span data-translate="plants_needing_attention">Plants needing curator attention</span>: <strong>181</strong></p>
+
+    <section class="stats-section">
+        <h2 data-translate="missing_content_by_plant">Missing Content by Plant</h2>
+        
+        <div class="family-chart">
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/alpinia-vittata.html" class="chart-label">Alpinia vittata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Alpinia Roxb.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">5</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/globba-schomburgkii.html" class="chart-label">Globba schomburgkii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Globba L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">5</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/hedychium-horsfieldii-1.html" class="chart-label">Hedychium horsfieldii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Hedychium J.Koenig
+                    </div>
+                    
+                </div>
+                <span class="chart-value">5</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/hedychium-horsfieldii-2.html" class="chart-label">Hedychium horsfieldii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Hedychium J.Koenig
+                    </div>
+                    
+                </div>
+                <span class="chart-value">5</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-nana.html" class="chart-label">Musa nana</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                </div>
+                <span class="chart-value">5</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-seminifera.html" class="chart-label">Musa seminifera</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                </div>
+                <span class="chart-value">5</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/rhipsalis-pentaptera.html" class="chart-label">Rhipsalis pentaptera</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Rhipsalis Gaertn.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">5</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/adenanthera-microsperma.html" class="chart-label">Adenanthera microsperma</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Adenanthera L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aglaonema-nitidum.html" class="chart-label">Aglaonema nitidum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Araceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aglaonema Schott
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/anthurium-digitatum.html" class="chart-label">Anthurium digitatum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Araceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Anthurium Schott
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-zollingeriana.html" class="chart-label">Aristolochia zollingeriana</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/brownea-coccinea-capitella.html" class="chart-label">Brownea coccinea capitella</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Brownea Jacq.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/castanospermum-australe.html" class="chart-label">Castanospermum australe</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cyanastrum-cordifolium.html" class="chart-label">Cyanastrum cordifolium</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Tecophilaeaceae Leyb.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cyanastrum Oliv.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dischidia-bengalensis.html" class="chart-label">Dischidia bengalensis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dischidia R.Br.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dischidia-subulata.html" class="chart-label">Dischidia subulata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dischidia R.Br.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/hoffmannia-ghiesbreghtii.html" class="chart-label">Hoffmannia ghiesbreghtii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Hoffmannia Sw.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/kigelia-africana-africana.html" class="chart-label">Kigelia africana africana</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Bignoniaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Kigelia DC.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/mimosa-polycarpa-spegazzinii.html" class="chart-label">Mimosa polycarpa spegazzinii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Mimosa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/nautilocalyx-lynchii.html" class="chart-label">Nautilocalyx lynchii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Gesneriaceae Rich. & Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Nautilocalyx Linden ex Hanst.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/neptunia-plena.html" class="chart-label">Neptunia plena</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Neptunia Lour.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/palisota-schweinfurthii.html" class="chart-label">Palisota schweinfurthii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Commelinaceae Mirb.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Palisota Rchb. ex Endl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/phyllanthus-inflatus.html" class="chart-label">Phyllanthus inflatus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Phyllanthaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Phyllanthus L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/pilea-ovalis-1.html" class="chart-label">Pilea ovalis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Urticaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Pilea Lindl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/pilea-ovalis-2.html" class="chart-label">Pilea ovalis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Urticaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Pilea Lindl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/piper-magnificum.html" class="chart-label">Piper magnificum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Piperaceae Giseke
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Piper L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/polyalthia-suberosa.html" class="chart-label">Polyalthia suberosa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Annonaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Polyalthia Blume
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/pseudorhipsalis-ramulosa.html" class="chart-label">Pseudorhipsalis ramulosa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Kimnachia S.Arias & N.Korotkova
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/pseudospondias-microcarpa.html" class="chart-label">Pseudospondias microcarpa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Anacardiaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Pseudospondias Engl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/rhipsalis-cereuscula.html" class="chart-label">Rhipsalis cereuscula</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Rhipsalis Gaertn.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">4</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-gigantea.html" class="chart-label">Aristolochia gigantea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/breynia-androgyna.html" class="chart-label">Breynia androgyna</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Phyllanthaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Breynia J.R.Forst. & G.Forst.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cinnamomum-parthenoxylon.html" class="chart-label">Cinnamomum parthenoxylon</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Lauraceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cinnamomum Schaeff.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/colvillea-racemosa.html" class="chart-label">Colvillea racemosa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Colvillea Bojer ex Hook.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cyperus-diffusus.html" class="chart-label">Cyperus diffusus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cyperaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cyperus L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/disocactus-anguliger.html" class="chart-label">Disocactus anguliger</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Disocactus Lindl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/spathodea-campanulata.html" class="chart-label">Spathodea campanulata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_description">missing_description</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Bignoniaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Spathodea P.Beauv.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/allamanda-schottii.html" class="chart-label">Allamanda schottii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Allamanda L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/alpinia-purpurata.html" class="chart-label">Alpinia purpurata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Alpinia Roxb.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/alpinia-zerumbet-1.html" class="chart-label">Alpinia zerumbet</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Alpinia Roxb.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/alpinia-zerumbet-2.html" class="chart-label">Alpinia zerumbet</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Alpinia Roxb.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-grandiflora.html" class="chart-label">Aristolochia grandiflora</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-ringens.html" class="chart-label">Aristolochia ringens</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/clerodendrum-thomsoniae.html" class="chart-label">Clerodendrum thomsoniae</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Lamiaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Clerodendrum L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dendrocnide-excelsa.html" class="chart-label">Dendrocnide excelsa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Urticaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dendrocnide Miq.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dichrostachys-cinerea.html" class="chart-label">Dichrostachys cinerea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Alantsilodendron Villiers
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dioscorea-polystachya.html" class="chart-label">Dioscorea polystachya</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Dioscoreaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dioscorea Plum. ex L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/elettaria-ensal.html" class="chart-label">Elettaria ensal</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Elettaria Maton
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/epiphyllum-chrysocardium-1.html" class="chart-label">Epiphyllum chrysocardium</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Epiphyllum Haw.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/epiphyllum-chrysocardium-2.html" class="chart-label">Epiphyllum chrysocardium</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Epiphyllum Haw.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/epiphyllum-oxypetalum.html" class="chart-label">Epiphyllum oxypetalum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Epiphyllum Haw.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/erythroxylum-coca.html" class="chart-label">Erythroxylum coca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Erythroxylaceae Kunth
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Erythroxylum P.Browne
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/euphorbia-leuconeura.html" class="chart-label">Euphorbia leuconeura</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Euphorbiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Euphorbia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/flacourtia-indica.html" class="chart-label">Flacourtia indica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Salicaceae Mirb.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Flacourtia Comm. ex L'Hér.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/harpullia-arborea.html" class="chart-label">Harpullia arborea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Sapindaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Harpullia Roxb.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/hatiora-salicornioides.html" class="chart-label">Hatiora salicornioides</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Hatiora Britton & Rose
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/heliconia-rostrata.html" class="chart-label">Heliconia rostrata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Heliconiaceae Nakai
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Heliconia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/khaya-grandifoliola.html" class="chart-label">Khaya grandifoliola</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Meliaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Khaya A.Juss.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/lagerstroemia-speciosa.html" class="chart-label">Lagerstroemia speciosa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Lythraceae J.St.-Hil.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Lagerstroemia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-coccinea.html" class="chart-label">Musa coccinea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/nephelium-lappaceum.html" class="chart-label">Nephelium lappaceum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Sapindaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Nephelium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/passiflora-incarnata.html" class="chart-label">Passiflora incarnata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Passifloraceae Juss. ex Roussel
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Passiflora L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/passiflora-violacea.html" class="chart-label">Passiflora violacea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-cattleianum-1.html" class="chart-label">Psidium cattleianum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-cattleianum-2.html" class="chart-label">Psidium cattleianum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-cattleianum-3.html" class="chart-label">Psidium cattleianum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-friedrichsthalianum.html" class="chart-label">Psidium friedrichsthalianum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-guineense.html" class="chart-label">Psidium guineense</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/rhipsalis-pilocarpa.html" class="chart-label">Rhipsalis pilocarpa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Rhipsalis Gaertn.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/selenicereus-megalanthus.html" class="chart-label">Selenicereus megalanthus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Selenicereus (A.Berger) Britton & Rose
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/solandra-maxima.html" class="chart-label">Solandra maxima</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Solanaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Solandra Sw.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/spondias-mombin.html" class="chart-label">Spondias mombin</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Anacardiaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Spondias L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/vanilla-pompona.html" class="chart-label">Vanilla pompona</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Orchidaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Vanilla Plum. ex Mill.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/zingiber-officinale.html" class="chart-label">Zingiber officinale</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>, 
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Zingiberaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Zingiber Mill.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/acorus-gramineus.html" class="chart-label">Acorus gramineus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Acoraceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Acorus L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aglaonema-costatum.html" class="chart-label">Aglaonema costatum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Araceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aglaonema Schott
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/ananas-comosus.html" class="chart-label">Ananas comosus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Bromeliaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Ananas Mill.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/angraecum-eburneum.html" class="chart-label">Angraecum eburneum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Orchidaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Angraecum Bory
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/anthurium-schlechtendalii.html" class="chart-label">Anthurium schlechtendalii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Araceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Anthurium Schott
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/anthurium-vittariifolium.html" class="chart-label">Anthurium vittariifolium</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Araceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Anthurium Schott
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-fimbriata.html" class="chart-label">Aristolochia fimbriata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-labiata.html" class="chart-label">Aristolochia labiata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-maxima.html" class="chart-label">Aristolochia maxima</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aristolochia-trilobata.html" class="chart-label">Aristolochia trilobata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aristolochiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Aristolochia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/asplenium-nidus.html" class="chart-label">Asplenium nidus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Aspleniaceae Newman
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Asplenium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/averrhoa-carambola-1.html" class="chart-label">Averrhoa carambola</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Oxalidaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Averrhoa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/averrhoa-carambola-2.html" class="chart-label">Averrhoa carambola</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Oxalidaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Averrhoa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/averrhoa-carambola-3.html" class="chart-label">Averrhoa carambola</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Oxalidaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Averrhoa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/begonia-listada.html" class="chart-label">Begonia listada</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_distribution">missing_distribution</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Begoniaceae C.Agardh
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Begonia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/breynia-disticha.html" class="chart-label">Breynia disticha</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Phyllanthaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Breynia J.R.Forst. & G.Forst.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/caladium-bicolor.html" class="chart-label">Caladium bicolor</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Araceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Caladium Vent.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/canna-glauca.html" class="chart-label">Canna glauca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cannaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Canna L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/carica-papaya-1.html" class="chart-label">Carica papaya</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Caricaceae Dumort.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Carica L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/carica-papaya-2.html" class="chart-label">Carica papaya</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Caricaceae Dumort.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Carica L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/carica-papaya-3.html" class="chart-label">Carica papaya</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Caricaceae Dumort.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Carica L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/carica-papaya-4.html" class="chart-label">Carica papaya</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Caricaceae Dumort.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Carica L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/carica-papaya-5.html" class="chart-label">Carica papaya</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Caricaceae Dumort.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Carica L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/carica-papaya-6.html" class="chart-label">Carica papaya</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Caricaceae Dumort.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Carica L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/clerodendrum-splendens.html" class="chart-label">Clerodendrum splendens</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Lamiaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Clerodendrum L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/clusia-rosea.html" class="chart-label">Clusia rosea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Clusiaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Clusia Plum. ex L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/coccothrinax-readii.html" class="chart-label">Coccothrinax readii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Coccothrinax Sarg.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cocos-nucifera-1.html" class="chart-label">Cocos nucifera</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cocos L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cocos-nucifera-2.html" class="chart-label">Cocos nucifera</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cocos L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cocos-nucifera-3.html" class="chart-label">Cocos nucifera</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cocos L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/coffea-arabica-1.html" class="chart-label">Coffea arabica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Coffea L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/coffea-arabica-2.html" class="chart-label">Coffea arabica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Coffea L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/coffea-arabica-3.html" class="chart-label">Coffea arabica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Coffea L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/coffea-canephora.html" class="chart-label">Coffea canephora</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Coffea L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cordia-myxa.html" class="chart-label">Cordia myxa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cordiaceae R.Br. ex Dumort.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cordia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/couroupita-guianensis.html" class="chart-label">Couroupita guianensis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Lecythidaceae A.Rich.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Couroupita Aubl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/ctenanthe-amabilis.html" class="chart-label">Ctenanthe amabilis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Marantaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Ctenanthe Eichler
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/cubanola-domingensis.html" class="chart-label">Cubanola domingensis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Cubanola Aiello
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/curculigo-capitulata.html" class="chart-label">Curculigo capitulata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Hypoxidaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Curculigo Gaertn.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/delonix-regia.html" class="chart-label">Delonix regia</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Delonix Raf.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dioscorea-alata.html" class="chart-label">Dioscorea alata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Dioscoreaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dioscorea Plum. ex L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dioscorea-oppositifolia.html" class="chart-label">Dioscorea oppositifolia</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Dioscoreaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dioscorea Plum. ex L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dischidia-platyphylla.html" class="chart-label">Dischidia platyphylla</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dischidia R.Br.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/dischidia-vidalii.html" class="chart-label">Dischidia vidalii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Dischidia R.Br.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/elaeis-guineensis.html" class="chart-label">Elaeis guineensis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Elaeis Jacq.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/epidendrum-ciliare.html" class="chart-label">Epidendrum ciliare</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Orchidaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Epidendrum L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/euterpe-oleracea.html" class="chart-label">Euterpe oleracea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Euterpe Mart.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/ficus-obliqua.html" class="chart-label">Ficus obliqua</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Moraceae Gaudich.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Ficus L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/ficus-rubiginosa-1.html" class="chart-label">Ficus rubiginosa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Moraceae Gaudich.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Ficus L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/ficus-rubiginosa-2.html" class="chart-label">Ficus rubiginosa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Moraceae Gaudich.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Ficus L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/heliconia.html" class="chart-label">Heliconia</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Heliconiaceae Nakai
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Heliconia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/hura-crepitans.html" class="chart-label">Hura crepitans</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Euphorbiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Hura L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/isolepis-cernua.html" class="chart-label">Isolepis cernua</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cyperaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Isolepis R.Br.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/justicia-brandegeeana.html" class="chart-label">Justicia brandegeeana</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Acanthaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Justicia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/justicia-carnea.html" class="chart-label">Justicia carnea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Acanthaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Justicia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/kohleria-hirsuta.html" class="chart-label">Kohleria hirsuta</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Gesneriaceae Rich. & Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Kohleria Regel
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/mangifera-indica-1.html" class="chart-label">Mangifera indica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Anacardiaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Mangifera L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/mangifera-indica-2.html" class="chart-label">Mangifera indica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Anacardiaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Mangifera L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/mangifera-indica-3.html" class="chart-label">Mangifera indica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Anacardiaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Mangifera L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/medinilla-magnifica.html" class="chart-label">Medinilla magnifica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Melastomataceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Medinilla Gaudich.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/mimosa-aculeaticarpa.html" class="chart-label">Mimosa aculeaticarpa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Mimosa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/morinda.html" class="chart-label">Morinda</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Morinda L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/murraya-paniculata.html" class="chart-label">Murraya paniculata</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rutaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Murraya J.Koenig
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-paradisiaca-1.html" class="chart-label">Musa paradisiaca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-paradisiaca-2.html" class="chart-label">Musa paradisiaca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-paradisiaca-3.html" class="chart-label">Musa paradisiaca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-paradisiaca-4.html" class="chart-label">Musa paradisiaca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-paradisiaca-5.html" class="chart-label">Musa paradisiaca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-paradisiaca-6.html" class="chart-label">Musa paradisiaca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-paradisiaca-7.html" class="chart-label">Musa paradisiaca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/musa-velutina.html" class="chart-label">Musa velutina</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Musaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Musa L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/oxalis-triangularis.html" class="chart-label">Oxalis triangularis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Oxalidaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Oxalis L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/pachira-insignis.html" class="chart-label">Pachira insignis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Malvaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Pachira Aubl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/passiflora-citrina.html" class="chart-label">Passiflora citrina</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Passifloraceae Juss. ex Roussel
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Passiflora L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/passiflora-coriacea.html" class="chart-label">Passiflora coriacea</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Passifloraceae Juss. ex Roussel
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Passiflora L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/passiflora-edulis.html" class="chart-label">Passiflora edulis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Passifloraceae Juss. ex Roussel
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Passiflora L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/passiflora-foetida.html" class="chart-label">Passiflora foetida</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Passifloraceae Juss. ex Roussel
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Passiflora L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/passiflora-quadrangularis.html" class="chart-label">Passiflora quadrangularis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Passifloraceae Juss. ex Roussel
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Passiflora L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/phyllanthus-reticulatus.html" class="chart-label">Phyllanthus reticulatus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Phyllanthaceae Martinov
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Phyllanthus L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/piper-betle.html" class="chart-label">Piper betle</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Piperaceae Giseke
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Piper L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/piper-kadsura.html" class="chart-label">Piper kadsura</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Piperaceae Giseke
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Piper L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/piper-longum.html" class="chart-label">Piper longum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Piperaceae Giseke
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Piper L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/plumeria-alba.html" class="chart-label">Plumeria alba</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Plumeria L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/plumeria-rubra.html" class="chart-label">Plumeria rubra</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Plumeria L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-guajava-1.html" class="chart-label">Psidium guajava</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-guajava-2.html" class="chart-label">Psidium guajava</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-guajava-3.html" class="chart-label">Psidium guajava</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/psidium-guajava-4.html" class="chart-label">Psidium guajava</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Myrtaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Psidium L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/rauvolfia-tetraphylla.html" class="chart-label">Rauvolfia tetraphylla</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Rauvolfia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/ravenala-madagascariensis.html" class="chart-label">Ravenala madagascariensis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Strelitziaceae Hutch.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Ravenala Adans.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/rhipsalis-baccifera.html" class="chart-label">Rhipsalis baccifera</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Cactaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Rhipsalis Gaertn.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/rosenbergiodendron-formosum.html" class="chart-label">Rosenbergiodendron formosum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Rubiaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Rosenbergiodendron Fagerl.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/saccharum-officinarum.html" class="chart-label">Saccharum officinarum</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Poaceae Barnhart
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Saccharum L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/salacca-zalacca.html" class="chart-label">Salacca zalacca</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Salacca Reinw.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/setaria-palmifolia.html" class="chart-label">Setaria palmifolia</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Poaceae Barnhart
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Setaria P.Beauv.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/spondias-dulcis.html" class="chart-label">Spondias dulcis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Anacardiaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Spondias L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/strelitzia-alba.html" class="chart-label">Strelitzia alba</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Strelitziaceae Hutch.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Strelitzia Banks
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/strelitzia-nicolai.html" class="chart-label">Strelitzia nicolai</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Strelitziaceae Hutch.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Strelitzia Banks
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/strophanthus-gratus.html" class="chart-label">Strophanthus gratus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Strophanthus DC.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/strophanthus-petersianus.html" class="chart-label">Strophanthus petersianus</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Apocynaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Strophanthus DC.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/syagrus-romanzoffiana.html" class="chart-label">Syagrus romanzoffiana</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Arecaceae Bercht. & J.Presl
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Syagrus Mart.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/tamarindus-indica.html" class="chart-label">Tamarindus indica</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Tamarindus Tourn. ex L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/terminalia-catappa.html" class="chart-label">Terminalia catappa</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Combretaceae R.Br.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Terminalia L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/theobroma-cacao.html" class="chart-label">Theobroma cacao</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Malvaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Theobroma L.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/thunbergia-mysorensis.html" class="chart-label">Thunbergia mysorensis</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Acanthaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Thunbergia Retz.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/vachellia-collinsii.html" class="chart-label">Vachellia collinsii</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Fabaceae Lindl.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Vachellia Wight & Arn.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/vanilla-planifolia.html" class="chart-label">Vanilla planifolia</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_toxicity">missing_toxicity</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: Orchidaceae Juss.
+                         | 
+                        <span data-translate="genus_label">Genus</span>: Vanilla Plum. ex Mill.
+                    </div>
+                    
+                </div>
+                <span class="chart-value">1</span>
+            </div>
+            
+        </div>
+        
+    </section>
+</div>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
+        <p class="footer-links">
+            <a href="./stats.html" data-translate="collection_statistics">Collection Statistics</a> |
+            <a href="./quality-queue.html" data-translate="content_quality_queue">Content Quality Queue</a>
+        </p>
+    </footer>
+
+    <script src="./static/js/search.js?v=1772135936"></script>
+    <script src="./static/js/controls.js?v=1772135936"></script>
+    <script src="./static/js/lightbox.js?v=1772135936"></script>
+    
+</body>
+</html>

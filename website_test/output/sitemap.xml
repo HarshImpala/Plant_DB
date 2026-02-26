@@ -234,6 +234,7 @@
   <url><loc>https://example.com/plant/vanilla-planifolia.html</loc></url>
   <url><loc>https://example.com/plant/vanilla-pompona.html</loc></url>
   <url><loc>https://example.com/plant/zingiber-officinale.html</loc></url>
+  <url><loc>https://example.com/plant/aa_test_plant.html</loc></url>
   <url><loc>https://example.com/family/acanthaceae.html</loc></url>
   <url><loc>https://example.com/family/acoraceae.html</loc></url>
   <url><loc>https://example.com/family/anacardiaceae-rbr.html</loc></url>
@@ -287,6 +288,7 @@
   <url><loc>https://example.com/family/tecophilaeaceae.html</loc></url>
   <url><loc>https://example.com/family/urticaceae.html</loc></url>
   <url><loc>https://example.com/family/zingiberaceae.html</loc></url>
+  <url><loc>https://example.com/family/a.html</loc></url>
   <url><loc>https://example.com/genus/acalypha.html</loc></url>
   <url><loc>https://example.com/genus/acorus.html</loc></url>
   <url><loc>https://example.com/genus/adenanthera.html</loc></url>

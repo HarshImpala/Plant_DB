@@ -191,10 +191,10 @@
                 <div id="search-results" class="search-results"></div>
             </div>
             <div class="header-controls">
-                <button id="lang-toggle" class="control-btn" title="Switch language">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
                     <span class="lang-label">HU</span>
                 </button>
-                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
                     <span class="theme-icon light-icon">&#9788;</span>
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
@@ -202,75 +202,89 @@
         </div>
     </header>
 
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content">
         
 <div class="map-page">
-    <h2>Botanical Garden Map</h2>
-    <p class="map-subtitle">Fovariosi Allat- es Novenykert - Fuveszkert, 2021</p>
+    <h2 data-translate="map_page_title">Botanical Garden Map</h2>
+    <p class="map-subtitle" data-translate="map_subtitle">Fővárosi Állat- és Növénykert - Füvészkert, 2021</p>
 
     <div class="pdf-container">
         <div id="pdf-viewer">
             <div class="pdf-toolbar">
-                <span class="pdf-page-label" id="pdf-page-info">Pages: -</span>
+                <span class="pdf-page-label"><span data-translate="pages_label">Pages</span>: <span id="pdf-page-count">-</span></span>
                 <button type="button" id="pdf-zoom-out">-</button>
                 <button type="button" id="pdf-zoom-in">+</button>
-                <button type="button" id="pdf-fit-width">Fit Width</button>
+                <button type="button" id="pdf-fit-width" data-translate="fit_width">Fit Width</button>
             </div>
             <div class="pdf-canvas-wrap" id="pdf-canvas-wrap">
-                <div id="pdf-pages" aria-label="Garden map PDF pages"></div>
+                <div id="pdf-pages" aria-label="Garden map PDF pages" data-translate-aria-label="map_pdf_pages"></div>
             </div>
         </div>
         <div class="pdf-fallback" id="pdf-fallback" style="display:none">
-            <p>Could not load inline PDF viewer.</p>
+            <p data-translate="pdf_viewer_error">Could not load inline PDF viewer.</p>
             <a class="pdf-download-link"
                href="./static/maps/Fuveszkert_terkepes_2021.0503.pdf"
-               download>Download Map PDF</a>
+               download data-translate="download_map_pdf">Download Map PDF</a>
         </div>
     </div>
 
     <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted,#666);">
-        <a href="./static/maps/Fuveszkert_terkepes_2021.0503.pdf" target="_blank">
+        <a href="./static/maps/Fuveszkert_terkepes_2021.0503.pdf" target="_blank" data-translate="open_in_new_tab">
             Open in new tab
         </a>
     </p>
 
     <section class="station-index">
-        <h3>Stations and Collection Links</h3>
-        <p class="map-subtitle">Mapped from the garden station list (1-25). Collection page links are included where applicable.</p>
+        <h3 data-translate="stations_and_links">Stations and Collection Links</h3>
+        <p class="map-subtitle" data-translate="stations_note">Mapped from the garden station list (1-25). Collection page links are included where applicable.</p>
         <ol>
-            <li><span class="station-title">A Fuveszkert tortenete es attekintese</span> <span class="station-en">- History and overview</span> <span class="station-note">(general stop)</span></li>
-            <li><a href="./collection/deciduous-trees-shrubs.html"><span class="station-title">A Kitaibel Pal szobra es a mersekelt ovi lombos fak</span> <span class="station-en">- Kitaibel statue and temperate forest trees</span></a></li>
-            <li><a href="./collection/tropical-aquatic-plants.html"><span class="station-title">Tropusi tunderrzsak</span> <span class="station-en">- Tropical water lilies</span></a> + <a href="./collection/carnivorous-plants.html"><span class="station-title">rovaremeszto novenyek</span> <span class="station-en">- carnivorous plants</span></a></li>
-            <li><a href="./collection/araceae.html"><span class="station-title">Kontyviragfelek</span> <span class="station-en">- Arums</span></a></li>
-            <li><a href="./collection/bromeliaceae.html"><span class="station-title">Ananaszfelek</span> <span class="station-en">- Bromeliads</span></a></li>
-            <li><a href="./collection/tropical-ferns-shade-plants.html"><span class="station-title">Tropusi pafranyok</span> <span class="station-en">- Tropical ferns</span></a></li>
-            <li><a href="./collection/orchids.html"><span class="station-title">Tropusi orchideak</span> <span class="station-en">- Tropical orchids</span></a></li>
-            <li><a href="./collection/succulent-plants.html"><span class="station-title">Pozsgas novenyek</span> <span class="station-en">- Tropical succulents</span></a></li>
-            <li><a href="./collection/cacti.html"><span class="station-title">Kaktuszok</span> <span class="station-en">- Cacti</span></a></li>
-            <li><a href="./collection/australian-plants.html"><span class="station-title">Ausztral novenyek</span> <span class="station-en">- Australian plants</span></a></li>
-            <li><span class="station-title">Juranyi Lajos emlekmuve</span> <span class="station-en">- Juranyi statue</span> <span class="station-note">(statue, no collection page)</span></li>
-            <li><a href="./collection/palms.html"><span class="station-title">Palmahaz kupola</span> <span class="station-en">- Palmhouse cupola</span></a></li>
-            <li><a href="./collection/tropical-crop-plants.html"><span class="station-title">Tropusi haszonnovenyek</span> <span class="station-en">- Tropical crops</span></a></li>
-            <li><a href="./collection/subtropical-plants.html"><span class="station-title">Szubtropusi novenyek</span> <span class="station-en">- Subtropical plants</span></a></li>
-            <li><a href="./collection/frost-tolerant-subtropical.html"><span class="station-title">Fagyturo szubtropusi novenyek</span> <span class="station-en">- Winter tolerant subtropical plants</span></a></li>
-            <li><a href="./collection/crop-plants-medicinal.html"><span class="station-title">Haszonnovenyek</span> <span class="station-en">- Crops</span></a></li>
-            <li><a href="./collection/broadleaved-evergreens.html"><span class="station-title">Orokzold lombos fak</span> <span class="station-en">- Evergreen trees</span></a> + <a href="./collection/deciduous-forest-understorey.html"><span class="station-en">Hungarian deciduous forest herbs</span></a></li>
-            <li><a href="./collection/east-asian-garden.html"><span class="station-title">Japankert</span> <span class="station-en">- Japanese garden</span></a></li>
-            <li><a href="./collection/cupressaceae-yew.html"><span class="station-title">Ciprusfelek, tiszafafelek</span> <span class="station-en">- Cypresses and Taxusses</span></a></li>
-            <li><a href="./collection/living-fossils.html"><span class="station-title">Elo kovuletek</span> <span class="station-en">- Living fossils</span></a></li>
-            <li><a href="./collection/rosaceae.html"><span class="station-title">Rozsakert es a kastely homlokzata</span> <span class="station-en">- Rose garden and the Castle facade</span></a></li>
-            <li><a href="./collection/dry-grassland-middle-mountains.html"><span class="station-title">Magyar kozephegysegek szaraz gyepei</span> <span class="station-en">- Dry grasslands of Hungarian middle mountains</span></a></li>
-            <li><a href="./collection/high-mountain-rock-gardens.html"><span class="station-title">Magashegysegi sziklakertek</span> <span class="station-en">- Highland rockeries</span></a></li>
-            <li><a href="./collection/needle-leaved-evergreens.html"><span class="station-title">Tulevelu orokzoldek</span> <span class="station-en">- Coniferous trees</span></a></li>
-            <li><span class="station-title">Jozsef nador szobra</span> <span class="station-en">- Joseph palatine statue</span> <span class="station-note">(statue, no collection page)</span></li>
+            <li><span class="station-title">A Fuveszkert tortenete es attekintese</span> <span class="station-en lang-en">- History and overview</span><span class="station-en lang-hu">- T?rt?net ?s ?ttekint?s</span> <span class="station-note"><span class="lang-en">(general stop)</span><span class="lang-hu">(?ltal?nos meg?ll?)</span></span></li>
+            <li><a href="./collection/deciduous-trees-shrubs.html"><span class="station-title">A Kitaibel Pal szobra es a mersekelt ovi lombos fak</span> <span class="station-en lang-en">- Kitaibel statue and temperate forest trees</span><span class="station-en lang-hu">- Kitaibel-szobor ?s m?rs?kelt ?vi lombos f?k</span></a></li>
+            <li><a href="./collection/tropical-aquatic-plants.html"><span class="station-title">Tropusi tunderrzsak</span> <span class="station-en lang-en">- Tropical water lilies</span><span class="station-en lang-hu">- Tr?pusi t?nd?rr?zs?k</span></a> + <a href="./collection/carnivorous-plants.html"><span class="station-title">rovaremeszto novenyek</span> <span class="station-en lang-en">- carnivorous plants</span><span class="station-en lang-hu">- Rovarev? n?v?nyek</span></a></li>
+            <li><a href="./collection/araceae.html"><span class="station-title">Kontyviragfelek</span> <span class="station-en lang-en">- Arums</span><span class="station-en lang-hu">- Kontyvir?gf?l?k</span></a></li>
+            <li><a href="./collection/bromeliaceae.html"><span class="station-title">Ananaszfelek</span> <span class="station-en lang-en">- Bromeliads</span><span class="station-en lang-hu">- Brom?liaf?l?k</span></a></li>
+            <li><a href="./collection/tropical-ferns-shade-plants.html"><span class="station-title">Tropusi pafranyok</span> <span class="station-en lang-en">- Tropical ferns</span><span class="station-en lang-hu">- Tr?pusi p?fr?nyok</span></a></li>
+            <li><a href="./collection/orchids.html"><span class="station-title">Tropusi orchideak</span> <span class="station-en lang-en">- Tropical orchids</span><span class="station-en lang-hu">- Tr?pusi orchide?k</span></a></li>
+            <li><a href="./collection/succulent-plants.html"><span class="station-title">Pozsgas novenyek</span> <span class="station-en lang-en">- Tropical succulents</span><span class="station-en lang-hu">- Tr?pusi pozsg?sok</span></a></li>
+            <li><a href="./collection/cacti.html"><span class="station-title">Kaktuszok</span> <span class="station-en lang-en">- Cacti</span><span class="station-en lang-hu">- Kaktuszok</span></a></li>
+            <li><a href="./collection/australian-plants.html"><span class="station-title">Ausztral novenyek</span> <span class="station-en lang-en">- Australian plants</span><span class="station-en lang-hu">- Ausztr?l n?v?nyek</span></a></li>
+            <li><span class="station-title">Juranyi Lajos emlekmuve</span> <span class="station-en lang-en">- Juranyi statue</span><span class="station-en lang-hu">- Jur?nyi-szobor</span> <span class="station-note"><span class="lang-en">(statue, no collection page)</span><span class="lang-hu">(szobor, nincs gy?jtem?nyoldal)</span></span></li>
+            <li><a href="./collection/palms.html"><span class="station-title">Palmahaz kupola</span> <span class="station-en lang-en">- Palmhouse cupola</span><span class="station-en lang-hu">- P?lmah?z kupola</span></a></li>
+            <li><a href="./collection/tropical-crop-plants.html"><span class="station-title">Tropusi haszonnovenyek</span> <span class="station-en lang-en">- Tropical crops</span><span class="station-en lang-hu">- Tr?pusi haszonn?v?nyek</span></a></li>
+            <li><a href="./collection/subtropical-plants.html"><span class="station-title">Szubtropusi novenyek</span> <span class="station-en lang-en">- Subtropical plants</span><span class="station-en lang-hu">- Szubtr?pusi n?v?nyek</span></a></li>
+            <li><a href="./collection/frost-tolerant-subtropical.html"><span class="station-title">Fagyturo szubtropusi novenyek</span> <span class="station-en lang-en">- Winter tolerant subtropical plants</span><span class="station-en lang-hu">- Fagyt?r? szubtr?pusi n?v?nyek</span></a></li>
+            <li><a href="./collection/crop-plants-medicinal.html"><span class="station-title">Haszonnovenyek</span> <span class="station-en lang-en">- Crops</span><span class="station-en lang-hu">- Haszonn?v?nyek</span></a></li>
+            <li><a href="./collection/broadleaved-evergreens.html"><span class="station-title">Orokzold lombos fak</span> <span class="station-en lang-en">- Evergreen trees</span><span class="station-en lang-hu">- ?r?kz?ld lombos f?k</span></a> + <a href="./collection/deciduous-forest-understorey.html"><span class="station-en lang-en">Hungarian deciduous forest herbs</span><span class="station-en lang-hu">Magyar lombos erdei l?gysz?r?ak</span></a></li>
+            <li><a href="./collection/east-asian-garden.html"><span class="station-title">Japankert</span> <span class="station-en lang-en">- Japanese garden</span><span class="station-en lang-hu">- Jap?nkert</span></a></li>
+            <li><a href="./collection/cupressaceae-yew.html"><span class="station-title">Ciprusfelek, tiszafafelek</span> <span class="station-en lang-en">- Cypresses and Taxusses</span><span class="station-en lang-hu">- Ciprus- ?s tiszafaf?l?k</span></a></li>
+            <li><a href="./collection/living-fossils.html"><span class="station-title">Elo kovuletek</span> <span class="station-en lang-en">- Living fossils</span><span class="station-en lang-hu">- ?l? k?v?letek</span></a></li>
+            <li><a href="./collection/rosaceae.html"><span class="station-title">Rozsakert es a kastely homlokzata</span> <span class="station-en lang-en">- Rose garden and the Castle facade</span><span class="station-en lang-hu">- R?zsakert ?s a kast?ly homlokzata</span></a></li>
+            <li><a href="./collection/dry-grassland-middle-mountains.html"><span class="station-title">Magyar kozephegysegek szaraz gyepei</span> <span class="station-en lang-en">- Dry grasslands of Hungarian middle mountains</span><span class="station-en lang-hu">- Magyar k?z?phegys?gek sz?raz gyepei</span></a></li>
+            <li><a href="./collection/high-mountain-rock-gardens.html"><span class="station-title">Magashegysegi sziklakertek</span> <span class="station-en lang-en">- Highland rockeries</span><span class="station-en lang-hu">- Magashegys?gi sziklakert</span></a></li>
+            <li><a href="./collection/needle-leaved-evergreens.html"><span class="station-title">Tulevelu orokzoldek</span> <span class="station-en lang-en">- Coniferous trees</span><span class="station-en lang-hu">- T?level? ?r?kz?ldek</span></a></li>
+            <li><span class="station-title">Jozsef nador szobra</span> <span class="station-en lang-en">- Joseph palatine statue</span><span class="station-en lang-hu">- J?zsef n?dor szobra</span> <span class="station-note"><span class="lang-en">(statue, no collection page)</span><span class="lang-hu">(szobor, nincs gy?jtem?nyoldal)</span></span></li>
         </ol>
     </section>
 
     <section class="location-index">
-        <h3>Find Plants by Garden Location</h3>
-        <p class="map-subtitle">Indexed locations: 0 | Plants with mapped location: 0</p>
+        <h3 data-translate="find_by_location">Find Plants by Garden Location</h3>
+        <p class="map-subtitle">
+            <span data-translate="indexed_locations">Indexed locations</span>: 0 |
+            <span data-translate="mapped_plants">Plants with mapped location</span>: 0
+        </p>
         <div class="location-filter">
-            <input id="location-filter" type="text" placeholder="Filter locations or plant names...">
+            <input id="location-filter" type="text" placeholder="Filter locations or plant names..." data-translate="filter_locations">
         </div>
         <div id="location-groups">
             
@@ -280,7 +294,7 @@
 
     </main>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
@@ -290,9 +304,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772023383"></script>
-    <script src="./static/js/controls.js?v=1772023383"></script>
-    <script src="./static/js/lightbox.js?v=1772023383"></script>
+    <script src="./static/js/search.js?v=1772135936"></script>
+    <script src="./static/js/controls.js?v=1772135936"></script>
+    <script src="./static/js/lightbox.js?v=1772135936"></script>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
 <script>
@@ -301,7 +315,7 @@
     const fallback = document.getElementById('pdf-fallback');
     const pagesHost = document.getElementById('pdf-pages');
     const canvasWrap = document.getElementById('pdf-canvas-wrap');
-    const pageInfo = document.getElementById('pdf-page-info');
+    const pageCountEl = document.getElementById('pdf-page-count');
     const zoomInBtn = document.getElementById('pdf-zoom-in');
     const zoomOutBtn = document.getElementById('pdf-zoom-out');
     const fitWidthBtn = document.getElementById('pdf-fit-width');
@@ -340,7 +354,9 @@
                     viewport: viewport
                 }).promise;
             }
-            pageInfo.textContent = "Pages: " + pdfDoc.numPages;
+        if (pageCountEl) {
+            pageCountEl.textContent = String(pdfDoc.numPages);
+        }
         }
 
         async function fitWidth() {

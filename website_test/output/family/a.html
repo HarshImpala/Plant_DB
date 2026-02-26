@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'dark';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>a - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-logo">
+                <h1 data-translate="site_title">Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li><a href="../families.html" data-translate="nav_families">Families</a></li>
+                    <li><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="../map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        
+<div class="category-page">
+    <nav class="breadcrumb">
+        <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
+        <a href="../families.html">Family</a> &rsaquo;
+        <span>a</span>
+    </nav>
+
+    <h1>a</h1>
+    <p class="category-meta">
+        Family: 1
+        
+        <span data-translate="plant">plant</span>
+        
+    </p>
+
+    
+
+    <div class="sort-bar">
+        <span class="sort-label" data-translate="sort_by">Sort by:</span>
+        <button class="sort-btn active" data-sort="scientific" data-translate="scientific_name">Scientific name</button>
+        <button class="sort-btn" data-sort="common" data-translate="common_name">Common name</button>
+    </div>
+
+    <div class="plant-list-grid">
+        
+        <a href="../plant/aa_test_plant.html" class="plant-list-item">
+            <div class="plant-list-image">
+                
+                    <img src="../static/images/plants/a" alt="aa_test_plant" loading="lazy">
+                
+            </div>
+            <div class="plant-list-info">
+                    <h3>aa_test_plant</h3>
+                        
+                        <p>A</p>
+                        
+            </div>
+        </a>
+        
+    </div>
+</div>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
+        <p class="footer-links">
+            <a href="../stats.html" data-translate="collection_statistics">Collection Statistics</a> |
+            <a href="../quality-queue.html" data-translate="content_quality_queue">Content Quality Queue</a>
+        </p>
+    </footer>
+
+    <script src="../static/js/search.js?v=1772135936"></script>
+    <script src="../static/js/controls.js?v=1772135936"></script>
+    <script src="../static/js/lightbox.js?v=1772135936"></script>
+    
+<script>
+(function() {
+    const grid = document.querySelector('.plant-list-grid');
+    const buttons = document.querySelectorAll('.sort-btn');
+    if (!grid) return;
+
+    function sortGrid(by) {
+        const items = Array.from(grid.querySelectorAll('.plant-list-item'));
+        items.sort(function(a, b) {
+            let valA, valB;
+            if (by === 'common') {
+                valA = (a.querySelector('p')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('p')?.textContent || '').trim().toLowerCase();
+                if (!valA && !valB) return 0;
+                if (!valA) return 1;
+                if (!valB) return -1;
+            } else {
+                valA = (a.querySelector('h3')?.textContent || '').trim().toLowerCase();
+                valB = (b.querySelector('h3')?.textContent || '').trim().toLowerCase();
+            }
+            return valA.localeCompare(valB);
+        });
+        items.forEach(function(item) { grid.appendChild(item); });
+    }
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            sortGrid(btn.dataset.sort);
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

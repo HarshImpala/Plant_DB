@@ -45,10 +45,10 @@
                 <div id="search-results" class="search-results"></div>
             </div>
             <div class="header-controls">
-                <button id="lang-toggle" class="control-btn" title="Switch language">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
                     <span class="lang-label">HU</span>
                 </button>
-                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
                     <span class="theme-icon light-icon">&#9788;</span>
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
@@ -56,11 +56,22 @@
         </div>
     </header>
 
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content">
         
 <article class="plant-page">
     <nav class="breadcrumb">
-        <a href="../index.html">Home</a> &rsaquo;
+        <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
         
         <a href="../family/lamiaceae.html">Lamiaceae Martinov</a> &rsaquo;
         
@@ -75,8 +86,8 @@
             <h1 class="scientific-name">Clerodendrum thomsoniae Balf.f.</h1>
             <button class="copy-name-btn"
                     data-name="Clerodendrum thomsoniae Balf.f."
-                    title="Copy scientific name"
-                    aria-label="Copy scientific name">
+                    title="Copy scientific name" data-translate-title="copy_scientific_name"
+                    aria-label="Copy scientific name" data-translate-aria-label="copy_scientific_name">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -96,7 +107,7 @@
                     <path d="M2 22c1.25-1.25 2.08-2.83 2.5-4.5C5 15 5 12 7 9c2-3 6-5 10-5-1 4-3 7-6 9-3 2-5 5-5 9"/>
                     <path d="M12 17c0-4 2-7 5-9"/>
                 </svg>
-                <span>No image available</span>
+                <span data-translate="no_image_available">No image available</span>
             </div>
             
 
@@ -139,15 +150,11 @@
             </table>
 
             <table class="info-table">
-                <caption>
-                    <span class="lang-en">Toxicity</span>
-                    <span class="lang-hu">Mergezes</span>
-                </caption>
+                <caption data-translate="toxicity_block_title">Toxicity</caption>
                 <tbody>
                     <tr>
                         <th>
-                            <span class="lang-en">Humans</span>
-                            <span class="lang-hu">Emberek</span>
+                            <span data-translate="toxicity_humans">Humans</span>
                         </th>
                         <td>
                             <span class="lang-en">unknown</span>
@@ -156,8 +163,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <span class="lang-en">Cats/Dogs</span>
-                            <span class="lang-hu">Macskak/Kutyak</span>
+                            <span data-translate="toxicity_cats_dogs">Cats/Dogs</span>
                         </th>
                         <td>
                             <span class="lang-en">unknown</span>
@@ -202,7 +208,7 @@
                 
                 <p class="lang-hu">
                     Clerodendrum thomsoniae is a species of flowering plant in the genus Clerodendrum of the family Lamiaceae, native to tropical west Africa from Cameroon west to Senegal. It is an evergreen liana growing to 4 m (13 ft) tall, with ovate to oblong leaves 8–17 cm (3–7 in) cm long. The flowers are produced in cymes of 8–20 together, each flower with a pure white to pale purple five-lobed calyx 2.5 cm in diameter, and a red five-lobed corolla 2 cm long and in diameter. The flowers are born in cymose inflorescences arising from the axils of the leaves. The leaves, in turn, are arranged opposite to each other and at right angles to the pairs above and below. An unambiguous common name is bleeding glory-bower; terms like "glory-bower", "bagflower" or "bleeding-heart vine" are also often encountered but can refer to any of the roughly 400 species of Clerodendrum. In some regions it has escaped from cultivation and become naturalised. It is grown as an ornamental plant for its decorative two-coloured flowers. With a minimum temperature of 10–13 °C (50–55 °F), in temperate areas it requires shelter and a frost-free environment. This plant has gained the Royal Horticultural Society's Award of Garden Merit (confirmed 2017). The plant was named at the request of Rev. William Cooper Thomson (1829-22 March 1878), a missionary and physician in Nigeria, in honor of his late first wife. This plant was very popular during the mid 19th century under the name "beauty bush". It lost favour only when its unusual culture conditions were forgotten. Specifically, its root system must be partially submerged in water most of the time, and it wants very good light.
-                    <em>(English fallback)</em>
+                    <em data-translate="english_fallback">(English fallback)</em>
                 </p>
                 
             </section>
@@ -360,7 +366,7 @@
 
     </main>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
@@ -370,22 +376,24 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772023383"></script>
-    <script src="../static/js/controls.js?v=1772023383"></script>
-    <script src="../static/js/lightbox.js?v=1772023383"></script>
+    <script src="../static/js/search.js?v=1772135936"></script>
+    <script src="../static/js/controls.js?v=1772135936"></script>
+    <script src="../static/js/lightbox.js?v=1772135936"></script>
     
 <script>
 // Copy scientific name
 (function() {
     var btn = document.querySelector('.copy-name-btn');
     if (!btn || !navigator.clipboard) return;
+    var copyLabel = (window.getTranslation && window.getTranslation('copy_scientific_name')) || 'Copy scientific name';
+    var copiedLabel = (window.getTranslation && window.getTranslation('copied')) || 'Copied!';
     btn.addEventListener('click', function() {
         navigator.clipboard.writeText(btn.dataset.name).then(function() {
             btn.classList.add('copied');
-            btn.title = 'Copied!';
+            btn.title = copiedLabel;
             setTimeout(function() {
                 btn.classList.remove('copied');
-                btn.title = 'Copy scientific name';
+                btn.title = copyLabel;
             }, 2000);
         });
     });

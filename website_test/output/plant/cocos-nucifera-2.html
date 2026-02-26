@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'dark';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Cocos nucifera - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+
+<meta name="description" content="The coconut (Cocos nucifera) is a member of the palm family (Arecaceae) and the only living species of the genus Cocos. The term "coconut" (or the archaic ...">
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Taxon","name":"Cocos nucifera","url":"https://example.com/plant/cocos-nucifera-2.html","description":"The coconut (Cocos nucifera) is a member of the palm family (Arecaceae) and the only living species of the genus Cocos. The term \"coconut\" (or the archaic \"cocoanut\") can denote the whole coconut palm tree or the large hard fruit. Originally native to Central Indo-Pacific, they are ubiquitous in coastal tropical regions. The coconut tree provides food, fuel, cosmetics, folk medicine and building materials. The inner flesh of the mature fruit forms a regular part of the diets of many people in the tropics and subtropics. Coconut endosperm contains a large quantity of a liquid, \"coconut water\". Mature coconuts can be processed for oil and coconut milk from the flesh, charcoal from the hard shell, and coir from the fibrous husk. Dried coconut flesh is called copra, and the oil and milk derived from it are commonly used in cooking and in soaps and cosmetics. Sweet coconut sap can be made into drinks or fermented into palm wine or coconut vinegar. The hard shells, fibrous husks and long pinnate leaves are used to make a products for furnishing and decoration. The coconut has cultural and religious significance for Austronesian peoples, appearing in their mythologies, songs, and oral traditions. It has religious significance in South Asian cultures, where it is used in Hindu rituals including weddings and worship. The species evolved in the central Indo-Pacific. It was domesticated by Austronesian peoples in Island Southeast Asia and spread during the Neolithic via their seaborne migrations as far east as the Pacific Islands, and as far west as Madagascar. The species played a critical role in their long sea voyages by providing a portable source of food and water, as well as building materials for outrigger boats. Coconuts were spread much later along the coasts of the Indian and Atlantic Oceans by South Asian, Arab, and from the 16th century by European sailors. Based on these introductions, the species can be divided into Pacific and Indo-Atlantic types. The Indo-Atlantic type was introduced to the Americas during the colonial era in the Columbian exchange, while Austronesian sailors appear to have introduced Pacific coconuts to Panama in pre-Columbian times. Trees can grow up to 30 metres (100 feet) tall and can yield up to 75 fruits per year, though fewer than 30 is more typical. They are intolerant to cold and prefer copious precipitation and full sunlight. Many insect pests and diseases affect commercial production. In 2023, world production of coconuts was 65 million tonnes, with 73% of the total produced by Indonesia, India, and the Philippines.","alternateName":["Cocos nucifera L.","Coconut","Coconut Palm","Coconut Tree","Cocore","Copra","Koko","Calappa nucifera (L.) Kuntze","Cocos indica Royle","Cocos mamillaris Blanco","Cocos nana Griff.","Cocos nucifera f. palmyrensis Becc.","Cocos nucifera subsp. synphyllica Becc.","Cocos nucifera var. alangan Blume"],"image":"https://example.com/static/images/plants/cocos-nucifera.jpg","identifier":"WFO:wfo-0000903570","sameAs":["https://www.worldfloraonline.org/taxon/wfo-0000903570","https://www.gbif.org/species/2735117","https://en.wikipedia.org/wiki/Coconut"],"parentTaxon":"Cocos L. > Arecaceae Bercht. & J.Presl"}</script>
+
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-logo">
+                <h1 data-translate="site_title">Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li><a href="../families.html" data-translate="nav_families">Families</a></li>
+                    <li><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="../map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        
+<article class="plant-page">
+    <nav class="breadcrumb">
+        <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
+        
+        <a href="../family/arecaceae-bercht-jpresl.html">Arecaceae Bercht. & J.Presl</a> &rsaquo;
+        
+        
+        <a href="../genus/cocos.html">Cocos L.</a> &rsaquo;
+        
+        <span>Cocos nucifera</span>
+    </nav>
+
+    <header class="plant-header">
+        <div class="plant-title-row">
+            <h1 class="scientific-name">Cocos nucifera L.</h1>
+            <button class="copy-name-btn"
+                    data-name="Cocos nucifera L."
+                    title="Copy scientific name" data-translate-title="copy_scientific_name"
+                    aria-label="Copy scientific name" data-translate-aria-label="copy_scientific_name">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <p class="common-name">Coconut / Kókuszpálma</p>
+        
+    </header>
+
+    <div class="plant-content">
+        <aside class="plant-sidebar">
+            
+            <div class="plant-image">
+                <img src="../static/images/plants/cocos-nucifera.jpg"
+                     alt="Cocos nucifera">
+                
+                <p class="image-credit"><span data-translate="image_source">Image source</span>: Wikipedia</p>
+                
+            </div>
+            
+
+            <table class="info-table">
+                <caption data-translate="classification">Classification</caption>
+                <tbody>
+                    
+                    <tr>
+                        <th data-translate="family">Family</th>
+                        <td><a href="../family/arecaceae-bercht-jpresl.html">Arecaceae Bercht. & J.Presl</a></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th data-translate="genus">Genus</th>
+                        <td><a href="../genus/cocos.html">Cocos L.</a></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th>
+                            <span class="lang-en">Collection</span>
+                            <span class="lang-hu">Gyűjtemény</span>
+                        </th>
+                        <td>
+                            <a href="../collection/tropical-crop-plants.html">
+                                <span class="lang-en">Tropical crop plants</span>
+                                <span class="lang-hu">Trópusi haszonnövények</span>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th data-translate="wfo_id">WFO ID</th>
+                        <td>wfo-0000903570</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <table class="info-table">
+                <caption data-translate="toxicity_block_title">Toxicity</caption>
+                <tbody>
+                    <tr>
+                        <th>
+                            <span data-translate="toxicity_humans">Humans</span>
+                        </th>
+                        <td>
+                            <span class="lang-en">unknown</span>
+                            <span class="lang-hu">ismeretlen</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span data-translate="toxicity_cats_dogs">Cats/Dogs</span>
+                        </th>
+                        <td>
+                            <span class="lang-en">unknown</span>
+                            <span class="lang-hu">ismeretlen</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+            <div class="external-links">
+                <h3 data-translate="external_links">External Links</h3>
+                
+                <ul>
+                    
+                    <li><a href="https://www.worldfloraonline.org/taxon/wfo-0000903570" target="_blank" rel="noopener">World Flora Online</a></li>
+                    
+                    
+                    <li><a href="https://www.gbif.org/species/2735117" target="_blank" rel="noopener">GBIF</a></li>
+                    
+                    
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Coconut" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
+                    <li class="lang-hu"><a href="https://en.wikipedia.org/wiki/Coconut" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-en"><a href="https://hu.wikipedia.org/wiki/K%C3%B3kuszp%C3%A1lma" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/K%C3%B3kuszp%C3%A1lma" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
+                    
+                </ul>
+                
+                <a href="https://www.fuveszkert.org/orokbefogadas/"
+                   target="_blank" rel="noopener"
+                   class="adopt-btn"
+                   data-translate="adopt_me">Adopt me!</a>
+            </div>
+        </aside>
+
+        <div class="plant-main">
+            
+            <section class="plant-section">
+                <h2 data-translate="about">About</h2>
+                
+                <p class="lang-en">The coconut (Cocos nucifera) is a member of the palm family (Arecaceae) and the only living species of the genus Cocos. The term "coconut" (or the archaic "cocoanut") can denote the whole coconut palm tree or the large hard fruit. Originally native to Central Indo-Pacific, they are ubiquitous in coastal tropical regions. The coconut tree provides food, fuel, cosmetics, folk medicine and building materials. The inner flesh of the mature fruit forms a regular part of the diets of many people in the tropics and subtropics. Coconut endosperm contains a large quantity of a liquid, "coconut water". Mature coconuts can be processed for oil and coconut milk from the flesh, charcoal from the hard shell, and coir from the fibrous husk. Dried coconut flesh is called copra, and the oil and milk derived from it are commonly used in cooking and in soaps and cosmetics. Sweet coconut sap can be made into drinks or fermented into palm wine or coconut vinegar. The hard shells, fibrous husks and long pinnate leaves are used to make a products for furnishing and decoration. The coconut has cultural and religious significance for Austronesian peoples, appearing in their mythologies, songs, and oral traditions. It has religious significance in South Asian cultures, where it is used in Hindu rituals including weddings and worship. The species evolved in the central Indo-Pacific. It was domesticated by Austronesian peoples in Island Southeast Asia and spread during the Neolithic via their seaborne migrations as far east as the Pacific Islands, and as far west as Madagascar. The species played a critical role in their long sea voyages by providing a portable source of food and water, as well as building materials for outrigger boats. Coconuts were spread much later along the coasts of the Indian and Atlantic Oceans by South Asian, Arab, and from the 16th century by European sailors. Based on these introductions, the species can be divided into Pacific and Indo-Atlantic types. The Indo-Atlantic type was introduced to the Americas during the colonial era in the Columbian exchange, while Austronesian sailors appear to have introduced Pacific coconuts to Panama in pre-Columbian times. Trees can grow up to 30 metres (100 feet) tall and can yield up to 75 fruits per year, though fewer than 30 is more typical. They are intolerant to cold and prefer copious precipitation and full sunlight. Many insect pests and diseases affect commercial production. In 2023, world production of coconuts was 65 million tonnes, with 73% of the total produced by Indonesia, India, and the Philippines.</p>
+                
+                
+                <p class="lang-hu">
+                    A kókuszpálma (Cocos nucifera) az egyszikűek (Liliopsida) osztályába, a pálmavirágúak (Arecales) rendjébe és a pálmafélék (Arecaceae) családjába tartozó faj.
+                    
+                </p>
+                
+            </section>
+            
+
+            
+            <section class="plant-section">
+                <h2 data-translate="common_names">Common Names</h2>
+                <ul class="common-names-list">
+                    
+                    <li>Coconut</li>
+                    
+                    <li>Coconut Palm</li>
+                    
+                    <li>Coconut Tree</li>
+                    
+                    <li>Cocore</li>
+                    
+                    <li>Copra</li>
+                    
+                    <li>Koko</li>
+                    
+                </ul>
+            </section>
+            
+
+            
+            <section class="plant-section">
+                <h2 data-translate="native_distribution">Native Distribution</h2>
+                <div class="country-badges">
+                    
+                    <span class="country-badge">Indonesia</span>
+                    
+                    <span class="country-badge">Singapore</span>
+                    
+                    <span class="country-badge">Timor-Leste</span>
+                    
+                    <span class="country-badge">Malaysia</span>
+                    
+                    <span class="country-badge">Myanmar</span>
+                    
+                    <span class="country-badge">Thailand</span>
+                    
+                    <span class="country-badge">Brunei</span>
+                    
+                    <span class="country-badge">Philippines</span>
+                    
+                    <span class="country-badge">Democratic Republic of the Congo</span>
+                    
+                    <span class="country-badge">Papua New Guinea</span>
+                    
+                    <span class="country-badge">France</span>
+                    
+                    <span class="country-badge">Australia</span>
+                    
+                    <span class="country-badge">New Zealand</span>
+                    
+                    <span class="country-badge">Solomon Islands</span>
+                    
+                    <span class="country-badge">Vanuatu</span>
+                    
+                    <span class="country-badge">Fiji</span>
+                    
+                    <span class="country-badge">Samoa</span>
+                    
+                    <span class="country-badge">Tonga</span>
+                    
+                </div>
+                
+                <details>
+                    <summary data-translate="detailed_regions">Detailed Regions</summary>
+                    <p>Asia-Tropical Malesia Maluku | Asia-Tropical | Malesia | Maluku | Philippines | Papuasia Bismarck Archipelago | Papuasia | Bismarck Archipelago | New Guinea | Solomon Is. | Australasia Australia Queensland | Australasia | Australia | Queensland | Pacific Southwestern Pacific Samoa | Pacific | Southwestern Pacific | Samoa | Santa Cruz Is. | Tokelau-Manihiki | Tonga | Vanuatu</p>
+                </details>
+                
+                
+                <p class="confidence-note"><span data-translate="data_confidence">Data confidence</span>: medium</p>
+                
+            </section>
+            
+
+            
+
+            
+            <section class="plant-section">
+                <h2 data-translate="synonyms">Synonyms</h2>
+                <details>
+                    <summary>
+                        <span class="lang-en">Show 63 synonyms</span>
+                        <span class="lang-hu">63 szinonima megjelenítése</span>
+                    </summary>
+                    <ul class="synonyms-list">
+                        
+                        <li>Calappa nucifera (L.) Kuntze</li>
+                        
+                        <li>Cocos indica Royle</li>
+                        
+                        <li>Cocos mamillaris Blanco</li>
+                        
+                        <li>Cocos nana Griff.</li>
+                        
+                        <li>Cocos nucifera L.</li>
+                        
+                        <li>Cocos nucifera f. palmyrensis Becc.</li>
+                        
+                        <li>Cocos nucifera subsp. synphyllica Becc.</li>
+                        
+                        <li>Cocos nucifera var. alangan Blume</li>
+                        
+                        <li>Cocos nucifera var. alba Blume</li>
+                        
+                        <li>Cocos nucifera var. angustifolia Hassk.</li>
+                        
+                        <li>Cocos nucifera var. aurea Anon.</li>
+                        
+                        <li>Cocos nucifera var. austera Blume</li>
+                        
+                        <li>Cocos nucifera var. bego Blume</li>
+                        
+                        <li>Cocos nucifera var. buri Blume</li>
+                        
+                        <li>Cocos nucifera var. calimbahin Blume</li>
+                        
+                        <li>Cocos nucifera var. capuliformis Blume</li>
+                        
+                        <li>Cocos nucifera var. cistiformis Blume</li>
+                        
+                        <li>Cocos nucifera var. como Blume</li>
+                        
+                        <li>Cocos nucifera var. crassissima Blume</li>
+                        
+                        <li>Cocos nucifera var. delicata Blume</li>
+                        
+                        <li>Cocos nucifera var. eburnea Blume</li>
+                        
+                        <li>Cocos nucifera var. edulis Blume</li>
+                        
+                        <li>Cocos nucifera var. elongata Blume</li>
+                        
+                        <li>Cocos nucifera var. fibrosa Blume</li>
+                        
+                        <li>Cocos nucifera var. fragilis Blume</li>
+                        
+                        <li>Cocos nucifera var. humilis Blume</li>
+                        
+                        <li>Cocos nucifera var. iners Blume</li>
+                        
+                        <li>Cocos nucifera var. javanica G.V.Narayana</li>
+                        
+                        <li>Cocos nucifera var. laetevirens Blume</li>
+                        
+                        <li>Cocos nucifera var. lansiformis Blume</li>
+                        
+                        <li>Cocos nucifera var. lolog Blume</li>
+                        
+                        <li>Cocos nucifera var. machaeroides Blume</li>
+                        
+                        <li>Cocos nucifera var. macrocarpa Blume</li>
+                        
+                        <li>Cocos nucifera var. maldivica Blume</li>
+                        
+                        <li>Cocos nucifera var. mamillaris (Blanco) Blume</li>
+                        
+                        <li>Cocos nucifera var. microcarpa Hassk.</li>
+                        
+                        <li>Cocos nucifera var. microcarpa Hassk. ex F.W.T.Hunger</li>
+                        
+                        <li>Cocos nucifera var. nana (Griff.) G.V.Narayana</li>
+                        
+                        <li>Cocos nucifera var. ossea Blume</li>
+                        
+                        <li>Cocos nucifera var. palmyrensis (Becc.) Becc.</li>
+                        
+                        <li>Cocos nucifera var. palmyrensis (Beccari) Pignotti & Baldini, 2020</li>
+                        
+                        <li>Cocos nucifera var. pinang Blume</li>
+                        
+                        <li>Cocos nucifera var. pretiosa Blume</li>
+                        
+                        <li>Cocos nucifera var. pruniformis Blume</li>
+                        
+                        <li>Cocos nucifera var. pumila Hassk.</li>
+                        
+                        <li>Cocos nucifera var. regia Blume</li>
+                        
+                        <li>Cocos nucifera var. rubescens Hassk.</li>
+                        
+                        <li>Cocos nucifera var. rutila Blume</li>
+                        
+                        <li>Cocos nucifera var. saccharina Blume</li>
+                        
+                        <li>Cocos nucifera var. sapida Blume</li>
+                        
+                        <li>Cocos nucifera var. spicata K.C.Jacob</li>
+                        
+                        <li>Cocos nucifera var. stupposa Blume</li>
+                        
+                        <li>Cocos nucifera var. suavis Blume</li>
+                        
+                        <li>Cocos nucifera var. subamara Blume</li>
+                        
+                        <li>Cocos nucifera var. subcandida Blume</li>
+                        
+                        <li>Cocos nucifera var. synphyllica Becc.</li>
+                        
+                        <li>Cocos nucifera var. tabogog Blume</li>
+                        
+                        <li>Cocos nucifera var. tamisan Blume</li>
+                        
+                        <li>Cocos nucifera var. tenuissima Blume</li>
+                        
+                        <li>Cocos nucifera var. viridis Blume</li>
+                        
+                        <li>Cocos nucifera var. viridis Hassk.</li>
+                        
+                        <li>Diplothemium henryanum F.Br.</li>
+                        
+                        <li>Palma cocos Mill.</li>
+                        
+                    </ul>
+                </details>
+            </section>
+            
+
+            
+        </div>
+    </div>
+</article>
+
+
+<section class="related-plants-section">
+    <h2 data-translate="related_plants">Related Plants</h2>
+    <div class="related-plants-grid">
+        
+        <a href="../plant/cocos-nucifera-1.html" class="related-plant-card">
+            <div class="related-plant-image">
+                
+                <img src="../static/images/plants/cocos-nucifera.jpg"
+                     alt="Cocos nucifera" loading="lazy">
+                
+            </div>
+            <div class="related-plant-info">
+                <span class="scientific">Cocos nucifera</span>
+                
+                <span class="common">Coconut / Kókuszpálma</span>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/cocos-nucifera-3.html" class="related-plant-card">
+            <div class="related-plant-image">
+                
+                <img src="../static/images/plants/cocos-nucifera.jpg"
+                     alt="Cocos nucifera" loading="lazy">
+                
+            </div>
+            <div class="related-plant-info">
+                <span class="scientific">Cocos nucifera</span>
+                
+                <span class="common">Coconut / Kókuszpálma</span>
+                
+            </div>
+        </a>
+        
+    </div>
+</section>
+
+
+
+<nav class="plant-nav">
+    <div class="plant-nav-prev">
+        
+        <a href="../plant/cocos-nucifera-1.html" class="plant-nav-link">
+            
+            <span class="plant-nav-thumb">
+                <img src="../static/images/plants/cocos-nucifera.jpg"
+                     alt="Cocos nucifera" loading="lazy">
+            </span>
+            
+            <span class="plant-nav-text">
+                <span class="plant-nav-arrow">&#8592;</span>
+                <span class="plant-nav-label" data-translate="previous">Previous</span>
+                <span class="plant-nav-name">Cocos nucifera</span>
+            </span>
+        </a>
+        
+    </div>
+    <div class="plant-nav-next">
+        
+        <a href="../plant/cocos-nucifera-3.html" class="plant-nav-link">
+            <span class="plant-nav-text">
+                <span class="plant-nav-name">Cocos nucifera</span>
+                <span class="plant-nav-label" data-translate="next">Next</span>
+                <span class="plant-nav-arrow">&#8594;</span>
+            </span>
+            
+            <span class="plant-nav-thumb">
+                <img src="../static/images/plants/cocos-nucifera.jpg"
+                     alt="Cocos nucifera" loading="lazy">
+            </span>
+            
+        </a>
+        
+    </div>
+</nav>
+
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
+        <p class="footer-links">
+            <a href="../stats.html" data-translate="collection_statistics">Collection Statistics</a> |
+            <a href="../quality-queue.html" data-translate="content_quality_queue">Content Quality Queue</a>
+        </p>
+    </footer>
+
+    <script src="../static/js/search.js?v=1772135936"></script>
+    <script src="../static/js/controls.js?v=1772135936"></script>
+    <script src="../static/js/lightbox.js?v=1772135936"></script>
+    
+<script>
+// Copy scientific name
+(function() {
+    var btn = document.querySelector('.copy-name-btn');
+    if (!btn || !navigator.clipboard) return;
+    var copyLabel = (window.getTranslation && window.getTranslation('copy_scientific_name')) || 'Copy scientific name';
+    var copiedLabel = (window.getTranslation && window.getTranslation('copied')) || 'Copied!';
+    btn.addEventListener('click', function() {
+        navigator.clipboard.writeText(btn.dataset.name).then(function() {
+            btn.classList.add('copied');
+            btn.title = copiedLabel;
+            setTimeout(function() {
+                btn.classList.remove('copied');
+                btn.title = copyLabel;
+            }, 2000);
+        });
+    });
+})();
+</script>
+
+<script>
+// Recently viewed
+(function() {
+    try {
+        const entry = {
+            slug: "cocos-nucifera-2",
+            name: "Cocos nucifera",
+            common_name: "Coconut / Kókuszpálma"
+        };
+        let recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+        recent = recent.filter(function(p) { return p.slug !== entry.slug; });
+        recent.unshift(entry);
+        localStorage.setItem('recentlyViewed', JSON.stringify(recent.slice(0, 8)));
+    } catch(e) {}
+})();
+</script>
+
+</body>
+</html>

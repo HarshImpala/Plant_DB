@@ -45,10 +45,10 @@
                 <div id="search-results" class="search-results"></div>
             </div>
             <div class="header-controls">
-                <button id="lang-toggle" class="control-btn" title="Switch language">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
                     <span class="lang-label">HU</span>
                 </button>
-                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
                     <span class="theme-icon light-icon">&#9788;</span>
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
@@ -56,11 +56,22 @@
         </div>
     </header>
 
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content">
         
 <article class="plant-page">
     <nav class="breadcrumb">
-        <a href="../index.html">Home</a> &rsaquo;
+        <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
         
         
         <span>Passiflora violacea</span>
@@ -71,8 +82,8 @@
             <h1 class="scientific-name">Passiflora ×violacea Loisel.</h1>
             <button class="copy-name-btn"
                     data-name="Passiflora ×violacea Loisel."
-                    title="Copy scientific name"
-                    aria-label="Copy scientific name">
+                    title="Copy scientific name" data-translate-title="copy_scientific_name"
+                    aria-label="Copy scientific name" data-translate-aria-label="copy_scientific_name">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -91,7 +102,7 @@
                 <img src="../static/images/plants/passiflora-violacea.jpg"
                      alt="Passiflora violacea">
                 
-                <p class="image-credit">Image source: Wikipedia</p>
+                <p class="image-credit"><span data-translate="image_source">Image source</span>: Wikipedia</p>
                 
             </div>
             
@@ -125,15 +136,11 @@
             </table>
 
             <table class="info-table">
-                <caption>
-                    <span class="lang-en">Toxicity</span>
-                    <span class="lang-hu">Mergezes</span>
-                </caption>
+                <caption data-translate="toxicity_block_title">Toxicity</caption>
                 <tbody>
                     <tr>
                         <th>
-                            <span class="lang-en">Humans</span>
-                            <span class="lang-hu">Emberek</span>
+                            <span data-translate="toxicity_humans">Humans</span>
                         </th>
                         <td>
                             <span class="lang-en">unknown</span>
@@ -142,8 +149,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <span class="lang-en">Cats/Dogs</span>
-                            <span class="lang-hu">Macskak/Kutyak</span>
+                            <span data-translate="toxicity_cats_dogs">Cats/Dogs</span>
                         </th>
                         <td>
                             <span class="lang-en">unknown</span>
@@ -188,7 +194,7 @@
                 
                 <p class="lang-hu">
                     Passiflora × violacea, the violet passion flower, is a hybrid between two species of flowering plants, Passiflora racemosa × Passiflora caerulea, in the family Passifloraceae. The name Passiflora × violacea has yet to be resolved as a correct scientific name; nevertheless it is widely found in the horticultural literature. It is an evergreen climber growing to 6 m (20 ft) with five-lobed leaves, clinging spiral tendrils, large showy purple flowers with maroon and white filaments, and the prominent stigmas and anthers typical of the genus. While somewhat hardier than one of its parents, P. racemosa, it is considerably less hardy than the other, P. caerulea (which can be grown outside in warm or coastal areas). P. × violacea will tolerate temperatures down to −1 °C (30 °F), but in most temperate zones is grown under glass, for instance in an unheated conservatory or greenhouse. Passiflora × violacea may well be the very first Passiflora to have been hybridised, by the British nurseryman Thomas Milne, in 1819. It was subsequently described by Joseph Sabine of the Royal Horticultural Society, then in 1824 by the French botanist Jean-Louis-Auguste Loiseleur-Deslongchamps in the "Herbier General de l'Amateur", giving it its current name. This hybrid has in its turn given rise to several cultivars, notably 'Victoria'. It has won the Royal Horticultural Society's Award of Garden Merit.
-                    <em>(English fallback)</em>
+                    <em data-translate="english_fallback">(English fallback)</em>
                 </p>
                 
             </section>
@@ -279,7 +285,7 @@
 
     </main>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
@@ -289,22 +295,24 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772023383"></script>
-    <script src="../static/js/controls.js?v=1772023383"></script>
-    <script src="../static/js/lightbox.js?v=1772023383"></script>
+    <script src="../static/js/search.js?v=1772135936"></script>
+    <script src="../static/js/controls.js?v=1772135936"></script>
+    <script src="../static/js/lightbox.js?v=1772135936"></script>
     
 <script>
 // Copy scientific name
 (function() {
     var btn = document.querySelector('.copy-name-btn');
     if (!btn || !navigator.clipboard) return;
+    var copyLabel = (window.getTranslation && window.getTranslation('copy_scientific_name')) || 'Copy scientific name';
+    var copiedLabel = (window.getTranslation && window.getTranslation('copied')) || 'Copied!';
     btn.addEventListener('click', function() {
         navigator.clipboard.writeText(btn.dataset.name).then(function() {
             btn.classList.add('copied');
-            btn.title = 'Copied!';
+            btn.title = copiedLabel;
             setTimeout(function() {
                 btn.classList.remove('copied');
-                btn.title = 'Copy scientific name';
+                btn.title = copyLabel;
             }, 2000);
         });
     });

@@ -38,16 +38,27 @@
                 <div id="search-results" class="search-results"></div>
             </div>
             <div class="header-controls">
-                <button id="lang-toggle" class="control-btn" title="Switch language">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
                     <span class="lang-label">HU</span>
                 </button>
-                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
                     <span class="theme-icon light-icon">&#9788;</span>
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
             </div>
         </div>
     </header>
+
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
 
     <main class="main-content">
         
@@ -56,28 +67,28 @@
 
     <div class="stats-grid">
         <div class="stat-card">
-            <div class="stat-number">196</div>
+            <div class="stat-number">197</div>
             <div class="stat-label" data-translate="total_plants">Total Plants</div>
         </div>
         <div class="stat-card highlight">
-            <div class="stat-number">137</div>
+            <div class="stat-number">138</div>
             <div class="stat-label" data-translate="with_photos">With Photos</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">161</div>
+            <div class="stat-number">162</div>
             <div class="stat-label" data-translate="with_descriptions">With Descriptions</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">164</div>
+            <div class="stat-number">165</div>
             <div class="stat-label" data-translate="with_distribution_data">With Distribution Data</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">53</div>
-            <div class="stat-label">Families</div>
+            <div class="stat-number">54</div>
+            <div class="stat-label" data-translate="families_label">Families</div>
         </div>
         <div class="stat-card">
             <div class="stat-number">105</div>
-            <div class="stat-label">Genera</div>
+            <div class="stat-label" data-translate="genera_label">Genera</div>
         </div>
     </div>
 
@@ -212,7 +223,7 @@
         <h2 data-translate="data_quality_dashboard">Data Quality Dashboard</h2>
         <div class="stats-grid">
             <div class="stat-card highlight">
-                <div class="stat-number">61.7%</div>
+                <div class="stat-number">61.9%</div>
                 <div class="stat-label" data-translate="overall_completeness">Overall Completeness</div>
             </div>
         </div>
@@ -229,49 +240,49 @@
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_wikipedia_url">Wikipedia URL</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 85.2%"></div>
+                    <div class="chart-bar-fill" style="width: 85.3%"></div>
                 </div>
-                <span class="chart-value">85.2%</span>
+                <span class="chart-value">85.3%</span>
             </div>
             
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_distribution">Distribution</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 83.7%"></div>
+                    <div class="chart-bar-fill" style="width: 83.8%"></div>
                 </div>
-                <span class="chart-value">83.7%</span>
+                <span class="chart-value">83.8%</span>
             </div>
             
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_description">Description</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 82.1%"></div>
+                    <div class="chart-bar-fill" style="width: 82.2%"></div>
                 </div>
-                <span class="chart-value">82.1%</span>
+                <span class="chart-value">82.2%</span>
             </div>
             
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_image">Image</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 69.9%"></div>
+                    <div class="chart-bar-fill" style="width: 70.1%"></div>
                 </div>
-                <span class="chart-value">69.9%</span>
+                <span class="chart-value">70.1%</span>
             </div>
             
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_toxicity_info">Toxicity Info</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 11.2%"></div>
+                    <div class="chart-bar-fill" style="width: 11.7%"></div>
                 </div>
-                <span class="chart-value">11.2%</span>
+                <span class="chart-value">11.7%</span>
             </div>
             
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_garden_location">Garden Location</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 0.0%"></div>
+                    <div class="chart-bar-fill" style="width: 0.5%"></div>
                 </div>
-                <span class="chart-value">0.0%</span>
+                <span class="chart-value">0.5%</span>
             </div>
             
         </div>
@@ -280,7 +291,7 @@
 
     </main>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
@@ -290,9 +301,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772023383"></script>
-    <script src="./static/js/controls.js?v=1772023383"></script>
-    <script src="./static/js/lightbox.js?v=1772023383"></script>
+    <script src="./static/js/search.js?v=1772135936"></script>
+    <script src="./static/js/controls.js?v=1772135936"></script>
+    <script src="./static/js/lightbox.js?v=1772135936"></script>
     
 </body>
 </html>

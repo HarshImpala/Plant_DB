@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            var theme = localStorage.getItem('theme') || 'dark';
+            var lang = localStorage.getItem('lang') || 'en';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Coffea arabica - Plant Encyclopedia</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+
+<meta name="description" content="Coffea arabica (), also known as the Arabica coffee, is a species of flowering plant in the coffee and madder family Rubiaceae. It is believed to be the fi...">
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Taxon","name":"Coffea arabica","url":"https://example.com/plant/coffea-arabica-2.html","description":"Coffea arabica (), also known as the Arabica coffee, is a species of flowering plant in the coffee and madder family Rubiaceae. It is believed to be the first species of coffee to have been cultivated and is the dominant cultivar, representing about 60% of global production. Coffee produced from the less acidic, more bitter, and more highly caffeinated robusta bean (C. canephora) makes up most of the remaining coffee production. The natural populations of Coffea arabica are restricted to the forests of South Ethiopia and Yemen.","alternateName":["Coffea arabica L.","Coffee","Arabian Coffee","Arabica Coffee, Arabian Coffee, Coffee Tree, Coffee,","Arabica Coffee","Coffea arabica f. abyssinica A.Chev.","Coffea arabica subsp. abyssinica A.Chev.","Coffea arabica subsp. amarella A.Froehner","Coffea arabica subsp. angustifolia Cramer","Coffea arabica subsp. bourbon Rodr.","Coffea arabica subsp. bourbon Rodr. ex Choussy","Coffea arabica subsp. brevistipulata Cif."],"image":"https://example.com/static/images/plants/coffea-arabica.jpg","identifier":"WFO:wfo-0000910097","sameAs":["https://www.worldfloraonline.org/taxon/wfo-0000910097","https://www.gbif.org/species/2895345","https://en.wikipedia.org/wiki/Coffea_arabica"],"parentTaxon":"Coffea L. > Rubiaceae Juss."}</script>
+
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="site-logo">
+                <h1 data-translate="site_title">Plant Encyclopedia</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li><a href="../families.html" data-translate="nav_families">Families</a></li>
+                    <li><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="../map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
+                <div id="search-results" class="search-results"></div>
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
+                    <span class="lang-label">HU</span>
+                </button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
+                    <span class="theme-icon light-icon">&#9788;</span>
+                    <span class="theme-icon dark-icon">&#9790;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        
+<article class="plant-page">
+    <nav class="breadcrumb">
+        <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
+        
+        <a href="../family/rubiaceae.html">Rubiaceae Juss.</a> &rsaquo;
+        
+        
+        <a href="../genus/coffea.html">Coffea L.</a> &rsaquo;
+        
+        <span>Coffea arabica</span>
+    </nav>
+
+    <header class="plant-header">
+        <div class="plant-title-row">
+            <h1 class="scientific-name">Coffea arabica L.</h1>
+            <button class="copy-name-btn"
+                    data-name="Coffea arabica L."
+                    title="Copy scientific name" data-translate-title="copy_scientific_name"
+                    aria-label="Copy scientific name" data-translate-aria-label="copy_scientific_name">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <p class="common-name">Coffee / Arab Kávécserje</p>
+        
+    </header>
+
+    <div class="plant-content">
+        <aside class="plant-sidebar">
+            
+            <div class="plant-image">
+                <img src="../static/images/plants/coffea-arabica.jpg"
+                     alt="Coffea arabica">
+                
+                <p class="image-credit"><span data-translate="image_source">Image source</span>: Wikipedia</p>
+                
+            </div>
+            
+
+            <table class="info-table">
+                <caption data-translate="classification">Classification</caption>
+                <tbody>
+                    
+                    <tr>
+                        <th data-translate="family">Family</th>
+                        <td><a href="../family/rubiaceae.html">Rubiaceae Juss.</a></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th data-translate="genus">Genus</th>
+                        <td><a href="../genus/coffea.html">Coffea L.</a></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th>
+                            <span class="lang-en">Collection</span>
+                            <span class="lang-hu">Gyűjtemény</span>
+                        </th>
+                        <td>
+                            <a href="../collection/tropical-crop-plants.html">
+                                <span class="lang-en">Tropical crop plants</span>
+                                <span class="lang-hu">Trópusi haszonnövények</span>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <th data-translate="wfo_id">WFO ID</th>
+                        <td>wfo-0000910097</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <table class="info-table">
+                <caption data-translate="toxicity_block_title">Toxicity</caption>
+                <tbody>
+                    <tr>
+                        <th>
+                            <span data-translate="toxicity_humans">Humans</span>
+                        </th>
+                        <td>
+                            <span class="lang-en">unknown</span>
+                            <span class="lang-hu">ismeretlen</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span data-translate="toxicity_cats_dogs">Cats/Dogs</span>
+                        </th>
+                        <td>
+                            <span class="lang-en">unknown</span>
+                            <span class="lang-hu">ismeretlen</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+            <div class="external-links">
+                <h3 data-translate="external_links">External Links</h3>
+                
+                <ul>
+                    
+                    <li><a href="https://www.worldfloraonline.org/taxon/wfo-0000910097" target="_blank" rel="noopener">World Flora Online</a></li>
+                    
+                    
+                    <li><a href="https://www.gbif.org/species/2895345" target="_blank" rel="noopener">GBIF</a></li>
+                    
+                    
+                    <li class="lang-en"><a href="https://en.wikipedia.org/wiki/Coffea_arabica" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
+                    <li class="lang-hu"><a href="https://en.wikipedia.org/wiki/Coffea_arabica" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
+                    
+                    
+                    <li class="lang-en"><a href="https://hu.wikipedia.org/wiki/Arab_k%C3%A1v%C3%A9" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
+                    <li class="lang-hu"><a href="https://hu.wikipedia.org/wiki/Arab_k%C3%A1v%C3%A9" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
+                    
+                </ul>
+                
+                <a href="https://www.fuveszkert.org/orokbefogadas/"
+                   target="_blank" rel="noopener"
+                   class="adopt-btn"
+                   data-translate="adopt_me">Adopt me!</a>
+            </div>
+        </aside>
+
+        <div class="plant-main">
+            
+            <section class="plant-section">
+                <h2 data-translate="about">About</h2>
+                
+                <p class="lang-en">Coffea arabica (), also known as the Arabica coffee, is a species of flowering plant in the coffee and madder family Rubiaceae. It is believed to be the first species of coffee to have been cultivated and is the dominant cultivar, representing about 60% of global production. Coffee produced from the less acidic, more bitter, and more highly caffeinated robusta bean (C. canephora) makes up most of the remaining coffee production. The natural populations of Coffea arabica are restricted to the forests of South Ethiopia and Yemen.</p>
+                
+                
+                <p class="lang-hu">
+                    Az arab kávé (Coffea arabica) a kávé (Coffea) nemzetség haszonnövényként termesztett két faja közül az ismertebb. Az arab kávé és a másik termesztett faj, a robuszta kávé (Coffea canephora) feldolgozott magjából készülő közkedvelt ital a kávé.
+                    
+                </p>
+                
+            </section>
+            
+
+            
+            <section class="plant-section">
+                <h2 data-translate="common_names">Common Names</h2>
+                <ul class="common-names-list">
+                    
+                    <li>Arabian Coffee</li>
+                    
+                    <li>Arabica Coffee, Arabian Coffee, Coffee Tree, Coffee,</li>
+                    
+                    <li>Coffee</li>
+                    
+                    <li>Arabica Coffee</li>
+                    
+                </ul>
+            </section>
+            
+
+            
+            <section class="plant-section">
+                <h2 data-translate="native_distribution">Native Distribution</h2>
+                <div class="country-badges">
+                    
+                    <span class="country-badge">Kenya</span>
+                    
+                    <span class="country-badge">Ethiopia</span>
+                    
+                    <span class="country-badge">Sudan</span>
+                    
+                </div>
+                
+                <details>
+                    <summary data-translate="detailed_regions">Detailed Regions</summary>
+                    <p>Africa East Tropical Africa Kenya | Africa | East Tropical Africa | Kenya | Northeast Tropical Africa Ethiopia | Northeast Tropical Africa | Ethiopia | Sudan</p>
+                </details>
+                
+                
+                <p class="confidence-note"><span data-translate="data_confidence">Data confidence</span>: low</p>
+                
+            </section>
+            
+
+            
+
+            
+            <section class="plant-section">
+                <h2 data-translate="synonyms">Synonyms</h2>
+                <details>
+                    <summary>
+                        <span class="lang-en">Show 79 synonyms</span>
+                        <span class="lang-hu">79 szinonima megjelenítése</span>
+                    </summary>
+                    <ul class="synonyms-list">
+                        
+                        <li>Coffea arabica L.</li>
+                        
+                        <li>Coffea arabica f. abyssinica A.Chev.</li>
+                        
+                        <li>Coffea arabica subsp. abyssinica A.Chev.</li>
+                        
+                        <li>Coffea arabica subsp. amarella A.Froehner</li>
+                        
+                        <li>Coffea arabica subsp. angustifolia Cramer</li>
+                        
+                        <li>Coffea arabica subsp. bourbon Rodr.</li>
+                        
+                        <li>Coffea arabica subsp. bourbon Rodr. ex Choussy</li>
+                        
+                        <li>Coffea arabica subsp. brevistipulata Cif.</li>
+                        
+                        <li>Coffea arabica subsp. bullata Cramer</li>
+                        
+                        <li>Coffea arabica subsp. columnaris Ottol.</li>
+                        
+                        <li>Coffea arabica subsp. columnaris Ottol. ex Cramer</li>
+                        
+                        <li>Coffea arabica subsp. culta A.Chev.</li>
+                        
+                        <li>Coffea arabica subsp. cultoides A.Chev.</li>
+                        
+                        <li>Coffea arabica subsp. erecta Ottol.</li>
+                        
+                        <li>Coffea arabica subsp. erecta Ottol. ex Cramer</li>
+                        
+                        <li>Coffea arabica subsp. latifolia A.Chev.</li>
+                        
+                        <li>Coffea arabica subsp. longistipulata Cif.</li>
+                        
+                        <li>Coffea arabica subsp. maragogype A.Froehner</li>
+                        
+                        <li>Coffea arabica subsp. mokka Cramer</li>
+                        
+                        <li>Coffea arabica subsp. monosperma Ottol. & Cramer</li>
+                        
+                        <li>Coffea arabica subsp. murta Lalière</li>
+                        
+                        <li>Coffea arabica subsp. myrtifolia A.Chev.</li>
+                        
+                        <li>Coffea arabica subsp. pendula Cramer</li>
+                        
+                        <li>Coffea arabica subsp. polysperma Burck</li>
+                        
+                        <li>Coffea arabica subsp. pubescens Cif.</li>
+                        
+                        <li>Coffea arabica subsp. purpurascens Cramer</li>
+                        
+                        <li>Coffea arabica subsp. rotundifolia Ottol.</li>
+                        
+                        <li>Coffea arabica subsp. rotundifolia Ottol. ex Cramer</li>
+                        
+                        <li>Coffea arabica subsp. straminea Miq.</li>
+                        
+                        <li>Coffea arabica subsp. straminea Miq. ex A.Froehner</li>
+                        
+                        <li>Coffea arabica subsp. sundana (Miq.) A.Chev.</li>
+                        
+                        <li>Coffea arabica subsp. typica Cramer</li>
+                        
+                        <li>Coffea arabica subsp. variegata Ottol.</li>
+                        
+                        <li>Coffea arabica subsp. variegata Ottol. ex Cramer</li>
+                        
+                        <li>Coffea arabica var. amarella A.Froehner</li>
+                        
+                        <li>Coffea arabica var. angustifolia Cramer</li>
+                        
+                        <li>Coffea arabica var. arabica</li>
+                        
+                        <li>Coffea arabica var. bourbon Rodr.</li>
+                        
+                        <li>Coffea arabica var. bourbon Rodr. ex Choussy</li>
+                        
+                        <li>Coffea arabica var. brevistipulata Cif.</li>
+                        
+                        <li>Coffea arabica var. bullata Cramer</li>
+                        
+                        <li>Coffea arabica var. columnaris Ottol.</li>
+                        
+                        <li>Coffea arabica var. columnaris Ottol. ex Cramer</li>
+                        
+                        <li>Coffea arabica var. culta A.Chev.</li>
+                        
+                        <li>Coffea arabica var. cultoides A.Chev.</li>
+                        
+                        <li>Coffea arabica var. erecta Ottol.</li>
+                        
+                        <li>Coffea arabica var. erecta Ottol. ex Cramer</li>
+                        
+                        <li>Coffea arabica var. goiaba Taschdjian</li>
+                        
+                        <li>Coffea arabica var. latifolia A.Chev.</li>
+                        
+                        <li>Coffea arabica var. laurina (Smeathman) DC.</li>
+                        
+                        <li>Coffea arabica var. laurina Laness.</li>
+                        
+                        <li>Coffea arabica var. longistipulata Cif.</li>
+                        
+                        <li>Coffea arabica var. maragogype A.Froehner</li>
+                        
+                        <li>Coffea arabica var. mirta P.J.S.Cramer</li>
+                        
+                        <li>Coffea arabica var. mokka Cramer</li>
+                        
+                        <li>Coffea arabica var. monosperma Ottol. & Cramer</li>
+                        
+                        <li>Coffea arabica var. murta Lalière</li>
+                        
+                        <li>Coffea arabica var. myrtifolia A.Chev.</li>
+                        
+                        <li>Coffea arabica var. pendula Cramer</li>
+                        
+                        <li>Coffea arabica var. polysperma Burck</li>
+                        
+                        <li>Coffea arabica var. polysperma Silveira</li>
+                        
+                        <li>Coffea arabica var. pubescens Cif.</li>
+                        
+                        <li>Coffea arabica var. purpurascens Cramer</li>
+                        
+                        <li>Coffea arabica var. rotundifolia Ottol.</li>
+                        
+                        <li>Coffea arabica var. rotundifolia Ottol. ex Cramer</li>
+                        
+                        <li>Coffea arabica var. straminea Miq.</li>
+                        
+                        <li>Coffea arabica var. straminea Miq. ex A.Froehner</li>
+                        
+                        <li>Coffea arabica var. sundana (Miq.) A.Chev.</li>
+                        
+                        <li>Coffea arabica var. typica Cramer</li>
+                        
+                        <li>Coffea arabica var. variegata Ottol.</li>
+                        
+                        <li>Coffea arabica var. variegata Ottol. ex Cramer</li>
+                        
+                        <li>Coffea bourbonica Pharm.</li>
+                        
+                        <li>Coffea bourbonica Pharm. ex Wehmer</li>
+                        
+                        <li>Coffea corymbulosa Bertol.</li>
+                        
+                        <li>Coffea laurifolia Salisb.</li>
+                        
+                        <li>Coffea laurina Smeathman</li>
+                        
+                        <li>Coffea moka Heynh.</li>
+                        
+                        <li>Coffea sundana Miq.</li>
+                        
+                        <li>Coffea vulgaris Moench</li>
+                        
+                    </ul>
+                </details>
+            </section>
+            
+
+            
+        </div>
+    </div>
+</article>
+
+
+<section class="related-plants-section">
+    <h2 data-translate="related_plants">Related Plants</h2>
+    <div class="related-plants-grid">
+        
+        <a href="../plant/coffea-arabica-1.html" class="related-plant-card">
+            <div class="related-plant-image">
+                
+                <img src="../static/images/plants/coffea-arabica.jpg"
+                     alt="Coffea arabica" loading="lazy">
+                
+            </div>
+            <div class="related-plant-info">
+                <span class="scientific">Coffea arabica</span>
+                
+                <span class="common">Coffee / Arab Kávécserje</span>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/coffea-arabica-3.html" class="related-plant-card">
+            <div class="related-plant-image">
+                
+                <img src="../static/images/plants/coffea-arabica.jpg"
+                     alt="Coffea arabica" loading="lazy">
+                
+            </div>
+            <div class="related-plant-info">
+                <span class="scientific">Coffea arabica</span>
+                
+                <span class="common">Coffee / Arab Kávécserje</span>
+                
+            </div>
+        </a>
+        
+        <a href="../plant/coffea-canephora.html" class="related-plant-card">
+            <div class="related-plant-image">
+                
+                <img src="../static/images/plants/coffea-canephora.jpg"
+                     alt="Coffea canephora" loading="lazy">
+                
+            </div>
+            <div class="related-plant-info">
+                <span class="scientific">Coffea canephora</span>
+                
+                <span class="common">Robusta Coffee</span>
+                
+            </div>
+        </a>
+        
+    </div>
+</section>
+
+
+
+<nav class="plant-nav">
+    <div class="plant-nav-prev">
+        
+        <a href="../plant/coffea-arabica-1.html" class="plant-nav-link">
+            
+            <span class="plant-nav-thumb">
+                <img src="../static/images/plants/coffea-arabica.jpg"
+                     alt="Coffea arabica" loading="lazy">
+            </span>
+            
+            <span class="plant-nav-text">
+                <span class="plant-nav-arrow">&#8592;</span>
+                <span class="plant-nav-label" data-translate="previous">Previous</span>
+                <span class="plant-nav-name">Coffea arabica</span>
+            </span>
+        </a>
+        
+    </div>
+    <div class="plant-nav-next">
+        
+        <a href="../plant/coffea-arabica-3.html" class="plant-nav-link">
+            <span class="plant-nav-text">
+                <span class="plant-nav-name">Coffea arabica</span>
+                <span class="plant-nav-label" data-translate="next">Next</span>
+                <span class="plant-nav-arrow">&#8594;</span>
+            </span>
+            
+            <span class="plant-nav-thumb">
+                <img src="../static/images/plants/coffea-arabica.jpg"
+                     alt="Coffea arabica" loading="lazy">
+            </span>
+            
+        </a>
+        
+    </div>
+</nav>
+
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
+        <p class="footer-links">
+            <a href="../stats.html" data-translate="collection_statistics">Collection Statistics</a> |
+            <a href="../quality-queue.html" data-translate="content_quality_queue">Content Quality Queue</a>
+        </p>
+    </footer>
+
+    <script src="../static/js/search.js?v=1772135936"></script>
+    <script src="../static/js/controls.js?v=1772135936"></script>
+    <script src="../static/js/lightbox.js?v=1772135936"></script>
+    
+<script>
+// Copy scientific name
+(function() {
+    var btn = document.querySelector('.copy-name-btn');
+    if (!btn || !navigator.clipboard) return;
+    var copyLabel = (window.getTranslation && window.getTranslation('copy_scientific_name')) || 'Copy scientific name';
+    var copiedLabel = (window.getTranslation && window.getTranslation('copied')) || 'Copied!';
+    btn.addEventListener('click', function() {
+        navigator.clipboard.writeText(btn.dataset.name).then(function() {
+            btn.classList.add('copied');
+            btn.title = copiedLabel;
+            setTimeout(function() {
+                btn.classList.remove('copied');
+                btn.title = copyLabel;
+            }, 2000);
+        });
+    });
+})();
+</script>
+
+<script>
+// Recently viewed
+(function() {
+    try {
+        const entry = {
+            slug: "coffea-arabica-2",
+            name: "Coffea arabica",
+            common_name: "Coffee / Arab Kávécserje"
+        };
+        let recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+        recent = recent.filter(function(p) { return p.slug !== entry.slug; });
+        recent.unshift(entry);
+        localStorage.setItem('recentlyViewed', JSON.stringify(recent.slice(0, 8)));
+    } catch(e) {}
+})();
+</script>
+
+</body>
+</html>

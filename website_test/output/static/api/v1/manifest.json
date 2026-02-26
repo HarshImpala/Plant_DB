@@ -1,0 +1,19 @@
+{
+  "version": "v1",
+  "build_version": "1772135936",
+  "generated_at_unix": 1772135936,
+  "counts": {
+    "plants": 197,
+    "families": 54,
+    "genera": 105,
+    "collections": 30,
+    "locations": 0
+  },
+  "files": {
+    "plants": "plants.json",
+    "families": "families.json",
+    "genera": "genera.json",
+    "collections": "collections.json",
+    "locations": "locations.json"
+  }
+}

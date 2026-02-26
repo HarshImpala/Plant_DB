@@ -38,10 +38,10 @@
                 <div id="search-results" class="search-results"></div>
             </div>
             <div class="header-controls">
-                <button id="lang-toggle" class="control-btn" title="Switch language">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
                     <span class="lang-label">HU</span>
                 </button>
-                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
                     <span class="theme-icon light-icon">&#9788;</span>
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
@@ -49,17 +49,33 @@
         </div>
     </header>
 
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content">
         
 <div class="az-index-page">
-    <h1>A-Z Plant Index</h1>
-    <p>Browse all 196 plants alphabetically by scientific name.</p>
-    <section class="facet-panel" aria-label="Filter plants">
+    <h1 data-translate="az_title">A-Z Plant Index</h1>
+    <p>
+        <span class="lang-en">Browse all 197 plants alphabetically by scientific name.</span>
+        <span class="lang-hu">Az összes 197 növény ábécé sorrendben tudományos név szerint.</span>
+    </p>
+    <section class="facet-panel" aria-label="Filter plants" data-translate-aria-label="filter_plants">
         <div class="facet-grid">
             <label class="facet-field">
-                <span>Family</span>
+                <span data-translate="family_filter">Family</span>
                 <select id="facet-family">
-                    <option value="">All families</option>
+                    <option value="" data-translate="all_families">All families</option>
+                    
+                    <option value="a">a</option>
                     
                     <option value="acanthaceae juss.">Acanthaceae Juss.</option>
                     
@@ -170,9 +186,11 @@
                 </select>
             </label>
             <label class="facet-field">
-                <span>Genus</span>
+                <span data-translate="genus_filter">Genus</span>
                 <select id="facet-genus">
-                    <option value="">All genera</option>
+                    <option value="" data-translate="all_genera">All genera</option>
+                    
+                    <option value="a">a</option>
                     
                     <option value="acalypha l.">Acalypha L.</option>
                     
@@ -387,9 +405,11 @@
                 </select>
             </label>
             <label class="facet-field">
-                <span>Native region</span>
+                <span data-translate="native_region">Native region</span>
                 <select id="facet-region">
-                    <option value="">All regions</option>
+                    <option value="" data-translate="all_regions">All regions</option>
+                    
+                    <option value="a">a</option>
                     
                     <option value="africa east tropical africa kenya | africa | east tropical africa | kenya | northeast tropical africa ethiopia | northeast tropical africa | ethiopia | sudan">Africa East Tropical Africa Kenya | Africa | East Tropical Africa | Kenya | Northeast Tropical Africa Ethiopia | Northeast Tropical Africa | Ethiopia | Sudan</option>
                     
@@ -667,12 +687,12 @@
             </label>
         </div>
         <div class="facet-toggles">
-            <label><input type="checkbox" id="facet-toxic"> Has toxicity info</label>
-            <label><input type="checkbox" id="facet-image"> Has image</label>
-            <label><input type="checkbox" id="facet-description"> Has description</label>
-            <button type="button" id="facet-reset" class="facet-reset">Reset</button>
+            <label><input type="checkbox" id="facet-toxic"> <span data-translate="has_toxicity">Has toxicity info</span></label>
+            <label><input type="checkbox" id="facet-image"> <span data-translate="has_image">Has image</span></label>
+            <label><input type="checkbox" id="facet-description"> <span data-translate="has_description">Has description</span></label>
+            <button type="button" id="facet-reset" class="facet-reset" data-translate="reset_filters">Reset</button>
         </div>
-        <p class="facet-results" id="facet-results">196 plants shown</p>
+        <p class="facet-results" id="facet-results">197 <span data-translate="plants_shown">plants shown</span></p>
     </section>
 
     <nav class="letter-nav">
@@ -1150,6 +1170,21 @@
                         <span class="scientific">Averrhoa carambola</span>
                         
                         <span class="common">- Carambola / Csillaggyümölcs</span>
+                        
+                    </a>
+                </li>
+                
+                <li class="plant-item"
+                    data-family="a"
+                    data-genus="a"
+                    data-native="a"
+                    data-has-toxicity="1"
+                    data-has-image="1"
+                    data-has-description="1">
+                    <a href="./plant/aa_test_plant.html">
+                        <span class="scientific">aa_test_plant</span>
+                        
+                        <span class="common">- A</span>
                         
                     </a>
                 </li>
@@ -3809,7 +3844,7 @@
 
     </main>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
@@ -3819,9 +3854,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772023383"></script>
-    <script src="./static/js/controls.js?v=1772023383"></script>
-    <script src="./static/js/lightbox.js?v=1772023383"></script>
+    <script src="./static/js/search.js?v=1772135936"></script>
+    <script src="./static/js/controls.js?v=1772135936"></script>
+    <script src="./static/js/lightbox.js?v=1772135936"></script>
     
 <script>
 (function() {
@@ -3881,7 +3916,8 @@
             }
         });
 
-        resultText.textContent = visibleCount + ' plants shown';
+        const suffix = (window.getTranslation && window.getTranslation('plants_shown')) || 'plants shown';
+        resultText.textContent = visibleCount + ' ' + suffix;
     }
 
     [family, genus, region, toxic, image, description].forEach(function(control) {

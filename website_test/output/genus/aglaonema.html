@@ -38,10 +38,10 @@
                 <div id="search-results" class="search-results"></div>
             </div>
             <div class="header-controls">
-                <button id="lang-toggle" class="control-btn" title="Switch language">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
                     <span class="lang-label">HU</span>
                 </button>
-                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
                     <span class="theme-icon light-icon">&#9788;</span>
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
@@ -49,24 +49,40 @@
         </div>
     </header>
 
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content">
         
 <div class="category-page">
     <nav class="breadcrumb">
-        <a href="../index.html">Home</a> &rsaquo;
+        <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
         <a href="../genera.html">Genus</a> &rsaquo;
         <span>Aglaonema Schott</span>
     </nav>
 
     <h1>Aglaonema Schott</h1>
-    <p class="category-meta">Genus: 3 plants</p>
+    <p class="category-meta">
+        Genus: 3
+        
+        <span data-translate="plants">plants</span>
+        
+    </p>
 
     
 
     <div class="sort-bar">
-        <span class="sort-label">Sort by:</span>
-        <button class="sort-btn active" data-sort="scientific">Scientific name</button>
-        <button class="sort-btn" data-sort="common">Common name</button>
+        <span class="sort-label" data-translate="sort_by">Sort by:</span>
+        <button class="sort-btn active" data-sort="scientific" data-translate="scientific_name">Scientific name</button>
+        <button class="sort-btn" data-sort="common" data-translate="common_name">Common name</button>
     </div>
 
     <div class="plant-list-grid">
@@ -118,7 +134,7 @@
 
     </main>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
@@ -128,9 +144,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772023383"></script>
-    <script src="../static/js/controls.js?v=1772023383"></script>
-    <script src="../static/js/lightbox.js?v=1772023383"></script>
+    <script src="../static/js/search.js?v=1772135936"></script>
+    <script src="../static/js/controls.js?v=1772135936"></script>
+    <script src="../static/js/lightbox.js?v=1772135936"></script>
     
 <script>
 (function() {

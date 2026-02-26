@@ -45,10 +45,10 @@
                 <div id="search-results" class="search-results"></div>
             </div>
             <div class="header-controls">
-                <button id="lang-toggle" class="control-btn" title="Switch language">
+                <button id="lang-toggle" class="control-btn" title="Switch language" data-translate-title="switch_language">
                     <span class="lang-label">HU</span>
                 </button>
-                <button id="theme-toggle" class="control-btn" title="Toggle dark mode">
+                <button id="theme-toggle" class="control-btn" title="Toggle dark mode" data-translate-title="toggle_dark_mode">
                     <span class="theme-icon light-icon">&#9788;</span>
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
@@ -56,11 +56,22 @@
         </div>
     </header>
 
+    <div id="language-modal" class="language-modal" hidden>
+        <div class="language-modal-card" role="dialog" aria-modal="true" aria-labelledby="language-modal-title" aria-describedby="language-modal-body">
+            <h2 id="language-modal-title" data-translate="language_modal_title">Choose your language</h2>
+            <p id="language-modal-body" data-translate="language_modal_body">Select a language to continue.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="language-modal-btn" data-lang="en">English</button>
+                <button type="button" class="language-modal-btn" data-lang="hu">Magyar</button>
+            </div>
+        </div>
+    </div>
+
     <main class="main-content">
         
 <article class="plant-page">
     <nav class="breadcrumb">
-        <a href="../index.html">Home</a> &rsaquo;
+        <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
         
         <a href="../family/zingiberaceae.html">Zingiberaceae Martinov</a> &rsaquo;
         
@@ -75,8 +86,8 @@
             <h1 class="scientific-name">Alpinia purpurata (Vieill.) K.Schum.</h1>
             <button class="copy-name-btn"
                     data-name="Alpinia purpurata (Vieill.) K.Schum."
-                    title="Copy scientific name"
-                    aria-label="Copy scientific name">
+                    title="Copy scientific name" data-translate-title="copy_scientific_name"
+                    aria-label="Copy scientific name" data-translate-aria-label="copy_scientific_name">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -95,7 +106,7 @@
                 <img src="../static/images/plants/alpinia-purpurata.jpg"
                      alt="Alpinia purpurata">
                 
-                <p class="image-credit">Image source: Wikipedia</p>
+                <p class="image-credit"><span data-translate="image_source">Image source</span>: Wikipedia</p>
                 
             </div>
             
@@ -139,15 +150,11 @@
             </table>
 
             <table class="info-table">
-                <caption>
-                    <span class="lang-en">Toxicity</span>
-                    <span class="lang-hu">Mergezes</span>
-                </caption>
+                <caption data-translate="toxicity_block_title">Toxicity</caption>
                 <tbody>
                     <tr>
                         <th>
-                            <span class="lang-en">Humans</span>
-                            <span class="lang-hu">Emberek</span>
+                            <span data-translate="toxicity_humans">Humans</span>
                         </th>
                         <td>
                             <span class="lang-en">unknown</span>
@@ -156,8 +163,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <span class="lang-en">Cats/Dogs</span>
-                            <span class="lang-hu">Macskak/Kutyak</span>
+                            <span data-translate="toxicity_cats_dogs">Cats/Dogs</span>
                         </th>
                         <td>
                             <span class="lang-en">unknown</span>
@@ -202,7 +208,7 @@
                 
                 <p class="lang-hu">
                     Alpinia purpurata, commonly referred to as red ginger, ostrich plume and pink cone ginger, is a ginger native to Maluku and the southwest Pacific islands. In typical ginger fashion, A. purpurata is a rhizomatous plant, spreading underground in a horizontal growth habit, sending feeder roots downwards into the substrate and sprouting leafy vertical stems from nodes located along the rhizome. As its common name implies, red ginger blooms with showy inflorescences on long, bright magenta- to red-hued bracts; while they appear to be a blossom, bracts are in fact modified leaves that contain the plant's actual flowers. Bracts are a common feature of many botanical genera (such as Euphorbia sp. or the Araceae family), having evolved to protect and resemble the flowers and appeal to pollinators. The actual flower "parts" (pollen, pistil, stamen, etc.) are located inside, often accessed by crawling insects like ants or beetles. Red ginger has several cultivars, such as A. purpurata 'Jungle King' and 'Jungle Queen'. The plant grows in many regions outside of its native southwest Pacific islands, including the countries and territories of Dominica, Grenada, Guadeloupe, Hawaii, Jamaica, Martinique, Puerto Rico, St. Lucia, St. Vincent, Suriname (where its Dutch name is bokkepoot, or "billy-goat's foot") and Trinidad and Tobago, in addition to several Central American nations, including Belize and Panama. It is also found in Samoa, where it is the national flower, locally called teuila. Red ginger can also be grown successfully in the United States, in places such as South Florida and coastal Southern California, as these regions' winter low temperatures do not typically reach freezing, usually dropping no lower than 45°-50 °F (about 7°-10 °C) at the coldest points of the year. Additionally, the plant may require extra overhead sun protection, as well as irrigation, in drier, hotter or sunnier climes outside its native range; as with many ginger species, red ginger prefers partial shade, indirect light and consistently moist—but not saturated—soil conditions, with preferably high levels of ambient humidity. If care is provided that the leaves do not sunburn, the red ginger can tolerate a few hours of full sun, earlier in the day. Extra light may help to stimulate more vivid foliage and vibrant blooms. In addition to planting in outdoor landscapes, red ginger may also be grown as an indoor houseplant (if provided with adequate light exposure). It can be successfully conditioned to grow in LECA or PON (in full, passive or semi-hydroponic setups). Its cut flowers and leaves are often used in floral arrangements and tropical bouquets. In Hawaii, the flowers of red ginger are grown commercially for sale, and have been associated with the Hamakua area for a long time. Once a very common flower regionally, the gardening community there has experienced a slight decline in recent years, though is starting to make a comeback. Red ginger blooms are also, sometimes, called "graveyard flowers" as they are customarily placed at loved ones' headstones, lasting for quite a while thanks to their vigor & long shelf-life as a cut flower.
-                    <em>(English fallback)</em>
+                    <em data-translate="english_fallback">(English fallback)</em>
                 </p>
                 
             </section>
@@ -364,7 +370,7 @@
 
     </main>
 
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" data-translate-aria-label="back_to_top">&#8679;</button>
 
     <footer class="site-footer">
         <p>&copy; 2026 <span data-translate="footer_text">Plant Encyclopedia. Data sources: GBIF, World Flora Online, Wikipedia.</span></p>
@@ -374,22 +380,24 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772023383"></script>
-    <script src="../static/js/controls.js?v=1772023383"></script>
-    <script src="../static/js/lightbox.js?v=1772023383"></script>
+    <script src="../static/js/search.js?v=1772135936"></script>
+    <script src="../static/js/controls.js?v=1772135936"></script>
+    <script src="../static/js/lightbox.js?v=1772135936"></script>
     
 <script>
 // Copy scientific name
 (function() {
     var btn = document.querySelector('.copy-name-btn');
     if (!btn || !navigator.clipboard) return;
+    var copyLabel = (window.getTranslation && window.getTranslation('copy_scientific_name')) || 'Copy scientific name';
+    var copiedLabel = (window.getTranslation && window.getTranslation('copied')) || 'Copied!';
     btn.addEventListener('click', function() {
         navigator.clipboard.writeText(btn.dataset.name).then(function() {
             btn.classList.add('copied');
-            btn.title = 'Copied!';
+            btn.title = copiedLabel;
             setTimeout(function() {
                 btn.classList.remove('copied');
-                btn.title = 'Copy scientific name';
+                btn.title = copyLabel;
             }, 2000);
         });
     });
