@@ -126,38 +126,6 @@ def create_template_xlsx(output_path: Path) -> None:
     ws = wb.active
     ws.title = "plants"
     ws.append(ALL_TEMPLATE_COLUMNS)
-    ws.append(
-        [
-            "Hedychium coronarium J.Koenig",
-            "Hedychium coronarium J.Koenig",
-            "Hedychium coronarium",
-            "Butterfly-ginger",
-            "feher gyomberliliom",
-            "Zingiberaceae",
-            "Hedychium",
-            "wfo-0000435787",
-            "https://www.worldfloraonline.org/taxon/wfo-0000435787",
-            "7883492",
-            "https://www.gbif.org/species/7883492",
-            "https://en.wikipedia.org/wiki/Hedychium_coronarium",
-            "",
-            "Perennial flowering ginger plant...",
-            "",
-            0,
-            "India | Nepal",
-            "India | Nepal",
-            "high",
-            "Non-toxic to dogs, cats. (Source: ASPCA)",
-            "Tropical greenhouse",
-            "hedychium-coronarium.jpg",
-            "manual",
-            "Added via desktop importer.",
-            "Amomum coronarium | Gandasulium coronarium",
-            "Butterfly-ginger | White ginger lily",
-            "feher gyomberliliom",
-            "tropical-crop-plants",
-        ]
-    )
 
     meta = wb.create_sheet("field_notes")
     meta.append(["column", "description"])
@@ -178,18 +146,29 @@ def create_template_xlsx(output_path: Path) -> None:
 
 
 def ensure_category(cursor: sqlite3.Cursor, name: str, category_type: str) -> int:
+    cursor.execute("SELECT id, category_type FROM categories WHERE name = ?", (name,))
+    row = cursor.fetchone()
+    if row:
+        category_id, existing_type = row
+        if not existing_type and category_type:
+            cursor.execute(
+                "UPDATE categories SET category_type = ? WHERE id = ?",
+                (category_type, category_id),
+            )
+        return int(category_id)
+
     cursor.execute(
         """
-        INSERT OR IGNORE INTO categories (name, category_type)
+        INSERT INTO categories (name, category_type)
         VALUES (?, ?)
         """,
         (name, category_type),
     )
-    cursor.execute(
-        "SELECT id FROM categories WHERE name = ? AND category_type = ?",
-        (name, category_type),
-    )
-    return int(cursor.fetchone()[0])
+    cursor.execute("SELECT id FROM categories WHERE name = ?", (name,))
+    row = cursor.fetchone()
+    if not row:
+        raise RuntimeError(f"Failed to create or resolve category: {name}")
+    return int(row[0])
 
 
 def upsert_collection_membership(collection_slug: str, canonical_name: str) -> bool:
@@ -355,12 +334,16 @@ class ImporterApp:
         self.root = root
         root.title("Plant XLSX Importer")
         root.geometry("860x560")
+        self._auto_close_job = None
+        self._auto_close_remaining = 0
 
         toolbar = tk.Frame(root)
         toolbar.pack(fill=tk.X, padx=8, pady=8)
 
-        tk.Button(toolbar, text="Generate Template", command=self.generate_template).pack(side=tk.LEFT, padx=4)
-        tk.Button(toolbar, text="Import XLSX + Rebuild", command=self.import_and_build).pack(side=tk.LEFT, padx=4)
+        self.btn_template = tk.Button(toolbar, text="Generate Template", command=self.generate_template)
+        self.btn_template.pack(side=tk.LEFT, padx=4)
+        self.btn_import = tk.Button(toolbar, text="Import XLSX + Rebuild", command=self.import_and_build)
+        self.btn_import.pack(side=tk.LEFT, padx=4)
 
         self.log = ScrolledText(root, wrap=tk.WORD, height=30)
         self.log.pack(fill=tk.BOTH, expand=True, padx=8, pady=(0, 8))
@@ -371,6 +354,24 @@ class ImporterApp:
         self.log.insert(tk.END, text)
         self.log.see(tk.END)
         self.root.update_idletasks()
+
+    def start_auto_close(self, seconds: int = 6) -> None:
+        if self._auto_close_job:
+            self.root.after_cancel(self._auto_close_job)
+            self._auto_close_job = None
+        self._auto_close_remaining = max(1, int(seconds))
+        self.btn_import.config(state=tk.DISABLED)
+        self.btn_template.config(state=tk.DISABLED)
+        self.write(f"Done. Closing automatically in {self._auto_close_remaining} seconds...\n")
+        self._tick_auto_close()
+
+    def _tick_auto_close(self) -> None:
+        if self._auto_close_remaining <= 0:
+            self.root.destroy()
+            return
+        self.root.title(f"Plant XLSX Importer - closing in {self._auto_close_remaining}s")
+        self._auto_close_remaining -= 1
+        self._auto_close_job = self.root.after(1000, self._tick_auto_close)
 
     def generate_template(self) -> None:
         path = filedialog.asksaveasfilename(
@@ -401,7 +402,7 @@ class ImporterApp:
             self.write("Rebuilding site...\n")
             run_build()
             self.write("Build complete.\n")
-            messagebox.showinfo("Done", "Import and rebuild finished.")
+            self.start_auto_close(6)
         except Exception as exc:
             self.write(f"ERROR: {exc}\n")
             messagebox.showerror("Error", str(exc))
@@ -437,4 +438,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
