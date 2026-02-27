@@ -45,6 +45,9 @@
         padding: 0.5rem 0.75rem;
         background: var(--color-header-bg, #f8f8f8);
         border-bottom: 1px solid var(--color-border-light, #e5e5e5);
+        position: sticky;
+        top: 0;
+        z-index: 4;
     }
     .pdf-toolbar button {
         border: 1px solid var(--color-border, #cfcfcf);
@@ -176,17 +179,27 @@
             <a href="./index.html" class="site-logo">
                 <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
-            <nav class="main-nav">
+            <button id="mobile-nav-toggle"
+                    class="control-btn mobile-nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="main-nav search-box"
+                    aria-label="Toggle navigation"
+                    data-translate-aria-label="toggle_navigation">
+                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
+            </button>
+            <nav id="main-nav" class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-translate="nav_home">Home</a></li>
                     <li><a href="./az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
                     <li><a href="./families.html" data-translate="nav_families">Families</a></li>
                     <li><a href="./genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="./toxicity/index.html" data-translate="nav_toxicity">Toxicity</a></li>
                     <li><a href="./map.html" data-translate="nav_map">Map</a></li>
                     <li><a href="./collections.html" data-translate="nav_collections">Collections</a></li>
                 </ul>
             </nav>
-            <div class="search-box">
+            <div id="search-box" class="search-box">
                 <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
@@ -284,7 +297,7 @@
             <span data-translate="mapped_plants">Plants with mapped location</span>: 0
         </p>
         <div class="location-filter">
-            <input id="location-filter" type="text" placeholder="Filter locations or plant names..." data-translate="filter_locations">
+            <input id="location-filter" type="text" inputmode="search" placeholder="Filter locations or plant names..." data-translate="filter_locations">
         </div>
         <div id="location-groups">
             
@@ -304,9 +317,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772135936"></script>
-    <script src="./static/js/controls.js?v=1772135936"></script>
-    <script src="./static/js/lightbox.js?v=1772135936"></script>
+    <script src="./static/js/search.js?v=1772187759"></script>
+    <script src="./static/js/controls.js?v=1772187759"></script>
+    <script src="./static/js/lightbox.js?v=1772187759"></script>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
 <script>

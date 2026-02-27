@@ -10,11 +10,13 @@
             nav_az_index: "A-Z Index",
             nav_families: "Families",
             nav_genera: "Genera",
+            nav_toxicity: "Toxicity",
             nav_map: "Map",
             nav_collections: "Collections",
             search_placeholder: "Search plants...",
             switch_language: "Switch language",
             toggle_dark_mode: "Toggle dark mode",
+            toggle_navigation: "Toggle navigation",
             language_modal_title: "Choose your language",
             language_modal_body: "Select a language to continue.",
 
@@ -173,11 +175,13 @@
             nav_az_index: "A-Z Index",
             nav_families: "Családok",
             nav_genera: "Nemzetségek",
+            nav_toxicity: "Mérgezés",
             nav_map: "Térkép",
             nav_collections: "Gyűjtemények",
             search_placeholder: "Növény keresése...",
             switch_language: "Nyelv váltása",
             toggle_dark_mode: "Sötét mód váltása",
+            toggle_navigation: "Navigáció váltása",
             // Homepage
             hero_title: "Növény Enciklopédia",
             hero_description: "Fedezze fel növénygyűjteményünket részletes taxonómiai információkkal, elterjedési adatokkal és még sok mással.",
@@ -496,6 +500,40 @@
 
         initBackToTop();
         initSearchShortcut();
+        initMobileHeader();
+    }
+
+    function initMobileHeader() {
+        const headerContent = document.querySelector('.header-content');
+        const navToggle = document.getElementById('mobile-nav-toggle');
+        const navLinks = document.querySelectorAll('.main-nav a');
+        if (!headerContent || !navToggle) return;
+
+        function closeMenu() {
+            headerContent.classList.remove('mobile-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        navToggle.addEventListener('click', function() {
+            const isOpen = headerContent.classList.toggle('mobile-open');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!headerContent.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
     }
 
     // ===== SEARCH SHORTCUT =====

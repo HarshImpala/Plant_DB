@@ -192,6 +192,14 @@ def ensure_plants_schema_columns(conn):
         ("description_english", "TEXT"),
         ("description_hungarian", "TEXT"),
         ("description_hungarian_is_translated", "INTEGER DEFAULT 0"),
+        ("toxicity_status_overall", "TEXT"),
+        ("toxicity_status_humans", "TEXT"),
+        ("toxicity_status_cats", "TEXT"),
+        ("toxicity_status_dogs", "TEXT"),
+        ("toxicity_status_family_inference", "TEXT"),
+        ("toxicity_status_confidence", "REAL"),
+        ("toxicity_status_source", "TEXT"),
+        ("toxicity_status_updated_at", "TIMESTAMP"),
     ]
     for column_name, column_def in add_columns:
         if column_name not in columns:

@@ -9,7 +9,11 @@
         <span class="lang-en">Browse all {{ plant_count }} plants alphabetically by scientific name.</span>
         <span class="lang-hu">Az összes {{ plant_count }} növény ábécé sorrendben tudományos név szerint.</span>
     </p>
-    <section class="facet-panel" aria-label="Filter plants" data-translate-aria-label="filter_plants">
+    <button type="button" id="facet-toggle" class="facet-toggle" aria-expanded="false" aria-controls="facet-panel">
+        <span class="lang-en">Show filters</span>
+        <span class="lang-hu">Szűrők megjelenítése</span>
+    </button>
+    <section id="facet-panel" class="facet-panel" aria-label="Filter plants" data-translate-aria-label="filter_plants">
         <div class="facet-grid">
             <label class="facet-field">
                 <span data-translate="family_filter">Family</span>
@@ -98,6 +102,23 @@
     const items = Array.from(document.querySelectorAll('.plant-item'));
     const sections = Array.from(document.querySelectorAll('.letter-section'));
     const links = Array.from(document.querySelectorAll('.letter-link'));
+    const facetToggle = document.getElementById('facet-toggle');
+    const facetPanel = document.getElementById('facet-panel');
+
+    function syncFacetState() {
+        if (!facetToggle || !facetPanel) return;
+        const isMobile = window.innerWidth <= 600;
+        if (!isMobile) {
+            facetPanel.hidden = false;
+            facetToggle.setAttribute('aria-expanded', 'true');
+            return;
+        }
+        if (!facetToggle.dataset.initialized) {
+            facetPanel.hidden = true;
+            facetToggle.dataset.initialized = '1';
+        }
+        facetToggle.setAttribute('aria-expanded', facetPanel.hidden ? 'false' : 'true');
+    }
 
     function nativeMatches(nativeText, selectedRegion) {
         if (!selectedRegion) return true;
@@ -160,6 +181,15 @@
         description.checked = false;
         applyFilters();
     });
+
+    if (facetToggle && facetPanel) {
+        facetToggle.addEventListener('click', function() {
+            facetPanel.hidden = !facetPanel.hidden;
+            facetToggle.setAttribute('aria-expanded', facetPanel.hidden ? 'false' : 'true');
+        });
+        window.addEventListener('resize', syncFacetState);
+        syncFacetState();
+    }
 })();
 </script>
 {% endblock %}

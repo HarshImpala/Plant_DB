@@ -23,17 +23,27 @@
             <a href="./index.html" class="site-logo">
                 <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
-            <nav class="main-nav">
+            <button id="mobile-nav-toggle"
+                    class="control-btn mobile-nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="main-nav search-box"
+                    aria-label="Toggle navigation"
+                    data-translate-aria-label="toggle_navigation">
+                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
+            </button>
+            <nav id="main-nav" class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-translate="nav_home">Home</a></li>
                     <li><a href="./az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
                     <li><a href="./families.html" data-translate="nav_families">Families</a></li>
                     <li><a href="./genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="./toxicity/index.html" data-translate="nav_toxicity">Toxicity</a></li>
                     <li><a href="./map.html" data-translate="nav_map">Map</a></li>
                     <li><a href="./collections.html" data-translate="nav_collections">Collections</a></li>
                 </ul>
             </nav>
-            <div class="search-box">
+            <div id="search-box" class="search-box">
                 <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
@@ -64,7 +74,7 @@
         
 <div class="stats-page">
     <h1 data-translate="content_quality_queue">Content Quality Queue</h1>
-    <p><span data-translate="plants_needing_attention">Plants needing curator attention</span>: <strong>181</strong></p>
+    <p><span data-translate="plants_needing_attention">Plants needing curator attention</span>: <strong>182</strong></p>
 
     <section class="stats-section">
         <h2 data-translate="missing_content_by_plant">Missing Content by Plant</h2>
@@ -976,6 +986,27 @@
                     
                 </div>
                 <span class="chart-value">3</span>
+            </div>
+            
+            <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
+                <a href="./plant/aa_test_plant.html" class="chart-label">aa_test_plant</a>
+                <div>
+                    <span class="common">
+                        
+                        <span data-translate="missing_image">missing_image</span>, 
+                        
+                        <span data-translate="missing_wikipedia">missing_wikipedia</span>
+                        
+                    </span>
+                    
+                    <div class="common">
+                        <span data-translate="family_label">Family</span>: a
+                         | 
+                        <span data-translate="genus_label">Genus</span>: a
+                    </div>
+                    
+                </div>
+                <span class="chart-value">2</span>
             </div>
             
             <div class="chart-row" style="grid-template-columns: 260px 1fr 4rem;">
@@ -3799,9 +3830,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772135936"></script>
-    <script src="./static/js/controls.js?v=1772135936"></script>
-    <script src="./static/js/lightbox.js?v=1772135936"></script>
+    <script src="./static/js/search.js?v=1772187759"></script>
+    <script src="./static/js/controls.js?v=1772187759"></script>
+    <script src="./static/js/lightbox.js?v=1772187759"></script>
     
 </body>
 </html>

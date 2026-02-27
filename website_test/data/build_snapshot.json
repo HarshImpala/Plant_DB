@@ -1958,5 +1958,15 @@
     "has_image": true,
     "has_description": true,
     "has_distribution": false
+  },
+  "aa_test_plant": {
+    "id": 792,
+    "input_name": "aaa_test_plant",
+    "display_name": "aa_test_plant",
+    "family": "a",
+    "genus": "a",
+    "has_image": false,
+    "has_description": true,
+    "has_distribution": true
   }
 }

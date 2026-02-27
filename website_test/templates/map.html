@@ -32,6 +32,9 @@
         padding: 0.5rem 0.75rem;
         background: var(--color-header-bg, #f8f8f8);
         border-bottom: 1px solid var(--color-border-light, #e5e5e5);
+        position: sticky;
+        top: 0;
+        z-index: 4;
     }
     .pdf-toolbar button {
         border: 1px solid var(--color-border, #cfcfcf);
@@ -227,7 +230,7 @@
             <span data-translate="mapped_plants">Plants with mapped location</span>: {{ mapped_plant_count }}
         </p>
         <div class="location-filter">
-            <input id="location-filter" type="text" placeholder="Filter locations or plant names..." data-translate="filter_locations">
+            <input id="location-filter" type="text" inputmode="search" placeholder="Filter locations or plant names..." data-translate="filter_locations">
         </div>
         <div id="location-groups">
             {% for item in map_locations %}

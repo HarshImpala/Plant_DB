@@ -30,17 +30,27 @@
             <a href="../index.html" class="site-logo">
                 <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
-            <nav class="main-nav">
+            <button id="mobile-nav-toggle"
+                    class="control-btn mobile-nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="main-nav search-box"
+                    aria-label="Toggle navigation"
+                    data-translate-aria-label="toggle_navigation">
+                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
+            </button>
+            <nav id="main-nav" class="main-nav">
                 <ul>
                     <li><a href="../index.html" data-translate="nav_home">Home</a></li>
                     <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
                     <li><a href="../families.html" data-translate="nav_families">Families</a></li>
                     <li><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="../toxicity/index.html" data-translate="nav_toxicity">Toxicity</a></li>
                     <li><a href="../map.html" data-translate="nav_map">Map</a></li>
                     <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
                 </ul>
             </nav>
-            <div class="search-box">
+            <div id="search-box" class="search-box">
                 <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
@@ -73,10 +83,14 @@
     <nav class="breadcrumb">
         <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
         
+        
         <a href="../family/araceae.html">Araceae Juss.</a> &rsaquo;
         
         
+        
+        
         <a href="../genus/colocasia.html">Colocasia Schott</a> &rsaquo;
+        
         
         <span>Colocasia esculenta</span>
     </nav>
@@ -117,13 +131,17 @@
                     
                     <tr>
                         <th data-translate="family">Family</th>
+                        
                         <td><a href="../family/araceae.html">Araceae Juss.</a></td>
+                        
                     </tr>
                     
                     
                     <tr>
                         <th data-translate="genus">Genus</th>
+                        
                         <td><a href="../genus/colocasia.html">Colocasia Schott</a></td>
+                        
                     </tr>
                     
                     
@@ -157,8 +175,8 @@
                             <span data-translate="toxicity_humans">Humans</span>
                         </th>
                         <td>
-                            <span class="lang-en">family known toxic</span>
-                            <span class="lang-hu">csaladban ismerten mergezo</span>
+                            <span class="lang-en">unknown</span>
+                            <span class="lang-hu">ismeretlen</span>
                         </td>
                     </tr>
                     <tr>
@@ -166,15 +184,15 @@
                             <span data-translate="toxicity_cats_dogs">Cats/Dogs</span>
                         </th>
                         <td>
-                            <span class="lang-en">toxic</span>
-                            <span class="lang-hu">mergezo</span>
+                            <span class="lang-en">unknown</span>
+                            <span class="lang-hu">ismeretlen</span>
                         </td>
                     </tr>
                 </tbody>
             </table>
             
             <p class="toxicity-source-note">
-                <span data-translate="toxicity_source">Source</span>: ASPCA
+                <span data-translate="toxicity_source">Source</span>: consensus_external_weighted
             </p>
             
 
@@ -646,9 +664,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772135936"></script>
-    <script src="../static/js/controls.js?v=1772135936"></script>
-    <script src="../static/js/lightbox.js?v=1772135936"></script>
+    <script src="../static/js/search.js?v=1772187759"></script>
+    <script src="../static/js/controls.js?v=1772187759"></script>
+    <script src="../static/js/lightbox.js?v=1772187759"></script>
     
 <script>
 // Copy scientific name

@@ -8,6 +8,9 @@
   <url><loc>https://example.com/quality-queue.html</loc></url>
   <url><loc>https://example.com/map.html</loc></url>
   <url><loc>https://example.com/collections.html</loc></url>
+  <url><loc>https://example.com/toxicity/index.html</loc></url>
+  <url><loc>https://example.com/toxicity/toxic/index.html</loc></url>
+  <url><loc>https://example.com/toxicity/possibly-toxic/index.html</loc></url>
   <url><loc>https://example.com/collection/annual-plants.html</loc></url>
   <url><loc>https://example.com/collection/taxonomic-collection.html</loc></url>
   <url><loc>https://example.com/collection/deciduous-trees-shrubs.html</loc></url>

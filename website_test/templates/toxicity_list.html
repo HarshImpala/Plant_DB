@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - Plant Encyclopedia{% endblock %}
+
+{% block content %}
+<div class="category-page">
+    <nav class="breadcrumb">
+        <a href="{{ base_url }}/index.html" data-translate="nav_home">Home</a> &rsaquo;
+        <span>Toxicity</span>
+        {% if current_scope == 'toxic' %}
+        &rsaquo; <span>Toxic</span>
+        {% elif current_scope == 'possibly-toxic' %}
+        &rsaquo; <span>Possibly Toxic</span>
+        {% endif %}
+    </nav>
+
+    <h1>{{ title }}</h1>
+    <p class="category-meta">{{ description }}</p>
+    <p class="category-meta">
+        Total plants: {{ total_plants }} |
+        Toxic: {{ toxic_count }} |
+        Possibly toxic: {{ possibly_toxic_count }}
+    </p>
+
+    <div class="sort-bar">
+        <a class="sort-btn {% if current_scope == 'all' %}active{% endif %}" href="{{ base_url }}/toxicity/index.html">All Flagged</a>
+        <a class="sort-btn {% if current_scope == 'toxic' %}active{% endif %}" href="{{ base_url }}/toxicity/toxic/index.html">Toxic</a>
+        <a class="sort-btn {% if current_scope == 'possibly-toxic' %}active{% endif %}" href="{{ base_url }}/toxicity/possibly-toxic/index.html">Possibly Toxic</a>
+    </div>
+
+    {% if plants %}
+    <div class="plant-list-grid">
+        {% for plant in plants %}
+        <a href="{{ base_url }}/plant/{{ plant.slug }}.html" class="plant-list-item">
+            <div class="plant-list-image">
+                {% if plant.image_filename %}
+                <img src="{{ base_url }}/static/images/plants/{{ plant.image_filename }}" alt="{{ plant.display_name }}" loading="lazy">
+                {% else %}
+                <div class="placeholder-image"></div>
+                {% endif %}
+            </div>
+            <div class="plant-list-info">
+                <h3>{{ plant.display_name }}</h3>
+                {% if plant.display_common_combined %}
+                <p>{{ plant.display_common_combined }}</p>
+                {% endif %}
+                <p>
+                    Humans: {{ plant.toxicity_humans_status_en }} |
+                    Pets: {{ plant.toxicity_pets_status_en }}
+                </p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="category-meta">No plants in this toxicity bucket.</p>
+    {% endif %}
+</div>
+{% endblock %}

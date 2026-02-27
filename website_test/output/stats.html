@@ -23,17 +23,27 @@
             <a href="./index.html" class="site-logo">
                 <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
-            <nav class="main-nav">
+            <button id="mobile-nav-toggle"
+                    class="control-btn mobile-nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="main-nav search-box"
+                    aria-label="Toggle navigation"
+                    data-translate-aria-label="toggle_navigation">
+                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
+            </button>
+            <nav id="main-nav" class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-translate="nav_home">Home</a></li>
                     <li><a href="./az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
                     <li><a href="./families.html" data-translate="nav_families">Families</a></li>
                     <li><a href="./genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="./toxicity/index.html" data-translate="nav_toxicity">Toxicity</a></li>
                     <li><a href="./map.html" data-translate="nav_map">Map</a></li>
                     <li><a href="./collections.html" data-translate="nav_collections">Collections</a></li>
                 </ul>
             </nav>
-            <div class="search-box">
+            <div id="search-box" class="search-box">
                 <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
@@ -71,7 +81,7 @@
             <div class="stat-label" data-translate="total_plants">Total Plants</div>
         </div>
         <div class="stat-card highlight">
-            <div class="stat-number">138</div>
+            <div class="stat-number">137</div>
             <div class="stat-label" data-translate="with_photos">With Photos</div>
         </div>
         <div class="stat-card">
@@ -223,7 +233,7 @@
         <h2 data-translate="data_quality_dashboard">Data Quality Dashboard</h2>
         <div class="stats-grid">
             <div class="stat-card highlight">
-                <div class="stat-number">61.9%</div>
+                <div class="stat-number">61.7%</div>
                 <div class="stat-label" data-translate="overall_completeness">Overall Completeness</div>
             </div>
         </div>
@@ -232,17 +242,17 @@
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_wfo_link">WFO Link</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 100.0%"></div>
+                    <div class="chart-bar-fill" style="width: 99.5%"></div>
                 </div>
-                <span class="chart-value">100.0%</span>
+                <span class="chart-value">99.5%</span>
             </div>
             
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_wikipedia_url">Wikipedia URL</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 85.3%"></div>
+                    <div class="chart-bar-fill" style="width: 84.8%"></div>
                 </div>
-                <span class="chart-value">85.3%</span>
+                <span class="chart-value">84.8%</span>
             </div>
             
             <div class="chart-row">
@@ -264,9 +274,9 @@
             <div class="chart-row">
                 <span class="chart-label" data-translate="quality_image">Image</span>
                 <div class="chart-bar-track">
-                    <div class="chart-bar-fill" style="width: 70.1%"></div>
+                    <div class="chart-bar-fill" style="width: 69.5%"></div>
                 </div>
-                <span class="chart-value">70.1%</span>
+                <span class="chart-value">69.5%</span>
             </div>
             
             <div class="chart-row">
@@ -301,9 +311,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772135936"></script>
-    <script src="./static/js/controls.js?v=1772135936"></script>
-    <script src="./static/js/lightbox.js?v=1772135936"></script>
+    <script src="./static/js/search.js?v=1772187759"></script>
+    <script src="./static/js/controls.js?v=1772187759"></script>
+    <script src="./static/js/lightbox.js?v=1772187759"></script>
     
 </body>
 </html>

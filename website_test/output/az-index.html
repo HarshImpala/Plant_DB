@@ -23,17 +23,27 @@
             <a href="./index.html" class="site-logo">
                 <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
-            <nav class="main-nav">
+            <button id="mobile-nav-toggle"
+                    class="control-btn mobile-nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="main-nav search-box"
+                    aria-label="Toggle navigation"
+                    data-translate-aria-label="toggle_navigation">
+                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
+            </button>
+            <nav id="main-nav" class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-translate="nav_home">Home</a></li>
                     <li><a href="./az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
                     <li><a href="./families.html" data-translate="nav_families">Families</a></li>
                     <li><a href="./genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="./toxicity/index.html" data-translate="nav_toxicity">Toxicity</a></li>
                     <li><a href="./map.html" data-translate="nav_map">Map</a></li>
                     <li><a href="./collections.html" data-translate="nav_collections">Collections</a></li>
                 </ul>
             </nav>
-            <div class="search-box">
+            <div id="search-box" class="search-box">
                 <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
@@ -68,7 +78,11 @@
         <span class="lang-en">Browse all 197 plants alphabetically by scientific name.</span>
         <span class="lang-hu">Az összes 197 növény ábécé sorrendben tudományos név szerint.</span>
     </p>
-    <section class="facet-panel" aria-label="Filter plants" data-translate-aria-label="filter_plants">
+    <button type="button" id="facet-toggle" class="facet-toggle" aria-expanded="false" aria-controls="facet-panel">
+        <span class="lang-en">Show filters</span>
+        <span class="lang-hu">Szűrők megjelenítése</span>
+    </button>
+    <section id="facet-panel" class="facet-panel" aria-label="Filter plants" data-translate-aria-label="filter_plants">
         <div class="facet-grid">
             <label class="facet-field">
                 <span data-translate="family_filter">Family</span>
@@ -1179,7 +1193,7 @@
                     data-genus="a"
                     data-native="a"
                     data-has-toxicity="1"
-                    data-has-image="1"
+                    data-has-image="0"
                     data-has-description="1">
                     <a href="./plant/aa_test_plant.html">
                         <span class="scientific">aa_test_plant</span>
@@ -3854,9 +3868,9 @@
         </p>
     </footer>
 
-    <script src="./static/js/search.js?v=1772135936"></script>
-    <script src="./static/js/controls.js?v=1772135936"></script>
-    <script src="./static/js/lightbox.js?v=1772135936"></script>
+    <script src="./static/js/search.js?v=1772187759"></script>
+    <script src="./static/js/controls.js?v=1772187759"></script>
+    <script src="./static/js/lightbox.js?v=1772187759"></script>
     
 <script>
 (function() {
@@ -3871,6 +3885,23 @@
     const items = Array.from(document.querySelectorAll('.plant-item'));
     const sections = Array.from(document.querySelectorAll('.letter-section'));
     const links = Array.from(document.querySelectorAll('.letter-link'));
+    const facetToggle = document.getElementById('facet-toggle');
+    const facetPanel = document.getElementById('facet-panel');
+
+    function syncFacetState() {
+        if (!facetToggle || !facetPanel) return;
+        const isMobile = window.innerWidth <= 600;
+        if (!isMobile) {
+            facetPanel.hidden = false;
+            facetToggle.setAttribute('aria-expanded', 'true');
+            return;
+        }
+        if (!facetToggle.dataset.initialized) {
+            facetPanel.hidden = true;
+            facetToggle.dataset.initialized = '1';
+        }
+        facetToggle.setAttribute('aria-expanded', facetPanel.hidden ? 'false' : 'true');
+    }
 
     function nativeMatches(nativeText, selectedRegion) {
         if (!selectedRegion) return true;
@@ -3933,6 +3964,15 @@
         description.checked = false;
         applyFilters();
     });
+
+    if (facetToggle && facetPanel) {
+        facetToggle.addEventListener('click', function() {
+            facetPanel.hidden = !facetPanel.hidden;
+            facetToggle.setAttribute('aria-expanded', facetPanel.hidden ? 'false' : 'true');
+        });
+        window.addEventListener('resize', syncFacetState);
+        syncFacetState();
+    }
 })();
 </script>
 

@@ -80,9 +80,31 @@ Outputs:
 - `toxicity_consensus_toxic.csv`
 - `toxicity_consensus_possibly_toxic.csv`
 
+Optional manual override layer:
+
+- Edit `manual_toxicity_overrides.csv` to force curator-reviewed status decisions.
+- Match rows by `id` (preferred) or `canonical_name`.
+- Allowed override statuses: `toxic`, `possibly_toxic`, `unknown`, `not_toxic`.
+- Consolidation applies these overrides before exporting consensus and before writing `toxicity_status_*` fields back into `plants`.
+
 Consensus is conservative:
 
 `toxic` > `possibly_toxic` > `unknown` > `not_toxic`
+
+Source-level confidence weighting is also computed in consensus output:
+
+- Higher baseline weights for veterinary/poison-control sources (ASPCA, Pet Poison Helpline, Poison Control, FDA Plantox).
+- Medium weights for vetted reference sources (Merck Vet, UC Davis, NC State).
+- Lower weights for internal free-text notes and auto-enriched low-confidence evidence.
+- Confidence multipliers (`high`, `medium`, `low`, `low_auto`) adjust each evidence contribution.
+
+New output columns:
+
+- `weighted_humans_status`
+- `weighted_cats_status`
+- `weighted_dogs_status`
+- `weighted_overall_status`
+- `weighted_overall_score`
 
 Family inference rule:
 

@@ -50,7 +50,10 @@
 - [x] Add automated regression checks for generated pages (`generator/smoke_test.py`)
   - Progress (2026-02-24): added smoke checks for broken internal links/assets and invalid/empty JSON-LD in generated HTML.
   - Progress (2026-02-24): wired smoke test into CI workflow after site build so deploy is blocked on failures.
-- [ ] Improve mobile layout and usability (navigation, filters, cards, map, and search)
+- [x] Improve mobile layout and usability (navigation, filters, cards, map, and search)
+  - Progress (2026-02-27): added mobile header menu toggle in `templates/base.html` with responsive open/close behavior in `static/js/controls.js`.
+  - Progress (2026-02-27): added collapsible mobile filter panel for A-Z index in `templates/az_index.html` and responsive styles in `static/css/style.css`.
+  - Progress (2026-02-27): improved small-screen map/list/card behavior (toolbar usability, location groups, and list density) across `templates/map.html` and `static/css/style.css`.
 - [x] Normalize taxonomy/name display rules across templates and cards
   - Progress (2026-02-24): introduced normalized display fields (`display_name`, `display_scientific`, `display_common`) in generator data shaping.
   - Progress (2026-02-24): updated cards/lists/search/plant templates to use the same display fields consistently.
@@ -75,7 +78,19 @@
 
 ## Toxicity Roadmap
 
-- [ ] Add source-level confidence weighting for toxicity evidence
-- [ ] Add structured `toxicity_status` fields in DB and write consensus back to `plants`
-- [ ] Build toxicity pages in site (`/toxicity`, `/toxicity/toxic`, `/toxicity/possibly-toxic`)
-- [ ] Add manual override layer for curator-reviewed toxicity decisions
+- [x] Add source-level confidence weighting for toxicity evidence
+  - Progress (2026-02-27): added source/domain weight model and confidence multipliers in `toxicity/consolidate_external_evidence.py`.
+  - Progress (2026-02-27): consensus output now includes weighted status fields (`weighted_*`) and weighted score.
+  - Progress (2026-02-27): updated toxicity workflow docs in `toxicity/README.md` and regenerated consensus CSV outputs.
+- [x] Add structured `toxicity_status` fields in DB and write consensus back to `plants`
+  - Progress (2026-02-27): added schema migration columns for `toxicity_status_*` in `generator/import_data.py`.
+  - Progress (2026-02-27): `toxicity/consolidate_external_evidence.py` now writes weighted consensus status fields back into `data/plants.db`.
+  - Progress (2026-02-27): site build now prefers structured toxicity status columns in `generator/build_site.py` with fallback to legacy `toxicity_info` parsing.
+- [x] Build toxicity pages in site (`/toxicity`, `/toxicity/toxic`, `/toxicity/possibly-toxic`)
+  - Progress (2026-02-27): added toxicity page generation in `generator/build_site.py` for overview, toxic-only, and possibly-toxic routes.
+  - Progress (2026-02-27): added new template `templates/toxicity_list.html` for toxicity listings and status summaries.
+  - Progress (2026-02-27): wired header navigation + translations for Toxicity and added toxicity URLs to sitemap.
+- [x] Add manual override layer for curator-reviewed toxicity decisions
+  - Progress (2026-02-27): added `toxicity/manual_toxicity_overrides.csv` for curator-enforced overrides by plant id or canonical name.
+  - Progress (2026-02-27): overrides are applied in `toxicity/consolidate_external_evidence.py` before CSV export and DB writeback.
+  - Progress (2026-02-27): documented override workflow in `toxicity/README.md`.

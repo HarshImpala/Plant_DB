@@ -18,10 +18,18 @@
     <nav class="breadcrumb">
         <a href="{{ base_url }}/index.html" data-translate="nav_home">Home</a> &rsaquo;
         {% if plant.family %}
-        <a href="{{ base_url }}/family/{{ plant.family | slugify }}.html">{{ plant.family }}</a> &rsaquo;
+        {% if plant.family_slug %}
+        <a href="{{ base_url }}/family/{{ plant.family_slug }}.html">{{ plant.family }}</a> &rsaquo;
+        {% else %}
+        <span>{{ plant.family }}</span> &rsaquo;
+        {% endif %}
         {% endif %}
         {% if plant.genus %}
-        <a href="{{ base_url }}/genus/{{ plant.genus | slugify }}.html">{{ plant.genus }}</a> &rsaquo;
+        {% if plant.genus_slug %}
+        <a href="{{ base_url }}/genus/{{ plant.genus_slug }}.html">{{ plant.genus }}</a> &rsaquo;
+        {% else %}
+        <span>{{ plant.genus }}</span> &rsaquo;
+        {% endif %}
         {% endif %}
         <span>{{ plant.display_name }}</span>
     </nav>
@@ -72,13 +80,21 @@
                     {% if plant.family %}
                     <tr>
                         <th data-translate="family">Family</th>
-                        <td><a href="{{ base_url }}/family/{{ plant.family | slugify }}.html">{{ plant.family }}</a></td>
+                        {% if plant.family_slug %}
+                        <td><a href="{{ base_url }}/family/{{ plant.family_slug }}.html">{{ plant.family }}</a></td>
+                        {% else %}
+                        <td>{{ plant.family }}</td>
+                        {% endif %}
                     </tr>
                     {% endif %}
                     {% if plant.genus %}
                     <tr>
                         <th data-translate="genus">Genus</th>
-                        <td><a href="{{ base_url }}/genus/{{ plant.genus | slugify }}.html">{{ plant.genus }}</a></td>
+                        {% if plant.genus_slug %}
+                        <td><a href="{{ base_url }}/genus/{{ plant.genus_slug }}.html">{{ plant.genus }}</a></td>
+                        {% else %}
+                        <td>{{ plant.genus }}</td>
+                        {% endif %}
                     </tr>
                     {% endif %}
                     {% if plant_collection %}

@@ -1,0 +1,662 @@
+/* Plant Encyclopedia - Wikipedia-style Static Site */
+
+/* === Language visibility === */
+[data-lang="hu"] .lang-en { display: none !important; }
+[data-lang="en"] .lang-hu { display: none !important; }
+
+/* === Reset & Base === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-bg: #f5f8f5;
+    --color-white: #ffffff;
+    --color-text: #1a2e1a;
+    --color-text-light: #4a5e4a;
+    --color-link: #2d7a4f;
+    --color-link-visited: #1a5c38;
+    --color-link-hover: #3a9c63;
+    --color-border: #9ab09a;
+    --color-border-light: #c4d4c4;
+    --color-header-bg: #eef3ee;
+    --color-accent: #2d7a4f;
+    --color-success: #14866d;
+    --color-warning: #fc3;
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    --max-width: 1200px;
+    --sidebar-width: 280px;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* === Header === */
+.site-header {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.site-logo {
+    color: var(--color-text);
+}
+
+.site-logo h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.site-logo:hover {
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.main-nav a:hover {
+    color: var(--color-link);
+}
+
+.search-box {
+    margin-left: auto;
+    position: relative;
+    flex-shrink: 1;
+    min-width: 150px;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(51, 102, 204, 0.2);
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 150;
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-results a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border-light);
+    color: var(--color-text);
+}
+
+.search-results a:hover {
+    background: var(--color-bg);
+    text-decoration: none;
+}
+
+.search-results .scientific {
+    font-style: italic;
+}
+
+.search-results .common {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+}
+
+/* === Language Modal === */
+.language-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 17, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 1rem;
+}
+
+.language-modal[hidden] {
+    display: none;
+}
+
+.language-modal-card {
+    width: min(420px, 100%);
+    background: var(--color-white);
+    border-radius: 12px;
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.language-modal-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.language-modal-card p {
+    color: var(--color-text-light);
+    margin-bottom: 1.25rem;
+}
+
+.language-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.language-modal-btn {
+    border: 1px solid var(--color-border);
+    background: var(--color-header-bg);
+    color: var(--color-text);
+    border-radius: 6px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.language-modal-btn:hover {
+    background: var(--color-white);
+    border-color: var(--color-accent);
+}
+
+/* === Main Content === */
+.main-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    background: var(--color-white);
+    min-height: calc(100vh - 200px);
+}
+
+/* === Footer === */
+.site-footer {
+    background: var(--color-header-bg);
+    border-top: 1px solid var(--color-border-light);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+}
+
+/* === Home Page === */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #e8f5ec 0%, #c8e6d0 100%);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-search {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+}
+
+.hero-search input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.hero-search input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}
+
+.hero-search-results {
+    width: 100%;
+    text-align: left;
+    border-radius: 0 0 8px 8px;
+}
+
+html[data-theme="dark"] .hero-search input {
+    background: var(--color-white);
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.browse-section h2,
+.recent-section h2 {
+    margin-bottom: 1rem;
+}
+
+.browse-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.browse-card {
+    display: block;
+    padding: 1.5rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    color: var(--color-text);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.browse-card:hover {
+    text-decoration: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.browse-card h3 {
+    color: var(--color-link);
+    margin-bottom: 0.5rem;
+}
+
+.browse-card p {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.plant-card {
+    display: block;
+    background: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    color: var(--color-text);
+    transition: box-shadow 0.2s;
+}
+
+.plant-card:hover {
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.plant-card-image {
+    aspect-ratio: 4/3;
+    background: var(--color-bg);
+}
+
+.plant-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232d7a4f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 22c1.25-1.25 2.08-2.83 2.5-4.5C5 15 5 12 7 9c2-3 6-5 10-5-1 4-3 7-6 9-3 2-5 5-5 9'/%3E%3Cpath d='M12 17c0-4 2-7 5-9'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 40% auto, 100%;
+    opacity: 0.75;
+}
+
+.plant-card-info {
+    padding: 1rem;
+}
+
+.plant-card-info h3 {
+    font-size: 0.9375rem;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+
+.plant-card-info p {
+    color: var(--color-text-light);
+    font-size: 0.8125rem;
+}
+
+.family-badge {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    background: #e6f2ec;
+    color: var(--color-accent);
+    border: 1px solid #b8d9c5;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-style: italic;
+    letter-spacing: 0.01em;
+}
+
+html[data-theme="dark"] .family-badge {
+    background: #1a3025;
+    color: #5aba7e;
+    border-color: #2d5040;
+}
+
+/* === Plant Page === */
+.breadcrumb {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: var(--color-text-light);
+}
+
+.plant-header {
+    border-bottom: 1px solid var(--color-border-light);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.plant-header h1 {
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: normal;
+    font-family: var(--font-serif);
+}
+
+.plant-header .common-name {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-top: 0.25rem;
+}
+
+.plant-content {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .plant-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.plant-sidebar {
+    order: -1;
+}
+
+.plant-image {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.plant-image img {
+    width: 100%;
+    display: block;
+}
+
+.plant-image.placeholder {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+html[data-theme="dark"] .plant-image.placeholder {
+    background: linear-gradient(135deg, #1e3a2a 0%, #142614 100%);
+}
+
+.plant-image.placeholder svg {
+    opacity: 0.45;
+    color: var(--color-accent);
+}
+
+.image-credit {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-header-bg);
+    border-top: 1px solid var(--color-border-light);
+    margin: 0;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-header-bg);
+    border: 1px solid var(--color-border-light);
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.info-table caption {
+    background: var(--color-accent);
+    color: white;
+    padding: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.info-table th,
+.info-table td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.info-table th {
+    width: 40%;
+    background: var(--color-bg);
+}
+
+.toxicity-source-note {
+    margin: -0.5rem 0 1rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+}
+
+.external-links {
+    background: var(--color-header-bg);
+    border: 1px solid var(--color-border-light);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.external-links h3 {
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+}
+
+.adopt-btn {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0.55rem 1rem;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.adopt-btn:hover {
+    background: var(--color-link-hover);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.adopt-btn:visited {
+    color: white;
+}
+
+.external-links ul {
+    list-style: none;
+}
+
+.external-links li {
+    padding: 0.25rem 0;
+}
+
+.plant-section {
+    margin-bottom: 1.5rem;
+}
+
+.plant-section h2 {
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--color-border-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.common-names-list,
+.synonyms-list {
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+.common-names-list li,
+.synonyms-list li {
+    padding: 0.25rem 0;
+}
+
+.synonyms-list li {
+    font-style: italic;
+}
+
+details summary {
+    cursor: pointer;
+    color: var(--color-link);
+    margin-bottom: 0.5rem;
+}
+
+.country-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 0.75rem;
+}
+
+.country-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: #e6f2ec;
+    color: #1a5c38;
+    border: 1px solid #b8d9c5;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+}
+
+html[data-theme="dark"] .country-badge {
+    background: #1a3025;
+    color: #7ecfa0;
+    border-color: #2d5040;
+}
+
+.confidence-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.toxicity-section {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    padding: 1rem;
+    border-radius: 4px;
+}
+

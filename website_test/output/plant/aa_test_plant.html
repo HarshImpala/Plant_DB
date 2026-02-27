@@ -20,7 +20,7 @@
 <meta name="description" content="a">
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Taxon","name":"aa_test_plant","url":"https://example.com/plant/aa_test_plant.html","description":"a","alternateName":["aaa_test_planterino","a"],"image":"https://example.com/static/images/plants/a","identifier":"WFO:a","sameAs":["a","a","a"],"parentTaxon":"a > a"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Taxon","name":"aa_test_plant","url":"https://example.com/plant/aa_test_plant.html","description":"a","alternateName":["aaa_test_planterino","a"],"identifier":"WFO:a","parentTaxon":"a > a"}</script>
 
 
 </head>
@@ -30,17 +30,27 @@
             <a href="../index.html" class="site-logo">
                 <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
-            <nav class="main-nav">
+            <button id="mobile-nav-toggle"
+                    class="control-btn mobile-nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="main-nav search-box"
+                    aria-label="Toggle navigation"
+                    data-translate-aria-label="toggle_navigation">
+                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
+            </button>
+            <nav id="main-nav" class="main-nav">
                 <ul>
                     <li><a href="../index.html" data-translate="nav_home">Home</a></li>
                     <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
                     <li><a href="../families.html" data-translate="nav_families">Families</a></li>
                     <li><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="../toxicity/index.html" data-translate="nav_toxicity">Toxicity</a></li>
                     <li><a href="../map.html" data-translate="nav_map">Map</a></li>
                     <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
                 </ul>
             </nav>
-            <div class="search-box">
+            <div id="search-box" class="search-box">
                 <input type="text" id="search-input" placeholder="Search plants..." data-translate="search_placeholder" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
@@ -73,10 +83,14 @@
     <nav class="breadcrumb">
         <a href="../index.html" data-translate="nav_home">Home</a> &rsaquo;
         
+        
         <a href="../family/a.html">a</a> &rsaquo;
         
         
-        <a href="../genus/a.html">a</a> &rsaquo;
+        
+        
+        <span>a</span> &rsaquo;
+        
         
         <span>aa_test_plant</span>
     </nav>
@@ -102,12 +116,12 @@
     <div class="plant-content">
         <aside class="plant-sidebar">
             
-            <div class="plant-image">
-                <img src="../static/images/plants/a"
-                     alt="aa_test_plant">
-                
-                <p class="image-credit"><span data-translate="image_source">Image source</span>: a</p>
-                
+            <div class="plant-image placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="56" height="56">
+                    <path d="M2 22c1.25-1.25 2.08-2.83 2.5-4.5C5 15 5 12 7 9c2-3 6-5 10-5-1 4-3 7-6 9-3 2-5 5-5 9"/>
+                    <path d="M12 17c0-4 2-7 5-9"/>
+                </svg>
+                <span data-translate="no_image_available">No image available</span>
             </div>
             
 
@@ -117,13 +131,17 @@
                     
                     <tr>
                         <th data-translate="family">Family</th>
+                        
                         <td><a href="../family/a.html">a</a></td>
+                        
                     </tr>
                     
                     
                     <tr>
                         <th data-translate="genus">Genus</th>
-                        <td><a href="../genus/a.html">a</a></td>
+                        
+                        <td>a</td>
+                        
                     </tr>
                     
                     
@@ -160,26 +178,13 @@
                 </tbody>
             </table>
             
+            <p class="toxicity-source-note">
+                <span data-translate="toxicity_source">Source</span>: consensus_external_weighted
+            </p>
+            
 
             <div class="external-links">
                 <h3 data-translate="external_links">External Links</h3>
-                
-                <ul>
-                    
-                    <li><a href="a" target="_blank" rel="noopener">World Flora Online</a></li>
-                    
-                    
-                    <li><a href="a" target="_blank" rel="noopener">GBIF</a></li>
-                    
-                    
-                    <li class="lang-en"><a href="a" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
-                    <li class="lang-hu"><a href="a" target="_blank" rel="noopener" data-translate="wikipedia_en">Wikipedia (EN)</a></li>
-                    
-                    
-                    <li class="lang-en"><a href="a" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
-                    <li class="lang-hu"><a href="a" target="_blank" rel="noopener" data-translate="wikipedia_hu">Wikipedia (HU)</a></li>
-                    
-                </ul>
                 
                 <a href="https://www.fuveszkert.org/orokbefogadas/"
                    target="_blank" rel="noopener"
@@ -313,9 +318,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772135936"></script>
-    <script src="../static/js/controls.js?v=1772135936"></script>
-    <script src="../static/js/lightbox.js?v=1772135936"></script>
+    <script src="../static/js/search.js?v=1772187759"></script>
+    <script src="../static/js/controls.js?v=1772187759"></script>
+    <script src="../static/js/lightbox.js?v=1772187759"></script>
     
 <script>
 // Copy scientific name
