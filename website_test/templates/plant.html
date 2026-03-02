@@ -214,15 +214,26 @@
             <section class="plant-section">
                 <h2 data-translate="native_distribution">Native Distribution</h2>
                 <div class="country-badges">
-                    {% for country in plant.native_countries.split(' | ') %}
-                    <span class="country-badge">{{ country.strip() }}</span>
+                    {% for country in plant.native_countries_list_en %}
+                    <span class="country-badge lang-en">{{ country }}</span>
+                    {% endfor %}
+                    {% for country in plant.native_countries_list_hu %}
+                    <span class="country-badge lang-hu">{{ country }}</span>
                     {% endfor %}
                 </div>
-                {% if plant.native_regions_display %}
+                {% if plant.native_regions_display or plant.native_regions_display_hungarian %}
                 <details>
                     <summary data-translate="detailed_regions">Detailed Regions</summary>
-                    <p>{{ plant.native_regions_display }}</p>
+                    {% if plant.native_regions_display %}
+                    <p class="lang-en">{{ plant.native_regions_display }}</p>
+                    {% endif %}
+                    {% if plant.native_regions_display_hungarian %}
+                    <p class="lang-hu">{{ plant.native_regions_display_hungarian }}</p>
+                    {% endif %}
                 </details>
+                {% endif %}
+                {% if plant.native_hungarian_is_translated %}
+                <p class="lang-hu"><em data-translate="machine_translated">(machine translated)</em></p>
                 {% endif %}
                 {% if plant.native_confidence %}
                 <p class="confidence-note"><span data-translate="data_confidence">Data confidence</span>: {{ plant.native_confidence }}</p>

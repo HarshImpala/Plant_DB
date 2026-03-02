@@ -35,9 +35,15 @@
             </label>
             <label class="facet-field">
                 <span data-translate="native_region">Native region</span>
-                <select id="facet-region">
+                <select id="facet-region-en" class="lang-en">
                     <option value="" data-translate="all_regions">All regions</option>
                     {% for region in facet_regions %}
+                    <option value="{{ region|lower }}">{{ region }}</option>
+                    {% endfor %}
+                </select>
+                <select id="facet-region-hu" class="lang-hu">
+                    <option value="" data-translate="all_regions">All regions</option>
+                    {% for region in facet_regions_hu %}
                     <option value="{{ region|lower }}">{{ region }}</option>
                     {% endfor %}
                 </select>
@@ -68,7 +74,8 @@
                 <li class="plant-item"
                     data-family="{{ (plant.family or '')|lower }}"
                     data-genus="{{ (plant.genus or '')|lower }}"
-                    data-native="{{ (plant.native_regions_display or '')|lower }}"
+                    data-native-en="{{ (plant.native_regions_display or '')|lower }}"
+                    data-native-hu="{{ (plant.native_regions_display_hungarian or '')|lower }}"
                     data-has-toxicity="{{ 1 if plant.toxicity_info else 0 }}"
                     data-has-image="{{ 1 if plant.image_filename else 0 }}"
                     data-has-description="{{ 1 if plant.description else 0 }}">
@@ -93,7 +100,8 @@
 (function() {
     const family = document.getElementById('facet-family');
     const genus = document.getElementById('facet-genus');
-    const region = document.getElementById('facet-region');
+    const regionEn = document.getElementById('facet-region-en');
+    const regionHu = document.getElementById('facet-region-hu');
     const toxic = document.getElementById('facet-toxic');
     const image = document.getElementById('facet-image');
     const description = document.getElementById('facet-description');
@@ -120,6 +128,11 @@
         facetToggle.setAttribute('aria-expanded', facetPanel.hidden ? 'false' : 'true');
     }
 
+    function getActiveRegionControl() {
+        const lang = document.documentElement.getAttribute('data-lang') || 'en';
+        return lang === 'hu' ? (regionHu || regionEn) : (regionEn || regionHu);
+    }
+
     function nativeMatches(nativeText, selectedRegion) {
         if (!selectedRegion) return true;
         const tokens = nativeText.split(/[;,]/).map(function(v) { return v.trim(); }).filter(Boolean);
@@ -129,16 +142,19 @@
     function applyFilters() {
         const selectedFamily = family.value;
         const selectedGenus = genus.value;
-        const selectedRegion = region.value;
+        const regionControl = getActiveRegionControl();
+        const selectedRegion = regionControl ? regionControl.value : '';
         const requireToxic = toxic.checked;
         const requireImage = image.checked;
         const requireDescription = description.checked;
         let visibleCount = 0;
+        const lang = document.documentElement.getAttribute('data-lang') || 'en';
 
         items.forEach(function(item) {
             const matchFamily = !selectedFamily || item.dataset.family === selectedFamily;
             const matchGenus = !selectedGenus || item.dataset.genus === selectedGenus;
-            const matchRegion = nativeMatches(item.dataset.native, selectedRegion);
+            const nativeField = lang === 'hu' ? item.dataset.nativeHu : item.dataset.nativeEn;
+            const matchRegion = nativeMatches(nativeField || '', selectedRegion);
             const matchToxic = !requireToxic || item.dataset.hasToxicity === '1';
             const matchImage = !requireImage || item.dataset.hasImage === '1';
             const matchDescription = !requireDescription || item.dataset.hasDescription === '1';
@@ -168,14 +184,16 @@
         resultText.textContent = visibleCount + ' ' + suffix;
     }
 
-    [family, genus, region, toxic, image, description].forEach(function(control) {
+    [family, genus, regionEn, regionHu, toxic, image, description].forEach(function(control) {
+        if (!control) return;
         control.addEventListener('change', applyFilters);
     });
 
     reset.addEventListener('click', function() {
         family.value = '';
         genus.value = '';
-        region.value = '';
+        if (regionEn) regionEn.value = '';
+        if (regionHu) regionHu.value = '';
         toxic.checked = false;
         image.checked = false;
         description.checked = false;

@@ -146,6 +146,9 @@ def normalize_plant_display_fields(plant):
     plant['display_common'] = common_combined
     plant['display_common_combined'] = common_combined
     plant['native_regions_display'] = clean_native_regions(plant.get('native_regions'))
+    plant['native_regions_display_hungarian'] = clean_native_regions(plant.get('native_regions_hungarian'))
+    plant['native_countries_list_en'] = split_list_field(plant.get('native_countries'))
+    plant['native_countries_list_hu'] = split_list_field(plant.get('native_countries_hungarian'))
     return plant
 
 
@@ -600,6 +603,10 @@ def build_site():
         {region for p in plants for region in split_list_field(p.get('native_regions_display'))},
         key=str.lower,
     )
+    facet_regions_hu = sorted(
+        {region for p in plants for region in split_list_field(p.get('native_regions_display_hungarian'))},
+        key=str.lower,
+    )
 
     html = template.render(
         **base_context,
@@ -610,6 +617,7 @@ def build_site():
         facet_families=facet_families,
         facet_genera=facet_genera,
         facet_regions=facet_regions,
+        facet_regions_hu=facet_regions_hu,
     )
     (OUTPUT_DIR / "az-index.html").write_text(html, encoding='utf-8')
 

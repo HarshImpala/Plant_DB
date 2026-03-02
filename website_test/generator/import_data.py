@@ -14,6 +14,7 @@ import re
 from difflib import SequenceMatcher
 from itertools import combinations
 
+from translation import translate_pipe_separated, translate_token
 
 # Paths
 BASE_DIR = Path(__file__).parent.parent
@@ -51,6 +52,9 @@ def create_database():
             native_countries TEXT,
             native_regions TEXT,
             native_confidence TEXT,
+            native_countries_hungarian TEXT,
+            native_regions_hungarian TEXT,
+            native_hungarian_is_translated INTEGER DEFAULT 0,
             -- Placeholder columns for future data
             toxicity_info TEXT,
             garden_location TEXT,
@@ -98,10 +102,15 @@ def create_database():
             plant_id INTEGER NOT NULL,
             country TEXT,
             region TEXT,
+            country_hungarian TEXT,
+            region_hungarian TEXT,
+            is_machine_translated INTEGER DEFAULT 0,
             source TEXT,  -- 'gbif' or 'wfo'
             FOREIGN KEY (plant_id) REFERENCES plants(id)
         )
     """)
+
+    ensure_native_regions_schema_columns(conn)
 
     # Categories table (for organizing plants)
     cursor.execute("""
@@ -200,6 +209,9 @@ def ensure_plants_schema_columns(conn):
         ("toxicity_status_confidence", "REAL"),
         ("toxicity_status_source", "TEXT"),
         ("toxicity_status_updated_at", "TIMESTAMP"),
+        ("native_countries_hungarian", "TEXT"),
+        ("native_regions_hungarian", "TEXT"),
+        ("native_hungarian_is_translated", "INTEGER DEFAULT 0"),
     ]
     for column_name, column_def in add_columns:
         if column_name not in columns:
@@ -210,6 +222,28 @@ def ensure_plants_schema_columns(conn):
         SET description_hungarian_is_translated = 0
         WHERE description_hungarian_is_translated IS NULL
     """)
+    cursor.execute("""
+        UPDATE plants
+        SET native_hungarian_is_translated = 0
+        WHERE native_hungarian_is_translated IS NULL
+    """)
+    conn.commit()
+
+
+def ensure_native_regions_schema_columns(conn):
+    """Upgrade plant_native_regions table columns without destructive rebuild."""
+    cursor = conn.cursor()
+    cursor.execute("PRAGMA table_info(plant_native_regions)")
+    columns = {row[1] for row in cursor.fetchall()}
+
+    add_columns = [
+        ("country_hungarian", "TEXT"),
+        ("region_hungarian", "TEXT"),
+        ("is_machine_translated", "INTEGER DEFAULT 0"),
+    ]
+    for column_name, column_def in add_columns:
+        if column_name not in columns:
+            cursor.execute(f"ALTER TABLE plant_native_regions ADD COLUMN {column_name} {column_def}")
     conn.commit()
 
 
@@ -439,14 +473,30 @@ def import_location_data(conn, df_location):
         native_regions = row.get('wfo_native_areas_found_in') if not pd.isna(row.get('wfo_native_areas_found_in')) else None
         native_confidence = row.get('gbif_native_confidence') if not pd.isna(row.get('gbif_native_confidence')) else None
 
+        native_countries_hu, countries_translated = translate_pipe_separated(native_countries)
+        native_regions_hu, regions_translated = translate_pipe_separated(native_regions)
+        native_translated = 1 if (countries_translated or regions_translated) else 0
+
         cursor.execute("""
             UPDATE plants SET
                 wfo_url = ?,
                 native_countries = ?,
                 native_regions = ?,
-                native_confidence = ?
+                native_confidence = ?,
+                native_countries_hungarian = ?,
+                native_regions_hungarian = ?,
+                native_hungarian_is_translated = ?
             WHERE input_name = ?
-        """, (wfo_url, native_countries, native_regions, native_confidence, input_name))
+        """, (
+            wfo_url,
+            native_countries,
+            native_regions,
+            native_confidence,
+            native_countries_hu,
+            native_regions_hu,
+            native_translated,
+            input_name,
+        ))
 
         # Get plant_id for detailed region import
         cursor.execute("SELECT id FROM plants WHERE input_name = ?", (input_name,))
@@ -464,10 +514,13 @@ def import_location_data(conn, df_location):
             for country in str(countries).split('|'):
                 country = country.strip()
                 if country:
+                    country_hu, country_translated = translate_token(country)
                     cursor.execute("""
-                        INSERT INTO plant_native_regions (plant_id, country, source)
-                        VALUES (?, ?, 'wfo')
-                    """, (plant_id, country))
+                        INSERT INTO plant_native_regions (
+                            plant_id, country, country_hungarian, is_machine_translated, source
+                        )
+                        VALUES (?, ?, ?, ?, 'wfo')
+                    """, (plant_id, country, country_hu, 1 if country_translated else 0))
 
     conn.commit()
     print(f"Updated location data for {len(df_location)} plants")
