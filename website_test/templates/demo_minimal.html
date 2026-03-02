@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Modern Minimal Demo{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="demo-page demo-minimal">
+    <header class="demo-hero">
+        <div class="demo-hero-text">
+            <span class="demo-kicker">Minimal System</span>
+            <h2>Modern Minimal</h2>
+            <p>
+                A crisp, grid-forward layout with generous whitespace and a neutral
+                palette for information-first browsing.
+            </p>
+        </div>
+        <div class="demo-hero-visual">
+            <div class="demo-hero-image minimal"></div>
+        </div>
+    </header>
+
+    <section class="demo-section">
+        <div class="demo-grid">
+            <article class="demo-card minimal-card">
+                <div class="demo-card-body">
+                    <h4>Specimen Index</h4>
+                    <p>Fast scanning with subtle data tags and crisp typography.</p>
+                </div>
+            </article>
+            <article class="demo-card minimal-card">
+                <div class="demo-card-body">
+                    <h4>Metadata Panel</h4>
+                    <p>Key attributes grouped into a compact mobile card.</p>
+                </div>
+            </article>
+            <article class="demo-card minimal-card">
+                <div class="demo-card-body">
+                    <h4>Global Search</h4>
+                    <p>Always visible, always accessible, with minimal chrome.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</section>
+{% endblock %}

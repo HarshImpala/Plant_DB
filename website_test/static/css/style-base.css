@@ -78,11 +78,27 @@ img {
 .header-content {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0.75rem 1rem;
+    padding: 1rem 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-wrap: nowrap;
+    position: relative;
+}
+
+.main-nav-primary,
+.search-box,
+.header-controls,
+.mobile-nav-toggle {
+    align-self: center;
+}
+
+.main-nav-primary {
+    margin-top: 0.2rem;
+}
+
+.header-content.mobile-open {
+    flex-wrap: wrap;
 }
 
 .site-logo {
@@ -90,7 +106,7 @@ img {
 }
 
 .site-logo h1 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 600;
 }
 
@@ -104,13 +120,28 @@ img {
     gap: 1.5rem;
 }
 
+.main-nav li {
+    text-align: center;
+}
+
+.main-nav-primary .nav-secondary {
+    display: none;
+}
+
 .main-nav a {
     color: var(--color-text);
-    font-weight: 500;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.98rem;
 }
 
 .main-nav a:hover {
     color: var(--color-link);
+}
+
+.header-content.mobile-open .main-nav-dropdown,
+.header-content.mobile-open .search-box {
+    display: block;
 }
 
 .search-box {

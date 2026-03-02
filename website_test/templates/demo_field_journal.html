@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Field Journal Demo{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="demo-page demo-field">
+    <header class="demo-hero">
+        <div class="demo-hero-text">
+            <span class="demo-kicker">Field Notes</span>
+            <h2>Field Journal</h2>
+            <p>
+                A tactile notebook aesthetic with torn edges, ink stamps, and
+                warm paper tones for a story-led plant log.
+            </p>
+        </div>
+        <div class="demo-hero-visual">
+            <div class="demo-hero-image journal"></div>
+            <div class="demo-hero-card">
+                <h3>Observation 12</h3>
+                <p>Morning dew sample, high humidity.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="demo-section">
+        <div class="demo-grid">
+            <article class="demo-card journal-card">
+                <div class="demo-card-body">
+                    <h4>Sketch Panel</h4>
+                    <p>Penciled leaf notes and quick sketches in the margin.</p>
+                </div>
+            </article>
+            <article class="demo-card journal-card">
+                <div class="demo-card-body">
+                    <h4>Collection Tags</h4>
+                    <p>Stampable labels for origin, habitat, and specimen ID.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</section>
+{% endblock %}

@@ -4,8 +4,28 @@
 
 {% block content %}
 <div class="category-list-page">
+    {% if category_type == 'family' %}
+    <h1>
+        <span class="lang-en" data-translate="families_title">Plant Families</span>
+        <span class="lang-hu">Növény családok</span>
+    </h1>
+    <p>
+        <span class="lang-en" data-translate="families_description">Browse plants organized by botanical families.</span>
+        <span class="lang-hu">Böngésszen növények között botanikai családok szerint.</span>
+    </p>
+    {% elif category_type == 'genus' %}
+    <h1>
+        <span class="lang-en" data-translate="genera_title">Plant Genera</span>
+        <span class="lang-hu">Növény nemzetségek</span>
+    </h1>
+    <p>
+        <span class="lang-en" data-translate="genera_description">Browse plants organized by genera.</span>
+        <span class="lang-hu">Böngésszen növények között nemzetségek szerint.</span>
+    </p>
+    {% else %}
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
+    {% endif %}
 
     <nav class="letter-nav">
         {% for letter in letters %}

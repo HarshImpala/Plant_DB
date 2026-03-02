@@ -198,6 +198,471 @@
     color: var(--color-link);
 }
 
+/* === Design Demo Pages === */
+.demo-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.demo-page h2 {
+    font-size: clamp(2rem, 3.6vw, 3.25rem);
+    letter-spacing: -0.02em;
+}
+
+.demo-page h3 {
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+}
+
+.demo-hero {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: center;
+}
+
+.demo-hero-text p {
+    margin-top: 0.75rem;
+    max-width: 500px;
+}
+
+.demo-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.75;
+    margin-bottom: 0.75rem;
+}
+
+.demo-cta-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.demo-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.25rem;
+    border-radius: 999px;
+    background: #1d3b2b;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+
+.demo-cta:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.demo-cta.ghost {
+    background: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+}
+
+.demo-hero-visual {
+    position: relative;
+    min-height: 240px;
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+}
+
+.demo-hero-image,
+.demo-card-image {
+    border-radius: 18px;
+    background: linear-gradient(140deg, #cfe3d4, #f4f0d6);
+    min-height: 180px;
+}
+
+.demo-card-image.warm {
+    background: linear-gradient(140deg, #f5d6c6, #f2e6c9);
+}
+
+.demo-card-image.cool {
+    background: linear-gradient(140deg, #cfe6f2, #d6f2e3);
+}
+
+.demo-hero-card {
+    position: absolute;
+    bottom: -1rem;
+    right: 0;
+    background: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.demo-hero-card h3 {
+    margin-bottom: 0.35rem;
+}
+
+.demo-tag {
+    display: inline-flex;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #2b6b45;
+}
+
+.demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.demo-section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+.demo-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-card-body {
+    padding: 1rem 1.1rem 1.3rem;
+}
+
+.demo-split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.demo-quote {
+    background: #1d3b2b;
+    color: #f3f1e5;
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.demo-quote p {
+    font-size: 1.2rem;
+}
+
+.demo-quote span {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* === Magazine Theme === */
+.demo-magazine {
+    font-family: "Source Sans 3", var(--font-sans);
+}
+
+.demo-magazine h2,
+.demo-magazine h3,
+.demo-magazine h4 {
+    font-family: "Playfair Display", var(--font-serif);
+}
+
+.demo-magazine .demo-hero {
+    background: radial-gradient(circle at top left, #f5f1e5, #e7f2ea);
+    border-radius: 24px;
+    padding: 2rem;
+}
+
+/* === Herbarium Theme === */
+.demo-herbarium {
+    font-family: "Fira Sans", var(--font-sans);
+    color: #2b2a24;
+}
+
+.demo-herbarium h2,
+.demo-herbarium h3,
+.demo-herbarium h4 {
+    font-family: "Libre Baskerville", var(--font-serif);
+}
+
+.demo-hero-image.herbarium {
+    background: repeating-linear-gradient(135deg, #e7e1d6 0 18px, #f4efe6 18px 36px);
+}
+
+.demo-herbarium .herbarium-card {
+    border: 1px dashed rgba(0,0,0,0.2);
+    background: #f8f5ee;
+}
+
+/* === Conservatory Theme === */
+.demo-conservatory {
+    font-family: "Manrope", var(--font-sans);
+    color: #0d2a22;
+}
+
+.demo-conservatory h2,
+.demo-conservatory h3,
+.demo-conservatory h4 {
+    font-family: "Fraunces", var(--font-serif);
+}
+
+.demo-hero-image.conservatory {
+    background: radial-gradient(circle at 20% 20%, #d7f5e1, #9fd7c0);
+}
+
+/* === Minimal Theme === */
+.demo-minimal {
+    font-family: "Space Grotesk", var(--font-sans);
+    color: #111;
+}
+
+.demo-hero-image.minimal {
+    background: linear-gradient(180deg, #e6e6e6, #f5f5f5);
+}
+
+.demo-minimal .minimal-card {
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.12);
+}
+
+/* === Field Journal Theme === */
+.demo-field {
+    font-family: "Rubik", var(--font-sans);
+    color: #2c1f14;
+}
+
+.demo-field h2,
+.demo-field h3,
+.demo-field h4 {
+    font-family: "Crimson Text", var(--font-serif);
+}
+
+.demo-hero-image.journal {
+    background: linear-gradient(135deg, #f5e4c9, #f0d7b5);
+}
+
+.demo-field .journal-card {
+    background: #fff7e8;
+    border: 1px solid rgba(121, 82, 43, 0.2);
+}
+
+/* === Museum Theme === */
+.demo-museum {
+    font-family: "Work Sans", var(--font-sans);
+    color: #111;
+}
+
+.demo-museum h2,
+.demo-museum h3,
+.demo-museum h4 {
+    font-family: "DM Serif Display", var(--font-serif);
+}
+
+.demo-museum .demo-hero {
+    background: linear-gradient(120deg, #f3eee7, #efe7da);
+    border-radius: 24px;
+    padding: 2rem;
+}
+
+.demo-museum .demo-hero-plinth {
+    height: 220px;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #e9e2d6, #f7f3ed);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.demo-hero-plaque {
+    background: #fff;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.demo-exhibit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.demo-exhibit {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.25rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+.demo-exhibit-chip {
+    display: inline-flex;
+    margin-top: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.demo-exhibit-chip.warning {
+    background: #b85b2b;
+}
+
+.demo-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.demo-timeline-card {
+    background: #111;
+    color: #f5f1e5;
+    padding: 1.5rem;
+    border-radius: 16px;
+}
+
+.demo-timeline-card ul {
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.demo-timeline-card li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 0.4rem;
+}
+
+/* === Demo Dropdown === */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown details {
+    position: relative;
+}
+
+.nav-dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    padding: 0.35rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-light);
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-dropdown-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.4rem);
+    background: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: 12px;
+    padding: 0.5rem;
+    min-width: 220px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    display: grid;
+    gap: 0.35rem;
+    z-index: 200;
+}
+
+.nav-dropdown-panel a {
+    padding: 0.35rem 0.5rem;
+    border-radius: 8px;
+    color: var(--color-text);
+}
+
+.nav-dropdown-panel a:hover {
+    background: var(--color-bg);
+    text-decoration: none;
+}
+
+.nav-dropdown details:not([open]) .nav-dropdown-panel {
+    display: none;
+}
+
+/* Show dropdown inline when nav is opened in stacked mode */
+.header-content.mobile-open .nav-dropdown-panel {
+    position: static;
+    box-shadow: none;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-light);
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 769px) {
+    .main-nav-dropdown {
+        display: none;
+    }
+
+    .header-content.mobile-open .main-nav-dropdown {
+        position: absolute;
+        right: 1rem;
+        top: calc(100% + 0.4rem);
+        background: var(--color-white);
+        border: 1px solid var(--color-border-light);
+        border-radius: 12px;
+        padding: 0.5rem 0.75rem;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        z-index: 180;
+    }
+
+    .header-content.mobile-open .main-nav-dropdown ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .header-content.mobile-open .main-nav-dropdown a {
+        padding: 0.35rem 0.25rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .demo-hero-card {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .demo-hero {
+        padding: 1.5rem;
+    }
+}
+
 @media (max-width: 600px) {
     .plant-nav a {
         max-width: 100%;
@@ -476,7 +941,8 @@ html[data-theme="dark"] .sort-btn.active {
 }
 
 .mobile-nav-toggle {
-    display: none;
+    display: inline-flex;
+    margin-left: auto;
 }
 
 .control-btn {

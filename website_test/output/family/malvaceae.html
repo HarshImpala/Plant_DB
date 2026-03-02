@@ -23,24 +23,50 @@
             <a href="../index.html" class="site-logo">
                 <h1 data-translate="site_title">Plant Encyclopedia</h1>
             </a>
-            <button id="mobile-nav-toggle"
-                    class="control-btn mobile-nav-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="main-nav search-box"
-                    aria-label="Toggle navigation"
-                    data-translate-aria-label="toggle_navigation">
-                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
-            </button>
-            <nav id="main-nav" class="main-nav">
+            <nav id="main-nav" class="main-nav main-nav-primary">
+                <ul>
+                    <li><a href="../index.html" data-translate="nav_home">Home</a></li>
+                    <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
+                    <li class="nav-secondary"><a href="../families.html" data-translate="nav_families">Families</a></li>
+                    <li class="nav-secondary"><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
+                    <li><a href="../map.html" data-translate="nav_map">Map</a></li>
+                    <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
+                    <li class="nav-dropdown">
+                        <details>
+                            <summary>DEMO</summary>
+                            <div class="nav-dropdown-panel">
+                                <a href="../demo-magazine.html">Botanical Magazine</a>
+                                <a href="../demo-museum.html">Museum Exhibit</a>
+                                <a href="../demo-herbarium.html">Herbarium Archive</a>
+                                <a href="../demo-conservatory.html">Tropical Conservatory</a>
+                                <a href="../demo-minimal.html">Modern Minimal</a>
+                                <a href="../demo-field-journal.html">Field Journal</a>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+            <nav id="main-nav-dropdown" class="main-nav main-nav-dropdown" aria-label="Full navigation">
                 <ul>
                     <li><a href="../index.html" data-translate="nav_home">Home</a></li>
                     <li><a href="../az-index.html" data-translate="nav_az_index">A-Z Index</a></li>
                     <li><a href="../families.html" data-translate="nav_families">Families</a></li>
                     <li><a href="../genera.html" data-translate="nav_genera">Genera</a></li>
-                    <li><a href="../toxicity/index.html" data-translate="nav_toxicity">Toxicity</a></li>
                     <li><a href="../map.html" data-translate="nav_map">Map</a></li>
                     <li><a href="../collections.html" data-translate="nav_collections">Collections</a></li>
+                    <li class="nav-dropdown">
+                        <details>
+                            <summary>DEMO</summary>
+                            <div class="nav-dropdown-panel">
+                                <a href="../demo-magazine.html">Botanical Magazine</a>
+                                <a href="../demo-museum.html">Museum Exhibit</a>
+                                <a href="../demo-herbarium.html">Herbarium Archive</a>
+                                <a href="../demo-conservatory.html">Tropical Conservatory</a>
+                                <a href="../demo-minimal.html">Modern Minimal</a>
+                                <a href="../demo-field-journal.html">Field Journal</a>
+                            </div>
+                        </details>
+                    </li>
                 </ul>
             </nav>
             <div id="search-box" class="search-box">
@@ -56,6 +82,15 @@
                     <span class="theme-icon dark-icon">&#9790;</span>
                 </button>
             </div>
+            <button id="mobile-nav-toggle"
+                    class="control-btn mobile-nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="main-nav search-box"
+                    aria-label="Toggle navigation"
+                    data-translate-aria-label="toggle_navigation">
+                <span class="mobile-nav-icon" aria-hidden="true">&#9776;</span>
+            </button>
         </div>
     </header>
 
@@ -152,9 +187,9 @@
         </p>
     </footer>
 
-    <script src="../static/js/search.js?v=1772190466"></script>
-    <script src="../static/js/controls.js?v=1772190466"></script>
-    <script src="../static/js/lightbox.js?v=1772190466"></script>
+    <script src="../static/js/search.js?v=1772460152"></script>
+    <script src="../static/js/controls.js?v=1772460152"></script>
+    <script src="../static/js/lightbox.js?v=1772460152"></script>
     
 <script>
 (function() {

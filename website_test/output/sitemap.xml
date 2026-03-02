@@ -8,6 +8,12 @@
   <url><loc>https://example.com/quality-queue.html</loc></url>
   <url><loc>https://example.com/map.html</loc></url>
   <url><loc>https://example.com/collections.html</loc></url>
+  <url><loc>https://example.com/demo-magazine.html</loc></url>
+  <url><loc>https://example.com/demo-museum.html</loc></url>
+  <url><loc>https://example.com/demo-herbarium.html</loc></url>
+  <url><loc>https://example.com/demo-conservatory.html</loc></url>
+  <url><loc>https://example.com/demo-minimal.html</loc></url>
+  <url><loc>https://example.com/demo-field-journal.html</loc></url>
   <url><loc>https://example.com/toxicity/index.html</loc></url>
   <url><loc>https://example.com/toxicity/toxic/index.html</loc></url>
   <url><loc>https://example.com/toxicity/possibly-toxic/index.html</loc></url>

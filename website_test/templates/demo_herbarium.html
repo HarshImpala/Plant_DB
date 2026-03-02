@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Herbarium Archive Demo{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Fira+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="demo-page demo-herbarium">
+    <header class="demo-hero">
+        <div class="demo-hero-text">
+            <span class="demo-kicker">Archive Cabinet 04</span>
+            <h2>Herbarium Archive</h2>
+            <p>
+                A reference-first layout inspired by pressed specimens, index cards,
+                and archival labeling for researchers on the move.
+            </p>
+        </div>
+        <div class="demo-hero-visual">
+            <div class="demo-hero-image herbarium"></div>
+            <div class="demo-hero-card">
+                <h3>Specimen Sheet</h3>
+                <p>Collected: 1926 • Sheet ID 04-17</p>
+                <span class="demo-tag">Archived</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="demo-section">
+        <div class="demo-grid">
+            <article class="demo-card herbarium-card">
+                <div class="demo-card-body">
+                    <h4>Taxonomic Notes</h4>
+                    <p>Field annotations, synonym crosslinks, and voucher references.</p>
+                </div>
+            </article>
+            <article class="demo-card herbarium-card">
+                <div class="demo-card-body">
+                    <h4>Collector Route</h4>
+                    <p>Route mapping with elevation, soil profile, and canopy cover.</p>
+                </div>
+            </article>
+            <article class="demo-card herbarium-card">
+                <div class="demo-card-body">
+                    <h4>Preservation Log</h4>
+                    <p>Drying method, archival status, and last inspection data.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</section>
+{% endblock %}

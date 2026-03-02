@@ -798,6 +798,32 @@ def build_site():
     )
     (OUTPUT_DIR / "map.html").write_text(html, encoding='utf-8')
 
+    # === Build Design Demo Pages ===
+    print("Building design demo pages...")
+    template = env.get_template('demo_magazine.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "demo-magazine.html").write_text(html, encoding='utf-8')
+
+    template = env.get_template('demo_museum.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "demo-museum.html").write_text(html, encoding='utf-8')
+
+    template = env.get_template('demo_herbarium.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "demo-herbarium.html").write_text(html, encoding='utf-8')
+
+    template = env.get_template('demo_conservatory.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "demo-conservatory.html").write_text(html, encoding='utf-8')
+
+    template = env.get_template('demo_minimal.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "demo-minimal.html").write_text(html, encoding='utf-8')
+
+    template = env.get_template('demo_field_journal.html')
+    html = template.render(**base_context)
+    (OUTPUT_DIR / "demo-field-journal.html").write_text(html, encoding='utf-8')
+
     # === Build Toxicity Pages ===
     print("Building toxicity pages...")
     template = env.get_template('toxicity_list.html')
@@ -859,6 +885,12 @@ def build_site():
         f"{SITE_BASE_URL}/quality-queue.html",
         f"{SITE_BASE_URL}/map.html",
         f"{SITE_BASE_URL}/collections.html",
+        f"{SITE_BASE_URL}/demo-magazine.html",
+        f"{SITE_BASE_URL}/demo-museum.html",
+        f"{SITE_BASE_URL}/demo-herbarium.html",
+        f"{SITE_BASE_URL}/demo-conservatory.html",
+        f"{SITE_BASE_URL}/demo-minimal.html",
+        f"{SITE_BASE_URL}/demo-field-journal.html",
         f"{SITE_BASE_URL}/toxicity/index.html",
         f"{SITE_BASE_URL}/toxicity/toxic/index.html",
         f"{SITE_BASE_URL}/toxicity/possibly-toxic/index.html",

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Botanical Magazine Demo{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="demo-page demo-magazine">
+    <header class="demo-hero">
+        <div class="demo-hero-text">
+            <span class="demo-kicker">Field Notes / Spring Edition</span>
+            <h2>Botanical Magazine</h2>
+            <p>
+                A lush editorial layout that celebrates plants with long-form storytelling,
+                rich photography placeholders, and quick taxonomy highlights.
+            </p>
+            <div class="demo-cta-row">
+                <a class="demo-cta" href="#">Read Feature</a>
+                <a class="demo-cta ghost" href="#">View Index</a>
+            </div>
+        </div>
+        <div class="demo-hero-visual">
+            <div class="demo-hero-image"></div>
+            <div class="demo-hero-card">
+                <h3>Monstera deliciosa</h3>
+                <p>Araceae • Central America</p>
+                <span class="demo-tag">Featured</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="demo-section">
+        <div class="demo-section-header">
+            <h3>In this issue</h3>
+            <p>Editorial highlights curated for mobile readers.</p>
+        </div>
+        <div class="demo-grid">
+            <article class="demo-card">
+                <div class="demo-card-image"></div>
+                <div class="demo-card-body">
+                    <h4>Rainforest Canopies</h4>
+                    <p>Explore towering foliage and the microclimates they create.</p>
+                </div>
+            </article>
+            <article class="demo-card">
+                <div class="demo-card-image warm"></div>
+                <div class="demo-card-body">
+                    <h4>Desert Resilience</h4>
+                    <p>Succulent strategies for thriving in arid sunlight.</p>
+                </div>
+            </article>
+            <article class="demo-card">
+                <div class="demo-card-image cool"></div>
+                <div class="demo-card-body">
+                    <h4>Temperate Meadows</h4>
+                    <p>Seasonal blooms that define the herbaceous layer.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="demo-section demo-split">
+        <div class="demo-spotlight">
+            <span class="demo-kicker">Spotlight</span>
+            <h3>Philodendron lineage</h3>
+            <p>
+                A mobile-friendly story block with key stats, native range,
+                and conservation notes for a deeper dive.
+            </p>
+            <ul>
+                <li><strong>Native range:</strong> South America</li>
+                <li><strong>Light:</strong> Bright, indirect</li>
+                <li><strong>Family:</strong> Araceae</li>
+            </ul>
+        </div>
+        <div class="demo-quote">
+            <p>“Leaves become a living archive of adaptation.”</p>
+            <span>— Garden Curator</span>
+        </div>
+    </section>
+</section>
+{% endblock %}

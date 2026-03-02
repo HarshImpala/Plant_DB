@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Museum Exhibit Demo{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="demo-page demo-museum">
+    <header class="demo-hero">
+        <div class="demo-hero-text">
+            <span class="demo-kicker">Exhibit Guide</span>
+            <h2>Living Fossils Gallery</h2>
+            <p>
+                A refined, museum-inspired layout with exhibit labels, timeline panels,
+                and collection highlights designed for handset browsing.
+            </p>
+        </div>
+        <div class="demo-hero-visual">
+            <div class="demo-hero-plinth">
+                <div class="demo-hero-plaque">
+                    <h3>Ginkgo biloba</h3>
+                    <p>Survivor of the Mesozoic era.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="demo-section">
+        <div class="demo-exhibit-grid">
+            <article class="demo-exhibit">
+                <h4>Specimen Label</h4>
+                <p><strong>Family:</strong> Ginkgoaceae</p>
+                <p><strong>Origin:</strong> East Asia</p>
+                <p><strong>Age:</strong> 200M+ years</p>
+            </article>
+            <article class="demo-exhibit">
+                <h4>Habitat Diorama</h4>
+                <p>See how coastal fog forests shield ancient conifers.</p>
+                <div class="demo-exhibit-chip">Interactive</div>
+            </article>
+            <article class="demo-exhibit">
+                <h4>Conservation Notes</h4>
+                <p>Propagation success rates and global collection partners.</p>
+                <div class="demo-exhibit-chip warning">Sensitive</div>
+            </article>
+        </div>
+    </section>
+
+    <section class="demo-section demo-timeline">
+        <div class="demo-timeline-card">
+            <h3>Evolutionary Timeline</h3>
+            <ul>
+                <li><span>250M</span> Conifer emergence</li>
+                <li><span>150M</span> Jurassic diversification</li>
+                <li><span>Today</span> Living fossil collections</li>
+            </ul>
+        </div>
+        <div class="demo-timeline-card">
+            <h3>Visitor Highlights</h3>
+            <p>Scan QR codes to explore interactive herbarium sheets.</p>
+            <button class="demo-cta">Open Guide</button>
+        </div>
+    </section>
+</section>
+{% endblock %}

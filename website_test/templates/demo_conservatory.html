@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Tropical Conservatory Demo{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="demo-page demo-conservatory">
+    <header class="demo-hero">
+        <div class="demo-hero-text">
+            <span class="demo-kicker">Glasshouse Walk</span>
+            <h2>Tropical Conservatory</h2>
+            <p>
+                A humid, immersive palette with layered cards and misty gradients
+                to mirror greenhouse storytelling on mobile.
+            </p>
+            <div class="demo-cta-row">
+                <a class="demo-cta" href="#">Enter Dome</a>
+                <a class="demo-cta ghost" href="#">Plant Guide</a>
+            </div>
+        </div>
+        <div class="demo-hero-visual">
+            <div class="demo-hero-image conservatory"></div>
+        </div>
+    </header>
+
+    <section class="demo-section">
+        <div class="demo-grid">
+            <article class="demo-card">
+                <div class="demo-card-image warm"></div>
+                <div class="demo-card-body">
+                    <h4>Humidity Zones</h4>
+                    <p>Microclimates grouped by canopy moisture profiles.</p>
+                </div>
+            </article>
+            <article class="demo-card">
+                <div class="demo-card-image cool"></div>
+                <div class="demo-card-body">
+                    <h4>Water Cycle</h4>
+                    <p>Condensation loops and irrigation highlight tours.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</section>
+{% endblock %}

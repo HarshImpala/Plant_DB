@@ -9,6 +9,7 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 import argparse
 import os
+import shutil
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -23,6 +24,19 @@ def main():
 
     if not OUTPUT_DIR.exists():
         raise SystemExit(f"Missing output directory: {OUTPUT_DIR}\nRun generator/build_site.py first.")
+
+    # Ensure core static assets exist in output so styles load.
+    output_static = OUTPUT_DIR / "static"
+    output_css = output_static / "css"
+    expected_css = output_css / "style-base.css"
+    if not expected_css.exists():
+        source_static = BASE_DIR / "static"
+        if source_static.exists():
+            output_static.mkdir(parents=True, exist_ok=True)
+            shutil.copytree(source_static, output_static, dirs_exist_ok=True)
+            print("Synced static assets into output/ (missing CSS detected).")
+        else:
+            print("Warning: static assets missing; styling may be broken.")
 
     os.chdir(OUTPUT_DIR)
     server = ThreadingHTTPServer((args.host, args.port), SimpleHTTPRequestHandler)
